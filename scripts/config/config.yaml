@@ -1,0 +1,4 @@
+log_level: DEBUG
+db_connection_url: 'sqlite:/' # memory database, requires sqlite3
+google_sheet_id: "1UatNC3r3skKjy2vGK1sysk6vKGD1F9v8YgdinyGMx7U"
+doc_root: "../docs"
