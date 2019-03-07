@@ -1,0 +1,48 @@
+{  
+	"DMP":{  
+		"title":"Super secret data DMP",
+		"description":"DMP with super secret and sensitive data that cannot be shared",
+  
+		"created":"2018-07-23T10:10:23.6",
+		"modified":"2019-02-22T15:10:56.9",
+		
+		"project":{  },
+	   
+		"securityAndPrivacy":[  
+			{  
+				"title":"Special security requirement",
+				"description":"Data must be kept in a locked room, because..."
+			},
+			{  
+				"title":"Privacy requirement",
+				"description":"Data cannot be shared even in an anonymised form, ..."
+			}
+		],
+	   
+		"dataset":{  
+			"title":"Interviews",
+			"description":"Audio recordings of interviews",
+			
+			"type":"audio",
+			
+			"personalData":"yes",
+			"sensitiveData":"yes",
+			
+			"dataQualityAssurance":"File naming conventions used to...",
+			
+			"preservationStatement":"High cultural value. Can be migrated to other formats if needed",
+			
+			"distribution":{  
+				"title":"Collection of recordings",
+				"description":"All interviews with people from...",
+				
+				"format":"audio/mpeg3",
+				"byteSize":"6934576883",
+				
+				"dataAccess":"closed",
+				
+				"availableTill":"2029-01-30"
+			}
+		}
+	}
+}
