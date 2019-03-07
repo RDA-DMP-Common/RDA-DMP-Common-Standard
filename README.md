@@ -3,3 +3,7 @@ Official outputs from the [RDA DMP Common Standards WG](https://www.rd-alliance.
 
 This work has been informed by a extensive community consultation which, among other things, collected a substantial set of ['user stories'](https://github.com/RDA-DMP-Common/user-stories).
 
+## Examples
+Check the [examples](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON) for JSON examples of maDMPs.
+
+

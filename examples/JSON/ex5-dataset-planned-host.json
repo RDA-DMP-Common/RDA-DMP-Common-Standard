@@ -1,0 +1,59 @@
+Example of a DMP with estimated size of data and specific requirements for infrastructure.
+
+{
+	"DMP": {
+	
+		"title": "Estimation DMP",
+		"description" : "DOI pre-booked for data, it's size is estimated",
+	
+		"created": "2018-07-23T10:10:23.6",
+		"modified": "2019-02-22T15:10:56.9",
+	
+
+		"project": {},
+
+		"dataset": {
+			"title": "Cool data",
+			"description": "Data which shows...",
+			"type": "document",
+			
+			"issued": "2021-06-30",
+
+			"personalData": "no",
+			"sensitiveData": "no",
+			
+			"datasetID" : {
+				"identifier": "10.5281/zenodo.1200361",
+				"identifierType": "DOI-RAW"
+			},
+					
+
+			"distribution": {
+				"title": "Raw data",
+				"description": "CSV file showing...",
+				
+				"format" : "text/csv",
+				"byteSize" : "100000",
+				
+				"dataAccess": "open",
+				
+				"license": {
+					"license_ref": "https://creativecommons.org/licenses/by/4.0/",
+					"startDate": "2021-06-30"
+				},
+				
+				"availableTill": "2029-01-30",
+				
+				"host" : {
+					"title": "SuperRepository",
+					"description" : "Super repository hosted by super computing centre in a super location",
+					"supportsVersioning" : "yes",
+					"backupFrequency" : "hourly",
+					"storageType" : "hot",
+					"availability" : "99,5"
+				}
+			}
+		}
+	}
+}
+
