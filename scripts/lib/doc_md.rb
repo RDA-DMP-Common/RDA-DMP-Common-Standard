@@ -41,7 +41,7 @@ class MarkdownDocument
 
     @root_node.each do |node|
       if node.has_children? then
-        @content += "## Properties in '#{node.name}'\n\n"
+        @content += "<h2 id=\"##{node.name}\">Properties in '#{node.name}'</h2>\n\n"
         @content += generate_table(node.children)
         @content += "\n<hr/>\n\n"
       end
@@ -50,7 +50,11 @@ class MarkdownDocument
 
   def generate_nested_li(node)
     li = ('  '*node.node_depth)
-    li += "* [#{node.name}](##{node.name})\n"
+    if node.has_children? then
+      li += "* [#{node.name}](##{node.name})\n"
+    else
+      li += "* #{node.name}\n"
+    end
     return li
   end
 
@@ -104,7 +108,7 @@ class MarkdownDocument
   end
 
   def get_node_as_html_table_row(node)
-    html = "<tr><td><span id=\"#{node.name}\">#{node.name}</span></td>"
+    html = "<tr><td>#{node.name}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:notes])}</td>"
