@@ -4,6 +4,13 @@ class MarkdownDocument
 
   PROPERTY_COLUMNS = ['Name','Data Type','Cardinality','Notes']
 
+  CARDINALITY_LABELS = {
+    '0..1' => 'Zero or One',
+    '1' => 'Exactly One',
+    '0..n' => 'Zero or More',
+    '1..n' => 'One or More'
+  }
+
   def initialize(path,header,footer,root_property)
     @path = path
     @header = header
@@ -21,7 +28,7 @@ class MarkdownDocument
       @content += "<tr>"
       @content += "<td>#{property.label_machine}</td>"
       @content += "<td>#{property.data_type.label}</td>"
-      @content += "<td>#{property.cardinality}</td>"
+      @content += "<td>#{CARDINALITY_LABELS[property.cardinality]}</td>"
       notes = property.notes
       if !notes | notes == '' then
         notes = '&nbsp;'

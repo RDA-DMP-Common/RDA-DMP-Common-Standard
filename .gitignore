@@ -1,2 +1,3 @@
 .DS_Store
-token.yaml
+secret_token.yaml
+secret_credentials.json

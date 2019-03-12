@@ -3,8 +3,8 @@ require 'googleauth'
 require 'googleauth/stores/file_token_store'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'.freeze
-CREDENTIALS_PATH = './config/credentials.json'.freeze
-TOKEN_PATH = './config/token.yaml'.freeze
+CREDENTIALS_PATH = './config/secret_credentials.json'.freeze
+TOKEN_PATH = './config/secret_token.yaml'.freeze
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
 ##
@@ -30,3 +30,6 @@ def authorize
   end
   credentials
 end
+
+
+# 4/CwFsdPX6uhQBFHGGSF__9rOaRfqLNMsDe4Cd6M3ESMVEmob2zq2MFN0
