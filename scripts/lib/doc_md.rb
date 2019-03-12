@@ -27,8 +27,15 @@ class MarkdownDocument
   def generate
     @content += generate_html_tree(@root_node)
     @content += "\n<hr/>\n\n"
-    @content += "## All Properties\n\n"
+
+    @content += "## Properties of 'DMP'\n\n"
     @content += generate_table(@root_node.children)
+    @content += "\n<hr/>\n\n"
+
+    @content += "## All Properties\n\n"
+    all_nodes = []
+    @root_node.each {|node| all_nodes << node} 
+    @content += generate_table(all_nodes)
     @content += "\n<hr/>\n\n"
   end
 
