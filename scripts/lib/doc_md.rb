@@ -22,21 +22,30 @@ class MarkdownDocument
     @content = ''
     @root_property = root_property
     @root_node = build_tree(@root_property)
+    @root_node.print_tree
   end
 
   def generate
     @content += generate_html_tree(@root_node)
     @content += "\n<hr/>\n\n"
 
-    @content += "## Properties of 'DMP'\n\n"
-    @content += generate_table(@root_node.children)
-    @content += "\n<hr/>\n\n"
+    # @content += "## Properties of 'DMP'\n\n"
+    # @content += generate_table(@root_node.children)
+    # @content += "\n<hr/>\n\n"
 
-    @content += "## All Properties\n\n"
-    all_nodes = []
-    @root_node.each {|node| all_nodes << node} 
-    @content += generate_table(all_nodes)
-    @content += "\n<hr/>\n\n"
+    # @content += "## All Properties\n\n"
+    # all_nodes = []
+    # @root_node.each {|node| all_nodes << node} 
+    # @content += generate_table(all_nodes)
+    # @content += "\n<hr/>\n\n"
+
+    @root_node.each do |node|
+      if node.has_children? then
+        @content += "## Properties in '#{node.name}'\n\n"
+        @content += generate_table(node.children)
+        @content += "\n<hr/>\n\n"
+      end
+    end
   end
 
   def generate_nested_li(node)
@@ -78,14 +87,11 @@ class MarkdownDocument
   def add_node_to_parent(parent_node,parent_property)
     parent_property.children.each do |property|
       new_node = Tree::TreeNode.new(property.label_machine,get_property_attributes_as_hash(property))
-      new_node.content['depth'] = new_node.node_depth
       parent_node << new_node
-      if(!property.children.empty?) then
-        property.children.each do |child_property|
-          add_node_to_parent(new_node,child_property)
-        end
-      end
+      new_node.content['depth'] = new_node.node_depth
+      add_node_to_parent(new_node,property)
     end
+    puts
     return parent_node
   end
 

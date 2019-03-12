@@ -21,6 +21,7 @@ DB.create_table? :properties do
   String :parent_id, :size=>255
   String :label_human, :size=>255
   String :label_machine, :size=>255
+  String :description, text: true
   String :uri, :size=>255
   String :notes, text: true
   String :cardinality, :size=> 5

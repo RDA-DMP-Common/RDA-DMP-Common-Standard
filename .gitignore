@@ -1,3 +1,4 @@
 .DS_Store
 secret_token.yaml
 secret_credentials.json
+./tmp/*

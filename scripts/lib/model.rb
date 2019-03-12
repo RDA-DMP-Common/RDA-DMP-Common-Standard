@@ -61,8 +61,9 @@ class Property < Sequel::Model
           data_type_id: row[4],
           parent_id: row[5],
           cardinality: row[6],
-          notes: row[7],
-          uri: row[8]
+          description: row[7],
+          uri: row[8],
+          notes: row[9]
         )
       rescue Exception => e
         LOGGER.error("Failed to create record for #{row.inspect}")

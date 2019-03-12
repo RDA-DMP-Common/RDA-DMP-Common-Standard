@@ -34,10 +34,11 @@ def generate_doc(path)
   md_doc.write_to_file
 end
 
-populate_rdb_from_google_sheet
+# populate_rdb_from_google_sheet
 generate_doc("#{DOC_ROOT}/index.md")
 
-
+funding = Property['funding']
+# puts funding.inspect
 
 
 
