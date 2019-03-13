@@ -30,6 +30,7 @@ if RESET_ALL_DATA then
     String :label_machine, :size=>255
     String :description, text: true
     String :uri, :size=>255
+    String :example_value, text: true
     String :notes, text: true
     String :cardinality, :size=> 5
     foreign_key :vocabulary_id, :vocabularies, :type=>'varchar'
@@ -40,6 +41,7 @@ if RESET_ALL_DATA then
     primary_key :id
     String :label_human, :size=>255
     String :label_machine, :size=>255
+    String :example_value, text: true
     String :notes, text: true
     String :cardinality, :size=> 5
     foreign_key :property_id, :properties, :type=>'varchar'

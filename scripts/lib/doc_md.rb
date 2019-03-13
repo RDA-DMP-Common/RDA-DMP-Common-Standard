@@ -4,7 +4,7 @@ require 'rubytree'
 
 class MarkdownDocument
 
-  PROPERTY_COLUMNS = ['Name','Description','Data Type','Cardinality','Attributes']
+  PROPERTY_COLUMNS = ['Name','Description','Data Type','Cardinality','Example Value','Attributes']
 
   CARDINALITY_LABELS = {
     '0..1' => 'Zero or One',
@@ -112,13 +112,15 @@ class MarkdownDocument
       :data_type => property.data_type.label,
       :cardinality => CARDINALITY_LABELS[property.cardinality],
       :description => property.description,
+      :example_value => property.example_value,
       :attributes => []
     }
     property.attributes.each do |attrib|
       attrib_hash = {
         :name => attrib.label_machine,
         :data_type => attrib.data_type.label,
-        :cardinality => CARDINALITY_LABELS[attrib.cardinality]
+        :cardinality => CARDINALITY_LABELS[attrib.cardinality],
+        :example_value => attrib.example_value
       }
       property_attributes[:attributes] << attrib_hash
     end
@@ -130,6 +132,7 @@ class MarkdownDocument
     html += "<td>#{process_content_for_table_cell(node.content[:description])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
+    html += "<td>#{process_content_for_table_cell(node.content[:example_value])}</td>"
     html += "<td>"
       if !node.content[:attributes].empty?
         html += "<table>"
@@ -141,11 +144,6 @@ class MarkdownDocument
           html += '</tr>'
         end
         html += "</table>"
-        # html += "<ul>"
-        # node.content[:attributes].each do |attribute|
-        #   html += "<li>#{attribute[:name]} [#{attribute[:data_type]}, #{attribute[:cardinality]}]</li>"
-        # end
-        # html += "</ul>"
       end
     html += "</td>"
     html += "</tr>"

@@ -62,8 +62,9 @@ class Property < Sequel::Model
           parent_id: row[5],
           cardinality: row[6],
           description: row[7],
-          uri: row[8],
-          notes: row[9]
+          example_value: row[8],
+          uri: row[9],
+          notes: row[10]
         )
       rescue Exception => e
         LOGGER.error("Failed to create record for #{row.inspect}")
@@ -88,7 +89,8 @@ class Attribute < Sequel::Model
           label_machine: row[2],
           data_type_id: row[3],
           cardinality: row[4],
-          notes: row[5]
+          example_value: row[5],
+          notes: row[6]
         )
       rescue Exception => e
         LOGGER.error("Failed to create record for #{row.inspect}")

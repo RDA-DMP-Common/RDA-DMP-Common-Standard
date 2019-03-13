@@ -11,16 +11,17 @@
       <th>Description</th>
       <th>Data Type</th>
       <th>Cardinality</th>
+      <th>Example Value</th>
       <th>Attributes</th>
     </tr>
   </thead>
-  <tbody><tr><td><a id="contact" href="#contact_tree">contact</a></td><td> </td><td>Nested Data Structure</td><td>Exactly One</td><td/></tr>
-<tr><td><a id="created" href="#created_tree">created</a></td><td> </td><td>DateTime</td><td>Exactly One</td><td/></tr>
-<tr><td><a id="description" href="#description_tree">description</a></td><td> </td><td>String</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td> </td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td/></tr>
-<tr><td><a id="modified" href="#modified_tree">modified</a></td><td> </td><td>DateTime</td><td>Exactly One</td><td/></tr>
-<tr><td><a id="project" href="#project_tree">project</a></td><td>A description of this property, its purpose and any other constraints</td><td>Nested Data Structure</td><td>Zero or More</td><td/></tr>
-<tr><td><a id="title" href="#title_tree">title</a></td><td> </td><td>String</td><td>Zero or One</td><td/></tr>
+  <tbody><tr><td><a id="contact" href="#contact_tree">contact</a></td><td> </td><td>Nested Data Structure</td><td>Exactly One</td><td> </td><td/></tr>
+<tr><td><a id="created" href="#created_tree">created</a></td><td> </td><td>DateTime</td><td>Exactly One</td><td>2019-03-13 13:13</td><td/></tr>
+<tr><td><a id="description" href="#description_tree">description</a></td><td> </td><td>String</td><td>Zero or One</td><td>This DMP is for our new project</td><td/></tr>
+<tr><td><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td>Value may be one of: 'yes'; 'no'; 'unknown'</td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td>unknown</td><td/></tr>
+<tr><td><a id="modified" href="#modified_tree">modified</a></td><td> </td><td>DateTime</td><td>Zero or One</td><td> </td><td/></tr>
+<tr><td><a id="project" href="#project_tree">project</a></td><td> </td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td/></tr>
+<tr><td><a id="title" href="#title_tree">title</a></td><td> </td><td>String</td><td>Zero or One</td><td>DMP for our new project</td><td/></tr>
 </tbody>
 </table>
 
@@ -33,12 +34,13 @@
       <th>Description</th>
       <th>Data Type</th>
       <th>Cardinality</th>
+      <th>Example Value</th>
       <th>Attributes</th>
     </tr>
   </thead>
-  <tbody><tr><td><a id="contact_id" href="#contact_id_tree">contact_id</a></td><td> </td><td>String</td><td>Zero or One</td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
-<tr><td><a id="mbox" href="#mbox_tree">mbox</a></td><td> </td><td>String</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="name" href="#name_tree">name</a></td><td> </td><td>String</td><td>Zero or One</td><td/></tr>
+  <tbody><tr><td><a id="contact_id" href="#contact_id_tree">contact_id</a></td><td> </td><td>String</td><td>Zero or One</td><td>http://orcid.org/0000-0000-0000-0000</td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
+<tr><td><a id="mbox" href="#mbox_tree">mbox</a></td><td> </td><td>String</td><td>Zero or One</td><td>cc@example.com</td><td/></tr>
+<tr><td><a id="name" href="#name_tree">name</a></td><td> </td><td>String</td><td>Zero or One</td><td>Charlie Chaplin</td><td/></tr>
 </tbody>
 </table>
 
@@ -51,13 +53,14 @@
       <th>Description</th>
       <th>Data Type</th>
       <th>Cardinality</th>
+      <th>Example Value</th>
       <th>Attributes</th>
     </tr>
   </thead>
-  <tbody><tr><td><a id="end" href="#end_tree">end</a></td><td> </td><td>DateTime</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="funding" href="#funding_tree">funding</a></td><td> </td><td>Nested Data Structure</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="start" href="#start_tree">start</a></td><td> </td><td>DateTime</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="title" href="#title_tree">title</a></td><td> </td><td>String</td><td>Zero or One</td><td/></tr>
+  <tbody><tr><td><a id="end" href="#end_tree">end</a></td><td> </td><td>Date</td><td>Zero or One</td><td>2020-03-31</td><td/></tr>
+<tr><td><a id="funding" href="#funding_tree">funding</a></td><td> </td><td>Nested Data Structure</td><td>Zero or One</td><td> </td><td/></tr>
+<tr><td><a id="start" href="#start_tree">start</a></td><td> </td><td>Date</td><td>Zero or One</td><td>2019-04-01</td><td/></tr>
+<tr><td><a id="title" href="#title_tree">title</a></td><td> </td><td>String</td><td>Zero or One</td><td>Our New Project</td><td/></tr>
 </tbody>
 </table>
 
@@ -70,12 +73,13 @@
       <th>Description</th>
       <th>Data Type</th>
       <th>Cardinality</th>
+      <th>Example Value</th>
       <th>Attributes</th>
     </tr>
   </thead>
-  <tbody><tr><td><a id="funder_id" href="#funder_id_tree">funder_id</a></td><td> </td><td>String</td><td>Zero or One</td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
-<tr><td><a id="funding_status" href="#funding_status_tree">funding_status</a></td><td> </td><td>Term from Controlled Vocabulary</td><td>Zero or One</td><td/></tr>
-<tr><td><a id="grant_id" href="#grant_id_tree">grant_id</a></td><td> </td><td>String</td><td>Zero or One</td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
+  <tbody><tr><td><a id="funder_id" href="#funder_id_tree">funder_id</a></td><td> </td><td>String</td><td>Zero or One</td><td> </td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
+<tr><td><a id="funding_status" href="#funding_status_tree">funding_status</a></td><td> </td><td>Term from Controlled Vocabulary</td><td>Zero or One</td><td> </td><td/></tr>
+<tr><td><a id="grant_id" href="#grant_id_tree">grant_id</a></td><td> </td><td>String</td><td>Zero or One</td><td> </td><td><table><tr><td>identifier</td><td>String</td><td>Exactly One</td></tr><tr><td>identifier_type</td><td>String</td><td>Exactly One</td></tr></table></td></tr>
 </tbody>
 </table>
 
