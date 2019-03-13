@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require './lib/config'
 require './lib/google'
 require './lib/db'
@@ -34,20 +35,13 @@ def generate_doc(path)
   md_doc.write_to_file
 end
 
-# populate_rdb_from_google_sheet
+
+# MAIN PROCESS
+
+if RESET_ALL_DATA then
+  populate_rdb_from_google_sheet
+end
+
 generate_doc("#{DOC_ROOT}/index.md")
 
-funding = Property['funding']
-# puts funding.inspect
 
-
-
-
-# puts
-# DataType.all {|rec| puts rec.inspect}
-# puts
-# Vocabulary.all {|rec| puts rec.inspect}
-# puts
-# Property.all {|rec| puts rec.inspect}
-
-# Property.all {|p| puts p.label_human}
