@@ -4,7 +4,7 @@ require 'rubytree'
 
 class MarkdownDocument
 
-  PROPERTY_COLUMNS = ['Name','Data Type','Cardinality','Notes']
+  PROPERTY_COLUMNS = ['Name','Description','Data Type','Cardinality']
 
   CARDINALITY_LABELS = {
     '0..1' => 'Zero or One',
@@ -29,40 +29,67 @@ class MarkdownDocument
     @content += generate_html_tree(@root_node)
     @content += "\n<hr/>\n\n"
 
-    # @content += "## Properties of 'DMP'\n\n"
-    # @content += generate_table(@root_node.children)
-    # @content += "\n<hr/>\n\n"
-
-    # @content += "## All Properties\n\n"
-    # all_nodes = []
-    # @root_node.each {|node| all_nodes << node} 
-    # @content += generate_table(all_nodes)
-    # @content += "\n<hr/>\n\n"
-
     @root_node.each do |node|
       if node.has_children? then
-        @content += "<h2 id=\"##{node.name}\">Properties in '#{node.name}'</h2>\n\n"
+        @content += "<h2 id=\"##{node.name}_table\">Properties in '#{node.name}'</h2>\n\n"
         @content += generate_table(node.children)
-        @content += "\n<hr/>\n\n"
+        @content += "\n\n"
       end
     end
   end
 
+
   def generate_nested_li(node)
     li = ('  '*node.node_depth)
     if node.has_children? then
-      li += "* [#{node.name}](##{node.name})\n"
+      li += "* [#{node.name}](##{node.name}_table)\n"
     else
-      li += "* #{node.name}\n"
+      # li += "* #{node.name}\n"
+      li += "* [#{node.name}](##{node.name})\n"
     end
     return li
   end
 
-  def generate_html_tree(node)
-    html_tree = ''
-    node.print_tree(node.node_depth,nil,lambda { |node, prefix| html_tree += "#{generate_nested_li(node)}" })
+  def generate_html_tree(start_node)
+    html_tree = '<ul>'
+    tree_depth = 0
+    final_node_depth = 0
+    start_node.each do |node|
+      final_node_depth = node.node_depth
+      if node.node_depth > tree_depth then
+        html_tree += '<ul>'
+      elsif node.node_depth < tree_depth then
+        html_tree += '</ul>'
+      end
+      tree_depth = node.node_depth
+      if node.has_children? then
+        html_tree += "<li id=\"##{node.name}_tree\"><a href=\"##{node.name}_table\">#{node.name}</a></li>"
+      else
+        html_tree += "<li id=\"##{node.name}_tree\"><a href=\"##{node.name}\">#{node.name}</a></li>"
+      end
+    end
+    [0..final_node_depth].each { html_tree += '</ul>' }
+    html_tree += '</ul>'
     return html_tree
   end
+
+
+  # def generate_nested_li(node)
+  #   li = ('  '*node.node_depth)
+  #   if node.has_children? then
+  #     li += "* [#{node.name}](##{node.name}_table)\n"
+  #   else
+  #     # li += "* #{node.name}\n"
+  #     li += "* [#{node.name}](##{node.name})\n"
+  #   end
+  #   return li
+  # end
+
+  # def generate_html_tree(node)
+  #   html_tree = ''
+  #   node.print_tree(node.node_depth,nil,lambda { |node, prefix| html_tree += "#{generate_nested_li(node)}" })
+  #   return html_tree
+  # end
 
   def generate_table(node_array)
     table_content = "<table><thead><tr>"
@@ -103,15 +130,15 @@ class MarkdownDocument
     {
       :data_type => property.data_type.label,
       :cardinality => CARDINALITY_LABELS[property.cardinality],
-      :notes => property.notes
+      :description => property.description
     }
   end
 
   def get_node_as_html_table_row(node)
-    html = "<tr><td>#{node.name}</td>"
+    html = "<tr><td><span id=\"##{node.name}\"><a href=\"##{node.name}_tree\">#{node.name}</a></span></td>"
+    html += "<td>#{process_content_for_table_cell(node.content[:description])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
-    html += "<td>#{process_content_for_table_cell(node.content[:notes])}</td>"
     html += "</tr>"
     return html
   end
