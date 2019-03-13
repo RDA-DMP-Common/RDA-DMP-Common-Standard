@@ -31,7 +31,7 @@ class MarkdownDocument
 
     @root_node.each do |node|
       if node.has_children? then
-        @content += "<h2 id=\"#{node.name}_table\">Properties in '#{node.name}'</h2>\n\n"
+        @content += "<h2 id=\"#{node.name}_table\">Properties in '#{node.content[:machine_name]}'</h2>\n\n"
         @content += generate_table(node.children)
         @content += "\n\n"
       end
@@ -62,9 +62,9 @@ class MarkdownDocument
       end
       tree_depth = node.node_depth
       if node.has_children? then
-        html_tree += "<li id=\"#{node.name}_tree\"><a href=\"##{node.name}_table\">#{node.name}</a></li>"
+        html_tree += "<li id=\"#{node.name}_tree\"><a href=\"##{node.name}_table\">#{node.content[:machine_name]}</a></li>"
       else
-        html_tree += "<li id=\"#{node.name}_tree\"><a href=\"##{node.name}\">#{node.name}</a></li>"
+        html_tree += "<li id=\"#{node.name}_tree\"><a href=\"##{node.name}\">#{node.content[:machine_name]}</a></li>"
       end
     end
     [0..final_node_depth].each { html_tree += '</ul>' }
@@ -98,7 +98,7 @@ class MarkdownDocument
 
   def add_node_to_parent(parent_node,parent_property)
     parent_property.children.each do |property|
-      new_node = Tree::TreeNode.new(property.label_machine,get_property_attributes_as_hash(property))
+      new_node = Tree::TreeNode.new(property.id,get_property_attributes_as_hash(property))
       parent_node << new_node
       new_node.content['depth'] = new_node.node_depth
       add_node_to_parent(new_node,property)
@@ -109,6 +109,7 @@ class MarkdownDocument
 
   def get_property_attributes_as_hash(property)
     {
+      :machine_name => property.label_machine,
       :data_type => property.data_type.label,
       :cardinality => CARDINALITY_LABELS[property.cardinality],
       :description => property.description,
@@ -117,7 +118,7 @@ class MarkdownDocument
   end
 
   def get_node_as_html_table_row(node)
-    html = "<tr><td><a id=\"#{node.name}\" href=\"##{node.name}_tree\">#{node.name}</a></td>"
+    html = "<tr><td><a id=\"#{node.name}\" href=\"##{node.name}_tree\">#{node.content[:machine_name]}</a></td>"
     html += "<td>#{process_content_for_table_cell(node.content[:description])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
