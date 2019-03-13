@@ -37,15 +37,15 @@ if RESET_ALL_DATA then
     foreign_key :data_type_id, :data_types, :type=>'varchar'
   end
 
-  DB.create_table? :attributes do
-    primary_key :id
-    String :label_human, :size=>255
-    String :label_machine, :size=>255
-    String :example_value, text: true
-    String :notes, text: true
-    String :cardinality, :size=> 5
-    foreign_key :property_id, :properties, :type=>'varchar'
-    foreign_key :data_type_id, :data_types, :type=>'varchar'
-  end
+  # DB.create_table? :attributes do
+  #   primary_key :id
+  #   String :label_human, :size=>255
+  #   String :label_machine, :size=>255
+  #   String :example_value, text: true
+  #   String :notes, text: true
+  #   String :cardinality, :size=> 5
+  #   foreign_key :property_id, :properties, :type=>'varchar'
+  #   foreign_key :data_type_id, :data_types, :type=>'varchar'
+  # end
 
 end

@@ -20,10 +20,10 @@ def populate_rdb_from_google_sheet
   LOGGER.debug("Populating 'Properties' from Google spreadsheet....")
   Property.populate_from_google_sheet(service,GOOGLE_SHEET_ID,'properties!A2:I')
   LOGGER.info("'Properties' populated from Google spreadsheet - OK")
-  LOGGER.debug("Populating 'Attributes' from Google spreadsheet....")
-  Attribute.populate_from_google_sheet(service,GOOGLE_SHEET_ID,'attributes!A2:F')
-  LOGGER.info("'Attributes' populated from Google spreadsheet - OK")
-  LOGGER.info "Populated temporary in-memory relational database from Google Sheet"
+  # LOGGER.debug("Populating 'Attributes' from Google spreadsheet....")
+  # Attribute.populate_from_google_sheet(service,GOOGLE_SHEET_ID,'attributes!A2:F')
+  # LOGGER.info("'Attributes' populated from Google spreadsheet - OK")
+  LOGGER.info "Populated relational database from Google Sheet"
 end
 
 def generate_doc(path)

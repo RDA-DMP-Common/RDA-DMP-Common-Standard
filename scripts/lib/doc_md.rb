@@ -4,7 +4,7 @@ require 'rubytree'
 
 class MarkdownDocument
 
-  PROPERTY_COLUMNS = ['Name','Description','Data Type','Cardinality','Example Value','Attributes']
+  PROPERTY_COLUMNS = ['Name','Description','Data Type','Cardinality','Example Value']
 
   CARDINALITY_LABELS = {
     '0..1' => 'Zero or One',
@@ -108,23 +108,12 @@ class MarkdownDocument
   end
 
   def get_property_attributes_as_hash(property)
-    property_attributes = {
+    {
       :data_type => property.data_type.label,
       :cardinality => CARDINALITY_LABELS[property.cardinality],
       :description => property.description,
-      :example_value => property.example_value,
-      :attributes => []
+      :example_value => property.example_value
     }
-    property.attributes.each do |attrib|
-      attrib_hash = {
-        :name => attrib.label_machine,
-        :data_type => attrib.data_type.label,
-        :cardinality => CARDINALITY_LABELS[attrib.cardinality],
-        :example_value => attrib.example_value
-      }
-      property_attributes[:attributes] << attrib_hash
-    end
-    return property_attributes
   end
 
   def get_node_as_html_table_row(node)
@@ -133,19 +122,19 @@ class MarkdownDocument
     html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
     html += "<td>#{process_content_for_table_cell(node.content[:example_value])}</td>"
-    html += "<td>"
-      if !node.content[:attributes].empty?
-        html += "<table>"
-        node.content[:attributes].each do |attribute|
-          html += '<tr>'
-          html += "<td>#{attribute[:name]}</td>"
-          html += "<td>#{attribute[:data_type]}</td>"
-          html += "<td>#{attribute[:cardinality]}</td>"
-          html += '</tr>'
-        end
-        html += "</table>"
-      end
-    html += "</td>"
+    # html += "<td>"
+    #   if !node.content[:attributes].empty?
+    #     html += "<table>"
+    #     node.content[:attributes].each do |attribute|
+    #       html += '<tr>'
+    #       html += "<td>#{attribute[:name]}</td>"
+    #       html += "<td>#{attribute[:data_type]}</td>"
+    #       html += "<td>#{attribute[:cardinality]}</td>"
+    #       html += '</tr>'
+    #     end
+    #     html += "</table>"
+    #   end
+    # html += "</td>"
     html += "</tr>"
     return html
   end

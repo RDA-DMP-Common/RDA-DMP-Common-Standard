@@ -47,7 +47,7 @@ class Property < Sequel::Model
   unrestrict_primary_key
   many_to_one :vocabulary
   many_to_one :data_type
-  one_to_many :attributes
+  # one_to_many :attributes
 
   def self.populate_from_google_sheet(service,sheet_id,range)
     response = service.get_spreadsheet_values(sheet_id,range)
@@ -73,28 +73,28 @@ class Property < Sequel::Model
   end
 end
 
-class Attribute < Sequel::Model
-  set_primary_key :id
-  unrestrict_primary_key
-  many_to_one :property
-  many_to_one :data_type
+# class Attribute < Sequel::Model
+#   set_primary_key :id
+#   unrestrict_primary_key
+#   many_to_one :property
+#   many_to_one :data_type
 
-  def self.populate_from_google_sheet(service,sheet_id,range)
-    response = service.get_spreadsheet_values(sheet_id,range)
-    response.values.each do |row|
-      begin
-        create(
-          property_id: row[0],
-          label_human: row[1],
-          label_machine: row[2],
-          data_type_id: row[3],
-          cardinality: row[4],
-          example_value: row[5],
-          notes: row[6]
-        )
-      rescue Exception => e
-        LOGGER.error("Failed to create record for #{row.inspect}")
-      end
-    end
-  end
-end
+#   def self.populate_from_google_sheet(service,sheet_id,range)
+#     response = service.get_spreadsheet_values(sheet_id,range)
+#     response.values.each do |row|
+#       begin
+#         create(
+#           property_id: row[0],
+#           label_human: row[1],
+#           label_machine: row[2],
+#           data_type_id: row[3],
+#           cardinality: row[4],
+#           example_value: row[5],
+#           notes: row[6]
+#         )
+#       rescue Exception => e
+#         LOGGER.error("Failed to create record for #{row.inspect}")
+#       end
+#     end
+#   end
+# end
