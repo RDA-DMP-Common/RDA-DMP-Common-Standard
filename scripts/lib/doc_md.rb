@@ -91,7 +91,7 @@ class MarkdownDocument
 
 
   def build_tree(root_property)
-    root_node = Tree::TreeNode.new("DMP", {})
+    root_node = Tree::TreeNode.new(root_property.id,get_property_attributes_as_hash(root_property))
     root_node = add_node_to_parent(root_node,root_property)
     return root_node
   end
