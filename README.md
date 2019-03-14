@@ -6,4 +6,10 @@ This work has been informed by a extensive community consultation which, among o
 ## Examples
 Check the [examples](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON) for JSON examples of maDMPs.
 
+## Documentation
+!Work in progress!
+Documentation of the maDMP can be found [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/index.md)
+
+## FAQ 
+!Work in progress!
 
