@@ -12,6 +12,7 @@
       <th>Data Type</th>
       <th>Cardinality</th>
       <th>Example Value</th>
+      <th>Comments</th>
     </tr>
   </thead>
   <tbody><tr><td><a id="dmp_contact" href="#dmp_contact_tree">contact</a></td><td>Contact person for a DMP</td><td>Nested Data Structure</td><td>Exactly One</td><td> </td></tr>
