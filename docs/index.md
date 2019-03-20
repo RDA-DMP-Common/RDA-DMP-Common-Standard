@@ -15,22 +15,22 @@
       <th>Comments</th>
     </tr>
   </thead>
-  <tbody><tr><td><a id="dmp_contact" href="#dmp_contact_tree">contact</a></td><td>Contact person for a DMP</td><td>Nested Data Structure</td><td>Exactly One</td><td> </td></tr>
-<tr><td><a id="cost" href="#cost_tree">cost</a></td><td>To list costs related to data management. Providing multiple instances of a 'Cost' allows to break down costs into details. Providing one 'Cost' instance allows to provide one aggregated sum.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="dmp_created" href="#dmp_created_tree">created</a></td><td>Date and time of the first version of a DMP. Must not be changed in subsequent DMPs.</td><td>DateTime</td><td>Exactly One</td><td>2019-03-13 13:13</td></tr>
-<tr><td><a id="dm_staff" href="#dm_staff_tree">dm_staff</a></td><td>To list people that play role in data management related to this DMP, e.g. resoponsible for performing actions described in this DMP.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="dataset" href="#dataset_tree">dataset</a></td><td>To describe data on a non-technical level.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="dmp_description" href="#dmp_description_tree">description</a></td><td>To provide any free-form text information on a DMP</td><td>String</td><td>Zero or One</td><td>This DMP is for our new project</td></tr>
-<tr><td><a id="ethical_issues_description" href="#ethical_issues_description_tree">ethical_issues_description</a></td><td>To describe ethical issues directly in a DMP</td><td>String</td><td>Zero or One</td><td>There are ethical issues, because...</td></tr>
-<tr><td><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td>To indicate whether there are ethical issues related to data that this DMP describes. Allowed values: yes / no / unknown</td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td>yes</td></tr>
-<tr><td><a id="ethical_issues_report" href="#ethical_issues_report_tree">ethical_issues_report</a></td><td>To indicate where a protocol from a meeting with an ethical commitee can be found</td><td>URI</td><td>Zero or One</td><td><code>http://report.location</code></td></tr>
-<tr><td><a id="dmp_language" href="#dmp_language_tree">language</a></td><td>Language of the DMP expressed using ISO 6391-1 two letter country code.</td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td>en</td></tr>
-<tr><td><a id="metadata" href="#metadata_tree">metadata</a></td><td>To describe metadata standards used. </td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="dmp_modified" href="#dmp_modified_tree">modified</a></td><td>Must be set each time DMP is modified. Indicates DMP version.</td><td>DateTime</td><td>Zero or One</td><td>2020-03-14 10:53</td></tr>
-<tr><td><a id="project" href="#project_tree">project</a></td><td>Project related to a DMP</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="security_privacy" href="#security_privacy_tree">security_and_privacy</a></td><td>To list all issues and requirements related to security and privacy</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="technical_resource" href="#technical_resource_tree">technical_resource</a></td><td>To list all technical resources needed to implement a DMP</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td></tr>
-<tr><td><a id="dmp_title" href="#dmp_title_tree">title</a></td><td>Title of a DMP</td><td>String</td><td>Zero or One</td><td>DMP for our new project</td></tr>
+  <tbody><tr><td><a id="dmp_contact" href="#dmp_contact_tree">contact</a></td><td>Contact person for a DMP</td><td>Nested Data Structure</td><td>Exactly One</td><td> </td><td> </td></tr>
+<tr><td><a id="cost" href="#cost_tree">cost</a></td><td>To list costs related to data management. Providing multiple instances of a 'Cost' allows to break down costs into details. Providing one 'Cost' instance allows to provide one aggregated sum.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="dmp_created" href="#dmp_created_tree">created</a></td><td>Date and time of the first version of a DMP. Must not be changed in subsequent DMPs.</td><td>DateTime</td><td>Exactly One</td><td>2019-03-13 13:13</td><td> </td></tr>
+<tr><td><a id="dm_staff" href="#dm_staff_tree">dm_staff</a></td><td>To list people that play role in data management related to this DMP, e.g. resoponsible for performing actions described in this DMP.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="dataset" href="#dataset_tree">dataset</a></td><td>To describe data on a non-technical level.</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="dmp_description" href="#dmp_description_tree">description</a></td><td>To provide any free-form text information on a DMP</td><td>String</td><td>Zero or One</td><td>This DMP is for our new project</td><td> </td></tr>
+<tr><td><a id="ethical_issues_description" href="#ethical_issues_description_tree">ethical_issues_description</a></td><td>To describe ethical issues directly in a DMP</td><td>String</td><td>Zero or One</td><td>There are ethical issues, because...</td><td> </td></tr>
+<tr><td><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td>To indicate whether there are ethical issues related to data that this DMP describes. Allowed values: yes / no / unknown</td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td>yes</td><td> </td></tr>
+<tr><td><a id="ethical_issues_report" href="#ethical_issues_report_tree">ethical_issues_report</a></td><td>To indicate where a protocol from a meeting with an ethical commitee can be found</td><td>URI</td><td>Zero or One</td><td><code>http://report.location</code></td><td> </td></tr>
+<tr><td><a id="dmp_language" href="#dmp_language_tree">language</a></td><td>Language of the DMP expressed using ISO 6391-1 two letter country code.</td><td>Term from Controlled Vocabulary</td><td>Exactly One</td><td>en</td><td> </td></tr>
+<tr><td><a id="metadata" href="#metadata_tree">metadata</a></td><td>To describe metadata standards used. </td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="dmp_modified" href="#dmp_modified_tree">modified</a></td><td>Must be set each time DMP is modified. Indicates DMP version.</td><td>DateTime</td><td>Zero or One</td><td>2020-03-14 10:53</td><td> </td></tr>
+<tr><td><a id="project" href="#project_tree">project</a></td><td>Project related to a DMP</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="security_privacy" href="#security_privacy_tree">security_and_privacy</a></td><td>To list all issues and requirements related to security and privacy</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="technical_resource" href="#technical_resource_tree">technical_resource</a></td><td>To list all technical resources needed to implement a DMP</td><td>Nested Data Structure</td><td>Zero or More</td><td> </td><td> </td></tr>
+<tr><td><a id="dmp_title" href="#dmp_title_tree">title</a></td><td>Title of a DMP</td><td>String</td><td>Zero or One</td><td>DMP for our new project</td><td> </td></tr>
 </tbody>
 </table>
 
