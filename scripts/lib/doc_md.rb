@@ -73,7 +73,7 @@ class MarkdownDocument
   end
 
   def generate_table(node_array)
-    table_content = "<table style=\"width: 99%;\"><thead><tr>"
+    table_content = "<table style=\"width: 99%; font-size: 80%\"><thead><tr>"
     PROPERTY_COLUMNS.each {|col| table_content += "<th>#{col}</th>"}
     table_content += "</tr></thead>"
     table_content += "<tbody>"
