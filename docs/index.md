@@ -1,10 +1,18 @@
-# UNDER DEVELOPMENT!
+# RDA DMP Common Standard for machine-actionable Data Management Plans
+
+This is a minimum set of universal terms that we agree on which ensure basic interoperability of systems using maDMPS. Further fields can be added in specific deployments, but they do not guarantee interoperability. DMP tools can use any other fields in their internal data models.
+
+This standard allows modelling a wide range of use cases and does not set any business (e.g. funder specific) requirements. It allows modelling information over the whole DMP lifecycle.
+
+Cardinalities: each field in this model can be expected to appear as part of a message exchanged between systems. However, not all of fields or classes are required [0..1] or [0..*].
+
+For more information see [examples](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON), [FAQ](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md) or [diagrams](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/docs/diagrams).  
 <ul><li id="dmp_tree"><a href="#dmp_table">dmp</a></li><ul><li id="dmp_contact_tree"><a href="#dmp_contact_table">contact</a></li><ul><li id="dmp_contact_id_ti_tree"><a href="#dmp_contact_id_ti_table">contact_id</a></li><ul><li id="contact_id_tree"><a href="#contact_id">contact_id</a></li><li id="contact_id_type_tree"><a href="#contact_id_type">contact_id_type</a></li></ul><li id="dmp_contact_mbox_tree"><a href="#dmp_contact_mbox">mail</a></li><li id="dmp_contact_name_tree"><a href="#dmp_contact_name">name</a></li></ul><li id="cost_tree"><a href="#cost_table">cost</a></li><ul><li id="cost_unit_tree"><a href="#cost_unit">currency_code</a></li><li id="cost_description_tree"><a href="#cost_description">description</a></li><li id="cost_title_tree"><a href="#cost_title">title</a></li><li id="cost_value_tree"><a href="#cost_value">value</a></li></ul><li id="dmp_created_tree"><a href="#dmp_created">created</a></li><li id="dm_staff_tree"><a href="#dm_staff_table">dm_staff</a></li><ul><li id="dm_staff_role_tree"><a href="#dm_staff_role">contributor_type</a></li><li id="dm_staff_mbox_tree"><a href="#dm_staff_mbox">mbox</a></li><li id="dm_staff_name_tree"><a href="#dm_staff_name">name</a></li><li id="dm_staff_id_ti_tree"><a href="#dm_staff_id_ti_table">staff_id</a></li><ul><li id="staff_id_tree"><a href="#staff_id">staff_id</a></li><li id="staff_id_type_tree"><a href="#staff_id_type">staff_id_type</a></li></ul><li id="dmp_id_ti_tree"><a href="#dmp_id_ti_table">dmp_id</a></li><ul><li id="dmp_id_tree"><a href="#dmp_id">dmp_id</a></li><li id="dmp_id_Type_tree"><a href="#dmp_id_Type">dmp_id_type</a></li></ul><li id="dataset_tree"><a href="#dataset_table">dataset</a></li><ul><li id="dataset_quality_assurance_tree"><a href="#dataset_quality_assurance">data_quality_assurance</a></li><li id="dataset_id_ti_tree"><a href="#dataset_id_ti_table">dataset_id</a></li><ul><li id="dataset_id_tree"><a href="#dataset_id">dataset_id</a></li><li id="dataset_id_type_tree"><a href="#dataset_id_type">dataset_id_type</a></li></ul><li id="dataset_description_tree"><a href="#dataset_description">description</a></li><li id="distribution_tree"><a href="#distribution_table">distribution</a></li><ul><li id="distribution_access_url_tree"><a href="#distribution_access_url">access_url</a></li><li id="distribution_available_till_tree"><a href="#distribution_available_till">available_till</a></li><li id="distribution_byte_size_tree"><a href="#distribution_byte_size">byte_size</a></li><li id="distribution_data_access_tree"><a href="#distribution_data_access">data_access</a></li><li id="distribution_description_tree"><a href="#distribution_description">description</a></li><li id="distribution_download_url_tree"><a href="#distribution_download_url">download_url</a></li><li id="distribution_format_tree"><a href="#distribution_format">format</a></li><li id="host_tree"><a href="#host_table">host</a></li><ul><li id="host_availability_tree"><a href="#host_availability">availability</a></li><li id="host_backup_frequency_tree"><a href="#host_backup_frequency">backup__frequency</a></li><li id="host_backup_type_tree"><a href="#host_backup_type">backup_type</a></li><li id="host_certified_with_tree"><a href="#host_certified_with">certified_with</a></li><li id="host_description_tree"><a href="#host_description">description</a></li><li id="host_geo_location_tree"><a href="#host_geo_location">geo_location</a></li><li id="host_pid_system_tree"><a href="#host_pid_system">pid_system</a></li><li id="host_supports_versioning_tree"><a href="#host_supports_versioning">support_versioning</a></li><li id="host_title_tree"><a href="#host_title">title</a></li></ul><li id="license_tree"><a href="#license_table">license</a></li><ul><li id="license_ref_tree"><a href="#license_ref">license_ref</a></li><li id="license_start_date_tree"><a href="#license_start_date">start_date</a></li></ul><li id="distribution_title_tree"><a href="#distribution_title">title</a></li></ul><li id="dataset_issued_tree"><a href="#dataset_issued">issued</a></li><li id="dataset_keyword_tree"><a href="#dataset_keyword">keyword</a></li><li id="dataset_language_tree"><a href="#dataset_language">language</a></li><li id="metadata_tree"><a href="#metadata_table">metadata</a></li><ul><li id="metadata_description_tree"><a href="#metadata_description">description</a></li><li id="metadata_language_tree"><a href="#metadata_language">language</a></li><li id="metadata_id_ti_tree"><a href="#metadata_id_ti_table">metadata_id</a></li><ul><li id="metadata_id_tree"><a href="#metadata_id">metadata_id</a></li><li id="metadata_id_type_tree"><a href="#metadata_id_type">metadata_id_type</a></li></ul><li id="dataset_personal_data_tree"><a href="#dataset_personal_data">personal_data</a></li><li id="dataset_preservation_tree"><a href="#dataset_preservation">preservation_statement</a></li><li id="security_privacy_tree"><a href="#security_privacy_table">security_and_privacy</a></li><ul><li id="sp_description_tree"><a href="#sp_description">description</a></li><li id="sp_title_tree"><a href="#sp_title">title</a></li></ul><li id="dataset_sensitive_data_tree"><a href="#dataset_sensitive_data">sensitive_data</a></li><li id="technical_resource_tree"><a href="#technical_resource_table">technical_resource</a></li><ul><li id="tr_description_tree"><a href="#tr_description">description</a></li><li id="tr_id_ti_tree"><a href="#tr_id_ti_table">resource_id</a></li><ul><li id="tr_id_tree"><a href="#tr_id">technical_reosurce_id</a></li><li id="tr_id_type_tree"><a href="#tr_id_type">technical_reosurce_id_type</a></li></ul><li id="dataset_title_tree"><a href="#dataset_title">title</a></li><li id="dataset_type_tree"><a href="#dataset_type">type</a></li></ul><li id="dmp_description_tree"><a href="#dmp_description">description</a></li><li id="ethical_issues_description_tree"><a href="#ethical_issues_description">ethical_issues_description</a></li><li id="ethical_issues_exist_tree"><a href="#ethical_issues_exist">ethical_issues_exist</a></li><li id="ethical_issues_report_tree"><a href="#ethical_issues_report">ethical_issues_report</a></li><li id="dmp_language_tree"><a href="#dmp_language">language</a></li><li id="dmp_modified_tree"><a href="#dmp_modified">modified</a></li><li id="project_tree"><a href="#project_table">project</a></li><ul><li id="project_description_tree"><a href="#project_description">description</a></li><li id="project_end_tree"><a href="#project_end">end</a></li><li id="funding_tree"><a href="#funding_table">funding</a></li><ul><li id="funder_id_ti_tree"><a href="#funder_id_ti_table">funder_id</a></li><ul><li id="funder_id_tree"><a href="#funder_id">funder_id</a></li><li id="funder_id_type_tree"><a href="#funder_id_type">funder_id_type</a></li></ul><li id="funding_status_tree"><a href="#funding_status">funding_status</a></li><li id="grant_id_ti_tree"><a href="#grant_id_ti_table">grant_id</a></li><ul><li id="grant _id_tree"><a href="#grant _id">grant_id</a></li><li id="grant _id_type_tree"><a href="#grant _id_type">grant_id_type</a></li></ul><li id="project_start_tree"><a href="#project_start">start</a></li><li id="project_title_tree"><a href="#project_title">title</a></li></ul><li id="dmp_title_tree"><a href="#dmp_title">title</a></li></ul></ul>
 <hr/>
 
 <h2 id="dmp_table">Properties in 'dmp'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -33,7 +41,7 @@
 
 <h2 id="dmp_contact_table">Properties in 'contact'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -51,7 +59,7 @@
 
 <h2 id="dmp_contact_id_ti_table">Properties in 'contact_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -68,7 +76,7 @@
 
 <h2 id="cost_table">Properties in 'cost'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -87,7 +95,7 @@
 
 <h2 id="dm_staff_table">Properties in 'dm_staff'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -106,7 +114,7 @@
 
 <h2 id="dm_staff_id_ti_table">Properties in 'staff_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -123,7 +131,7 @@
 
 <h2 id="dmp_id_ti_table">Properties in 'dmp_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -140,7 +148,7 @@
 
 <h2 id="dataset_table">Properties in 'dataset'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -170,7 +178,7 @@
 
 <h2 id="dataset_id_ti_table">Properties in 'dataset_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -187,7 +195,7 @@
 
 <h2 id="distribution_table">Properties in 'distribution'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -212,7 +220,7 @@
 
 <h2 id="host_table">Properties in 'host'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -236,7 +244,7 @@
 
 <h2 id="license_table">Properties in 'license'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -253,7 +261,7 @@
 
 <h2 id="metadata_table">Properties in 'metadata'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -271,7 +279,7 @@
 
 <h2 id="metadata_id_ti_table">Properties in 'metadata_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -288,7 +296,7 @@
 
 <h2 id="security_privacy_table">Properties in 'security_and_privacy'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -305,7 +313,7 @@
 
 <h2 id="technical_resource_table">Properties in 'technical_resource'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -322,7 +330,7 @@
 
 <h2 id="tr_id_ti_table">Properties in 'resource_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -339,7 +347,7 @@
 
 <h2 id="project_table">Properties in 'project'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -359,7 +367,7 @@
 
 <h2 id="funding_table">Properties in 'funding'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -377,7 +385,7 @@
 
 <h2 id="funder_id_ti_table">Properties in 'funder_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -394,7 +402,7 @@
 
 <h2 id="grant_id_ti_table">Properties in 'grant_id'</h2>
 
-<table>
+<table style="width: 99%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -409,5 +417,4 @@
 </tbody>
 </table>
 
-
-this is the footer...
+Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg).
