@@ -39,15 +39,16 @@ class MarkdownDocument
   end
 
 
-  def generate_nested_li(node)
-    li = ('  '*node.node_depth)
-    if node.has_children? then
-      li += "* [#{node.name}](##{node.name}_table)\n"
-    else
-      li += "* [#{node.name}](##{node.name})\n"
-    end
-    return li
-  end
+  # def generate_nested_li(node)
+  #   puts "#{node.name} = #{node.node_depth}"
+  #   li = ('  '*node.node_depth)
+  #   if node.has_children? then
+  #     li += "* [#{node.name}](##{node.name}_table)\n"
+  #   else
+  #     li += "* [#{node.name}](##{node.name})\n"
+  #   end
+  #   return li
+  # end
 
   def generate_html_tree(start_node)
     html_tree = '<ul>'
@@ -58,7 +59,8 @@ class MarkdownDocument
       if node.node_depth > tree_depth then
         html_tree += '<ul>'
       elsif node.node_depth < tree_depth then
-        html_tree += '</ul>'
+        steps_back = tree_depth - node.node_depth
+        html_tree += '</ul>'*steps_back
       end
       tree_depth = node.node_depth
       if node.has_children? then
@@ -103,7 +105,6 @@ class MarkdownDocument
       new_node.content['depth'] = new_node.node_depth
       add_node_to_parent(new_node,property)
     end
-    puts
     return parent_node
   end
 
