@@ -10,12 +10,13 @@ Documentation of the maDMP standard can be found [here](https://github.com/RDA-D
 
 It is also available as a [diagram](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/docs/diagrams).
 
+
 ## Examples
-You can find JSON examples of maDMPs [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON) 
-They may be the easiest way to start with the model.
+You can find JSON examples of maDMPs [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON).
 
 ## Feedback and contributions
-Please create issues to provide feedback or contact us directly. 
+Current version of the model is freezed. It will undergo peridocial reviews to address feedback and requests for changes.
+Please create issues to provide feedback, request changes, ask for clarifications, etc. You can also contact group chairs directly. If the model does not support your use case, please also do let us know. 
 
 ## Useful links
 We have collected all important links consultations, documents, tools, prototypes, etc. developed the working group [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/links.md)
