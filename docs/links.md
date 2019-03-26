@@ -1,6 +1,6 @@
 # Links
 
-We have collected here links to all important resources created by the working group.
+We have collected here links to all important resources created by the [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg) (official website).
 
 ## 1st Consultation - scoping the maDMPs
 Collection of user stories to identify scope of maDMPs. 
