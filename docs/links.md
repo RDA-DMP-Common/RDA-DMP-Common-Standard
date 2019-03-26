@@ -45,10 +45,17 @@ Work in progress.
 - [maDMP tool mock-ups](https://oblassers.github.io/dmap-mockups/)
 
 ## Publications
-- [iPres conference paper summarising the consultation](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
+- [Tomasz Miksa, Peter Neish, Paul Walk, Andreas Rauber: Defining requirements for machine-actionable Data Management Plans. iPres 2018](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
+
+- [Tomasz Miksa, Stephanie Simms, Daniel Mietchen, Sarah Jones: Ten principles for machine-actionable data management plans. PLOS Computational Biology (in press)](https://doi.org/10.5281/zenodo.1172672)
+
+- [Tomasz Miksa, João Cardoso, José Luis Borbinha: Framing the scope of the common data model for machine-actionable Data Management Plans. BigData 2018: 2733-2742](https://dcicblog.umd.edu/cas/wp-content/uploads/sites/13/2018/12/10.Miksa_.pdf)
+
+- [Asztrik Bakos, Tomasz Miksa, Andreas Rauber: Research Data Preservation Using Process Engines and Machine-Actionable Data Management Plans. TPDL 2018: 69-80](https://link.springer.com/chapter/10.1007/978-3-030-00066-0_6)
+
 
 ## Presentations
-Slides from RDA plenaries:
+Slides from RDA plenaries
 
 - [10th Plenary in Montreal](https://www.rd-alliance.org/system/files/documents/RDA_P10_DMPCommonStandardsWG.pdf)
 - [11th Plenary in Berlin](https://www.rd-alliance.org/system/files/documents/2018-RDA-Plenary-Berlin.pdf)
