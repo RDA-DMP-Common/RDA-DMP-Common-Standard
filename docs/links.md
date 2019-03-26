@@ -1,0 +1,61 @@
+# Links
+
+We have collected here links to all important resources created by the working group.
+
+## 1st Consultation - scoping the maDMPs
+Collection of user stories to identify scope of maDMPs. 
+
+- [Description of the consultation](https://github.com/RDA-DMP-Common/user-stories/)
+- [User stories organised on a project board](https://github.com/RDA-DMP-Common/user-stories/projects/2)
+- [Interactive visualisation of user stories](https://goo.gl/znBL3F)
+- [Report from Vienna workshop for collecting user stories](https://doi.org/10.5281/zenodo.1066121)
+- [iPres conference paper summarising the consultation](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
+
+## 2nd Consultation - existing models
+Collection of models that are relevant in view of requirements derived from the user stories
+
+- [Description of the 2nd consultatuion (includes further links)](https://docs.google.com/document/d/1mMJqmvqEAkbEWbdV7rtFU9hiQMOuH0ESn4Up_TDn1Es/edit?usp=sharing)
+
+## Demo tools for maDMPs
+Prototype tools to illustrate various scenarios that can be supported by maDMPs (to generate new ideas).
+
+Landing page for maDMPs
+
+- [Example 1](https://oblassers.github.io/fair-data-science/)
+
+Tools to source information automatically from external systems
+- [Tool1](https://github.com/TomMiksa/DMPGenerator)
+- [Tool2](https://github.com/TomMiksa/digital_preservation_ex_1_2)
+- [Tool3](https://github.com/TomMiksa/tu-dpue-lab2-ss18)
+- [Tool4](https://github.com/TomMiksa/DigitalPreservation_2)
+- [Tool5](https://github.com/TomMiksa/digitalpreservation-dmp-generator)
+- [Tool6](https://github.com/TomMiksa/DMPlanner)
+
+
+
+## BPMN processes 
+Use cases modeled as BPMN processes to show how DMPs can become machine-actionable. Processes are not fixed. Must be reviewed and adapted. Their goal is to show that machine-actionability lies within the systems and processes that use information from the model, and not in the model itself.
+
+- [BPMN processes](https://doi.org/10.5281/zenodo.2607555)
+
+## maDMP tool mock-up
+Balsamiq mock-up of a tool for maDMPs that is based on feedback collected from previous consultations, prototypes and interviews with researchers.
+Work in progress.
+
+- [maDMP tool mock-ups](https://oblassers.github.io/dmap-mockups/)
+
+## Publications
+- [iPres conference paper summarising the consultation](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
+
+## Presentations
+Slides from RDA plenaries:
+
+- [10th Plenary in Montreal](https://www.rd-alliance.org/system/files/documents/RDA_P10_DMPCommonStandardsWG.pdf)
+- [11th Plenary in Berlin](https://www.rd-alliance.org/system/files/documents/2018-RDA-Plenary-Berlin.pdf)
+- [12th Plenary in Gaborone](https://www.rd-alliance.org/system/files/documents/2018-RDA-DMP-Plenary-Gaborone.pdf)
+
+## Workshops
+Workshops ran to collect inputs
+- [Vienna, 2017](https://doi.org/10.5281/zenodo.1066121)
+- [Porto, 2018](http://rda-ws-tpdl2018.idsswh.sysresearch.org/# )
+- [Melbourne, 2019](https://www.rd-alliance.org/system/files/documents/IDCC2019%20Unconference%20Data%20management%20planning%20and%20data%20models.pdf)
