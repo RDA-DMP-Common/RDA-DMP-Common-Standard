@@ -5,7 +5,7 @@
 * How to indicate actions that were performed?
 * How to model embargoes?
 * Do I have to list all datasets?
-* Why Metadata is referenced from DMP and form a Dataset?
+* Why Metadata is referenced from a Dataset?
 * What is a difference between Dataset and a Distribution?
 
 * Are there any other serialisations planned different than JSON?
