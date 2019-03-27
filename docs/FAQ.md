@@ -1,5 +1,6 @@
 <h1> Frequently Asked Questions </h1>
 Index:
+
 * [When to use the model?](#when-to-use-the-model)
 * [Do I need to populate all fields?](#do-i-need-to-populate-all-fields)
 * [What is the granularity of a Dataset?](#what-is-the-granularity-of-a-dataset)
@@ -14,11 +15,15 @@ Index:
 * [Is there a model validator?](#is-there-a-model-validator)
 
 ### When to use the model?
-The model is meant for exchange of machine-actionable DMPs between systems. The model is independent of any internal data organisation used by these systems. The model aims to be flexible and for this reason many fields are optional. In specific deployments requirements may be stricter, for example: DMP must contain information on a project number (funder requirement), while in the model specification this is optional. 
+The model is meant for exchange of machine-actionable DMPs between systems. The model is independent of any internal data organisation used by these systems. The model also does not prescribe how information must be presented to the end user and do not enforce any specific logic on how this information must be collected or used. The model is an information carrier and the full machine-actionability can be achieved only when systems using the model implement appropriate logic.
 
 ### Do I need to populate all fields?
 No. Only those fields for which the cardinality is set to "exactly one" or "one to many". Further fields defined in the model may be set if required (by business constraints), or when the information becomes available. 
+
+The model aims to be flexible and for this reason many fields are optional. In specific deployments requirements may be stricter, for example: DMP must contain information on a project number (funder requirement), while in the model specification this is optional. 
+
 All tools complaint to the standard, must expect to receive both obligatory and optional fields.
+
 [Here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/examples/JSON/ex8-dmp-minimal-content.json) you can find an example of a minimum DMP.
 
 ### What is the granularity of a Dataset?
