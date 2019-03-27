@@ -8,7 +8,7 @@
         "dataset": {
             "title": "Source Code",
             "description": "Proof of concept implementation",
-            "type": "source-code",
+            "type": "software",
             "issued": "2019-06-30",
             "personalData": "unknown",
             "sensitiveData": "no",
