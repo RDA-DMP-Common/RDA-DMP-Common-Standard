@@ -15,7 +15,7 @@ Examaple of a DMP describing a project that has finished. It describes actions t
 		"dataset": {
 			"title": "Source Code",
 			"description": "Proof of concept implementation",
-			"type": "source-code",
+			"type": "software",
 			"issued": "2019-01-30",
 			
 			"datasetID" : {
