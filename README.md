@@ -1,7 +1,7 @@
 # RDA-DMP-Common-Standard
 Official outputs from the [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg).
 
-This readme is available as a [webiste](https://rda-dmp-common.github.io/RDA-DMP-Common-Standard/).
+This readme is available as a [website](https://rda-dmp-common.github.io/RDA-DMP-Common-Standard/).
 
 ### Model specification
 Documentation of the maDMP standard can be found [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/index.md).
