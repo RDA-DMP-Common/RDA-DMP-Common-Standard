@@ -12,14 +12,14 @@ It is also available as a [diagram](https://github.com/RDA-DMP-Common/RDA-DMP-Co
 You can find JSON examples of maDMPs [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON).
 
 ### FAQ 
-You can find a list of frequently asked quentiones [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md).
+You can find a list of frequently asked quentions [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md).
 
 ### Useful links
 We have collected all important links to consultations, documents, tools, prototypes, etc. developed the working group [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/links.md).
 
 ### Feedback and contributions
-Current version of the model is freezed. It will undergo peridocial reviews to address feedback and requests for changes.
-Please create issues to provide feedback, request changes, ask for clarifications, etc. You can also contact group chairs directly. If the model does not support your use case, please also do let us know. 
+Current version of the model is frozen. It will undergo peridocial reviews to address feedback and requests for changes.
+Please create GitHub issues to provide feedback, request changes, ask for clarifications, etc. You can also contact group chairs directly. If the model does not support your use case, please also do let us know. 
 
 ### TODO
 (volunteers needed!)
