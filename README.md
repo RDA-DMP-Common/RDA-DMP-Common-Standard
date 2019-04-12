@@ -21,11 +21,3 @@ We have collected all important links to consultations, documents, tools, protot
 Current version of the model is frozen. It will undergo peridocial reviews to address feedback and requests for changes.
 Please create GitHub issues to provide feedback, request changes, ask for clarifications, etc. You can also contact group chairs directly. If the model does not support your use case, please also do let us know. 
 
-### TODO
-(volunteers needed!)
-+ JSON Schema
-+ Standard validator
-+ Other serialsiations: XML, JSON-LD, ...
-+ Mappings and use cases...
-
-
