@@ -8,7 +8,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 Versions available:
 
-*v1.0.0 [2019.05.09] - Initial release
+* v1.0.0 [2019.05.09] - Initial release
 
 ## Authors
 
