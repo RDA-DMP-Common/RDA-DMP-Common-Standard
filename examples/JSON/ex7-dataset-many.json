@@ -1,75 +1,74 @@
-{  
-   "DMP":{  
-      "title":"DMP with two datasets",
-      "description":"DMP describing more than one dataset",
-	  
-      "created":"2018-07-23T10:10:23.6",
-      "modified":"2019-02-22T15:10:56.9",
-	  
-      "project":{  
-
+{
+  "dmp": {
+    "title": "DMP with two datasets",
+    "description": "DMP describing more than one dataset",
+    "created": "2018-07-23T10:10:23.6",
+    "modified": "2019-02-22T15:10:56.9",
+    "project": [],
+    "contact": {
+      "mail": "TMiksa@sba-research.org",
+      "name": "Tomasz Miksa",
+      "contact_id": {
+        "contact_id": "https://orcid.org/0000-0000-0000-0000",
+        "contact_id_type": "HTTP-ORCID"
+      }
+    },
+    "language": "en",
+    "ethical_issues_exist": "no",
+    "dataset": [
+      {
+        "title": "Cool data",
+        "description": "Data which shows...",
+        "type": "document",
+        "issued": "2019-06-30",
+        "personal_data": "no",
+        "sensitive_data": "unknown",
+        "distribution": [
+          {
+            "title": "Raw data",
+            "description": "CSV file showing...",
+            "format": "text/csv",
+            "byte_size": 100000,
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "start_date": "2021-06-30"
+              }
+            ],
+            "available_till": "2029-01-30"
+          }
+        ]
       },
-	  
-      "dataset":[  
-         {  
-            "title":"Cool data",
-            "description":"Data which shows...",
-			
-            "type":"document",
-            "issued":"2019-06-30",
-			
-            "personalData":"no",
-            "sensitiveData":"unknown",
-			
-            "distribution":{  
-               "title":"Raw data",
-               "description":"CSV file showing...",
-			   
-               "format":"text/csv",
-               "byteSize":"100000",
-			   
-               "dataAccess":"open",
-			   
-               "license":{  
-                  "license_ref":"https://creativecommons.org/licenses/by/4.0/",
-                  "startDate":"2021-06-30"
-               },
-			   
-               "availableTill":"2029-01-30"
-            }
-         },
-         {  
-            "title":"Source Code",
-            "description":"Proof of concept implementation",
-			
-            "type":"source-code",
-            "issued":"2019-01-30",
-			
-            "datasetID":{  
-               "identifier":"10.5281/zenodo.1200361",
-               "identifierType":"DOI-RAW"
-            },
-			
-            "personalData":"no",
-            "sensitiveData":"no",
-			
-            "dataQualityAssurance":"The code has been reviewed by... and follows naming convention...",
-			
-            "distribution":{  
-               "title":"Java code",
-               "description":"Final realase implemented using... to...",
-			   
-               "accessURL":"http://github.com/some-repo...",
-               "dataAccess":"open",
-			   
-               "license":{  
-                  "license":"https://creativecommons.org/licenses/by/4.0/",
-                  "activeFrom":"2019-01-30"
-               },
-			   
-               "availableTill":"2029-01-30"
-            }
-         }
-      ]
-   }
+      {
+        "title": "Source Code",
+        "description": "Proof of concept implementation",
+        "type": "source-code",
+        "issued": "2019-01-30",
+        "datasetID": {
+          "identifier": "10.5281/zenodo.1200361",
+          "identifier_type": "DOI-RAW"
+        },
+        "personal_data": "no",
+        "sensitive_data": "no",
+        "data_quality_assurance": "The code has been reviewed by... and follows naming convention...",
+        "distribution": [
+          {
+            "title": "Java code",
+            "description": "Final realase implemented using... to...",
+            "access_url": "http://github.com/some-repo...",
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+                "active_from": "2019-01-30",
+                "start_date": "2021-06-30"
+              }
+            ],
+            "available_till": "2029-01-30"
+          }
+        ]
+      }
+    ]
+  }
 }
