@@ -16,6 +16,7 @@ Versions available:
 
 * v1.0.0 [2019.05.09] - Initial release, modelling the [DMP Common Standard model 2019.03.25](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/diagrams/RDA-DMP-Common-Model-Diagram-190325.pdf).
 * v1.1.1 [2019.09.12] - Fixed some consistency issues. Added cross references to the foaf, dcat and dct data properties.
+* v1.1.2 [2019.09.19] - Added the hostID object property, that now allows Host entities to be identified through TypeIdentifier entities.
 
 ## Authors
 
