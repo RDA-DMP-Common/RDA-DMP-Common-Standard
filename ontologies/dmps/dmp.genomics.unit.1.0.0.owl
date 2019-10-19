@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:rda-common-dmp="http://www.sysresearch.org/rda-common-dmp#">
     <owl:Ontology>
-        <owl:imports rdf:resource="file:/C:/Dropbox%20(INESC-ID)/Doutoramento/Conferências/2020/ECIR2020/Ontologies/dcso.extended.1.0.0.owl"/>
+        <owl:imports rdf:resource="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/ontologies/extensions/dcso.extension.2019.10.19.1.0.0.owl"/>
     </owl:Ontology>
     
 
