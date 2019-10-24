@@ -31,7 +31,17 @@ Tools to source information automatically from external systems
 - [Tool5](https://github.com/TomMiksa/digitalpreservation-dmp-generator)
 - [Tool6](https://github.com/TomMiksa/DMPlanner)
 
+Dataverse and maDMPs
+- [Tool7](https://hido1994.github.io/madmp/)
 
+Generating human-readable DMPs from maDMPs
+- [Tool8](https://github.com/datastewardstuw/DataStewards2)
+- [Tool9](https://github.com/MBAigner/Making-maDMPs-human-readable) 
+- [Tool10](https://hasankhatib.github.io/maDMPTranslator/)
+
+
+maDMP JSON validator
+- [Tool11](https://github.com/HasanKhatib/maDMPValidator-SpringBoot)
 
 ## BPMN processes 
 Use cases modeled as BPMN processes to show how DMPs can become machine-actionable. Processes are not fixed. Must be reviewed and adapted. Their goal is to show that machine-actionability lies within the systems and processes that use information from the model, and not in the model itself.
@@ -60,6 +70,8 @@ Slides from RDA plenaries
 - [10th Plenary in Montreal](https://www.rd-alliance.org/system/files/documents/RDA_P10_DMPCommonStandardsWG.pdf)
 - [11th Plenary in Berlin](https://www.rd-alliance.org/system/files/documents/2018-RDA-Plenary-Berlin.pdf)
 - [12th Plenary in Gaborone](https://www.rd-alliance.org/system/files/documents/2018-RDA-DMP-Plenary-Gaborone.pdf)
+- [13th Plenary in Philadelphia](https://www.rd-alliance.org/rda-plenary-philadelphia-meeting-slides)
+- [14th Plenary in Helsinki](https://www.rd-alliance.org/p14-helsinki-slides)
 
 ## Workshops
 Workshops ran to collect inputs
