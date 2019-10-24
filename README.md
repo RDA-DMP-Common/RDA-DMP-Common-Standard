@@ -3,18 +3,18 @@ Official outputs from the [RDA DMP Common Standards WG](https://www.rd-alliance.
 
 This readme is available as a [website](https://rda-dmp-common.github.io/RDA-DMP-Common-Standard/).
 
-### Model specification
+### [Model specification](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/index.md)
 Documentation of the maDMP standard can be found [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/index.md).
 
 It is also available as a [diagram](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/docs/diagrams).
 
-### Examples
+### [Examples](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON)
 You can find JSON examples of maDMPs [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON).
 
-### FAQ 
+### [FAQ](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md) 
 You can find a list of frequently asked quentions [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md).
 
-### Useful links
+### [Useful links](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/links.md)
 We have collected all important links to consultations, documents, tools, prototypes, etc. developed the working group [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/links.md).
 
 ### Feedback and contributions
