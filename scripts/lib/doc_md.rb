@@ -27,6 +27,7 @@ class MarkdownDocument
 
   def generate
     @content += generate_html_tree(@root_node)
+    @content += "</td></tr></table>\n"
     @content += "\n<hr/>\n\n"
 
     @root_node.each do |node|
@@ -109,11 +110,19 @@ class MarkdownDocument
   end
 
   def get_property_attributes_as_hash(property)
+    description = property.description
+    if property.values.size > 0 then
+      description += "<br/>Allowed Values:<ul>"
+      property.values.each do |value|
+        description += "<li>#{value.label}</li>"
+      end
+      description += "<ul>"
+    end
     {
       :machine_name => property.label_machine,
       :data_type => property.data_type.label,
       :cardinality => CARDINALITY_LABELS[property.cardinality],
-      :description => property.description,
+      :description => description,
       :example_value => property.example_value
     }
   end

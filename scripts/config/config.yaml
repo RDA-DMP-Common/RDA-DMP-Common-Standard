@@ -1,6 +1,10 @@
 log_level: DEBUG
-reset_all_data: true
+reset_database_from_google_sheet: true
 # db_connection_url: 'sqlite:/' # memory database, requires sqlite3
 db_connection_url: 'sqlite://./tmp/db.sqlite' 
-google_sheet_id: "1UatNC3r3skKjy2vGK1sysk6vKGD1F9v8YgdinyGMx7U"
 doc_root: "../docs"
+google_sheets_csv_urls:
+  Property: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=830294496&single=true&output=csv'
+  Vocabulary: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=1421257402&single=true&output=csv'
+  DataType: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=1487393314&single=true&output=csv'
+  Value: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=90441725&single=true&output=csv'
