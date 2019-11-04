@@ -128,19 +128,19 @@ class MarkdownDocument
   end
 
   def get_node_as_html_table_row(node)
-    html = "<tr><td><a id=\"#{node.name}\" href=\"##{node.name}_tree\">#{node.content[:machine_name]}</a></td>"
-    html += "<td>#{process_content_for_table_cell(node.content[:description])}</td>"
-    html += "<td>#{process_content_for_table_cell(node.content[:data_type])}</td>"
-    html += "<td>#{process_content_for_table_cell(node.content[:cardinality])}</td>"
-    html += "<td>#{process_content_for_table_cell(node.content[:example_value])}</td>"
-    # html += "<td>"
+    html = "<tr><td valign=\"top\"><a id=\"#{node.name}\" href=\"##{node.name}_tree\">#{node.content[:machine_name]}</a></td>"
+    html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:description])}</td>"
+    html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:data_type])}</td>"
+    html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:cardinality])}</td>"
+    html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:example_value])}</td>"
+    # html += "<td valign=\"top\">"
     #   if !node.content[:attributes].empty?
     #     html += "<table>"
     #     node.content[:attributes].each do |attribute|
     #       html += '<tr>'
-    #       html += "<td>#{attribute[:name]}</td>"
-    #       html += "<td>#{attribute[:data_type]}</td>"
-    #       html += "<td>#{attribute[:cardinality]}</td>"
+    #       html += "<td valign=\"top\">#{attribute[:name]}</td>"
+    #       html += "<td valign=\"top\">#{attribute[:data_type]}</td>"
+    #       html += "<td valign=\"top\">#{attribute[:cardinality]}</td>"
     #       html += '</tr>'
     #     end
     #     html += "</table>"
