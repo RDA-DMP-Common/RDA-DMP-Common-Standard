@@ -17,7 +17,6 @@
       "dataset_id": "https://doi.org/10.0000/00.0.5678",
       "dataset_id_type": "HTTP_DOI",
       "title": "Placeholder dataset",
-      "type": "dataset",
       "personal_data": "unknown",
       "sensitive_data": "unknown"
     }]
