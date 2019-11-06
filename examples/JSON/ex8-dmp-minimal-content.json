@@ -1,27 +1,25 @@
 {
   "dmp": {
-  	"contact": {
-      "mail": "cc@example.com",
-      "name": "Charlie Chaplin",
-      "contact_id": {
-        "contact_id": "http://orcid.org/0000-0000-0000-0000",
-        "contact_id_type": "HTTP-ORCID"
-      }
+    "contact": {
+      "contact_id": "http://orcid.org/0000-0000-0000-0000",
+      "contact_id_type": "HTTP-ORCID",
+      "mbox": "cc@example.com",
+      "name": "Charlie Chaplin"
     },
     "created": "2018-07-23T10:10:23.6",
-    "dmp_id" : "https://doi.org/10.5281/zenodo.31780",
-    "dmp_id_type" : "HTTP-DOI",
+    "dmp_id": "https://doi.org/10.0000/00.0.1234",
+    "dmp_id_type": "HTTP-DOI",
     "modified": "2019-02-06T15:30:42.1",
     "title": "Minimal DMP",
-    "language": "en",    
+    "language": "en",
     "ethical_issues_exist": "unknown",
-    "dataset": [
-      {
-        "title": "Placeholder dataset",
-        "type": "(value from dictionary)",
-        "personal_data": "unknown",
-        "sensitive_data": "unknown"
-      }
-    ]
+    "dataset": [{
+      "dataset_id": "https://doi.org/10.0000/00.0.5678",
+      "dataset_id_type": "HTTP_DOI",
+      "title": "Placeholder dataset",
+      "type": "dataset",
+      "personal_data": "unknown",
+      "sensitive_data": "unknown"
+    }]
   }
 }
