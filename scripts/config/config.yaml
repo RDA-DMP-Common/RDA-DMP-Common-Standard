@@ -1,5 +1,6 @@
 log_level: DEBUG
-reset_database_from_google_sheet: true
+coloured_output: true
+reset_database_from_google_sheet: false
 # db_connection_url: 'sqlite:/' # memory database, requires sqlite3
 db_connection_url: 'sqlite://./tmp/db.sqlite' 
 doc_root: "../docs"

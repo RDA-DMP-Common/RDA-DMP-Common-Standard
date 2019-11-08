@@ -21,6 +21,7 @@ class Vocabulary < Sequel::Model
       )
     end
   end
+
 end
 
 
@@ -65,6 +66,10 @@ class Property < Sequel::Model
         notes: row['notes']
       )
     end
+  end
+
+  def ordered_values
+    Value.where(:property_id => id).order(:list_order)
   end
 end
 

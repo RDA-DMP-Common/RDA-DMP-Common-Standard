@@ -22,19 +22,23 @@ class MarkdownDocument
     @content = ''
     @root_property = root_property
     @root_node = build_tree(@root_property)
-    @root_node.print_tree
+    # @root_node.print_tree
   end
 
   def generate
+    LOGGER.debug("Generating HTML tree....")
     @content += generate_html_tree(@root_node)
+    LOGGER.info("HTML tree generated - OK")
     @content += "</td></tr></table>\n"
     @content += "\n<hr/>\n\n"
 
     @root_node.each do |node|
       if node.has_children? then
+        LOGGER.debug("Generating HTML table for property '#{node.content[:machine_name]}'....")
         @content += "<h2 id=\"#{node.name}_table\">Properties in '#{node.content[:machine_name]}'</h2>\n\n"
         @content += generate_table(node.children)
         @content += "\n\n"
+        LOGGER.info("HTML table for property '#{node.content[:machine_name]}' generated - OK")
       end
     end
   end
@@ -111,9 +115,12 @@ class MarkdownDocument
 
   def get_property_attributes_as_hash(property)
     description = property.description
-    if property.values.size > 0 then
+    if !description then
+      description = ''
+    end
+    if property.ordered_values.count > 0 then
       description += "<br/>Allowed Values:<ul>"
-      property.values.each do |value|
+      property.ordered_values.each do |value|
         description += "<li>#{value.label}</li>"
       end
       description += "<ul>"

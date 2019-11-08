@@ -40,4 +40,9 @@ end
 
 generate_doc("#{DOC_ROOT}/index.md")
 
+# CSV.new(open(GOOGLE_SHEETS_CSV_URLS['Vocabulary']), CSV_PARSING_OPTIONS).each do |row|
+#   puts row.inspect
+# end
 
+# p = Property['dataset_personal_data']
+# p.ordered_values.each {|v| puts v.inspect}
