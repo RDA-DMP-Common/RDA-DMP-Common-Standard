@@ -1,26 +1,30 @@
 {
   "dmp": {
     "contact": {
-      "contact_id": 
+      "contact_id": {
         "identifier": "http://orcid.org/0000-0000-0000-0000",
-        "type": "HTTP-ORCID"
+        "type": "orcid"
       },
       "mbox": "cc@example.com",
       "name": "Charlie Chaplin"
     },
     "created": "2018-07-23T10:10:23.6",
-    "dmp_id": "https://doi.org/10.0000/00.0.1234",
-    "dmp_id_type": "HTTP-DOI",
-    "modified": "2019-02-06T15:30:42.1",
-    "title": "Minimal DMP",
-    "language": "en",
-    "ethical_issues_exist": "unknown",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1234",
+      "type": "doi"
+    },
     "dataset": [{
-      "dataset_id": "https://doi.org/10.0000/00.0.5678",
-      "dataset_id_type": "HTTP_DOI",
+      "dataset_id": {
+        "identifier": "https://doi.org/10.0000/00.0.5678",
+        "type": "doi"
+      },
       "title": "Placeholder dataset",
       "personal_data": "unknown",
       "sensitive_data": "unknown"
-    }]
+    }],
+    "ethical_issues_exist": "unknown",
+    "language": "en",
+    "modified": "2019-02-06T15:30:42.1",
+    "title": "Minimal DMP"
   }
 }
