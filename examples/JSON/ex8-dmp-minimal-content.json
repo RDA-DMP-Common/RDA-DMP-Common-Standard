@@ -1,8 +1,10 @@
 {
   "dmp": {
     "contact": {
-      "contact_id": "http://orcid.org/0000-0000-0000-0000",
-      "contact_id_type": "HTTP-ORCID",
+      "contact_id": 
+        "identifier": "http://orcid.org/0000-0000-0000-0000",
+        "type": "HTTP-ORCID"
+      },
       "mbox": "cc@example.com",
       "name": "Charlie Chaplin"
     },
