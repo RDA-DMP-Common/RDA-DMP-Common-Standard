@@ -19,28 +19,23 @@
       "identifier": "https://doi.org/10.0000/00.0.1234",
       "type": "doi"
     },
-    "dataset": [
-      {
-        "title": "Source Code",
-        "description": "Proof of concept implementation",
-        "type": "software",
-        "issued": "2019-06-30",
-        "personal_data": "unknown",
-        "sensitive_data": "no",
-        "distribution": [
-          {
-            "title": "Java code",
-            "access_url": "http://github.com/some-repo...",
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2019-06-30"
-              }
-            ]
-          }
-        ]
+    "dataset": {
+      "title": "Source Code",
+      "description": "Proof of concept implementation",
+      "type": "software",
+      "issued": "2019-06-30",
+      "personal_data": "unknown",
+      "sensitive_data": "no",
+      "distribution": {
+        "title": "Java code",
+        "access_url": "http://github.com/some-repo...",
+        "data_access": "open",
+        "license": 
+        {
+          "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+          "start_date": "2019-06-30"
+        }
       }
-    ]
+    }
   }
 }
