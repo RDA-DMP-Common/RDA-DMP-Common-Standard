@@ -4,26 +4,22 @@
     "description": "Example of a DMP header for a funded project.",
     "created": "2018-07-23T10:10:23.6",
     "modified": "2019-02-06T15:30:42.1",
-    "project": [
-      {
-        "title": "Making maDMPs awesome",
-        "start": "2017-01-01T00:00:00.0",
-        "end": "2020-12-31T00:00:00.0",
-        "funding": [
-          {
-            "funder_id": {
-              "identifier": "501100002428",
-              "type": "fundref"
-            },
-            "grant_id": {
-              "identifier": "1234567-AT",
-              "type": "other"
-            },
-            "funding_status": "granted"
-          }
-        ]
+    "project": {
+      "title": "Making maDMPs awesome",
+      "start": "2017-01-01T00:00:00",
+      "end": "2020-12-31T00:00:00",
+      "funding": {
+        "funder_id": {
+          "identifier": "501100002428",
+          "type": "fundref"
+        },
+        "grant_id": {
+          "identifier": "1234567-AT",
+          "type": "other"
+        },
+        "funding_status": "granted"
       }
-    ],
+    },
     "contact": {
       "contact_id": {
         "identifier": "http://orcid.org/0000-0000-0000-0000",
