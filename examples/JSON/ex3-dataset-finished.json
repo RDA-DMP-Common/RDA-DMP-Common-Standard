@@ -19,35 +19,29 @@
       "identifier": "https://doi.org/10.0000/00.0.1234",
       "type": "doi"
     },
-    "dataset": [
-      {
-        "title": "Source Code",
-        "description": "Proof of concept implementation",
-        "type": "software",
-        "issued": "2019-01-30",
-        "dataset_id": {
-          "identifier": "10.5281/zenodo.1200361",
-          "type": "doi"
+    "dataset": {
+      "title": "Source Code",
+      "description": "Proof of concept implementation",
+      "type": "software",
+      "issued": "2019-01-30",
+      "dataset_id": {
+        "identifier": "10.5281/zenodo.1200361",
+        "type": "doi"
+      },
+      "personal_data": "no",
+      "sensitive_data": "no",
+      "data_quality_assurance": "The code has been reviewed by... and follows naming convention...",
+      "distribution": {
+        "title": "Java code",
+        "description": "Final realase implemented using... to...",
+        "access_url": "http://github.com/some-repo...",
+        "data_access": "open",
+        "license": {
+          "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+          "start_date": "2019-01-30"
         },
-        "personal_data": "no",
-        "sensitive_data": "no",
-        "data_quality_assurance": "The code has been reviewed by... and follows naming convention...",
-        "distribution": [
-          {
-            "title": "Java code",
-            "description": "Final realase implemented using... to...",
-            "access_url": "http://github.com/some-repo...",
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2019-01-30"
-              }
-            ],
-            "available_untill": "2029-01-30"
-          }
-        ]
+        "available_untill": "2029-01-30"
       }
-    ]
+    }
   }
 }

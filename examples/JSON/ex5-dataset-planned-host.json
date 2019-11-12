@@ -31,31 +31,27 @@
           "identifier": "10.5281/zenodo.1200361",
           "type": "doi"
         },
-        "distribution": [
-          {
-            "title": "Raw data",
-            "description": "CSV file showing...",
-            "format": "text/csv",
-            "byteSize": "100000",
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2021-06-30"
-              }
-            ],
-            "available_untill": "2029-01-30",
-            "host": {
-              "title": "SuperRepository",
-              "url": "https://super-repository.org",
-              "description": "Super repository hosted by super computing centre in a super location",
-              "supports_versioning": "yes",
-              "backup_frequency": "hourly",
-              "storage_type": "hot",
-              "availability": "99,5"
-            }
+        "distribution":{
+          "title": "Raw data",
+          "description": "CSV file showing...",
+          "format": "text/csv",
+          "byteSize": "100000",
+          "data_access": "open",
+          "license": {
+            "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+            "start_date": "2021-06-30"
+          },
+          "available_untill": "2029-01-30",
+          "host": {
+            "title": "SuperRepository",
+            "url": "https://super-repository.org",
+            "description": "Super repository hosted by super computing centre in a super location",
+            "supports_versioning": "yes",
+            "backup_frequency": "hourly",
+            "storage_type": "hot",
+            "availability": "99,5"
           }
-        ]
+        }
       }
     ]
   }
