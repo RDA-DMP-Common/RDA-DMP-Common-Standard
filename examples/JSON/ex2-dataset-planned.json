@@ -15,6 +15,10 @@
     },
     "language": "en",
     "ethical_issues_exist": "no",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1234",
+      "type": "doi"
+    },
     "dataset": [
       {
         "title": "Source Code",

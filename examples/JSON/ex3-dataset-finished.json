@@ -6,15 +6,19 @@
     "modified": "2019-02-22T15:10:56.9",
     "project": [],
     "contact": {
-      "mail": "TMiksa@sba-research.org",
+      "mbox": "TMiksa@sba-research.org",
       "name": "Tomasz Miksa",
       "contact_id": {
-        "contact_id": "https://orcid.org/0000-0000-0000-0000",
-        "contact_id_type": "HTTP-ORCID"
+        "identifier": "https://orcid.org/0000-0000-0000-0000",
+        "type": "orcid"
       }
     },
     "language": "en",
     "ethical_issues_exist": "no",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1234",
+      "type": "doi"
+    },
     "dataset": [
       {
         "title": "Source Code",
