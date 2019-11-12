@@ -35,13 +35,13 @@
         "distribution": [
           {
             "title": "Java code",
-            "description": "Final realase implemented using... to... code is embargoed until the licence start_date below.",
+            "description": "Final realase implemented using... to...",
             "access_url": "http://github.com/some-repo...",
             "data_access": "open",
             "license": [
               {
                 "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2021-06-30"
+                "start_date": "2019-01-30"
               }
             ],
             "available_untill": "2029-01-30"
