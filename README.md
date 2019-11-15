@@ -446,4 +446,4 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 </td></tr></tbody>
 </table>
 
-Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg).
+Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg) (Tomasz Miksa, Peter Neith and Paul Walk).
