@@ -4,6 +4,7 @@ require './lib/config'
 require './lib/db'
 require './lib/model'
 require './lib/doc_md'
+require 'colorize'
 
 
 def populate_rdb_from_google_sheet
@@ -39,6 +40,8 @@ if RESET_DATABASE_FROM_GOOGLE_SHEET then
 end
 
 generate_doc("#{DOC_ROOT}/index.md")
+
+
 
 # CSV.new(open(GOOGLE_SHEETS_CSV_URLS['Vocabulary']), CSV_PARSING_OPTIONS).each do |row|
 #   puts row.inspect

@@ -22,7 +22,7 @@ LOGGER.formatter = proc do |severity, datetime, progname, msg|
   if ["ERROR","FATAL"].include? severity then
     "#{severity}: #{msg}\n".light_red
   elsif severity == "DEBUG" then
-    "#{severity}: #{msg}\n".light_yellow
+    "#{severity}: #{msg}\n".light_white
   else
     "#{severity}: #{msg}\n".light_cyan
   end
