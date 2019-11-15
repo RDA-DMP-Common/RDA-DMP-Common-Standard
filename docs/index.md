@@ -2,9 +2,11 @@
 <table><tr><td valign="top"><h3>About this document</h3>
 This is a metadata application profile to provide basic interoperability between systems producing or consuming machine-actionable data management plans (maDMPS). Further fields can be added in specific deployments, but they do not guarantee interoperability. DMP tools can use any other fields in their internal data models.
 
-This standard allows modelling a wide range of use cases and does not set any business (e.g. funder specific) requirements. It allows modelling information over the whole DMP lifecycle.
+This application profile is intended to cover a wide range of use cases and does not set any business (e.g. funder specific) requirements. I represents information over the whole DMP lifecycle.
 
-For more information see <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON">examples</a>, <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md">FAQ</a> or <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/docs/diagrams">diagrams</a>.
+For more information see <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON">examples</a> or <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md">FAQ</a>.
+
+<img src="diagrams/maDMP-diagram.png"/>
 
 <h3>DMP</h3>
 Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory.
@@ -19,7 +21,7 @@ For specifying details on funded projects, e.g. NSF of EC funded projects.
 Specifies the party which can provide any information on the DMP. This is not necessarily the DMP creator, and can be a person or an organisation.
 
 <h3>Contributor</h3>
-For listing all parties which are involved in the process of creating or managing this DMP.
+For listing all parties involved in the process of the data management described by this DMP, and those parties involved in the creation and management of the DMP itself.
 
 <h3>Cost</h3>
 Provides a list of costs related to data management.
