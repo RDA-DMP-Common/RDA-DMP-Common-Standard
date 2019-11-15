@@ -13,7 +13,7 @@ config_hash.each do |key_value_pair|
   end
 end
 
-String.disable_colorization (COLOURED_OUTPUT ==  false)
+String.disable_colorization (COLOURED_LOGGING ==  false)
 
 LOGGER = Logger.new(STDOUT)
 # LOGGER.formatter = proc { |severity, datetime, progname, msg| "#{severity}: #{msg} - #{caller[4]}\n"}

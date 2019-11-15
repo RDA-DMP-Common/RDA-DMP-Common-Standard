@@ -1,5 +1,5 @@
 log_level: DEBUG
-coloured_output: true
+coloured_logging: true
 reset_database_from_google_sheet: true
 # db_connection_url: 'sqlite:/' # memory database, requires sqlite3
 db_connection_url: 'sqlite://./tmp/db.sqlite' 
