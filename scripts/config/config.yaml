@@ -3,7 +3,7 @@ coloured_logging: true
 reset_database_from_google_sheet: true
 # db_connection_url: 'sqlite:/' # memory database, requires sqlite3
 db_connection_url: 'sqlite://./tmp/db.sqlite' 
-doc_root: "../docs"
+doc_root: "../"
 document_title: "RDA DMP Common Standard for machine-actionable Data Management Plans"
 document_footer: "Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg)."
 google_sheets_csv_urls:

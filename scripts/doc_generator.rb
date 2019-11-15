@@ -42,7 +42,7 @@ if RESET_DATABASE_FROM_GOOGLE_SHEET then
   populate_rdb_from_google_sheet
 end
 
-generate_doc("#{DOC_ROOT}/index.md")
+generate_doc("#{DOC_ROOT}/README.md")
 
 
 
