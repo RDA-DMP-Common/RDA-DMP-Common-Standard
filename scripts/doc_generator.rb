@@ -20,14 +20,17 @@ def populate_rdb_from_google_sheet
   LOGGER.debug("Populating 'Values' from Google spreadsheet....")
   Value.populate_from_google_csv
   LOGGER.info("'Values' populated from Google spreadsheet - OK")
+  LOGGER.debug("Populating 'Entity Descriptions' from Google spreadsheet....")
+  EntityDescription.populate_from_google_csv
+  LOGGER.info("'Entity Descriptions' populated from Google spreadsheet - OK")
   LOGGER.info "Populated relational database from Google Sheet"
 end
 
 def generate_doc(path)
-  header = File.read("./doc_templates/header.md")
-  footer = File.read("./doc_templates/footer.md")
+  # header = File.read("./doc_templates/header.md")
+  # footer = File.read("./doc_templates/footer.md")
   dmp = Property['dmp']
-  md_doc = MarkdownDocument.new(path,header,footer,dmp)
+  md_doc = MarkdownDocument.new(path,dmp)
   md_doc.generate
   md_doc.write_to_file
 end

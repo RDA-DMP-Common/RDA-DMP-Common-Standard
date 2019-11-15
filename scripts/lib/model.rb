@@ -4,6 +4,20 @@ require 'open-uri'
 
 CSV_PARSING_OPTIONS = {:headers=>true,:encoding=>'UTF-8'}
 
+class EntityDescription < Sequel::Model
+  # set_primary_key :id
+  unrestrict_primary_key
+
+  def self.populate_from_google_csv
+    CSV.new(open(GOOGLE_SHEETS_CSV_URLS[self.name]), CSV_PARSING_OPTIONS).each do |row|
+      create(
+        title: row['title'],
+        description: row['description']
+      )
+    end
+  end
+end
+
 class Vocabulary < Sequel::Model
   set_primary_key :id
   unrestrict_primary_key
@@ -21,7 +35,6 @@ class Vocabulary < Sequel::Model
       )
     end
   end
-
 end
 
 

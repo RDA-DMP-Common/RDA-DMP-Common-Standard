@@ -8,6 +8,13 @@ if RESET_DATABASE_FROM_GOOGLE_SHEET then
   DB.drop_table? :properties
   DB.drop_table? :vocabularies
   DB.drop_table? :data_types
+  DB.drop_table? :entity_descriptions
+
+  DB.create_table? :entity_descriptions do
+    primary_key :id
+    String :title, :size=>255
+    String :description, text: true
+  end
   
   DB.create_table? :data_types do
     String :id, :size=>255, :primary_key=>true

@@ -15,18 +15,24 @@ class MarkdownDocument
 
   INDENT_SIZE = 2
 
-  def initialize(path,header,footer,root_property)
+  def initialize(path,root_property)
     @path = path
-    @header = header
-    @footer = footer
+    @header = "<h1>#{DOCUMENT_TITLE}</h1>\n"
+    @footer = DOCUMENT_FOOTER
     @content = ''
     @root_property = root_property
     @root_node = build_tree(@root_property)
-    # @root_node.print_tree
   end
 
   def generate
     LOGGER.debug("Generating HTML tree....")
+    @content += "<table><tr><td valign=\"top\">"
+    EntityDescription.all.each do |ed|
+      @content += "<h3>#{ed.title}</h3>\n"
+      @content += "#{ed.description}\n\n"
+    end
+    @content += '</td>'
+    @content += "<td valign=\"top\"><h3>Structure</h3>"
     @content += generate_html_tree(@root_node)
     LOGGER.info("HTML tree generated - OK")
     @content += "</td></tr></table>\n"
@@ -42,18 +48,6 @@ class MarkdownDocument
       end
     end
   end
-
-
-  # def generate_nested_li(node)
-  #   puts "#{node.name} = #{node.node_depth}"
-  #   li = ('  '*node.node_depth)
-  #   if node.has_children? then
-  #     li += "* [#{node.name}](##{node.name}_table)\n"
-  #   else
-  #     li += "* [#{node.name}](##{node.name})\n"
-  #   end
-  #   return li
-  # end
 
   def generate_html_tree(start_node)
     html_tree = '<ul>'
@@ -140,19 +134,6 @@ class MarkdownDocument
     html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:data_type])}</td>"
     html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:cardinality])}</td>"
     html += "<td valign=\"top\">#{process_content_for_table_cell(node.content[:example_value])}</td>"
-    # html += "<td valign=\"top\">"
-    #   if !node.content[:attributes].empty?
-    #     html += "<table>"
-    #     node.content[:attributes].each do |attribute|
-    #       html += '<tr>'
-    #       html += "<td valign=\"top\">#{attribute[:name]}</td>"
-    #       html += "<td valign=\"top\">#{attribute[:data_type]}</td>"
-    #       html += "<td valign=\"top\">#{attribute[:cardinality]}</td>"
-    #       html += '</tr>'
-    #     end
-    #     html += "</table>"
-    #   end
-    # html += "</td>"
     html += "</tr>"
     return html
   end
