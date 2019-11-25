@@ -22,7 +22,7 @@ go get -u github.com/goki/ki/ki
 
 ### 2. Compile the sources
 
-From a command line, change into the `src` directory and run:
+From a command line, change into the `src` sub-directory and run:
 
 ```bash
 go build -o ../rda_dmp_common_standard_doc_generator
@@ -45,4 +45,8 @@ This should create two new files, both in the `output` folder:
 1. `db.sqlite`
 2. `README.md`
 
-Anytime you want to 'refresh' the local documentaiton file from the Google Spreadsheet sources, simply delete the `db.sqlite` file from the `output` folder, and re-run the utility. This will rebuild the database from the Google Spreadsheet data, and then rebuild the documentation file (`README.md`)in the `output` folder.
+Anytime you want to 'refresh' the local documentation file from the Google Spreadsheet sources, simply delete the `db.sqlite` file from the `output` folder, and re-run the utility. This will rebuild the database from the Google Spreadsheet data, and then rebuild the documentation file (`README.md`)in the `output` folder.
+
+
+### 5. Publish the new documentation
+Simply copy or move the `README.md` file from the `output` folder to the top level folder of this Github repository (replacing the one that is there).

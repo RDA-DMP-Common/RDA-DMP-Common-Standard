@@ -62,7 +62,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <h2 id="contact_id_table">Properties in 'contact_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="contact_id_identifier" href="#contact_id_identifier_tree">identifier</a></td><td valign="top"> </td><td valign="top">String</td><td valign="top">1</td><td valign="top"> </td></tr>
-<tr><td valign="top"><a id="contact_id_type" href="#contact_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">orcid</td></tr>
+<tr><td valign="top"><a id="contact_id_type" href="#contact_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">orcid</td></tr>
 </tbody></table>
 
 <h2 id="dmp_contributor_table">Properties in 'contributor'</h2>
@@ -70,13 +70,13 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="contributor_id" href="#contributor_id_tree">contributor_id</a></td><td valign="top"> </td><td valign="top">Nested Data Structure</td><td valign="top">1</td><td valign="top"> </td></tr>
 <tr><td valign="top"><a id="dmp_contributor_mbox" href="#dmp_contributor_mbox_tree">mbox</a></td><td valign="top">Mail address</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">john@smith.com</td></tr>
 <tr><td valign="top"><a id="dmp_contributor_name" href="#dmp_contributor_name_tree">name</a></td><td valign="top">Name</td><td valign="top">String</td><td valign="top">1</td><td valign="top">John Smith</td></tr>
-<tr><td valign="top"><a id="dmp_contributor_role" href="#dmp_contributor_role_tree">role</a></td><td valign="top">Contributor Type.</td><td valign="top">String</td><td valign="top">1..n</td><td valign="top"> </td></tr>
+<tr><td valign="top"><a id="dmp_contributor_role" href="#dmp_contributor_role_tree">role</a></td><td valign="top">Type of contributor</td><td valign="top">String</td><td valign="top">1..n</td><td valign="top">Data Steward</td></tr>
 </tbody></table>
 
 <h2 id="contributor_id_table">Properties in 'contributor_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="contributor_id_id" href="#contributor_id_id_tree">identifier</a></td><td valign="top">Identifier for a contact person</td><td valign="top">String</td><td valign="top">1</td><td valign="top">http://orcid.org/0000-0000-0000-0000</td></tr>
-<tr><td valign="top"><a id="contributor_id_type" href="#contributor_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">orcid</td></tr>
+<tr><td valign="top"><a id="contributor_id_type" href="#contributor_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">orcid</td></tr>
 </tbody></table>
 
 <h2 id="cost_table">Properties in 'cost'</h2>
@@ -97,10 +97,10 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <tr><td valign="top"><a id="dataset_keyword" href="#dataset_keyword_tree">keyword</a></td><td valign="top">Keyword</td><td valign="top">String</td><td valign="top">0..n</td><td valign="top">keyword 1, keyword 2</td></tr>
 <tr><td valign="top"><a id="dataset_language" href="#dataset_language_tree">language</a></td><td valign="top">Language of the dataset expressed using ISO 6391-1 two letter country code.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">en</td></tr>
 <tr><td valign="top"><a id="metadata" href="#metadata_tree">metadata</a></td><td valign="top">To describe metadata standards used. </td><td valign="top">Nested Data Structure</td><td valign="top">0..n</td><td valign="top"> </td></tr>
-<tr><td valign="top"><a id="dataset_personal_data" href="#dataset_personal_data_tree">personal_data</a></td><td valign="top"> </td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">unknown</td></tr>
+<tr><td valign="top"><a id="dataset_personal_data" href="#dataset_personal_data_tree">personal_data</a></td><td valign="top"><br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">unknown</td></tr>
 <tr><td valign="top"><a id="dataset_preservation" href="#dataset_preservation_tree">preservation_statement</a></td><td valign="top">Preservation Statement</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">Must be preserved to enable...</td></tr>
 <tr><td valign="top"><a id="security_privacy" href="#security_privacy_tree">security_and_privacy</a></td><td valign="top">To list all issues and requirements related to security and privacy</td><td valign="top">Nested Data Structure</td><td valign="top">0..n</td><td valign="top"> </td></tr>
-<tr><td valign="top"><a id="dataset_sensitive_data" href="#dataset_sensitive_data_tree">sensitive_data</a></td><td valign="top"> </td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">unknown</td></tr>
+<tr><td valign="top"><a id="dataset_sensitive_data" href="#dataset_sensitive_data_tree">sensitive_data</a></td><td valign="top"><br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">unknown</td></tr>
 <tr><td valign="top"><a id="technical_resource" href="#technical_resource_tree">technical_resource</a></td><td valign="top">To list all technical resources needed to implement a DMP</td><td valign="top">Nested Data Structure</td><td valign="top">0..n</td><td valign="top"> </td></tr>
 <tr><td valign="top"><a id="dataset_title" href="#dataset_title_tree">title</a></td><td valign="top">Title is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.</td><td valign="top">String</td><td valign="top">1</td><td valign="top">Fast car images</td></tr>
 <tr><td valign="top"><a id="dataset_type" href="#dataset_type_tree">type</a></td><td valign="top">If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf
@@ -110,7 +110,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <h2 id="dataset_id_table">Properties in 'dataset_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="dataset_id_id" href="#dataset_id_id_tree">identifier</a></td><td valign="top">Identifier for a dataset</td><td valign="top">String</td><td valign="top">1</td><td valign="top">https://hdl.handle.net/11353/10.923628</td></tr>
-<tr><td valign="top"><a id="dataset_id_type" href="#dataset_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">handle</td></tr>
+<tr><td valign="top"><a id="dataset_id_type" href="#dataset_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>handle</li><li>doi</li><li>ark</li><li>url</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">handle</td></tr>
 </tbody></table>
 
 <h2 id="distribution_table">Properties in 'distribution'</h2>
@@ -118,7 +118,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="distribution_access_url" href="#distribution_access_url_tree">access_url</a></td><td valign="top">A URL of the resource that gives access to a distribution of the dataset. e.g. landing page.</td><td valign="top">URI</td><td valign="top">0..1</td><td valign="top">http://some.repo...</td></tr>
 <tr><td valign="top"><a id="distribution_available_until" href="#distribution_available_until_tree">available_until</a></td><td valign="top">Indicates how long this distribution will be/ should be available</td><td valign="top">Date</td><td valign="top">0..1</td><td valign="top">2030-06-30</td></tr>
 <tr><td valign="top"><a id="distribution_byte_size" href="#distribution_byte_size_tree">byte_size</a></td><td valign="top">Byte Size</td><td valign="top">Number</td><td valign="top">0..1</td><td valign="top">690000</td></tr>
-<tr><td valign="top"><a id="distribution_data_access" href="#distribution_data_access_tree">data_access</a></td><td valign="top">Indicates access mode for data.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">open</td></tr>
+<tr><td valign="top"><a id="distribution_data_access" href="#distribution_data_access_tree">data_access</a></td><td valign="top">Indicates access mode for data.<br/>Allowed Values:<ul><li>open</li><li>shared</li><li>closed</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">open</td></tr>
 <tr><td valign="top"><a id="distribution_description" href="#distribution_description_tree">description</a></td><td valign="top">Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">Best quality data before resizing</td></tr>
 <tr><td valign="top"><a id="distribution_download_url" href="#distribution_download_url_tree">download_url</a></td><td valign="top">The URL of the downloadable file in a given format. E.g. CSV file or RDF file.</td><td valign="top">URI</td><td valign="top">0..1</td><td valign="top">http://some.repo.../download/...</td></tr>
 <tr><td valign="top"><a id="distribution_format" href="#distribution_format_tree">format</a></td><td valign="top">Format according to: https://www.iana.org/assignments/media-types/media-types.xhtml if appropriate, otherwise use the common name for this format</td><td valign="top">String</td><td valign="top">0..n</td><td valign="top">image/tiff</td></tr>
@@ -137,7 +137,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <tr><td valign="top"><a id="dmp_description" href="#dmp_description_tree">description</a></td><td valign="top">To provide any free-form text information on a DMP</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">This DMP is for our new project</td></tr>
 <tr><td valign="top"><a id="dmp_id" href="#dmp_id_tree">dmp_id</a></td><td valign="top">Identifier for the DMP itself</td><td valign="top">Nested Data Structure</td><td valign="top">1</td><td valign="top"> </td></tr>
 <tr><td valign="top"><a id="ethical_issues_description" href="#ethical_issues_description_tree">ethical_issues_description</a></td><td valign="top">To describe ethical issues directly in a DMP</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">There are ethical issues, because...</td></tr>
-<tr><td valign="top"><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">yes</td></tr>
+<tr><td valign="top"><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td><td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">yes</td></tr>
 <tr><td valign="top"><a id="ethical_issues_report" href="#ethical_issues_report_tree">ethical_issues_report</a></td><td valign="top">To indicate where a protocol from a meeting with an ethical commitee can be found</td><td valign="top">URI</td><td valign="top">0..1</td><td valign="top">http://report.location</td></tr>
 <tr><td valign="top"><a id="dmp_language" href="#dmp_language_tree">language</a></td><td valign="top">Language of the DMP expressed using ISO 6391-1 two letter country code.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">en</td></tr>
 <tr><td valign="top"><a id="dmp_modified" href="#dmp_modified_tree">modified</a></td><td valign="top">Must be set each time DMP is modified. Indicates DMP version.</td><td valign="top">DateTime</td><td valign="top">1</td><td valign="top">2020-03-14 10:53</td></tr>
@@ -148,26 +148,26 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <h2 id="dmp_id_table">Properties in 'dmp_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="dmp_id_id" href="#dmp_id_id_tree">identifier</a></td><td valign="top">Identifier for a DMP</td><td valign="top">String</td><td valign="top">1</td><td valign="top">https://doi.org/10.1371/journal.pcbi.1006750</td></tr>
-<tr><td valign="top"><a id="dmp_id_type" href="#dmp_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">doi</td></tr>
+<tr><td valign="top"><a id="dmp_id_type" href="#dmp_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>handle</li><li>doi</li><li>ark</li><li>url</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">doi</td></tr>
 </tbody></table>
 
 <h2 id="funder_id_table">Properties in 'funder_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="funder_id_id" href="#funder_id_id_tree">identifier</a></td><td valign="top">Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/</td><td valign="top">String</td><td valign="top">1</td><td valign="top">501100002428</td></tr>
-<tr><td valign="top"><a id="funder_id_type" href="#funder_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">fundref</td></tr>
+<tr><td valign="top"><a id="funder_id_type" href="#funder_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>fundref</li><li>url</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">fundref</td></tr>
 </tbody></table>
 
 <h2 id="funding_table">Properties in 'funding'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="funder_id" href="#funder_id_tree">funder_id</a></td><td valign="top">Funder ID of the associated project</td><td valign="top">Nested Data Structure</td><td valign="top">1</td><td valign="top"> </td></tr>
-<tr><td valign="top"><a id="funding_status" href="#funding_status_tree">funding_status</a></td><td valign="top">To express different phases of project lifecycle.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">granted</td></tr>
+<tr><td valign="top"><a id="funding_status" href="#funding_status_tree">funding_status</a></td><td valign="top">To express different phases of project lifecycle.<br/>Allowed Values:<ul><li>planned</li><li>applied</li><li>granted</li><li>rejected</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">granted</td></tr>
 <tr><td valign="top"><a id="grant_id" href="#grant_id_tree">grant_id</a></td><td valign="top">Grant ID of the associated project</td><td valign="top">Nested Data Structure</td><td valign="top">1</td><td valign="top">1234567</td></tr>
 </tbody></table>
 
 <h2 id="grant_id_table">Properties in 'grant_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="grant_id_id" href="#grant_id_id_tree">identifier</a></td><td valign="top">Grant ID</td><td valign="top">String</td><td valign="top">1</td><td valign="top">776242</td></tr>
-<tr><td valign="top"><a id="grant_id_type" href="#grant_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">other</td></tr>
+<tr><td valign="top"><a id="grant_id_type" href="#grant_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>url</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">other</td></tr>
 </tbody></table>
 
 <h2 id="host_table">Properties in 'host'</h2>
@@ -175,12 +175,12 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="host_availability" href="#host_availability_tree">availability</a></td><td valign="top">Availability</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">99,5</td></tr>
 <tr><td valign="top"><a id="host_backup_frequency" href="#host_backup_frequency_tree">backup__frequency</a></td><td valign="top">Backup  Frequency</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">weekly</td></tr>
 <tr><td valign="top"><a id="host_backup_type" href="#host_backup_type_tree">backup_type</a></td><td valign="top">Backup Type</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">tapes</td></tr>
-<tr><td valign="top"><a id="host_certified_with" href="#host_certified_with_tree">certified_with</a></td><td valign="top">Repository certified to a recognised standard</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">coretrustseal</td></tr>
+<tr><td valign="top"><a id="host_certified_with" href="#host_certified_with_tree">certified_with</a></td><td valign="top">Repository certified to a recognised standard<br/>Allowed Values:<ul><li>din31644</li><li>dini-zertifikat</li><li>dsa</li><li>iso16363</li><li>iso16919</li><li>trac</li><li>wds</li><li>coretrustseal</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">coretrustseal</td></tr>
 <tr><td valign="top"><a id="host_description" href="#host_description_tree">description</a></td><td valign="top">Description</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">Repository hosted by...</td></tr>
 <tr><td valign="top"><a id="host_geo_location" href="#host_geo_location_tree">geo_location</a></td><td valign="top">Physical location of the data expressed using ISO 3166-1 country code.</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">AT</td></tr>
-<tr><td valign="top"><a id="host_pid_system" href="#host_pid_system_tree">pid_system</a></td><td valign="top">PID System</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..n</td><td valign="top">doi</td></tr>
+<tr><td valign="top"><a id="host_pid_system" href="#host_pid_system_tree">pid_system</a></td><td valign="top">PID System<br/>Allowed Values:<ul><li>ark</li><li>arxiv</li><li>bibcode</li><li>doi</li><li>ean13</li><li>eissn</li><li>handle</li><li>igsn</li><li>isbn</li><li>issn</li><li>istc</li><li>lissn</li><li>lsid</li><li>pmid</li><li>purl</li><li>upc</li><li>url</li><li>urn</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..n</td><td valign="top">doi</td></tr>
 <tr><td valign="top"><a id="host_storage_type" href="#host_storage_type_tree">storage_type</a></td><td valign="top">The type of storage required</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top"> </td></tr>
-<tr><td valign="top"><a id="host_supports_versioning" href="#host_supports_versioning_tree">support_versioning</a></td><td valign="top"> </td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">yes</td></tr>
+<tr><td valign="top"><a id="host_supports_versioning" href="#host_supports_versioning_tree">support_versioning</a></td><td valign="top"><br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">0..1</td><td valign="top">yes</td></tr>
 <tr><td valign="top"><a id="host_title" href="#host_title_tree">title</a></td><td valign="top">Title</td><td valign="top">String</td><td valign="top">1</td><td valign="top">Super Repository</td></tr>
 <tr><td valign="top"><a id="host_url" href="#host_url_tree">url</a></td><td valign="top">The URL of the system hosting a distribution of a dataset</td><td valign="top">URI</td><td valign="top">1</td><td valign="top">https://zenodo.org</td></tr>
 </tbody></table>
@@ -201,7 +201,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <h2 id="metadata_standard_id_table">Properties in 'metadata_standard_id'</h2>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="metadata_id_id" href="#metadata_id_id_tree">identifier</a></td><td valign="top">Identifier for the metadata standard used.</td><td valign="top">String</td><td valign="top">1</td><td valign="top">http://www.dublincore.org/specifications/dublin-core/dcmi-terms/</td></tr>
-<tr><td valign="top"><a id="metadata_id_type" href="#metadata_id_type_tree">type</a></td><td valign="top">Identifier type</td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">url</td></tr>
+<tr><td valign="top"><a id="metadata_id_type" href="#metadata_id_type_tree">type</a></td><td valign="top">Identifier type<br/>Allowed Values:<ul><li>url</li><li>other</li><ul></td><td valign="top">Term from Controlled Vocabulary</td><td valign="top">1</td><td valign="top">url</td></tr>
 </tbody></table>
 
 <h2 id="project_table">Properties in 'project'</h2>
