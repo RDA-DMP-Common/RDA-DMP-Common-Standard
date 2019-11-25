@@ -1,0 +1,9 @@
+output_folder_path: "./output"
+document_title: "RDA DMP Common Standard for machine-actionable Data Management Plans"
+document_footer: "Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg) (Tomasz Miksa, Peter Neith and Paul Walk)."
+google_sheets_csv_urls:
+  Property: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=830294496&single=true&output=csv'
+  Vocabulary: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=1421257402&single=true&output=csv'
+  DataType: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=1487393314&single=true&output=csv'
+  Value: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=90441725&single=true&output=csv'
+  EntityDescription: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_BGLZWJS7qEArM1EbxKe_yTPR2pumMuO1jnlTQhKRks_Df988D93bm_na_bbZbMemirUL370SfeU5/pub?gid=365041659&single=true&output=csv'
