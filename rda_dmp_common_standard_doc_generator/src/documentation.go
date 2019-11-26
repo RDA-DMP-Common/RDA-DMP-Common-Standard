@@ -67,7 +67,7 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 		for _, value := range values {
 			description += fmt.Sprintf("<li>%s</li>", value.Label)
 		}
-		description += "<ul>"
+		description += "</ul>"
 	}
 	html := fmt.Sprintf("<tr><td valign=\"top\"><a id=\"%s\" href=\"#%s_tree\">%s</a></td>", node.Name(), node.Name(), property.LabelMachine)
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(description))
