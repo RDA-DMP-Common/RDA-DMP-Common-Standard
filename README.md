@@ -7,7 +7,6 @@ For more information see <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Comm
 
 <img src="docs/diagrams/maDMP-diagram.png"/>
 
-(This document is available as a <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard">Github Readme</a> and as <a href="https://rda-dmp-common.github.io/RDA-DMP-Common-Standard/">a webpage</a>.)
 
 <h3>DMP</h3>
 Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory.
