@@ -6,68 +6,66 @@
     "modified": "2019-02-22T15:10:56.9",
     "project": [],
     "contact": {
-      "mail": "TMiksa@sba-research.org",
+      "mbox": "TMiksa@sba-research.org",
       "name": "Tomasz Miksa",
       "contact_id": {
-        "contact_id": "https://orcid.org/0000-0000-0000-0000",
-        "contact_id_type": "HTTP-ORCID"
+        "identifier": "https://orcid.org/0000-0000-0000-0000",
+        "type": "orcid"
       }
     },
     "language": "en",
     "ethical_issues_exist": "no",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1234",
+      "type": "doi"
+    },
     "dataset": [
       {
         "title": "Cool data",
         "description": "Data which shows...",
         "type": "document",
         "issued": "2019-06-30",
+        "dataset_id": {
+          "identifier": "10.9876/zenodo.1234567",
+          "type": "doi"
+        },
         "personal_data": "no",
         "sensitive_data": "unknown",
-        "distribution": [
-          {
-            "title": "Raw data",
-            "description": "CSV file showing...",
-            "format": "text/csv",
-            "byte_size": 100000,
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2021-06-30"
-              }
-            ],
-            "available_till": "2029-01-30"
-          }
-        ]
+        "distribution": {
+          "title": "Raw data",
+          "description": "CSV file showing...",
+          "format": "text/csv",
+          "byte_size": 100000,
+          "data_access": "open",
+          "license": {
+              "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+              "start_date": "2019-06-30"
+           },
+          "available_untill": "2029-01-30"
+        }
       },
       {
         "title": "Source Code",
         "description": "Proof of concept implementation",
         "type": "source-code",
         "issued": "2019-01-30",
-        "datasetID": {
-          "identifier": "10.5281/zenodo.1200361",
-          "identifier_type": "DOI-RAW"
+        "dataset_id": {
+          "identifier": "10.1234/zenodo.123456789",
+          "type": "doi"
         },
         "personal_data": "no",
         "sensitive_data": "no",
         "data_quality_assurance": "The code has been reviewed by... and follows naming convention...",
-        "distribution": [
-          {
-            "title": "Java code",
-            "description": "Final realase implemented using... to...",
-            "access_url": "http://github.com/some-repo...",
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "active_from": "2019-01-30",
-                "start_date": "2021-06-30"
-              }
-            ],
-            "available_till": "2029-01-30"
+        "distribution": {
+          "title": "Java code",
+          "description": "Final realase implemented using... to...",
+          "access_url": "http://github.com/some-repo...",
+          "data_access": "open",
+          "license": {
+            "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+            "start_date": "2019-06-30"
           }
-        ]
+        }
       }
     ]
   }

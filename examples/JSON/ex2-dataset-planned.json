@@ -1,42 +1,41 @@
 {
   "dmp": {
     "title": "DMP in a planning phase",
-    "description": "Examaple of a DMP describing a project in which source code will be created and put on GitHub. The DMP  is created on 2019-02-22. The code is planned to be released on 2019-06-30 using CC-BY license.",
+    "description": "Example of a DMP describing a project in which source code will be created and put on GitHub. The DMP  is created on 2019-02-22. The code is planned to be released on 2019-06-30 using CC-BY license.",
     "created": "2019-02-22T13:20:15.5",
     "modified": "2019-02-22T13:20:15.5",
     "project": [],
     "contact": {
-      "mail": "TMiksa@sba-research.org",
+      "mbox": "TMiksa@sba-research.org",
       "name": "Tomasz Miksa",
       "contact_id": {
-        "contact_id": "https://orcid.org/0000-0000-0000-0000",
-        "contact_id_type": "HTTP-ORCID"
+        "identifier": "https://orcid.org/0000-0000-0000-0000",
+        "type": "orcid"
       }
     },
     "language": "en",
     "ethical_issues_exist": "no",
-    "dataset": [
-      {
-        "title": "Source Code",
-        "description": "Proof of concept implementation",
-        "type": "software",
-        "issued": "2019-06-30",
-        "personal_data": "unknown",
-        "sensitive_data": "no",
-        "distribution": [
-          {
-            "title": "Java code",
-            "access_url": "http://github.com/some-repo...",
-            "data_access": "open",
-            "license": [
-              {
-                "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-                "start_date": "2019-06-30"
-              }
-            ]
-          }
-        ]
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1234",
+      "type": "doi"
+    },
+    "dataset": {
+      "title": "Source Code",
+      "description": "Proof of concept implementation",
+      "type": "software",
+      "issued": "2019-06-30",
+      "personal_data": "unknown",
+      "sensitive_data": "no",
+      "distribution": {
+        "title": "Java code",
+        "access_url": "http://github.com/some-repo...",
+        "data_access": "open",
+        "license": 
+        {
+          "license_ref": "https://creativecommons.org/licenses/by/4.0/",
+          "start_date": "2019-06-30"
+        }
       }
-    ]
+    }
   }
 }
