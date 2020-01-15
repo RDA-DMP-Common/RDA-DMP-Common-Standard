@@ -1,8 +1,12 @@
-# DMP Common Standard Ontology
+# DMP Common Standard Ontology (DCSO)
 
 This ontology aims to represent the DMP Common Standard model, through the usage of semantic web technology. It represents the DMP Common Standard model using the [Web Ontology Language (OWL)](https://www.w3.org/OWL/).
 
 This is still a work in progress. The idea behind having the DMP Common Standard model represented in OWL, is to explore the potential behing a machine-readable version of the model.
+
+The following is a diagram of the DCSO:
+
+![DCSO Diagram](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/ontologies/diagrams/dcso30.png)
 
 ## Exploring the ontology
 
