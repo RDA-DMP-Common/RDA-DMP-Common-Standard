@@ -11,7 +11,7 @@ Index:
 * [How to model embargoes?](#how-to-model-embargoes)
 * [Why Metadata is referenced from a Dataset?](#why-metadata-is-referenced-from-a-dataset)
 * [Are there any other serialisations planned different than JSON?](#are-there-any-other-serialisations-planned-different-tham-json)
-
+* [Is there a JSON schema?](#is-there-a-JSON-schema)
 
 ### When to use this standard?
 The standard is meant for exchange of machine-actionable DMPs between systems. It is independent of any internal data organisation used by these systems. The standard also does not prescribe how information must be presented to the end user and do not enforce any specific logic on how this information must be collected or used. The standard is an information carrier and the full machine-actionability can only be achieved when systems using the standard implement appropriate logic.
@@ -74,4 +74,6 @@ If a DMP contains only one Dataset and one or more Metadata elements assigned to
 ### Are there any other serialisations planned different than JSON?
 All the examples provided so far are in JSON, because of its popularity. The standard can be serialised to any other representation, e.g. XML, OWL, JSON-LD, etc. if needed. If you're interested in it, please contact us.
 
+### Is there a JSON schema?
+Yes, you can find it [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema)
 
