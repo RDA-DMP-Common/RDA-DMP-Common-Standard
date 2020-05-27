@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/dcso#> .
+@prefix : <https://w3id.org/dcso/ns/core#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,8 +14,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
-@prefix rda-common-dmp: <https:/#> .
-@prefix rda-common-dmp1: <https://w3id.org/dcso#> .
 @base <https://w3id.org/dcso/ns/core> .
 
 <https://w3id.org/dcso/ns/core> rdf:type owl:Ontology ;
@@ -27,58 +25,58 @@
 
 ###  http://purl.org/dc/terms/created
 terms:created rdf:type owl:AnnotationProperty ;
-              rdfs:domain rda-common-dmp1:dmp .
+              rdfs:domain :dmp .
 
 
 ###  http://purl.org/dc/terms/description
 terms:description rdf:type owl:AnnotationProperty ;
-                  rdfs:domain rda-common-dmp1:cost ,
-                              rda-common-dmp1:dataset ,
-                              rda-common-dmp1:distribution ,
-                              rda-common-dmp1:dmp ,
-                              rda-common-dmp1:host ,
-                              rda-common-dmp1:metadata ,
-                              rda-common-dmp1:project ,
-                              rda-common-dmp1:security_and_privacy ,
-                              rda-common-dmp1:technical_resource .
+                  rdfs:domain :cost ,
+                              :dataset ,
+                              :distribution ,
+                              :dmp ,
+                              :host ,
+                              :metadata ,
+                              :project ,
+                              :security_and_privacy ,
+                              :technical_resource .
 
 
 ###  http://purl.org/dc/terms/identifier
 terms:identifier rdf:type owl:AnnotationProperty ;
-                 rdfs:domain rda-common-dmp1:contact_id ,
-                             rda-common-dmp1:contributor_id ,
-                             rda-common-dmp1:dataset_id ,
-                             rda-common-dmp1:dmp_id ,
-                             rda-common-dmp1:funder_id ,
-                             rda-common-dmp1:grant_id ,
-                             rda-common-dmp1:metadata_standard_id .
+                 rdfs:domain :contact_id ,
+                             :contributor_id ,
+                             :dataset_id ,
+                             :dmp_id ,
+                             :funder_id ,
+                             :grant_id ,
+                             :metadata_standard_id .
 
 
 ###  http://purl.org/dc/terms/modified
 terms:modified rdf:type owl:AnnotationProperty ;
-               rdfs:domain rda-common-dmp1:dmp .
+               rdfs:domain :dmp .
 
 
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty ;
             rdfs:domain dcat:Distribution ,
-                        rda-common-dmp1:cost ,
-                        rda-common-dmp1:dataset ,
-                        rda-common-dmp1:dmp ,
-                        rda-common-dmp1:host ,
-                        rda-common-dmp1:project ,
-                        rda-common-dmp1:security_and_privacy .
+                        :cost ,
+                        :dataset ,
+                        :dmp ,
+                        :host ,
+                        :project ,
+                        :security_and_privacy .
 
 
 ###  http://www.w3.org/ns/dcat#keyword
 dcat:keyword rdf:type owl:AnnotationProperty ;
-             rdfs:domain rda-common-dmp1:dataset .
+             rdfs:domain :dataset .
 
 
 ###  http://xmlns.com/foaf/0.1/name
 foaf:name rdf:type owl:AnnotationProperty ;
-          rdfs:domain rda-common-dmp1:contact ,
-                      rda-common-dmp1:contributor .
+          rdfs:domain :contact ,
+                      :contributor .
 
 
 ###  https://w3id.org/dcso/ns/core#hasCrossReference
