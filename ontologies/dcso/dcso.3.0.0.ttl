@@ -19,10 +19,10 @@
 @base <https://w3id.org/dcso> .
 
 <https://w3id.org/dcso> rdf:type owl:Ontology ;
-                         owl:imports <http://www.w3.org/ns/dcat> ,
-                                     <file:/C:/Users/João%20Cardoso/Google%20Drive%20(joao.m.f.cardoso@tecnico.ulisboa.pt)/Doutoramento/CAT%20João%20Cardoso/RDA%20Common%20DMP/hackathon/Ontologies/dublin_core_terms.rdf> ,
-                                     terms: ,
-                                     foaf: ;
+#                         owl:imports <http://www.w3.org/ns/dcat> ,
+#                                     <file:/C:/Users/João%20Cardoso/Google%20Drive%20(joao.m.f.cardoso@tecnico.ulisboa.pt)/Doutoramento/CAT%20João%20Cardoso/RDA%20Common%20DMP/hackathon/Ontologies/dublin_core_terms.rdf> ,
+#                                     terms: ,
+#                                     foaf: ;
                          owl:versionInfo "3.0.0"^^xsd:string .
 
 #################################################################
