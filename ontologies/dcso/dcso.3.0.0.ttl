@@ -407,26 +407,11 @@ foaf:name rdf:type owl:AnnotationProperty ;
 #################################################################
 
 ###  http://www.w3.org/ns/dcat#Distribution
-dcat:Distribution rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty :available_until ;
-                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:dateTime
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :format ;
-                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:string
-                                  ] .
+dcat:Distribution rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#contact
-:contact rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :mbox ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] .
+:contact rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#contact_id
@@ -434,12 +419,7 @@ dcat:Distribution rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/core#contributor
-:contributor rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :mbox ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] .
+:contributor rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#contributor_id
@@ -447,36 +427,11 @@ dcat:Distribution rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/core#cost
-:cost rdf:type owl:Class ;
-      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty :value ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:integer
-                      ] .
+:cost rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#dataset
-:dataset rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :type ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :issued ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:dateTime
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :language ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :preservation_statement ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
-                         ] .
+:dataset rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#dataset_id
@@ -484,27 +439,7 @@ dcat:Distribution rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/core#dmp
-:dmp rdf:type owl:Class ;
-     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasDataset ;
-                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onClass :dataset
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasContact ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onClass :contact
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :ethical_issues_description ;
-                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:string
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :ethical_issues_report ;
-                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:anyURI
-                     ] .
+:dmp rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#dmp_id
@@ -524,55 +459,15 @@ dcat:Distribution rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/core#host
-:host rdf:type owl:Class ;
-      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty :url ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:anyURI
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :availability ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:string
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :backup_frequency ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:string
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :backup_type ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:string
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :storage_type ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onDataRange xsd:string
-                      ] .
+:host rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#license
-:license rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :licence_ref ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :start_date ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:dateTime
-                         ] .
+:license rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#metadata
-:metadata rdf:type owl:Class ;
-          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty :language ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onDataRange xsd:string
-                          ] .
+:metadata rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#metadata_standard_id
@@ -580,17 +475,7 @@ dcat:Distribution rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/core#project
-:project rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :end ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:dateTime
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :start ;
-                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:dateTime
-                         ] .
+:project rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#security_and_privacy
