@@ -19,9 +19,6 @@ Versions available:
 
 ## Contributors
 
-* **[Daniel Faria](https://github.com/DanFaria)**
-
 ## Acknowledgments
 
 * Tomasz Miksa
-* Diogo Proença
