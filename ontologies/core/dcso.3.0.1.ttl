@@ -28,11 +28,40 @@
                                                    "Tomasz Miksa" ;
                                  terms:creator "Fajar J. Ekaputra" ,
                                                "João Cardoso" ,
+                                               "Leyla Garcia" ,
                                                "Marie Christine Jacquemot" ;
                                  terms:description " This ontology aims to represent the DMP Common Standard model, through the usage of semantic web technology. It represents the DMP Common Standard model using the Web Ontology Language (OWL)."@en ;
                                  terms:rights "http://creativecommons.org/licenses/by/4.0/" ;
                                  terms:title "The DMP Common Standard Ontology." ;
                                  vann:preferredNamespacePrefix "dcso" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+terms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -42,39 +71,44 @@
 dcso:hasContact rdf:type owl:ObjectProperty ;
                 rdfs:domain dcso:DMP ;
                 rdfs:range dcso:Contact ;
-                rdfs:comment "Contact for the DMP"^^rdfs:Literal .
+                rdfs:comment "Any Contact that can provide information on this DMP."^^rdfs:Literal .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContactId
 dcso:hasContactId rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf dcso:hasId ;
                   rdfs:domain dcso:Contact ;
-                  rdfs:range dcso:ContactId .
+                  rdfs:range dcso:ContactId ;
+                  rdfs:comment "Any ID used to uniquely identified this Contact." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContributor
 dcso:hasContributor rdf:type owl:ObjectProperty ;
                     rdfs:domain dcso:DMP ;
-                    rdfs:range dcso:Contributor .
+                    rdfs:range dcso:Contributor ;
+                    rdfs:comment "Any Contributor involved in the process of the data management described by this DMP as well as any Contributor involved in the creation and management of this DMP itself." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContributorId
 dcso:hasContributorId rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf dcso:hasId ;
                       rdfs:domain dcso:Contributor ;
-                      rdfs:range dcso:ContributorId .
+                      rdfs:range dcso:ContributorId ;
+                      rdfs:comment "Any ID used to uniquely identified this Contributor." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasCost
 dcso:hasCost rdf:type owl:ObjectProperty ;
              rdfs:domain dcso:DMP ;
-             rdfs:range dcso:Cost .
+             rdfs:range dcso:Cost ;
+             rdfs:comment "Any Cost related to data management included in this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasCurrencyCode
 dcso:hasCurrencyCode rdf:type owl:ObjectProperty ;
                      rdfs:domain dcso:Cost ;
-                     rdfs:range dcsx:CurrencyCode .
+                     rdfs:range dcsx:CurrencyCode ;
+                     rdfs:comment "A Currency Code used to express values in this Cost." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDMPId
@@ -82,107 +116,122 @@ dcso:hasDMPId rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dcso:hasId ;
               rdfs:domain dcso:DMP ;
               rdfs:range dcso:DMPId ;
-              rdfs:comment "Provides a TypeIdentifier for a DMP"^^xsd:string .
+              rdfs:comment "Any ID used to uniquely identified this DMP."^^xsd:string .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDataset
 dcso:hasDataset rdf:type owl:ObjectProperty ;
                 rdfs:domain dcso:DMP ;
-                rdfs:range dcso:Dataset .
+                rdfs:range dcso:Dataset ;
+                rdfs:comment "Any Dataset considered under this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDatasetId
 dcso:hasDatasetId rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf dcso:hasId ;
                   rdfs:domain dcso:Dataset ;
-                  rdfs:range dcso:DatasetId .
+                  rdfs:range dcso:DatasetId ;
+                  rdfs:comment "Any ID used to uniquely identified this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDistribution
 dcso:hasDistribution rdf:type owl:ObjectProperty ;
                      rdfs:domain dcso:Dataset ;
-                     rdfs:range dcso:Distribution .
+                     rdfs:range dcso:Distribution ;
+                     rdfs:comment "Any Distribution, i.e., specific instance, of this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasFunderId
 dcso:hasFunderId rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf dcso:hasId ;
                  rdfs:domain dcso:Funding ;
-                 rdfs:range dcso:FunderId .
+                 rdfs:range dcso:FunderId ;
+                 rdfs:comment "Any ID used to uniquely identified this Funder." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasFunding
 dcso:hasFunding rdf:type owl:ObjectProperty ;
                 rdfs:domain dcso:Project ;
-                rdfs:range dcso:Funding .
+                rdfs:range dcso:Funding ;
+                rdfs:comment "Any Funding granted for this Project." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasGeoLocation
 dcso:hasGeoLocation rdf:type owl:ObjectProperty ;
                     rdfs:domain dcso:Host ;
-                    rdfs:range dcsx:Country .
+                    rdfs:range dcsx:Country ;
+                    rdfs:comment "A Country where a Host, i.e. storage system, is located." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasGrantId
 dcso:hasGrantId rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf dcso:hasId ;
                 rdfs:domain dcso:Funding ;
-                rdfs:range dcso:GrantId .
+                rdfs:range dcso:GrantId ;
+                rdfs:comment "Any ID used to uniquely identified a Grant associated to this Funder." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasHost
 dcso:hasHost rdf:type owl:ObjectProperty ;
              rdfs:domain dcso:Distribution ;
-             rdfs:range dcso:Host .
+             rdfs:range dcso:Host ;
+             rdfs:comment "Any Host, i., storage system, where this Distribution has been stored." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasId
 dcso:hasId rdf:type owl:ObjectProperty ;
-           rdfs:range dcso:Id
-  .
+           rdfs:range dcso:Id ;
+           rdfs:comment "Any ID used to uniquely identified a Thing." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasLanguage
 dcso:hasLanguage rdf:type owl:ObjectProperty ;
                  rdfs:domain dcso:DMP ;
-                 rdfs:range dcsx:Language .
+                 rdfs:range dcsx:Language ;
+                 rdfs:comment "Any Language used to express data in this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasLicense
 dcso:hasLicense rdf:type owl:ObjectProperty ;
                 rdfs:domain dcso:Distribution ;
-                rdfs:range dcso:License .
+                rdfs:range dcso:License ;
+                rdfs:comment "A License used for this Distribution." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasMetadata
 dcso:hasMetadata rdf:type owl:ObjectProperty ;
                  rdfs:domain dcso:DMP ;
-                 rdfs:range dcso:Metadata .
+                 rdfs:range dcso:Metadata ;
+                 rdfs:comment "A Metadata standard used to describe data in this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasMetadataStandardId
 dcso:hasMetadataStandardId rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf dcso:hasId ;
                            rdfs:domain dcso:Metadata ;
-                           rdfs:range dcso:MetadataStandardId .
+                           rdfs:range dcso:MetadataStandardId ;
+                           rdfs:comment "Any ID used to uniquely identified this Metadata standard." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasProject
 dcso:hasProject rdf:type owl:ObjectProperty ;
                 rdfs:domain dcso:DMP ;
-                rdfs:range dcso:Project .
+                rdfs:range dcso:Project ;
+                rdfs:comment "Any Project associated with this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasSecurityPrivacy
 dcso:hasSecurityPrivacy rdf:type owl:ObjectProperty ;
                         rdfs:domain dcso:Dataset ;
-                        rdfs:range dcso:SecurityPrivacy .
+                        rdfs:range dcso:SecurityPrivacy ;
+                        rdfs:comment "Any specific requirements related to security and privacy of this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasTechnicalResource
 dcso:hasTechnicalResource rdf:type owl:ObjectProperty ;
                           rdfs:domain dcso:Dataset ;
-                          rdfs:range dcso:TechnicalResource .
+                          rdfs:range dcso:TechnicalResource ;
+                          rdfs:comment "Any Technical Resource, e.g, microscope, needed/used to create or process the data in this Dataset." .
 
 
 #################################################################
@@ -243,7 +292,8 @@ foaf:name rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/dcso/ns/core#availability
 dcso:availability rdf:type owl:DatatypeProperty ;
                   rdfs:domain dcso:Host ;
-                  rdfs:range xsd:string .
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Indicates the availability of a resuource such as a Host, i.e, storage system." .
 
 
 ###  https://w3id.org/dcso/ns/core#available_until
@@ -362,8 +412,7 @@ dcso:geo_location rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/dcso/ns/core#identifier_type
 dcso:identifier_type rdf:type owl:DatatypeProperty ;
-                     rdfs:domain dcso:Id
-  ;
+                     rdfs:domain dcso:Id ;
                      rdfs:range xsd:string ;
                      rdfs:comment "Identifier type" ,
                                   "Validation with ShEx/SHACL" .
@@ -514,8 +563,7 @@ dcso:Contact rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#ContactId
 dcso:ContactId rdf:type owl:Class ;
-               rdfs:subClassOf dcso:Id
-  ;
+               rdfs:subClassOf dcso:Id ;
                rdfs:comment "Identifier for a contact person" .
 
 
@@ -527,8 +575,7 @@ dcso:Contributor rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#ContributorId
 dcso:ContributorId rdf:type owl:Class ;
-                   rdfs:subClassOf dcso:Id
-  ;
+                   rdfs:subClassOf dcso:Id ;
                    rdfs:comment "Identifier for a contributor person" .
 
 
@@ -544,8 +591,7 @@ dcso:DMP rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#DMPId
 dcso:DMPId rdf:type owl:Class ;
-           rdfs:subClassOf dcso:Id
-  ;
+           rdfs:subClassOf dcso:Id ;
            rdfs:comment "Identifier for a DMP" .
 
 
@@ -557,8 +603,7 @@ dcso:Dataset rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#DatasetId
 dcso:DatasetId rdf:type owl:Class ;
-               rdfs:subClassOf dcso:Id
-  ;
+               rdfs:subClassOf dcso:Id ;
                rdfs:comment "Identifier for a dataset" .
 
 
@@ -570,8 +615,7 @@ dcso:Distribution rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#FunderId
 dcso:FunderId rdf:type owl:Class ;
-              rdfs:subClassOf dcso:Id
-  ;
+              rdfs:subClassOf dcso:Id ;
               rdfs:comment "Identifier for funders : it is recommended to use CrossRef Funder Registry. " .
 
 
@@ -582,19 +626,13 @@ dcso:Funding rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#GrantId
 dcso:GrantId rdf:type owl:Class ;
-             rdfs:subClassOf dcso:Id
-  ;
+             rdfs:subClassOf dcso:Id ;
              rdfs:comment "Identifier for grant" .
 
 
 ###  https://w3id.org/dcso/ns/core#Host
 dcso:Host rdf:type owl:Class ;
           rdfs:comment "Provides information on the system where data is stored. It can be used to provide details on a repository where data is deposited, e.g. a Core Trust Seal certified repository located in Europe that uses DOIs. It can also provide details on systems where data is stored and processed during research, e.g. a high performance computer that uses fast storage with two daily backups. " .
-
-
-###  https://w3id.org/dcso/ns/core#ID
-dcso:Id
-  rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#Id
@@ -613,8 +651,7 @@ dcso:Metadata rdf:type owl:Class ;
 
 ###  https://w3id.org/dcso/ns/core#MetadataStandardId
 dcso:MetadataStandardId rdf:type owl:Class ;
-                        rdfs:subClassOf dcso:Id
-  ;
+                        rdfs:subClassOf dcso:Id ;
                         rdfs:comment "Identifier for the metadata standard used." .
 
 
@@ -634,12 +671,18 @@ dcso:TechnicalResource rdf:type owl:Class ;
 
 
 ###  https://w3id.org/dcso/ns/extension#Country
-dcsx:Country rdf:type owl:Class .
+dcsx:Country rdf:type owl:Class ;
+             rdfs:comment "A Country corresponds to a geo-location. It is used, for instance, to state where a storage system is located." .
 
 
 ###  https://w3id.org/dcso/ns/extension#CurrencyCode
-dcsx:CurrencyCode rdf:type owl:Class .
+dcsx:CurrencyCode rdf:type owl:Class ;
+                  rdfs:comment "A CurrencyCode is used to express a currency, for instance, used to express values in a Cost." .
 
 
 ###  https://w3id.org/dcso/ns/extension#Language
-dcsx:Language rdf:type owl:Class .
+dcsx:Language rdf:type owl:Class ;
+              rdfs:comment "A Language used to express, for instance, data encoded in a Dataset." .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
