@@ -28,9 +28,15 @@ Versions available:
 ## Authors
 
 * **[João Cardoso](https://github.com/JoaoMFCardoso)**
+* **[Fajar J. Ekaputra](https://github.com/fekaputra)**
+* **[Marie Christine Jacquemot](https://github.com/JoaoMFCardoso)**
+* **[Leyla Garcia](https://github.com/ljgarcia)**
+
+## Contributors
+
+* **[Daniel Faria](https://github.com/DanFaria)**
 
 ## Acknowledgments
 
-* Daniel Faria 
 * Tomasz Miksa
 * Diogo Proença
