@@ -23,7 +23,7 @@ Versions available:
 
 * **[João Cardoso](https://github.com/JoaoMFCardoso)**
 * **[Fajar J. Ekaputra](https://github.com/fekaputra)**
-* **[Marie Christine Jacquemot](https://github.com/JoaoMFCardoso)**
+* **[Marie Christine Jacquemot](https://github.com/JacquemotMC)**
 * **[Leyla Garcia](https://github.com/ljgarcia)**
 
 ## Contributors
