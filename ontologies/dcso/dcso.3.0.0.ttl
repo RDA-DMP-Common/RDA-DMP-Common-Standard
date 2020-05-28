@@ -39,7 +39,8 @@ terms:contributor rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/created
-terms:created rdf:type owl:AnnotationProperty .
+terms:created rdf:type owl:AnnotationProperty ;
+              rdfs:label "Created" .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -47,7 +48,8 @@ terms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
-terms:description rdf:type owl:AnnotationProperty .
+terms:description rdf:type owl:AnnotationProperty ;
+                  rdfs:label "Description" .
 
 
 ###  http://purl.org/dc/terms/identifier
@@ -55,7 +57,8 @@ terms:identifier rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/modified
-terms:modified rdf:type owl:AnnotationProperty .
+terms:modified rdf:type owl:AnnotationProperty ;
+               rdfs:label "Modified" .
 
 
 ###  http://purl.org/dc/terms/rights
@@ -63,7 +66,8 @@ terms:rights rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
-terms:title rdf:type owl:AnnotationProperty .
+terms:title rdf:type owl:AnnotationProperty ;
+            rdfs:label "Title" .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -225,28 +229,49 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://purl.org/dc/terms/format
-terms:format rdf:type owl:DatatypeProperty .
+terms:format rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Format according to: https://www.iana.org/assignments/media-types/media-types.xhtml if appropriate, otherwise use the common name for this format" .
 
 
 ###  http://purl.org/dc/terms/issued
-terms:issued rdf:type owl:DatatypeProperty .
+terms:issued rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Issued date" .
 
 
 ###  http://purl.org/dc/terms/language
 terms:language rdf:type owl:DatatypeProperty ;
-               rdfs:comment "Validation with ShEx/SHACL" .
+               rdfs:comment """Language expressed using ISO 639-3
+Validation with ShEx/SHACL""" .
+
+
+###  http://www.w3.org/ns/dcat#accessURL
+dcat:accessURL rdf:type owl:DatatypeProperty ;
+               rdfs:comment "A URL of the resource that gives access to a distribution of the dataset. e.g. landing page." .
+
+
+###  http://www.w3.org/ns/dcat#byteSize
+dcat:byteSize rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Byte size" .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+dcat:downloadURL rdf:type owl:DatatypeProperty ;
+                 rdfs:comment "The URL of the downloadable file in a given format. E.g. CSV file or RDF file." .
 
 
 ###  http://www.w3.org/ns/dcat#keyword
-dcat:keyword rdf:type owl:DatatypeProperty .
+dcat:keyword rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Keyword to describe the dataset" .
 
 
 ###  http://xmlns.com/foaf/0.1/mbox
-foaf:mbox rdf:type owl:DatatypeProperty .
+foaf:mbox rdf:type owl:DatatypeProperty ;
+          rdfs:comment "E_mail address" .
 
 
 ###  http://xmlns.com/foaf/0.1/name
-foaf:name rdf:type owl:DatatypeProperty .
+foaf:name rdf:type owl:DatatypeProperty ;
+          rdfs:comment "Name of a person" .
 
 
 ###  https://w3id.org/dcso/ns/core#availability
@@ -258,32 +283,58 @@ foaf:name rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/dcso/ns/core#available_until
 :available_until rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Distribution ;
-                 rdfs:range xsd:dateTime .
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "Indicates how long this distribution will be/ should be available" .
 
 
 ###  https://w3id.org/dcso/ns/core#backup_frequency
 :backup_frequency rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Host ;
-                  rdfs:range xsd:string .
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Backup frequency" .
 
 
 ###  https://w3id.org/dcso/ns/core#backup_type
 :backup_type rdf:type owl:DatatypeProperty ;
              rdfs:domain :Host ;
-             rdfs:range xsd:string .
+             rdfs:range xsd:string ;
+             rdfs:comment "Backup type" .
 
 
 ###  https://w3id.org/dcso/ns/core#certified_with
 :certified_with rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Host ;
                 rdfs:range xsd:string ;
-                rdfs:comment "Validation with ShEx/SHACL" .
+                rdfs:comment """Repository certified to a recognised standard
+Allowed Values:
+
+    din31644
+    dini-zertifikat
+    dsa
+    iso16363
+    iso16919
+    trac
+    wds
+    coretrustseal""" ,
+                             "Validation with ShEx/SHACL" .
 
 
 ###  https://w3id.org/dcso/ns/core#currency_code
 :currency_code rdf:type owl:DatatypeProperty ;
                rdfs:domain :Cost ;
-               rdfs:comment "Validation with ShEx/SHACL" .
+               rdfs:comment """Allowed values defined by ISO 4217.
+Validation with ShEx/SHACL""" .
+
+
+###  https://w3id.org/dcso/ns/core#data_access
+:data_access rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Availability" ,
+                          """Indicates access mode for data.
+Allowed Values:
+
+    open
+    shared
+    closed""" .
 
 
 ###  https://w3id.org/dcso/ns/core#data_quality_assurance
@@ -295,65 +346,109 @@ foaf:name rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/dcso/ns/core#end
 :end rdf:type owl:DatatypeProperty ;
      rdfs:domain :Project ;
-     rdfs:range xsd:dateTime .
+     rdfs:range xsd:dateTime ;
+     rdfs:comment "Project end date" .
 
 
 ###  https://w3id.org/dcso/ns/core#ethical_issues_description
 :ethical_issues_description rdf:type owl:DatatypeProperty ;
                             rdfs:domain :DMP ;
-                            rdfs:range xsd:string .
+                            rdfs:range xsd:string ;
+                            rdfs:comment "To describe ethical issues directly in a DMP" .
 
 
 ###  https://w3id.org/dcso/ns/core#ethical_issues_exist
 :ethical_issues_exist rdf:type owl:DatatypeProperty ;
-                      rdfs:domain :DMP .
+                      rdfs:domain :DMP ;
+                      rdfs:comment """To indicate whether there are ethical issues related to data that this DMP describes.
+Allowed Values:
+
+    yes
+    no
+    unknown""" .
 
 
 ###  https://w3id.org/dcso/ns/core#ethical_issues_report
 :ethical_issues_report rdf:type owl:DatatypeProperty ;
                        rdfs:domain :DMP ;
-                       rdfs:range xsd:anyURI .
+                       rdfs:range xsd:anyURI ;
+                       rdfs:comment "To indicate where a protocol from a meeting with an ethical commitee can be found" .
 
 
 ###  https://w3id.org/dcso/ns/core#funding_status
 :funding_status rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Funding .
+                rdfs:domain :Funding ;
+                rdfs:comment """To express different phases of project lifecycle.
+Allowed Values:
+
+    planned
+    applied
+    granted
+    rejected""" .
 
 
 ###  https://w3id.org/dcso/ns/core#geo_location
 :geo_location rdf:type owl:DatatypeProperty ;
               rdfs:domain :Host ;
-              rdfs:comment "Validation with ShEx/SHACL" .
+              rdfs:comment "Physical location of the data expressed using ISO 3166-1 country code." ,
+                           "Validation with ShEx/SHACL" .
 
 
 ###  https://w3id.org/dcso/ns/core#identifier_type
 :identifier_type rdf:type owl:DatatypeProperty ;
                  rdfs:domain :ID ;
                  rdfs:range xsd:string ;
-                 rdfs:comment "Validation with ShEx/SHACL" .
+                 rdfs:comment "Identifier type" ,
+                              "Validation with ShEx/SHACL" .
 
 
 ###  https://w3id.org/dcso/ns/core#licence_ref
 :licence_ref rdf:type owl:DatatypeProperty ;
              rdfs:domain :License ;
              rdfs:range xsd:anyURI ;
+             rdfs:comment "" ,
+                          "Link to license document." ;
              rdfs:seeAlso "https://jats.nlm.nih.gov/archiving/tag-library/1.2/element/ali-license_ref.html" .
 
 
 ###  https://w3id.org/dcso/ns/core#personal_data
 :personal_data rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Dataset .
+               rdfs:domain :Dataset ;
+               rdfs:comment "Informs about the presence or absence of personal data in the dataset" .
 
 
 ###  https://w3id.org/dcso/ns/core#pid_system
 :pid_system rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Host .
+            rdfs:domain :Host ;
+            rdfs:comment """PID System
+Allowed Values:
+
+    ark
+    arxiv
+    bibcode
+    doi
+    ean13
+    eissn
+    handle
+    igsn
+    isbn
+    issn
+    istc
+    lissn
+    lsid
+    pmid
+    purl
+    upc
+    url
+    urn
+    other""" .
 
 
 ###  https://w3id.org/dcso/ns/core#preservation_statement
 :preservation_statement rdf:type owl:DatatypeProperty ;
                         rdfs:domain :Dataset ;
-                        rdfs:range xsd:string .
+                        rdfs:range xsd:string ;
+                        rdfs:comment "Preservation statement" .
 
 
 ###  https://w3id.org/dcso/ns/core#report
@@ -365,53 +460,67 @@ foaf:name rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/dcso/ns/core#role
 :role rdf:type owl:DatatypeProperty ;
       rdfs:domain :Contributor ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:comment "Type of contributor" .
 
 
 ###  https://w3id.org/dcso/ns/core#sensitive_data
 :sensitive_data rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Dataset .
+                rdfs:domain :Dataset ;
+                rdfs:comment "Informs about the presence or absence of sensitive data in the dataset" .
 
 
 ###  https://w3id.org/dcso/ns/core#start
 :start rdf:type owl:DatatypeProperty ;
        rdfs:domain :Project ;
-       rdfs:range xsd:dateTime .
+       rdfs:range xsd:dateTime ;
+       rdfs:comment "Project start date" .
 
 
 ###  https://w3id.org/dcso/ns/core#start_date
 :start_date rdf:type owl:DatatypeProperty ;
             rdfs:domain :License ;
-            rdfs:range xsd:dateTime .
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "If date is set in the future, it indicates embargo period." .
 
 
 ###  https://w3id.org/dcso/ns/core#storage_type
 :storage_type rdf:type owl:DatatypeProperty ;
               rdfs:domain :Host ;
-              rdfs:range xsd:string .
+              rdfs:range xsd:string ;
+              rdfs:comment "The type of storage required" .
 
 
 ###  https://w3id.org/dcso/ns/core#support_versioning
 :support_versioning rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Host .
+                    rdfs:domain :Host ;
+                    rdfs:comment """Informs of the support for versioning
+  Allowed Values:
+
+    yes
+    no
+    unknown""" .
 
 
 ###  https://w3id.org/dcso/ns/core#type
 :type rdf:type owl:DatatypeProperty ;
       rdfs:domain :Dataset ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:comment "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf http://vocabularies.coar-repositories.org/pubby/resource_type.html" .
 
 
 ###  https://w3id.org/dcso/ns/core#url
 :url rdf:type owl:DatatypeProperty ;
      rdfs:domain :Host ;
-     rdfs:range xsd:anyURI .
+     rdfs:range xsd:anyURI ;
+     rdfs:comment "The URL of the system hosting a distribution of a dataset" .
 
 
 ###  https://w3id.org/dcso/ns/core#value
 :value rdf:type owl:DatatypeProperty ;
        rdfs:domain :Cost ;
-       rdfs:range xsd:integer .
+       rdfs:range xsd:integer ;
+       rdfs:comment "Value for cost" .
 
 
 #################################################################
@@ -432,68 +541,82 @@ foaf:Person rdf:type owl:Class .
 
 ###  https://w3id.org/dcso/ns/core#Contact
 :Contact rdf:type owl:Class ;
-         rdfs:subClassOf foaf:Person .
+         rdfs:subClassOf foaf:Person ;
+         rdfs:comment "Specifies the party which can provide any information on the DMP. This is not necessarily the DMP creator, and can be a person or an organisation. " .
 
 
 ###  https://w3id.org/dcso/ns/core#ContactId
 :ContactId rdf:type owl:Class ;
-           rdfs:subClassOf :ID .
+           rdfs:subClassOf :ID ;
+           rdfs:comment "Identifier for a contact person" .
 
 
 ###  https://w3id.org/dcso/ns/core#Contributor
 :Contributor rdf:type owl:Class ;
-             rdfs:subClassOf foaf:Person .
+             rdfs:subClassOf foaf:Person ;
+             rdfs:comment "For listing all parties involved in the process of the data management described by this DMP, and those parties involved in the creation and management of the DMP itself. " .
 
 
 ###  https://w3id.org/dcso/ns/core#ContributorId
 :ContributorId rdf:type owl:Class ;
-               rdfs:subClassOf :ID .
+               rdfs:subClassOf :ID ;
+               rdfs:comment "Identifier for a contributor person" .
 
 
 ###  https://w3id.org/dcso/ns/core#Cost
-:Cost rdf:type owl:Class .
+:Cost rdf:type owl:Class ;
+      rdfs:comment "Provides a list of costs related to data management" .
 
 
 ###  https://w3id.org/dcso/ns/core#DMP
-:DMP rdf:type owl:Class .
+:DMP rdf:type owl:Class ;
+     rdfs:comment "Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory. " .
 
 
 ###  https://w3id.org/dcso/ns/core#DMPId
 :DMPId rdf:type owl:Class ;
-       rdfs:subClassOf :ID .
+       rdfs:subClassOf :ID ;
+       rdfs:comment "Identifier for a DMP" .
 
 
 ###  https://w3id.org/dcso/ns/core#Dataset
 :Dataset rdf:type owl:Class ;
-         rdfs:subClassOf dcat:Dataset .
+         rdfs:subClassOf dcat:Dataset ;
+         rdfs:comment "This follows the defintion of Dataset in the W3C DCAT specification. Dataset can be understood as a logical entity depicting data, e.g. raw data. It provides high level information about the data. The granularity of dataset depends on a specific setting. In edge cases it can be a file, but also a collection of files in different formats" .
 
 
 ###  https://w3id.org/dcso/ns/core#DatasetId
 :DatasetId rdf:type owl:Class ;
-           rdfs:subClassOf :ID .
+           rdfs:subClassOf :ID ;
+           rdfs:comment "Identifier for a dataset" .
 
 
 ###  https://w3id.org/dcso/ns/core#Distribution
 :Distribution rdf:type owl:Class ;
-              rdfs:subClassOf dcat:Distribution .
+              rdfs:subClassOf dcat:Distribution ;
+              rdfs:comment "This follows the defintion of Dataset in the W3C DCAT specification. Dataset can be understood as a logical entity depicting data, e.g. raw data. It provides high level information about the data. The granularity of dataset depends on a specific setting. In edge cases it can be a file, but also a collection of files in different formats" .
 
 
 ###  https://w3id.org/dcso/ns/core#FunderId
 :FunderId rdf:type owl:Class ;
-          rdfs:subClassOf :ID .
+          rdfs:subClassOf :ID ;
+          rdfs:comment "Identifier for funders : it is recommended to use CrossRef Funder Registry. " .
 
 
 ###  https://w3id.org/dcso/ns/core#Funding
-:Funding rdf:type owl:Class .
+:Funding rdf:type owl:Class ;
+         rdfs:comment "For specifying details on funded projects, e.g. NSF of EC funded projects. " .
 
 
 ###  https://w3id.org/dcso/ns/core#GrantId
 :GrantId rdf:type owl:Class ;
-         rdfs:subClassOf :ID .
+         rdfs:subClassOf :ID ;
+         rdfs:comment "Identifier for grant" .
 
 
 ###  https://w3id.org/dcso/ns/core#Host
-:Host rdf:type owl:Class .
+:Host rdf:type owl:Class ;
+      rdfs:comment "Provides information on the system where data is stored. It can be used to provide details on a repository where data is deposited, e.g. a Core Trust Seal certified repository located in Europe that uses DOIs. It can also provide details on systems where data is stored and processed during research, e.g. a high performance computer that uses fast storage with two daily backups. " .
 
 
 ###  https://w3id.org/dcso/ns/core#ID
@@ -501,28 +624,34 @@ foaf:Person rdf:type owl:Class .
 
 
 ###  https://w3id.org/dcso/ns/core#License
-:License rdf:type owl:Class .
+:License rdf:type owl:Class ;
+         rdfs:comment "Used to indicate the license under which data (each specific Distribution) will be made available. It also allows for modelling embargoes. " .
 
 
 ###  https://w3id.org/dcso/ns/core#Metadata
-:Metadata rdf:type owl:Class .
+:Metadata rdf:type owl:Class ;
+          rdfs:comment "Provides a pointer to a metadata standard used to describe the data. It does not contain any actual metadata relating to the dataset. " .
 
 
 ###  https://w3id.org/dcso/ns/core#MetadataStandardId
 :MetadataStandardId rdf:type owl:Class ;
-                    rdfs:subClassOf :ID .
+                    rdfs:subClassOf :ID ;
+                    rdfs:comment "Identifier for the metadata standard used." .
 
 
 ###  https://w3id.org/dcso/ns/core#Project
-:Project rdf:type owl:Class .
+:Project rdf:type owl:Class ;
+         rdfs:comment "Describes the project associated with the DMP, if applicable. It can be used to describe any type of project: that is, not only funded projects, but also internal projects, PhD theses, etc. " .
 
 
 ###  https://w3id.org/dcso/ns/core#SecurityPrivacy
-:SecurityPrivacy rdf:type owl:Class .
+:SecurityPrivacy rdf:type owl:Class ;
+                 rdfs:comment "Used to indicate any specific requirements related to security and privacy of a specific dataset, e.g. to indicate that data is not anonymized. " .
 
 
 ###  https://w3id.org/dcso/ns/core#TechnicalResource
-:TechnicalResource rdf:type owl:Class .
+:TechnicalResource rdf:type owl:Class ;
+                   rdfs:comment "For specifying equipment needed/used to create or process the data, e.g. a microscope, etc. " .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
