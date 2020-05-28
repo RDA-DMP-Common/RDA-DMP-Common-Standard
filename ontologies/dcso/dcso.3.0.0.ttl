@@ -21,7 +21,7 @@
                                  owl:versionIRI <https://w3id.org/dcso/ns/core/3.0.0> ;
                                  terms:contributor "Daniel Faria" ,
                                                    "Diogo Proença" ,
-                                                   "Tomasz Miksa" ;
+                                                   "Leyla Garcia" ;
                                  terms:creator "Fajar J. Ekaputra" ,
                                                "João Cardoso" ,
                                                "Marie Christine Jacquemot" ;
@@ -34,8 +34,16 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/created
 terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
@@ -50,8 +58,16 @@ terms:identifier rdf:type owl:AnnotationProperty .
 terms:modified rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/rights
+terms:rights rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/title
 terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -62,33 +78,37 @@ terms:title rdf:type owl:AnnotationProperty .
 :hasContact rdf:type owl:ObjectProperty ;
             rdfs:domain :DMP ;
             rdfs:range :Contact ;
-            rdfs:comment "Contact for the DMP"^^rdfs:Literal .
+            rdfs:comment "Any Contact that can provide information on this DMP."^^rdfs:Literal .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContactId
 :hasContactId rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :hasId ;
               rdfs:domain :Contact ;
-              rdfs:range :ContactId .
+              rdfs:range :ContactId ;
+              rdfs:comment "Any ID used to uniquely identified this Contact." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContributor
 :hasContributor rdf:type owl:ObjectProperty ;
                 rdfs:domain :DMP ;
-                rdfs:range :Contributor .
+                rdfs:range :Contributor ;
+                rdfs:comment "Any Contributor involved in the process of the data management described by this DMP as well as any Contributor involved in the creation and management of this DMP itself." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasContributorId
 :hasContributorId rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :hasId ;
                   rdfs:domain :Contributor ;
-                  rdfs:range :ContributorId .
+                  rdfs:range :ContributorId ;
+                  rdfs:comment "Any ID used to uniquely identified this Contributor." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasCost
 :hasCost rdf:type owl:ObjectProperty ;
          rdfs:domain :DMP ;
-         rdfs:range :Cost .
+         rdfs:range :Cost ;
+         rdfs:comment "Any Cost related to data management included in this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDMPId
@@ -96,94 +116,108 @@ terms:title rdf:type owl:AnnotationProperty .
           rdfs:subPropertyOf :hasId ;
           rdfs:domain :DMP ;
           rdfs:range :DMPId ;
-          rdfs:comment "Provides a TypeIdentifier for a DMP"^^xsd:string .
+          rdfs:comment "Any ID used to uniquely identified this DMP."^^xsd:string .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDataset
 :hasDataset rdf:type owl:ObjectProperty ;
             rdfs:domain :DMP ;
-            rdfs:range :Dataset .
+            rdfs:range :Dataset ;
+            rdfs:comment "Any Dataset considered under this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDatasetId
 :hasDatasetId rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :hasId ;
               rdfs:domain :Dataset ;
-              rdfs:range :DatasetId .
+              rdfs:range :DatasetId ;
+              rdfs:comment "Any ID used to uniquely identified this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasDistribution
 :hasDistribution rdf:type owl:ObjectProperty ;
                  rdfs:domain :Dataset ;
-                 rdfs:range :Distribution .
+                 rdfs:range :Distribution ;
+                 rdfs:comment "Any Distribution, i.e., specific instance, of this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasFunderId
 :hasFunderId rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasId ;
              rdfs:domain :Funding ;
-             rdfs:range :FunderId .
+             rdfs:range :FunderId ;
+             rdfs:comment "Any ID used to uniquely identified this Funder." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasFunding
 :hasFunding rdf:type owl:ObjectProperty ;
             rdfs:domain :Project ;
-            rdfs:range :Funding .
+            rdfs:range :Funding ;
+            rdfs:comment "Any Funding granted for this Project." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasGrantId
 :hasGrantId rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :hasId ;
             rdfs:domain :Funding ;
-            rdfs:range :GrantId .
+            rdfs:range :GrantId ;
+            rdfs:comment "Any ID used to uniquely identified a Grant associated to this Funder." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasHost
 :hasHost rdf:type owl:ObjectProperty ;
          rdfs:domain :Distribution ;
-         rdfs:range :Host .
+         rdfs:range :Host ;
+         rdfs:comment "Any Host, i., storage system, where this Distribution has been stored." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasId
 :hasId rdf:type owl:ObjectProperty ;
-       rdfs:range :ID .
+       rdfs:range :ID ;
+       rdfs:comment "Any ID used to uniquely identified a Thing." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasLicence
 :hasLicence rdf:type owl:ObjectProperty ;
             rdfs:domain :Distribution ;
-            rdfs:range :License .
+            rdfs:range :License ;
+            rdfs:comment "A License used for this Distribution." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasMetadataStandard
 :hasMetadataStandard rdf:type owl:ObjectProperty ;
                      rdfs:domain :Dataset ;
-                     rdfs:range :Metadata .
+                     rdfs:range :Metadata ;
+                     rdfs:comment "A Metadata standard used to describe data in this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasMetadataStandardId
 :hasMetadataStandardId rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf :hasId ;
                        rdfs:domain :Metadata ;
-                       rdfs:range :MetadataStandardId .
+                       rdfs:range :MetadataStandardId ;
+                       rdfs:comment "Any ID used to uniquely identified this Metadata standard." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasProject
 :hasProject rdf:type owl:ObjectProperty ;
             rdfs:domain :DMP ;
-            rdfs:range :Project .
+            rdfs:range :Project ;
+            rdfs:comment "Any Project associated with this DMP." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasSecurityPrivacy
 :hasSecurityPrivacy rdf:type owl:ObjectProperty ;
                     rdfs:domain :Dataset ;
-                    rdfs:range :SecurityPrivacy .
+                    rdfs:range :SecurityPrivacy ;
+                    rdfs:comment "Any specific requirements related to security and privacy of this Dataset." .
 
 
 ###  https://w3id.org/dcso/ns/core#hasTechnicalResource
 :hasTechnicalResource rdf:type owl:ObjectProperty ;
                       rdfs:domain :Dataset ;
-                      rdfs:range :TechnicalResource .
+                      rdfs:range :TechnicalResource ;
+                      rdfs:comment "Any Technical Resource, e.g, microscope, needed/used to create or process the data in this Dataset." .
 
 
 #################################################################
@@ -491,4 +525,4 @@ foaf:Person rdf:type owl:Class .
 :TechnicalResource rdf:type owl:Class .
 
 
-###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
