@@ -1,0 +1,72 @@
+@prefix : <https://w3id.org/dcso/ns/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcso: <https://w3id.org/dcso/ns/core#> .
+@prefix dcsx: <https://w3id.org/dcso/ns/extension#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcs-cur: <https://w3id.org/dcso/id/iso4217/> .
+@prefix dcs-geo: <https://w3id.org/dcso/id/iso3166-1/> .
+@prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
+@prefix ex: <https://w3id.org/dcso/id/example/> .
+@base <https://w3id.org/dcso/ns/core> .
+
+###  https://w3id.org/dcso/id/example/dmp_1
+ex:dmp_1 rdf:type owl:NamedIndividual ,
+                  dcso:DMP ;
+         dcso:hasContact ex:contact_1 ;
+         dcso:hasContributor ex:contact_1 ,
+                             ex:contact_2 ;
+         #dcso:hasCost ex:cost_1 ;
+         #dcso:hasDMPId ex:dmpid_1 ;
+         #dcso:hasDataset ex:dataset_1 ;
+         #dcso:hasProject ex:project_1 ;
+         dcso:ethical_issues_exist "unknown" ;
+         terms:created "2019-09-18T00:00:00" ;
+         terms:description "This DMP ." ;
+         terms:language dcs-lang:eng ;
+         terms:modified "2019-09-18T00:00:00" ;
+         terms:title "Unidade de Genómica" .
+
+###  https://w3id.org/dcso/id/example/contact_1
+ex:contact_1 rdf:type owl:NamedIndividual ,
+                      dcso:Contributor ,
+                      dcso:Contact ;
+             dcso:hasContactId ex:id_1 ;
+             dcso:hasContributorId ex:id_1 ;
+             foaf:mbox "rleite@igc.gulbenkian.pt" ;
+             dcso:role "project leader" ;
+             foaf:name "Ricardo Leite" .
+
+###  https://w3id.org/dcso/id/example/id_1
+ex:id_1 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "orcid" ;
+        terms:identifier "0000-0002-9622-3895" .
+
+###  https://w3id.org/dcso/id/example/contact_2
+ex:contact_2 rdf:type owl:NamedIndividual ,
+                      dcso:Contributor ;
+             dcso:hasContributorId ex:id_2 ;
+             foaf:mbox "sladeiro@igc.gulbenkian.pt" ;
+             dcso:role "project leader" ;
+             foaf:name "Susana Ladeiro" .
+
+###  https://w3id.org/dcso/id/example/id_2
+ex:id_2 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "orcid" ;
+        terms:identifier "0000-0003-4333-2008" .

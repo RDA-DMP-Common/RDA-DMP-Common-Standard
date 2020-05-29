@@ -1,0 +1,46 @@
+PREFIX dcs: <http://ontologi.es/doap-changeset#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcso: <https://w3id.org/dcso/ns/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+start = @<dmp>
+
+<dmp> EXTRA rdf:type {
+  rdf:type [ dcso:DMP ] ; 
+  dcso:hasContact @<contact> {1} ;
+  dcso:hasContributor @<contributor> * ;
+  dcso:hasCost @<cost> * ;
+  dcso:hasProject @<project> * ;
+}
+
+<contact> EXTRA rdf:type {
+  rdf:type [ dcso:Contact ] ; 
+  dcso:hasContactId @<contactOrContributorId> + ; #e.g., one orcid and one isni, but at least one
+  foaf:mbox xsd:string + ; #at least one email
+  foaf:name xsd:string {1} ;
+}
+
+<contributor> EXTRA rdf:type {
+  rdf:type [ dcso:Contributor ] ;
+  dcso:hasContributorId @<contactOrContributorId> + ;  #e.g., one orcid and one isni, but at least one
+  foaf:mbox xsd:string * ; 
+  foaf:name xsd:string {1} ;
+  dcso:role xsd:string + ; 
+}
+
+<contactOrContributorId> EXTRA rdf:type {
+  rdf:type [ dcso:ContactId dcso:ContributorId dcso:Id ] ;
+  terms:identifier IRI OR xsd:string {1} ;
+  dcso:identifierType xsd:string {1} ; #e.g., orcid, isni, openid, other
+}
+
+<cost> {
+
+}
+
+<project> {
+}
