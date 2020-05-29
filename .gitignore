@@ -3,3 +3,4 @@ secret_token.yaml
 secret_credentials.json
 db.sqlite
 ontologies/core/catalog-v001.xml
+ontologies/extensions/catalog-v001.xml
