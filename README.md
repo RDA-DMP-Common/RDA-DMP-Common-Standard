@@ -207,7 +207,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 
 <table style="width: 99%;"><thead><tr><th>Name</th><th>Description</th><th>Data Type</th><th>Cardinality</th><th>Example Value</th></tr></thead><tbody><tr><td valign="top"><a id="project_description" href="#project_description_tree">description</a></td><td valign="top">Project description</td><td valign="top">String</td><td valign="top">0..1</td><td valign="top">Project develops novel...</td></tr>
 <tr><td valign="top"><a id="project_end" href="#project_end_tree">end</a></td><td valign="top">Project end date</td><td valign="top">Date</td><td valign="top">1</td><td valign="top">2020-03-31</td></tr>
-<tr><td valign="top"><a id="funding" href="#funding_tree">funding</a></td><td valign="top">Funding related with a project</td><td valign="top">Nested Data Structure</td><td valign="top">0..1</td><td valign="top"> </td></tr>
+<tr><td valign="top"><a id="funding" href="#funding_tree">funding</a></td><td valign="top">Funding related with a project</td><td valign="top">Nested Data Structure</td><td valign="top">0..n</td><td valign="top"> </td></tr>
 <tr><td valign="top"><a id="project_start" href="#project_start_tree">start</a></td><td valign="top">Project start date</td><td valign="top">Date</td><td valign="top">1</td><td valign="top">2019-04-01</td></tr>
 <tr><td valign="top"><a id="project_title" href="#project_title_tree">title</a></td><td valign="top">Project title</td><td valign="top">String</td><td valign="top">1</td><td valign="top">Our New Project</td></tr>
 </tbody></table>
