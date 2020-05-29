@@ -11,10 +11,19 @@ start = @<dmp>
 
 <dmp> EXTRA rdf:type {
   rdf:type [ dcso:DMP ] ; 
+  dcso:hasDMPId @<dmpId> {1} ;
   dcso:hasContact @<contact> {1} ;
   dcso:hasContributor @<contributor> * ;
   dcso:hasCost @<cost> * ;
   dcso:hasProject @<project> * ;
+}
+
+<dmpId> EXTRA rdf:type {
+  rdf:type [ dcso:DMPId dcso:Id ] ;
+  $<commonIdInfo> (  
+    terms:identifier IRI OR xsd:string {1} ;
+    dcso:identifierType xsd:string {1} ; #e.g., orcid, isni, openid, other
+  )
 }
 
 <contact> EXTRA rdf:type {
@@ -34,13 +43,24 @@ start = @<dmp>
 
 <contactOrContributorId> EXTRA rdf:type {
   rdf:type [ dcso:ContactId dcso:ContributorId dcso:Id ] ;
-  terms:identifier IRI OR xsd:string {1} ;
-  dcso:identifierType xsd:string {1} ; #e.g., orcid, isni, openid, other
+  &<commonIdInfo> ;
 }
 
-<cost> {
-
+<cost> EXTRA rdf:type {
+  rdf:type [ dcso:Cost ] ;
+  dcso:hasCurrencyCode IRI or xsd:string ? ;
+  terms:description xsd:string ? ;
+  terms:title xsd:string {1} ;
+  dcso:value xsd:decimal OR xsd:integer OR xsd:long ? ;
 }
 
-<project> {
+<project> EXTRA rdf:type {
+  rdf:type [ dcso:Project ] ;
+  terms:description xsd:string ? ;
+  terms:title xsd:string {1} ;
+  dcso:hasFunding @<funding> ? ;
+  dcso:start xsd:date OR xsd:dateTime {1} ;
+  dcso:end xsd:date OR xsd:dateTime {1} ; 
 }
+
+<funding> {}

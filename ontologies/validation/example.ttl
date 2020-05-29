@@ -27,19 +27,25 @@
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
+         dcso:hasDMPId ex:dmpid_1 ;
          dcso:hasContact ex:contact_1 ;
          dcso:hasContributor ex:contact_1 ,
                              ex:contact_2 ;
          #dcso:hasCost ex:cost_1 ;
-         #dcso:hasDMPId ex:dmpid_1 ;
          #dcso:hasDataset ex:dataset_1 ;
          #dcso:hasProject ex:project_1 ;
          dcso:ethical_issues_exist "unknown" ;
          terms:created "2019-09-18T00:00:00" ;
-         terms:description "This DMP ." ;
+         terms:description "This DMP is awesome!" ;
          terms:language dcs-lang:eng ;
          terms:modified "2019-09-18T00:00:00" ;
          terms:title "Unidade de Genómica" .
+
+###  https://w3id.org/dcso/id/example/dmpid_1
+ex:dmpid_1 rdf:type owl:NamedIndividual ,
+                    dcso:Id ;
+           dcso:identifierType "url" ;
+           terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" .
 
 ###  https://w3id.org/dcso/id/example/contact_1
 ex:contact_1 rdf:type owl:NamedIndividual ,
@@ -70,3 +76,20 @@ ex:id_2 rdf:type owl:NamedIndividual ,
                  dcso:Id ;
         dcso:identifierType "orcid" ;
         terms:identifier "0000-0003-4333-2008" .
+
+###  https://w3id.org/dcso/id/example/cost_1
+ex:cost_1 rdf:type owl:NamedIndividual ,
+                   dcso:Cost ;
+          dcso:hasCurrencyCode dcs-cur:eur ;
+          dcso:value 100000 ;
+          terms:description "The cost of buying and maintaining equipment for the laboratory." ;
+          terms:title "Equipment" .
+
+###  https://w3id.org/dcso/id/example/project_1
+ex:project_1 rdf:type owl:NamedIndividual ,
+                      dcso:Project ;
+             dcso:hasFunding ex:funding_1 ;
+             dcso:end "2020-12-01T00:00:00"^^xsd:date ;
+             dcso:start "2017-01-01T00:00:00"^^xsd:date ;
+             terms:description "ONEIDA is a project." ;
+             terms:title "ONEIDA" .          
