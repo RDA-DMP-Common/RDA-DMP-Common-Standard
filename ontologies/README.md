@@ -11,11 +11,11 @@ This is still a work in progress. The idea behind having the DMP Common Standard
 ## Directory Organization
 
 ```bash
-|-- core - Core elements of the DCSO
-|-- diagrams - DCSO diagrams
-|-- examples - Examples of DMPs represented using the DCSO
-|-- extensions - Context specific extensions of the DCSO
-|-- validation - Shex representation of the DCSO constraints
+├── core - Core elements of the DCSO
+├── diagrams - DCSO diagrams
+├── examples - Examples of DMPs represented using the DCSO
+├── extensions - Context specific extensions of the DCSO
+└── validation - Shex representation of the DCSO constraints
 ```
 
 ## Authors
