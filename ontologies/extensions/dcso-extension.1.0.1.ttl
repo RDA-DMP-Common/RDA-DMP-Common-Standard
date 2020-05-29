@@ -38,17 +38,17 @@
 
 ###  https://w3id.org/dcso/ns/extension#Country
 :Country rdf:type owl:Class ;
-         rdfs:comment "Country Code based on ISO-3166-1-alpha2"@en .
+         rdfs:comment "A Country corresponds to a geo-location. It is used, for instance, to state where a storage system is located. Country Code based on ISO-3166-1-alpha2"@en .
 
 
 ###  https://w3id.org/dcso/ns/extension#CurrencyCode
 :CurrencyCode rdf:type owl:Class ;
-              rdfs:comment "Currency Code from ISO-4217"@en .
+              rdfs:comment "A CurrencyCode is used to express a currency, for instance, used to express values in a Cost. Currency Code based on ISO-4217"@en .
 
 
 ###  https://w3id.org/dcso/ns/extension#Language
 :Language rdf:type owl:Class ;
-          rdfs:comment "Language Code based on ISO 639-3"@en .
+          rdfs:comment "A Language used to express, for instance, data encoded in a Dataset. Language Code based on ISO 639-3"@en .
 
 
 #################################################################
