@@ -92,4 +92,29 @@ ex:project_1 rdf:type owl:NamedIndividual ,
              dcso:end "2020-12-01T00:00:00"^^xsd:date ;
              dcso:start "2017-01-01T00:00:00"^^xsd:date ;
              terms:description "ONEIDA is a project." ;
-             terms:title "ONEIDA" .          
+             terms:title "ONEIDA" .   
+
+###  https://w3id.org/dcso/id/example/funding_1
+ex:funding_1 rdf:type owl:NamedIndividual ,
+                      dcso:Funding ;
+             dcso:hasFunderId ex:id_4, ex:id_4a ;
+             dcso:hasGrantId ex:id_3 ;
+             dcso:fundingStatus "granted" .       
+
+###  https://w3id.org/dcso/id/example/id_3
+ex:id_3 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "other" ;
+        terms:identifier "03/SAICT/2015" .
+
+###  https://w3id.org/dcso/id/example/id_4
+ex:id_4 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "DOI" ;
+        terms:identifier "http://dx.doi.org/10.13039/501100000780" .
+
+###  https://w3id.org/dcso/id/example/id_4a
+ex:id_4a rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "url" ;
+        terms:identifier                       "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" .
