@@ -31,21 +31,24 @@
 #    Individuals
 #################################################################
 
-###  https://w3id.org/dcso/id/example/contact_1
-ex:contact_1 rdf:type owl:NamedIndividual ,
+###  https://w3id.org/dcso/id/example/contributor_1
+ex:contributor_1 rdf:type owl:NamedIndividual ,
                       dcso:Contributor, dcso:Contact ;
              dcso:hasContactId ex:id_1 ;
              foaf:mbox "rleite@igc.gulbenkian.pt" ;
-             dcso:role "project leader" ;
+             dcso:role "Project Leader" ;
+			 dcso:hasContactId ex:contactid_1;
+			 dcso:hasContributorId ex:contactid_1;
              foaf:name "Ricardo Leite" .
 
 
-###  https://w3id.org/dcso/id/example/contact_2
-ex:contact_2 rdf:type owl:NamedIndividual ,
+###  https://w3id.org/dcso/id/example/contributor_2
+ex:contributor_2 rdf:type owl:NamedIndividual ,
                       dcso:Contributor ;
              dcso:hasContactId ex:id_2 ;
              foaf:mbox "sladeiro@igc.gulbenkian.pt" ;
-             dcso:role "project leader" ;
+             dcso:role "Data Collector" ;
+			 dcso:hasContributorId ex:contributorid_1;
              foaf:name "Susana Ladeiro" .
 
 
@@ -72,6 +75,7 @@ ex:dataset_1 rdf:type owl:NamedIndividual ,
              dcso:type "http://purl.org/coar/resource_type/c_18gh" ;
              terms:description "Quality Control of DNA and RNA " ;
              terms:language dcs-lang:eng ;
+			 dcso:hasDatasetId ex:datasetid_1;
              terms:title "Quality Check QC " .
 
 
@@ -86,47 +90,32 @@ ex:distribution_1 rdf:type owl:NamedIndividual ,
                   dcso:available_until "2022-01-01T00:00:00 " ;
                   dcso:data_access "shared" ;
                   terms:description "Files will be stored in xls and pfd in the storage server (AFS) " ;
-         dcso:hasDatasetId [
-           terms:identifier "dmp-1" ;
-           dcso:identifierType "other" ;
-         ] ;
                   terms:title "Quality control file " .
 
 
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
-         dcso:hasContact ex:contact_1 ;
-         dcso:hasContributor ex:contact_1 ,
-                             ex:contact_2 ;
+         dcso:hasContact ex:contributor_1 ;
+         dcso:hasContributor ex:contributor_1 ,
+                             ex:contributor_2 ;
          dcso:hasCost ex:cost_1 ;
          dcso:hasDMPId ex:dmpid_1 ;
          dcso:hasDataset ex:dataset_1 ;
          dcso:hasProject ex:project_1 ;
          dcso:ethical_issues_exist "unknown" ;
-         dcso:hasDatasetId [
-           terms:identifier "dmp-1" ;
-           dcso:identifierType "other" ;
-         ] ;
+         dcso:hasDMPId ex:dmpid_1;
          terms:created "2019-09-18T00:00:00" ;
          terms:description "This DMP serves to characterize the functioning of the Unidade de Genómica at the Instituto Gulbenkian para a Ciência in Oeiras." ;
          terms:language dcs-lang:eng ;
          terms:modified "2019-09-18T00:00:00" ;
          terms:title "Unidade de Genómica " .
 
-
-###  https://w3id.org/dcso/id/example/dmpid_1
-ex:dmpid_1 rdf:type owl:NamedIndividual ,
-                    dcso:Id ;
-           dcso:identifier_type "url" ;
-           terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" .
-
-
 ###  https://w3id.org/dcso/id/example/funding_1
 ex:funding_1 rdf:type owl:NamedIndividual ,
                       dcso:Funding ;
-             dcso:hasFunderId ex:id_4 ;
-             dcso:hasGrantId ex:id_3 ;
+             dcso:hasFunderId ex:funderid_1 ;
+             dcso:hasGrantId ex:grantid_1 ;
              dcso:funding_status "granted" .
 
 
@@ -142,38 +131,7 @@ ex:host_1 rdf:type owl:NamedIndividual ,
           dcso:support_versioning "no" ;
           terms:description "Storage server (AFS) managed by IGC IT " ;
           terms:title "AFS Server" .
-
-
-###  https://w3id.org/dcso/id/example/id_1
-ex:id_1 rdf:type owl:NamedIndividual ,
-                 dcso:Id ;
-        dcso:identifier_type "orcid" ;
-        terms:identifier "0000-0002-9622-3895" .
-
-
-###  https://w3id.org/dcso/id/example/id_2
-ex:id_2 rdf:type owl:NamedIndividual ,
-                 dcso:Id ;
-        dcso:identifier_type "orcid" ;
-        terms:identifier "0000-0003-4333-2008" .
-
-
-###  https://w3id.org/dcso/id/example/id_3
-ex:id_3 rdf:type owl:NamedIndividual ,
-                 dcso:Id ;
-        dcso:identifier_type "other" ;
-        terms:identifier "03/SAICT/2015" .
-
-
-###  https://w3id.org/dcso/id/example/id_4
-ex:id_4 rdf:type owl:NamedIndividual ,
-                 dcso:Id ;
-        dcso:identifier_type "fundref" ,
-                             "url" ;
-        terms:identifier "http://dx.doi.org/10.13039/501100000780" ,
-                         "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" .
-
-
+		  
 ###  https://w3id.org/dcso/id/example/license_1
 ex:license_1 rdf:type owl:NamedIndividual ,
                       dcso:License ;
@@ -184,7 +142,7 @@ ex:license_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/metadata_1
 ex:metadata_1 rdf:type owl:NamedIndividual ,
                        dcso:Metadata ;
-              dcso:hasMetadataStandardId ex:id_4 ;
+              dcso:hasMetadataStandardId ex:metadataid_1 ;
               terms:description "Used index and sample name (sample sheet) " ;
               terms:language dcs-lang:eng .
 
@@ -211,7 +169,53 @@ ex:technicalresource_1 rdf:type owl:NamedIndividual ,
                                 dcso:TechnicalResource ;
                        terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html " ;
                        terms:title "Ilumina sequencer" .
+		  
+## ID CLASSES		
+
+###  https://w3id.org/dcso/id/example/dmpid_1
+ex:dmpid_1 rdf:type owl:NamedIndividual ,
+                    dcso:DMPId ;
+           dcso:identifier_type "url" ;
+           terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" .
+  
+		  
+###  https://w3id.org/dcso/id/example/contactid_1
+ex:contactid_1 rdf:type owl:NamedIndividual ,
+                 dcso:ContactId, dcso:ContributorId ;
+        dcso:identifier_type "orcid" ;
+        terms:identifier "0000-0002-9622-3895" .
 
 
+###  https://w3id.org/dcso/id/example/contributorid_1
+ex:contributorid_1 rdf:type owl:NamedIndividual ,
+                 dcso:ContributorId ;
+        dcso:identifier_type "orcid" ;
+        terms:identifier "0000-0003-4333-2008" .
+
+###  https://w3id.org/dcso/id/example/datasetid_1
+ex:datasetid_1 rdf:type owl:NamedIndividual ,
+                 dcso:DatasetId ;
+        dcso:identifier_type "doi" ;
+        terms:identifier "doi:10.1038/nphys1170" .
+
+###  https://w3id.org/dcso/id/example/grantid_1
+ex:grantid_1 rdf:type owl:NamedIndividual ,
+                 dcso:GrantId ;
+        dcso:identifier_type "other" ;
+        terms:identifier "03/SAICT/2015" .
+
+###  https://w3id.org/dcso/id/example/metadataid_1
+ex:metadata_1 rdf:type owl:NamedIndividual ,
+                 dcso:MetadataStandardId ;
+        dcso:identifier_type "other" ;
+        terms:identifier "xpto naming convention" .
+
+###  https://w3id.org/dcso/id/example/funderid_1
+ex:funderid_1 rdf:type owl:NamedIndividual ,
+                 dcso:FunderId ;
+        dcso:identifier_type "fundref" ,
+                             "url" ;
+        terms:identifier "http://dx.doi.org/10.13039/501100000780" ,
+                         "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" .
 
 ###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi
