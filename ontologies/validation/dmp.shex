@@ -17,13 +17,14 @@ start = @<dmp>
   terms:created xsd:date OR xsd:dateTime {1} ; 
   terms:description xsd:string ? ;
   dcso:ethicalIssueDescription xsd:string ? ;
-  dcso:ethicalIssuesExist ["yes" "no" "unknown"] {1} ;
+  dcso:ethicalIssuesExist ["yes" "no" "unknown"] {1} ; #how to deal with lower/upper case?
   dcso:ethicalIssuesReport IRI ? ;
-  #terms:language
   terms:modified xsd:date OR xsd:dateTime {1} ; 
   terms:title xsd:string {1} ;
   #additional validations
+  #terms:language
   #modified >= created
+  
   #Object properties
   dcso:hasDMPId @<id> {1} ;
   dcso:hasContact @<contact> {1} ;
@@ -34,14 +35,20 @@ start = @<dmp>
 
 <contact> EXTRA rdf:type {
   rdf:type [ dcso:Contact ] ; 
-  dcso:hasContactId @<id> + ; #e.g., one orcid and one isni, but at least one
-  foaf:mbox xsd:string + ; #at least one email
+  #should be only 1, but could be better be at least one? 
+  #someone could have more than one id, e.g., orcid and also openid and it should be allowed, should not it?
+  dcso:hasContactId @<id> + ; 
+  #should be only 1, but could be better be at least one?
+  #So we can have, for instance, the same person as contract and contributor (contributors can have more than on mbox)
+  foaf:mbox xsd:string + ; 
   foaf:name xsd:string {1} ;
 }
 
 <contributor> EXTRA rdf:type {
   rdf:type [ dcso:Contributor ] ;
-  dcso:hasContributorId @<id> + ;  #e.g., one orcid and one isni, but at least one
+  #should be only 1, but could be better be at least one? 
+  #someone could have more than one id, e.g., orcid and also openid and it should be allowed, should not it?
+  dcso:hasContributorId @<id> + ; 
   foaf:mbox xsd:string * ; 
   foaf:name xsd:string {1} ;
   dcso:role xsd:string + ; 
@@ -53,6 +60,8 @@ start = @<dmp>
   terms:description xsd:string ? ;
   terms:title xsd:string {1} ;
   dcso:value xsd:decimal OR xsd:integer OR xsd:long ? ;
+  #additonal restrictions
+  #currency values
 }
 
 <project> EXTRA rdf:type {
@@ -62,13 +71,15 @@ start = @<dmp>
   dcso:hasFunding @<funding> ? ;
   dcso:start xsd:date OR xsd:dateTime {1} ;
   dcso:end xsd:date OR xsd:dateTime {1} ; 
+  #additonal restrictions
+  #start <= end
 }
 
 <funding> EXTRA rdf:type {
   rdf:type [ dcso:Funding ] ;
   dcso:hasFunderId @<id> + ;
   dcso:hasGrantId @<id> + ;
-  dcso:fundingStatus IRI or xsd:string ? ;
+  dcso:fundingStatus [ "planned" "applied" "granted" "rejected"] ? ; #how to deal with lower/upper case?
 }
 
 <id> EXTRA rdf:type {
