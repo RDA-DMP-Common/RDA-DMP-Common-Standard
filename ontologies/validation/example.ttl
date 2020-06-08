@@ -27,19 +27,21 @@
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
+         terms:created "2019-09-18T00:00:00"^^xsd:dateTime ;
+         terms:description "This DMP is awesome!" ;                  
+         dcso:ethicalIssuesExist "unknown" ;
+         dcso:ethicalIssuesReport <http://a.url.com> ;
+         terms:language dcs-lang:eng ;
+         terms:modified "2019-09-18T00:00:00"^^xsd:dateTime ; 
+         terms:title "Unidade de Genómica" ;
          dcso:hasDMPId ex:dmpid_1 ;
          dcso:hasContact ex:contact_1 ;
          dcso:hasContributor ex:contact_1 ,
-                             ex:contact_2 ;
-         #dcso:hasCost ex:cost_1 ;
-         #dcso:hasDataset ex:dataset_1 ;
+                             ex:contact_2 
+         #dcso:hasCost ex:cost_1 ;         
          #dcso:hasProject ex:project_1 ;
-         dcso:ethical_issues_exist "unknown" ;
-         terms:created "2019-09-18T00:00:00" ;
-         terms:description "This DMP is awesome!" ;
-         terms:language dcs-lang:eng ;
-         terms:modified "2019-09-18T00:00:00" ;
-         terms:title "Unidade de Genómica" .
+         #dcso:hasDataset ex:dataset_1 ;
+.
 
 ###  https://w3id.org/dcso/id/example/dmpid_1
 ex:dmpid_1 rdf:type owl:NamedIndividual ,
