@@ -17,7 +17,8 @@ start = @<dmp>
   terms:created xsd:date OR xsd:dateTime {1} ; 
   terms:description xsd:string ? ;
   dcso:ethicalIssueDescription xsd:string ? ;
-  dcso:ethicalIssuesExist ["yes" "no" "unknown"] {1} ; #how to deal with lower/upper case?
+  #how to deal with lower/upper case?
+  dcso:ethicalIssuesExist ["yes" "no" "unknown" "Yes" "No" "Unknown"] {1} ; 
   dcso:ethicalIssuesReport IRI ? ;
   terms:modified xsd:date OR xsd:dateTime {1} ; 
   terms:title xsd:string {1} ;
@@ -35,9 +36,7 @@ start = @<dmp>
 
 <contact> EXTRA rdf:type {
   rdf:type [ dcso:Contact ] ; 
-  #should be only 1, but could be better be at least one? 
-  #someone could have more than one id, e.g., orcid and also openid and it should be allowed, should not it?
-  dcso:hasContactId @<id> + ; 
+  dcso:hasContactId @<id> {1} ; 
   #should be only 1, but could be better be at least one?
   #So we can have, for instance, the same person as contract and contributor (contributors can have more than on mbox)
   foaf:mbox xsd:string + ; 
@@ -46,9 +45,7 @@ start = @<dmp>
 
 <contributor> EXTRA rdf:type {
   rdf:type [ dcso:Contributor ] ;
-  #should be only 1, but could be better be at least one? 
-  #someone could have more than one id, e.g., orcid and also openid and it should be allowed, should not it?
-  dcso:hasContributorId @<id> + ; 
+  dcso:hasContributorId @<id> {1} ; 
   foaf:mbox xsd:string * ; 
   foaf:name xsd:string {1} ;
   dcso:role xsd:string + ; 
@@ -79,7 +76,8 @@ start = @<dmp>
   rdf:type [ dcso:Funding ] ;
   dcso:hasFunderId @<id> + ;
   dcso:hasGrantId @<id> + ;
-  dcso:fundingStatus [ "planned" "applied" "granted" "rejected"] ? ; #how to deal with lower/upper case?
+  #how to deal with lower/upper case?
+  dcso:fundingStatus [ "planned" "applied" "granted" "rejected" "Planned" "Applied" "Granted" "Rejected" ] ? ; 
 }
 
 <id> EXTRA rdf:type {
