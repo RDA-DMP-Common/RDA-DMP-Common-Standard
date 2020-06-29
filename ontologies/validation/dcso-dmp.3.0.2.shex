@@ -1,0 +1,87 @@
+PREFIX dcs: <http://ontologi.es/doap-changeset#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcso: <https://w3id.org/dcso/ns/core#>
+prefix dcsx: <https://w3id.org/dcso/ns/extension#>
+prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+start = @<dmp>
+
+<dmp> EXTRA rdf:type {
+  rdf:type [ dcso:DMP ] ; 
+  #Data properties
+  terms:created xsd:date OR xsd:dateTime {1} ; 
+  terms:description xsd:string ? ;
+  dcso:ethicalIssueDescription xsd:string ? ;
+  #how to deal with lower/upper case?
+  dcso:ethicalIssuesExist ["yes" "no" "unknown" "Yes" "No" "Unknown"] {1} ; 
+  dcso:ethicalIssuesReport IRI ? ;
+  terms:modified xsd:date OR xsd:dateTime {1} ; 
+  terms:title xsd:string {1} ;
+  #additional validations
+  #terms:language
+  #modified >= created
+  
+  #Object properties
+  dcso:hasDMPId @<id> {1} ;
+  dcso:hasContact @<contact> {1} ;
+  dcso:hasContributor @<contributor> * ;
+  dcso:hasCost @<cost> * ;
+  dcso:hasProject @<project> * ;
+}
+
+<contact> EXTRA rdf:type {
+  rdf:type [ dcso:Contact ] ; 
+  dcso:hasContactId @<id> {1} ; 
+  #should be only 1, but could be better be at least one?
+  #So we can have, for instance, the same person as contract and contributor (contributors can have more than on mbox)
+  foaf:mbox xsd:string + ; 
+  foaf:name xsd:string {1} ;
+}
+
+<contributor> EXTRA rdf:type {
+  rdf:type [ dcso:Contributor ] ;
+  dcso:hasContributorId @<id> {1} ; 
+  foaf:mbox xsd:string * ; 
+  foaf:name xsd:string {1} ;
+  dcso:role xsd:string + ; 
+}
+
+<cost> EXTRA rdf:type {
+  rdf:type [ dcso:Cost ] ;
+  dcso:hasCurrencyCode IRI or xsd:string ? ;
+  terms:description xsd:string ? ;
+  terms:title xsd:string {1} ;
+  dcso:value xsd:decimal OR xsd:integer OR xsd:long ? ;
+  #additonal restrictions
+  #currency values
+}
+
+<project> EXTRA rdf:type {
+  rdf:type [ dcso:Project ] ;
+  terms:description xsd:string ? ;
+  terms:title xsd:string {1} ;
+  dcso:hasFunding @<funding> ? ;
+  dcso:start xsd:date OR xsd:dateTime {1} ;
+  dcso:end xsd:date OR xsd:dateTime {1} ; 
+  #additonal restrictions
+  #start <= end
+}
+
+<funding> EXTRA rdf:type {
+  rdf:type [ dcso:Funding ] ;
+  dcso:hasFunderId @<id> + ;
+  dcso:hasGrantId @<id> + ;
+  #how to deal with lower/upper case?
+  dcso:fundingStatus [ "planned" "applied" "granted" "rejected" "Planned" "Applied" "Granted" "Rejected" ] ? ; 
+}
+
+<id> EXTRA rdf:type {
+  rdf:type [ dcso:ContactId dcso:ContributorId dcso:DMPId dcso:FunderId dcso:GrantId dcso:Id ] ; 
+  terms:identifier IRI OR xsd:string {1} ;
+  dcso:identifierType xsd:string {1} ; #e.g., orcid, isni, openid, other
+}
