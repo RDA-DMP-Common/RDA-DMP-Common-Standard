@@ -1007,6 +1007,7 @@
 			},
 			"required": [
 				"contact",
+				"created",
 				"dataset",
 				"dmp_id",
 				"ethical_issues_exist",
