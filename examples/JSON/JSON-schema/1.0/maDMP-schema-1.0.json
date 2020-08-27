@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"id": "https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema/1.0",
+	"$id": "https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema/1.0",
 	"title": "RDA DMP Common Standard Schema",
 	"description": "JSON Schema for the RDA DMP Common Standard",
 	"type": "object",
@@ -16,18 +16,18 @@
 					"title": "The DMP Contact Schema",
 					"properties": {
 						"contact_id": {
-							"id": "#/properties/dmp/properties/contact/properties/contact_id",
+							"$id": "#/properties/dmp/properties/contact/properties/contact_id",
 							"type": "object",
 							"title": "The Contact ID Schema",
 							"properties": {
 								"identifier": {
-									"id": "#/properties/dmp/properties/contact/properties/contact_id/properties/identifier",
+									"$id": "#/properties/dmp/properties/contact/properties/contact_id/properties/identifier",
 									"type": "string",
 									"title": "The DMP Contact Identifier Schema",
 									"examples": ["https://orcid.org/0000-0003-0644-4174"]
 								},
 								"type": {
-									"id": "#/properties/dmp/properties/contact/properties/contact_id/properties/type",
+									"$id": "#/properties/dmp/properties/contact/properties/contact_id/properties/type",
 									"type": "string",
 									"enum": [
 										"orcid",
@@ -54,7 +54,7 @@
 							"examples": ["cc@example.com"]
 						},
 						"name": {
-							"id": "#/properties/dmp/properties/contact/properties/name",
+							"$id": "#/properties/dmp/properties/contact/properties/name",
 							"type": "string",
 							"title": "The Name Schema",
 							"description": "Name of the contact person",
@@ -72,24 +72,24 @@
 					"type": "array",
 					"title": "The Contributor Schema",
 					"items": {
-						"id": "#/properties/dmp/properties/contributor/items",
+						"$id": "#/properties/dmp/properties/contributor/items",
 						"type": "object",
 						"title": "The Contributor Items Schema",
 						"properties": {
 							"contributor_id": {
-								"id": "#/properties/dmp/properties/contributor/items/properties/contributor_id",
+								"$id": "#/properties/dmp/properties/contributor/items/properties/contributor_id",
 								"type": "object",
 								"title": "The Contributor_id Schema",
 								"properties": {
 									"identifier": {
-										"id": "#/properties/dmp/properties/contributor/items/properties/contributor_id/properties/identifier",
+										"$id": "#/properties/dmp/properties/contributor/items/properties/contributor_id/properties/identifier",
 										"type": "string",
 										"title": "The Contributor Identifier Schema",
 										"description": "Identifier for a contact person",
 										"examples": ["http://orcid.org/0000-0000-0000-0000"]
 									},
 									"type": {
-										"id": "#/properties/dmp/properties/contributor/items/properties/contributor_id/properties/type",
+										"$id": "#/properties/dmp/properties/contributor/items/properties/contributor_id/properties/type",
 										"type": "string",
 										"enum": [
 											"orcid",
@@ -108,7 +108,7 @@
 								]
 							},
 							"mbox": {
-								"id": "#/properties/dmp/properties/contributor/items/properties/mbox",
+								"$id": "#/properties/dmp/properties/contributor/items/properties/mbox",
 								"type": "string",
 								"title": "The Contributor Mailbox Schema",
 								"description": "Contributor Mail address",
@@ -116,20 +116,20 @@
 								"format": "email"
 							},
 							"name": {
-								"id": "#/properties/dmp/properties/contributor/items/properties/name",
+								"$id": "#/properties/dmp/properties/contributor/items/properties/name",
 								"type": "string",
 								"title": "The Name Schema",
 								"description": "Name of the contributor",
 								"examples": ["John Smith"]
 							},
 							"role": {
-								"id": "#/properties/dmp/properties/contributor/items/properties/role",
+								"$id": "#/properties/dmp/properties/contributor/items/properties/role",
 								"minItems": 1,
 								"type": "array",
 								"title": "The Role Schema",
 								"description": "Type of contributor",
 								"items": {
-									"id": "#/properties/dmp/properties/contributor/items/properties/role/items",
+									"$id": "#/properties/dmp/properties/contributor/items/properties/role/items",
 									"type": "string",
 									"title": "The Contributor Role(s) Items Schema",
 									"examples": ["Data Steward"]
@@ -149,7 +149,7 @@
 					"type": "array",
 					"title": "The Cost Schema",
 					"items": {
-						"id": "#/properties/dmp/properties/cost/items",
+						"$id": "#/properties/dmp/properties/cost/items",
 						"type": "object",
 						"title": "The Cost Items Schema",
 						"properties": {
@@ -180,21 +180,21 @@
 								"examples": ["EUR"]
 							},
 							"description": {
-								"id": "#/properties/dmp/properties/cost/items/properties/description",
+								"$id": "#/properties/dmp/properties/cost/items/properties/description",
 								"type": "string",
 								"title": "The Cost Description Schema",
 								"description": "Cost(s) Description",
 								"examples": ["Costs for maintaining..."]
 							},
 							"title": {
-								"id": "#/properties/dmp/properties/cost/items/properties/title",
+								"$id": "#/properties/dmp/properties/cost/items/properties/title",
 								"type": "string",
 								"title": "The Cost Title Schema",
 								"description": "Title",
 								"examples": ["Storage and Backup"]
 							},
 							"value": {
-								"id": "#/properties/dmp/properties/cost/items/properties/value",
+								"$id": "#/properties/dmp/properties/cost/items/properties/value",
 								"type": "number",
 								"title": "The Cost Value Schema",
 								"description": "Value",
@@ -213,7 +213,7 @@
 					"examples": ["2019-03-13 13:13"]
 				},
 				"dataset": {
-					"id": "#/properties/dmp/properties/dataset",
+					"$id": "#/properties/dmp/properties/dataset",
 					"type": "array",
 					"minItems": 1,
 					"title": "The Dataset Schema",
@@ -228,27 +228,27 @@
 								"title": "The Data Quality Assurance Schema",
 								"description": "Data Quality Assurance",
 								"items": {
-									"id": "#/properties/dmp/properties/dataset/items/properties/data_quality_assurance/items",
+									"$id": "#/properties/dmp/properties/dataset/items/properties/data_quality_assurance/items",
 									"type": "string",
 									"title": "The Data Quality Assurance Schema",
 									"examples": ["We use file naming convention..."]
 								}
 							},
 							"dataset_id": {
-								"id": "#/properties/dmp/properties/dataset/items/properties/dataset_id",
+								"$id": "#/properties/dmp/properties/dataset/items/properties/dataset_id",
 								"type": "object",
 								"title": "The Dataset ID Schema",
 								"description": "Dataset ID",
 								"properties": {
 									"identifier": {
-										"id": "#/properties/dmp/properties/dataset/items/properties/dataset_id/properties/identifier",
+										"$id": "#/properties/dmp/properties/dataset/items/properties/dataset_id/properties/identifier",
 										"type": "string",
 										"title": "The Dataset Identifier Schema",
 										"description": "Identifier for a dataset",
 										"examples": ["https://hdl.handle.net/11353/10.923628"]
 									},
 									"type": {
-										"id": "#/properties/dmp/properties/dataset/items/properties/dataset_id/properties/type",
+										"$id": "#/properties/dmp/properties/dataset/items/properties/dataset_id/properties/type",
 										"type": "string",
 										"enum": [
 											"handle",
@@ -268,14 +268,14 @@
 								]
 							},
 							"description": {
-								"id": "#/properties/dmp/properties/dataset/items/properties/description",
+								"$id": "#/properties/dmp/properties/dataset/items/properties/description",
 								"type": "string",
 								"title": "The Dataset Description Schema",
 								"description": "Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.",
 								"examples": ["Field observation"]
 							},
 							"distribution": {
-								"id": "#/properties/dmp/properties/dataset/items/properties/distribution",
+								"$id": "#/properties/dmp/properties/dataset/items/properties/distribution",
 								"type": "array",
 								"title": "The Dataset Distribution Schema",
 								"description": "To provide technical information on a specific instance of data.",
@@ -679,7 +679,7 @@
 								"title": "The Dataset Security and Policy Schema",
 								"description": "To list all issues and requirements related to security and privacy",
 								"items": {
-									"id": "#/properties/dmp/properties/dataset/items/properties/security_and_privacy/items",
+									"$id": "#/properties/dmp/properties/dataset/items/properties/security_and_privacy/items",
 									"type": "object",
 									"title": "The Dataset Security & Policy Items Schema",
 									"properties": {
@@ -719,19 +719,19 @@
 								"title": "The Dataset Technical Resource Schema",
 								"description": "To list all technical resources needed to implement a DMP",
 								"items": {
-									"id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items",
+									"$id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items",
 									"type": "object",
 									"title": "The Dataset Technical Resource Items Schema",
 									"properties": {
 										"description": {
-											"id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items/description",
+											"$id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items/description",
 											"type": "string",
 											"title": "The Dataset Technical Resource Description Schema",
 											"description": "Description of the technical resource",
 											"examples": ["Device needed to collect field data..."]
 										},
 										"name": {
-											"id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items/name",
+											"$id": "#/properties/dmp/properties/dataset/items/properties/technical_resource/items/name",
 											"type": "string",
 											"title": "The Dataset Technical Resource Name Schema",
 											"description": "Name of the technical resource",
@@ -778,14 +778,14 @@
 					"description": "Identifier for the DMP itself",
 					"properties": {
 						"identifier": {
-							"id": "#/properties/dmp/properties/dmp_id/properties/identifier",
+							"$id": "#/properties/dmp/properties/dmp_id/properties/identifier",
 							"type": "string",
 							"title": "The DMP Identifier Value Schema",
 							"description": "Identifier for a DMP",
 							"examples": ["https://doi.org/10.1371/journal.pcbi.1006750"]
 						},
 						"type": {
-							"id": "#/properties/dmp/properties/dmp_id/properties/type",
+							"$id": "#/properties/dmp/properties/dmp_id/properties/type",
 							"type": "string",
 							"enum": [
 								"handle",
@@ -975,7 +975,7 @@
 								}
 							},
 							"start": {
-								"id": "#/properties/dmp/properties/project/items/start",
+								"$id": "#/properties/dmp/properties/project/items/start",
 								"type": "string",
 								"format": "date",
 								"title": "The DMP Project Start Date Schema",
@@ -983,7 +983,7 @@
 								"examples": ["2019-04-01"]
 							},
 							"title": {
-								"id": "#/properties/dmp/properties/project/items/title",
+								"$id": "#/properties/dmp/properties/project/items/title",
 								"type": "string",
 								"title": "The DMP Project Title Schema",
 								"description": "Project title",
