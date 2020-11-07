@@ -16,29 +16,10 @@ This is the JSON schema for the DMP common standard. Examples against the schema
     * `start`  (_dmp/project/start_)
     * `start_date`  (_dmp/dataset/distribution/license/start_date_)
 
-<br>
+3. Removed all `minItems` restrictions to arrays.
 
----
-**NOTE**
-
-Certain properties, which may contain multiple objects or values, have `minItems` set to 1.  
-This ensures that an empty array is not provided. These properties can still be omitted (if not required).  
-If they are specified however, they have to have at least one object or value contained.
-
-Example:  
-This will not pass validation:  
-```
-"license": []
-```
-
-But this will:  
-```
-"license": [
-    {
-        "license_ref": "https://creativecommons.org/licenses/by/4.0/",
-		"start_date": "2020-01-01"
-    }
-]
-```
-
----
+    Example:  
+    This will now pass validation:  
+    ```
+    "license": []
+    ```

@@ -124,7 +124,6 @@
               },
               "role": {
                 "$id": "#/properties/dmp/properties/contributor/items/properties/role",
-                "minItems": 1,
                 "type": "array",
                 "title": "The Role Schema",
                 "description": "Type of contributor",
@@ -215,7 +214,6 @@
         "dataset": {
           "$id": "#/properties/dmp/properties/dataset",
           "type": "array",
-          "minItems": 1,
           "title": "The Dataset Schema",
           "items": {
             "$id": "#/properties/dmp/properties/dataset/items",
@@ -496,7 +494,6 @@
                     "license": {
                       "$id": "#/properties/dmp/properties/dataset/items/properties/distribution/items/properties/license",
                       "type": "array",
-                      "minItems": 1,
                       "title": "The Dataset Distribution License(s) Schema",
                       "description": "To list all licenses applied to a specific distribution of data.",
                       "items": {
@@ -583,7 +580,6 @@
               "metadata": {
                 "$id": "#/properties/dmp/properties/dataset/items/properties/metadata",
                 "type": "array",
-                "minItems": 1,
                 "title": "The Dataset Metadata Schema",
                 "description": "To describe metadata standards used.",
                 "items": {
@@ -675,7 +671,6 @@
               "security_and_privacy": {
                 "$id": "#/properties/dmp/properties/dataset/items/properties/security_and_privacy",
                 "type": "array",
-                "minItems": 1,
                 "title": "The Dataset Security and Policy Schema",
                 "description": "To list all issues and requirements related to security and privacy",
                 "items": {
