@@ -224,3 +224,5 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <tr><td valign="top"><a id="technical_resource_name" href="#technical_resource_name_tree">name</a></td><td valign="top">Name of the technical resource</td><td valign="top">String</td><td valign="top">1</td><td valign="top">123/45/43/AT</td></tr>
 </tbody></table>
 
+<h1>Cite as</h1>
+Tomasz Miksa, Paul Walk, Peter Neish. RDA DMP Common Standard for Machine-actionable Data Management Plans. http://doi.org/10.15497/rda00039
