@@ -30,7 +30,7 @@ Provides a list of costs related to data management.
 This follows the defintion of Dataset in the W3C DCAT specification. Dataset can be understood as a logical entity depicting data, e.g. raw data. It provides high level information about the data. The granularity of dataset depends on a specific setting. In edge cases it can be a file, but also a collection of files in different formats. See <a href=https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md>FAQ</a> for more details. 
 
 <h3>Distribution</h3>
-This follows the defintion of Distribution in the W3C DCAT specification. Distribution points to a specific instance of a dataset. Hence, distribution contains information such as the format and size of files. A dataset can have several distributions.
+The term "distribution" used here is as defined by the very widely used W3C DCAT metadata application profile. It is used to mean a particular instance of a dataset that has been, or is intended to be, made available in some fashion. It is important to separates the logical notion of a "dataset" from its distributions, of which there may be several, especially to attach more specific metadata properties such as "size" and "license". The lifecycle of the DMP has no particular bearing on this, and a "distribution" may be defined even if the DMP is never actually realised.
 
 <h3>License</h3>
 Used to indicate the license under which data (each specific Distribution) will be made available. It also allows for modelling embargoes. See <a href=https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md>FAQ</a> for more details.
