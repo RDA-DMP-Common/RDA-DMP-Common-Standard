@@ -12,6 +12,12 @@ Versions available:
 * [dcso-dmp.3.0.2.shex](./dcso-dmp.3.0.2.shex): Validation for DMPs exluding Dataset class and those directly related to it, a validating example is provided at [./valid-example_dcso.3.0.2.ttl](./valid-example_dcso.3.0.2.ttl), a failing example is provided at [./failing-example_dcso.3.0.2.ttl](./failing-example_dcso.3.0.2.ttl)
 * Soon to come dcso-dataset.3.0.2.shex: Validation for DMP associated datasets
 
+## Examples
+
+We use Shaclex/RDFShape as validation service. If you experience any trouble with the validation, please try again later as the server might be busy.
+* A [DMP valid example](./valid-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-valid
+* A [DMP failing example](./failing-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-failing
+
 ## Work in progress
 * Getting a permalink on the validation platforms so people can go directly to the validation without needing to copy & paste
 * Adding the validation for DCSO dataset
