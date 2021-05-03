@@ -14,9 +14,11 @@ Versions available:
 
 ## Examples
 
-We use Shaclex/RDFShape as validation service. If you experience any trouble with the validation, please try again later as the server might be busy.
+We use [Shaclex/RDFShape](http://shaclex.herokuapp.com/shExValidate) as validation service. If you experience any trouble with the validation, please try again later as the server might be busy.
 * A [DMP valid example](./valid-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-valid
 * A [DMP failing example](./failing-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-failing
+* A [Dataset valid example](./valid-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-valid
+* A [Dataset failing example](./failing-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-failing
 
 ## Work in progress
 * Getting a permalink on the validation platforms so people can go directly to the validation without needing to copy & paste
