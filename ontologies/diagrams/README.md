@@ -13,5 +13,5 @@ Versions available:
 
 Versions available for validation shapes in ShEx:
 
-* dcso-dmp.3.0.2 [2021.05.27] - Diagram representing the validation shapes corresponding to DMPs in the DCSO core version 3.0.2
-* dcso-dataset.30.0.2 [2021.05.27] - Diagram representing the validation shapes corresponding to Datasets in the DCSO core version 3.0.2
+* dcso-dmp-shex-validation.3.0.2 [2021.05.27] - Diagram representing the [validation shapes corresponding to DMPs](./dcso-dmp-shex-validation.3.0.2.png) in the DCSO core version 3.0.2
+* dcso-dataset-shex-validation.3.0.2 [2021.05.27] - Diagram representing the [validation shapes corresponding to Datasets](./dcso-dataset-shex-validation.3.0.2.png) in the DCSO core version 3.0.2
