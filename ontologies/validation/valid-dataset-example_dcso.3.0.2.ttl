@@ -29,7 +29,8 @@ ex:ds_1 rdf:type owl:NamedIndividual ,
                   dcso:Dataset ;
 		#mandatory
 		dcso:personalData "no" ;
-		dcso:sensitiveData "no sensitive" ;
+		dcso:sensitiveData "NO" ;
+		terms:title "Dataset title" ;
 		dcso:datasetType "Dataset" ;
 		dcso:hasDatasetId ex:dsid_1 ;
 		
@@ -58,3 +59,23 @@ ex:md_1 rdf:type owl:NamedIndividual ,
            dcso:hasMetadataStandardId ex:mdid_1 ;
 .
 
+###  https://w3id.org/dcso/id/example/mdid_1
+ex:mdid_1 rdf:type owl:NamedIndividual ,
+                    dcso:MetadataStandardId ;
+           dcso:identifierType "url" ;
+           terms:identifier "https://www.dropbox.com/mdid_1" ;
+.
+
+###  https://w3id.org/dcso/id/example/sp_1
+ex:sp_1 rdf:type owl:NamedIndividual ,
+                    dcso:SecurityPrivacy ;
+			terms:title "Security/Privacy policy" ;
+            terms:description "Policy" ;
+.		   
+		
+###  https://w3id.org/dcso/id/example/tr_1
+ex:tr_1 rdf:type owl:NamedIndividual ,
+                    dcso:TechnicalResource ;
+			foaf:name "Technical Resource Name" ;
+            terms:description "A name" ;
+.		
