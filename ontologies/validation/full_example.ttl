@@ -64,14 +64,14 @@ ex:dataset_1 rdf:type owl:NamedIndividual ,
              dcso:hasSecurityPrivacy ex:sp_1 ;
              dcso:hasTechnicalResource ex:technicalresource_1 ;
              terms:issued "2019-09-18T00:00:00" ;
-             dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC " ;
+             dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC" ;
              dcso:personal_data "no" ;
              dcso:preservation_statement "Keep record" ;
              dcso:sensitive_data "no" ;
              dcso:type "http://purl.org/coar/resource_type/c_18gh" ;
-             terms:description "Quality Control of DNA and RNA " ;
+             terms:description "Quality Control of DNA and RNA" ;
              terms:language dcs-lang:eng ;
-             terms:title "Quality Check QC " .
+             terms:title "Quality Check QC" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/distribution_1
@@ -82,10 +82,10 @@ ex:distribution_1 rdf:type owl:NamedIndividual ,
                   terms:format "application/pdf" ;
                   dcat:access_url "http://example.org/example_url" ;
                   dcat:download_url "http://example.org/example_url" ;
-                  dcso:available_until "2022-01-01T00:00:00 " ;
+                  dcso:available_until "2022-01-01T00:00:00" ;
                   dcso:data_access "shared" ;
-                  terms:description "Files will be stored in xls and pfd in the storage server (AFS) " ;
-                  terms:title "Quality control file " .
+                  terms:description "Files will be stored in xls and pfd in the storage server (AFS)" ;
+                  terms:title "Quality control file" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/dmp_1
@@ -103,7 +103,7 @@ ex:dmp_1 rdf:type owl:NamedIndividual ,
          terms:description "This DMP serves to characterize the functioning of the Unidade de Genómica at the Instituto Gulbenkian para a Ciência in Oeiras." ;
          terms:language dcs-lang:eng ;
          terms:modified "2019-09-18T00:00:00" ;
-         terms:title "Unidade de Genómica " .
+         terms:title "Unidade de Genómica" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/dmpid_1
@@ -131,7 +131,7 @@ ex:host_1 rdf:type owl:NamedIndividual ,
           dcso:certified_with "none" ;
           dcso:pid_system "none" ;
           dcso:support_versioning "no" ;
-          terms:description "Storage server (AFS) managed by IGC IT " ;
+          terms:description "Storage server (AFS) managed by IGC IT" ;
           terms:title "AFS Server" .
 ​
 ​
@@ -169,14 +169,14 @@ ex:id_4 rdf:type owl:NamedIndividual ,
 ex:license_1 rdf:type owl:NamedIndividual ,
                       dcso:License ;
              dcso:license_ref "https://creativecommons.org/licenses/by/4.0" ;
-             dcso:start_date "2022-01-01T00:00:00 " .
+             dcso:start_date "2022-01-01T00:00:00" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/metadata_1
 ex:metadata_1 rdf:type owl:NamedIndividual ,
                        dcso:Metadata ;
               dcso:hasMetadataStandardId ex:id_4 ;
-              terms:description "Used index and sample name (sample sheet) " ;
+              terms:description "Used index and sample name (sample sheet)" ;
               terms:language dcs-lang:eng .
 ​
 ​
@@ -184,21 +184,21 @@ ex:metadata_1 rdf:type owl:NamedIndividual ,
 ex:project_1 rdf:type owl:NamedIndividual ,
                       dcso:Project ;
              dcso:hasFunding ex:funding_1 ;
-             dcso:end "2020-12-01T00:00:00 " ;
-             dcso:start "2017-01-01T00:00:00 " ;
-             terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance. " ;
+             dcso:end "2020-12-01T00:00:00" ;
+             dcso:start "2017-01-01T00:00:00" ;
+             terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance." ;
              terms:title "ONEIDA" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/sp_1
 ex:sp_1 rdf:type owl:NamedIndividual ,
                  dcso:SecurityPrivacy ;
-        terms:description "Used index and sample name (sample sheet) " ;
+        terms:description "Used index and sample name (sample sheet)" ;
         terms:title "Access" .
 ​
 ​
 ###  https://w3id.org/dcso/id/example/technicalresource_1
 ex:technicalresource_1 rdf:type owl:NamedIndividual ,
                                 dcso:TechnicalResource ;
-                       terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html " ;
+                       terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html" ;
                        terms:title "Ilumina sequencer" .
