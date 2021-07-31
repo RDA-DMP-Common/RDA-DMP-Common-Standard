@@ -1,0 +1,813 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix :      <https://w3id.org/madmp/terms#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix ns:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dcam:  <http://purl.org/dc/dcam/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcsx:  <https://w3id.org/dcso/ns/extension#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <https://w3id.org/dcso/id/example/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix wot:   <http://xmlns.com/wot/0.1/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix madmp: <https://w3id.org/madmp/terms#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dash: <http://datashapes.org/dash#> .
+
+ex:DMPShape
+    a sh:NodeShape;
+    sh:name "The DMP Schema";
+    sh:targetClass madmp:DMP;
+    sh:property [
+        sh:path terms:title;
+        sh:name "The DMP Title Schema";
+        sh:description "Title of a DMP";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+    ];
+    sh:property [
+        sh:path madmp:contact;
+        sh:name "The DMP Contact Schema";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:property [
+            sh:path madmp:contact_id;
+            sh:name "The Contact ID Schema";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:property [
+                sh:path terms:identifier;
+                sh:name "The DMP Contact Identifier Schema";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+            ];
+            sh:property [
+                sh:path madmp:identifier_type;
+                sh:name "The DMP Contact Identifier Type Schema";
+                sh:description "Identifier type. Allowed values: orcid, isni, openid, other";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:in ("orcid"^^xsd:string "isni"^^xsd:string "openid"^^xsd:string "other"^^xsd:string);
+            ];
+        ];
+        sh:property [
+            sh:path foaf:mbox;
+            sh:name "The Mailbox Schema";
+            sh:description "Contact Person's E-mail address";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:pattern "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+        ];
+        sh:property [
+            sh:path foaf:name;
+            sh:name "The Name Schema";
+            sh:description "Name of the contact person";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+        ];
+
+    ];
+    sh:property [
+        sh:path madmp:contributor;
+        sh:name "The Contributor Schema";
+        sh:property [
+            sh:path madmp:contributor_id;
+            sh:name "The Contributor_id Schema";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:property [
+                sh:path terms:identifier;
+                sh:name "The Contributor Identifier Schema";
+                sh:description "Identifier for a contact person";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+            ];
+            sh:property [
+                sh:path madmp:identifier_type;
+                sh:name "The Contributor Identifier Type Schema";
+                sh:description "Identifier type. Allowed values: orcid, isni, openid, other";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:in ("orcid"^^xsd:string "isni"^^xsd:string "openid"^^xsd:string "other"^^xsd:string );
+            ];
+        ];
+        sh:property [
+            sh:path foaf:mbox;
+            sh:name "The Contributor Mailbox Schema";
+            sh:description "Contributor Mail address";
+            sh:maxCount 1;
+            sh:pattern "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+        ];
+        sh:property [
+            sh:path foaf:name;
+            sh:name "The Name Schema";
+            sh:description "Name of the contributor";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+        ];
+        sh:property [
+            sh:path madmp:role;
+            sh:name "The Role Schema";
+            sh:description "Type of contributor";
+            sh:node dash:ListShape;
+            sh:minCount 1 ;
+            sh:property [
+                sh:path ( [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ;
+                sh:datatype xsd:string ;
+                sh:minCount 1 ;
+            ]
+        ];
+        sh:sparql [
+            sh:message "Contributor {?name} has role {?role} more than once ({?roleCount} times).";
+            sh:prefixes (madmp: rdf: foaf:);
+            sh:select """
+            PREFIX madmp: <https://w3id.org/madmp/terms#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            prefix foaf:  <http://xmlns.com/foaf/0.1/>
+
+            SELECT $this ?role ?name (COUNT(?role) AS ?roleCount)
+            WHERE {
+                $this $PATH ?contributor.
+                ?contributor madmp:role/rdf:rest*/rdf:first ?role;
+                foaf:name ?name
+            }
+            GROUP BY $this ?name ?role
+            HAVING (?roleCount > 1)
+            """
+        ]
+    ];
+    sh:property [
+        sh:path madmp:dataset;
+        sh:name "The Dataset Schema";
+        sh:minCount 1;
+        sh:property [
+            sh:path madmp:data_quality_assurance;
+            sh:name "The Data Quality Assurance Schema";
+            sh:description "Data Quality Assurance";
+            sh:datatype xsd:string
+        ];
+        sh:property [
+            sh:path madmp:dataset_id;
+            sh:name "The Dataset ID Schema";
+            sh:description "The Dataset ID Schema";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:property [
+                sh:path terms:identifier;
+                sh:name "The Dataset Identifier Schema";
+                sh:description "Identifier for a dataset";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string
+            ];
+            sh:property [
+                sh:path madmp:identifier_type;
+                sh:name "The Dataset Identifier Type Schema";
+                sh:description "Dataset identifier type. Allowed values: handle, doi, ark, url, other";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+                sh:in ( "handle"^^xsd:string "doi"^^xsd:string "ark"^^xsd:string "url"^^xsd:string "other"^^xsd:string );
+            ]
+        ];
+        sh:property [
+            sh:path terms:description;
+            sh:name "The Dataset Description Schema";
+            sh:description "Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.";
+            sh:maxCount 1;
+            sh:datatype xsd:string
+        ];
+        sh:property [
+            sh:path madmp:distribution;
+            sh:name "The Dataset Distribution Schema";
+            sh:description "To provide technical information on a specific instance of data.";
+            sh:property [
+                sh:path dcat:accessUrl;
+                sh:name "The Dataset Distribution Access URL Schema";
+                sh:description "A URL of the resource that gives access to a distribution of the dataset. e.g. landing page.";
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+            ];
+            sh:property [
+                sh:path madmp:available_until;
+                sh:name "The Dataset Distribution Available Until Schema";
+                sh:description "Indicates how long this distribution will be/ should be available. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+                sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])$"
+            ];
+            sh:property [
+                sh:path dcat:byteSize;
+                sh:name "The Dataset Distribution Byte Size Schema";
+                sh:description "Size in bytes.";
+                sh:maxCount 1;
+                sh:datatype xsd:integer
+            ];
+            sh:property [
+                sh:path madmp:data_access;
+                sh:name "The Dataset Distribution Data Access Schema";
+                sh:description "Indicates access mode for data. Allowed values: open, shared, closed";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+                sh:in ( "open"^^xsd:string "shared"^^xsd:string "closed"^^xsd:string)
+            ];
+            sh:property [
+                sh:path terms:description;
+                sh:name "The Dataset Distribution Description Schema";
+                sh:description "Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.";
+                sh:maxCount 1;
+                sh:datatype xsd:string
+            ];
+            sh:property [
+                sh:path dcat:downloadURL;
+                sh:name "The Dataset Distribution Download URL Schema";
+                sh:description "The URL of the downloadable file in a given format. E.g. CSV file or RDF file.";
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+                sh:pattern "^\\w+:(\\/){0,2}[^\\s]+$"
+            ];
+            sh:property [
+                sh:path terms:format;
+                sh:name "The Dataset Distribution Format Schema";
+                sh:description "Format according to: https://www.iana.org/assignments/media-types/media-types.xhtml if appropriate, otherwise use the common name for this format.";
+                sh:datatype xsd:string
+            ];
+            sh:property [
+                sh:path madmp:hasHost;
+                sh:name "The Dataset Distribution Host Schema";
+                sh:description "To provide information on quality of service provided by infrastructure (e.g. repository) where data is stored.";
+                sh:maxCount 1;
+                sh:property [
+                    sh:path madmp:availability;
+                    sh:name "The Dataset Distribution Host Availability Schema";
+                    sh:description "Availability";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:backup_frequency;
+                    sh:name "The Dataset Distribution Host Backup Frequency Schema";
+                    sh:description "Backup Frequency";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:backup_type;
+                    sh:name "The Dataset Distribution Host Backup Type Schema";
+                    sh:description "Backup Type";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:certified_with;
+                    sh:name "The Dataset Distribution Host Certification Type Schema";
+                    sh:description "Repository certified to a recognised standard. Allowed values: din31644, dini-zertifikat, dsa, iso16363, iso16919, trac, wds, coretrustseal";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:in ( "din31644"^^xsd:string "dini-zertifikat"^^xsd:string "dsa"^^xsd:string "iso16363"^^xsd:string "iso16919"^^xsd:string "trac"^^xsd:string "wds"^^xsd:string "coretrustseal"^^xsd:string )
+                ];
+                sh:property [
+                    sh:path terms:description;
+                    sh:name "The Dataset Distribution Host Description Schema";
+                    sh:description "Description";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:geo_location;
+                    sh:name "The Dataset Distribution Host Geographical Location Schema";
+                    sh:description "Physical location of the data expressed using ISO 3166-1 country code.";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:in ( "AD"^^xsd:string "AE"^^xsd:string "AF"^^xsd:string "AG"^^xsd:string "AI"^^xsd:string "AL"^^xsd:string "AM"^^xsd:string "AO"^^xsd:string "AQ"^^xsd:string "AR"^^xsd:string "AS"^^xsd:string "AT"^^xsd:string "AU"^^xsd:string "AW"^^xsd:string "AZ"^^xsd:string "BA"^^xsd:string "BB"^^xsd:string "BD"^^xsd:string "BE"^^xsd:string "BF"^^xsd:string "BG"^^xsd:string "BH"^^xsd:string "BI"^^xsd:string "BJ"^^xsd:string "BL"^^xsd:string "BM"^^xsd:string "BN"^^xsd:string "BO"^^xsd:string "BQ"^^xsd:string "BR"^^xsd:string "BT"^^xsd:string "BV"^^xsd:string "BW"^^xsd:string "BY"^^xsd:string "BZ"^^xsd:string "CA"^^xsd:string "CC"^^xsd:string "CD"^^xsd:string "CF"^^xsd:string "CG"^^xsd:string "CH"^^xsd:string "CI"^^xsd:string "CK"^^xsd:string "CL"^^xsd:string "CM"^^xsd:string "CN"^^xsd:string "CR"^^xsd:string "CU"^^xsd:string "CV"^^xsd:string "CW"^^xsd:string "CX"^^xsd:string "CY"^^xsd:string "CZ"^^xsd:string "DE"^^xsd:string "DJ"^^xsd:string "DK"^^xsd:string "DM"^^xsd:string "DO"^^xsd:string "DZ"^^xsd:string "EC"^^xsd:string "EE"^^xsd:string "EG"^^xsd:string "ER"^^xsd:string "ES"^^xsd:string "ET"^^xsd:string "FI"^^xsd:string "FJ"^^xsd:string "FK"^^xsd:string "FM"^^xsd:string "FO"^^xsd:string "FR"^^xsd:string "GA"^^xsd:string "GB"^^xsd:string "GD"^^xsd:string "GE"^^xsd:string "GF"^^xsd:string "GG"^^xsd:string "GH"^^xsd:string "GL"^^xsd:string "GM"^^xsd:string "GN"^^xsd:string "GP"^^xsd:string "GQ"^^xsd:string "GR"^^xsd:string "GS"^^xsd:string "GT"^^xsd:string "GU"^^xsd:string "GW"^^xsd:string "GY"^^xsd:string "HK"^^xsd:string "HM"^^xsd:string "HN"^^xsd:string "HR"^^xsd:string "HT"^^xsd:string "ID"^^xsd:string "IE"^^xsd:string "IL"^^xsd:string "IM"^^xsd:string "IN"^^xsd:string "IO"^^xsd:string "IQ"^^xsd:string "IR"^^xsd:string "IS"^^xsd:string "IT"^^xsd:string "JE"^^xsd:string "JM"^^xsd:string "JO"^^xsd:string "JP"^^xsd:string "KE"^^xsd:string "KG"^^xsd:string "KI"^^xsd:string "KM"^^xsd:string "KN"^^xsd:string "KP"^^xsd:string "KR"^^xsd:string "KW"^^xsd:string "KY"^^xsd:string "KZ"^^xsd:string "LA"^^xsd:string "LB"^^xsd:string "LC"^^xsd:string "LI"^^xsd:string "LK"^^xsd:string "LR"^^xsd:string "LS"^^xsd:string "LT"^^xsd:string "LV"^^xsd:string "LY"^^xsd:string "MA"^^xsd:string "MC"^^xsd:string "MD"^^xsd:string "ME"^^xsd:string "MF"^^xsd:string "MG"^^xsd:string "MH"^^xsd:string "MK"^^xsd:string "ML"^^xsd:string "MM"^^xsd:string "MN"^^xsd:string "MO"^^xsd:string "MP"^^xsd:string "MQ"^^xsd:string "MS"^^xsd:string "MT"^^xsd:string "MU"^^xsd:string "MV"^^xsd:string "MW"^^xsd:string "MX"^^xsd:string "MY"^^xsd:string "MZ"^^xsd:string "NA"^^xsd:string "NC"^^xsd:string "NE"^^xsd:string "NF"^^xsd:string "NG"^^xsd:string "NI"^^xsd:string "NL"^^xsd:string "NO"^^xsd:string "NR"^^xsd:string "NU"^^xsd:string "NZ"^^xsd:string "OM"^^xsd:string "PA"^^xsd:string "PE"^^xsd:string "PF"^^xsd:string "PG"^^xsd:string "PH"^^xsd:string "PK"^^xsd:string "PL"^^xsd:string "PM"^^xsd:string "PN"^^xsd:string "PR"^^xsd:string "PS"^^xsd:string "PT"^^xsd:string "PY"^^xsd:string "QA"^^xsd:string "RE"^^xsd:string "RO"^^xsd:string "RS"^^xsd:string "RU"^^xsd:string "RW"^^xsd:string "SA"^^xsd:string "SB"^^xsd:string "SC"^^xsd:string "SD"^^xsd:string "SE"^^xsd:string "SG"^^xsd:string "SH"^^xsd:string "SI"^^xsd:string "SJ"^^xsd:string "SL"^^xsd:string "SM"^^xsd:string "SN"^^xsd:string "SO"^^xsd:string "SR"^^xsd:string "SS"^^xsd:string "ST"^^xsd:string "SV"^^xsd:string "SX"^^xsd:string "SY"^^xsd:string "SZ"^^xsd:string "TC"^^xsd:string "TD"^^xsd:string "TF"^^xsd:string "TG"^^xsd:string "TH"^^xsd:string "TK"^^xsd:string "TL"^^xsd:string "TM"^^xsd:string "TN"^^xsd:string "TO"^^xsd:string "TR"^^xsd:string "TT"^^xsd:string "TV"^^xsd:string "TW"^^xsd:string "TZ"^^xsd:string "UA"^^xsd:string "UG"^^xsd:string "UM"^^xsd:string "US"^^xsd:string "UY"^^xsd:string "UZ"^^xsd:string "VC"^^xsd:string "VE"^^xsd:string "VG"^^xsd:string "VI"^^xsd:string "VN"^^xsd:string "VU"^^xsd:string "WF"^^xsd:string "WS"^^xsd:string "YE"^^xsd:string "YT"^^xsd:string "ZA"^^xsd:string "ZM"^^xsd:string "ZW"^^xsd:string )
+                ];
+                sh:property [
+                    sh:path madmp:pid_system;
+                    sh:name "The Dataset Distribution Host PID System Schema";
+                    sh:description "PID system(s). Allowed values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other";
+                    sh:datatype xsd:string;
+                    sh:in ( "ark"^^xsd:string "arxiv"^^xsd:string "bibcode"^^xsd:string "doi"^^xsd:string "ean13"^^xsd:string "eissn"^^xsd:string "handle"^^xsd:string "igsn"^^xsd:string "isbn"^^xsd:string "issn"^^xsd:string "istc"^^xsd:string "lissn"^^xsd:string "lsid"^^xsd:string "pmid"^^xsd:string "purl"^^xsd:string "upc"^^xsd:string "url"^^xsd:string "urn"^^xsd:string "other"^^xsd:string )
+                ];
+                sh:property [
+                    sh:path madmp:storage_type;
+                    sh:name "The Dataset Distribution Host Storage Type Schema";
+                    sh:description "The type of storage required";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:support_versioning;
+                    sh:name "The Dataset Distribution Host Support Versioning Schema";
+                    sh:description "If host supports versioning. Allowed values: yes, no, unknown";
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:in ( "yes"^^xsd:string "no"^^xsd:string "unknown"^^xsd:string)
+                ];
+                sh:property [
+                    sh:path terms:title;
+                    sh:name "The Dataset Distribution Host Title Schema";
+                    sh:description "Title";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string
+                ];
+                sh:property [
+                    sh:path madmp:url;
+                    sh:name "The Dataset Distribution Host URL Schema";
+                    sh:description "The URL of the system hosting a distribution of a dataset";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:pattern "^\\w+:(\\/){0,2}[^\\s]+$"
+                ]
+            ];
+            sh:property [
+                sh:path madmp:license;
+                sh:name "The Dataset Distribution License(s) Schema";
+                sh:description "To list all licenses applied to a specific distribution of data.";
+                sh:property [
+                    sh:path madmp:license_ref;
+                    sh:name "The Dataset Distribution License Reference Schema";
+                    sh:description "Link to license document.";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:pattern "^\\w+:(\\/){0,2}[^\\s]+$"
+                ];
+                sh:property [
+                    sh:path madmp:start_date;
+                    sh:name "The Dataset Distribution License Start Date Schema";
+                    sh:description "If date is set in the future, it indicates embargo period. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                    sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])$"
+                ]
+            ];
+            sh:property [
+                sh:path terms:title;
+                sh:name "The Dataset Distribution Title Schema";
+                sh:description "Title is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:datatype xsd:string;
+            ]
+
+        ];
+        sh:property [
+            sh:path terms:issued;
+            sh:name "The Dataset Date of Issue Schema";
+            sh:description "Issued. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+            sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])$"
+        ];
+        sh:property [
+            sh:path dcat:keyword;
+            sh:name "The Dataset Keyword(s) Schema";
+            sh:description "Keywords";
+            sh:datatype xsd:string
+        ];
+        sh:property [
+            sh:path madmp:language;
+            sh:name "The Dataset Language Schema";
+            sh:description "Language of the dataset expressed using ISO 639-3.";
+            sh:datatype xsd:string;
+            sh:in (
+                "aar"^^xsd:string "abk"^^xsd:string "afr"^^xsd:string "aka"^^xsd:string "amh"^^xsd:string "ara"^^xsd:string "arg"^^xsd:string "asm"^^xsd:string "ava"^^xsd:string "ave"^^xsd:string
+                "aym"^^xsd:string "aze"^^xsd:string "bak"^^xsd:string "bam"^^xsd:string "bel"^^xsd:string "ben"^^xsd:string "bih"^^xsd:string "bis"^^xsd:string "bod"^^xsd:string "bos"^^xsd:string
+                "bre"^^xsd:string "bul"^^xsd:string "cat"^^xsd:string "ces"^^xsd:string "cha"^^xsd:string "che"^^xsd:string "chu"^^xsd:string "chv"^^xsd:string "cor"^^xsd:string "cos"^^xsd:string
+                "cre"^^xsd:string "cym"^^xsd:string "dan"^^xsd:string "deu"^^xsd:string "div"^^xsd:string "dzo"^^xsd:string "ell"^^xsd:string "eng"^^xsd:string "epo"^^xsd:string "est"^^xsd:string
+                "eus"^^xsd:string "ewe"^^xsd:string "fao"^^xsd:string "fas"^^xsd:string "fij"^^xsd:string "fin"^^xsd:string "fra"^^xsd:string "fry"^^xsd:string "ful"^^xsd:string "gla"^^xsd:string
+                "gle"^^xsd:string "glg"^^xsd:string "glv"^^xsd:string "grn"^^xsd:string "guj"^^xsd:string "hat"^^xsd:string "hau"^^xsd:string "hbs"^^xsd:string "heb"^^xsd:string "her"^^xsd:string
+                "hin"^^xsd:string "hmo"^^xsd:string "hrv"^^xsd:string "hun"^^xsd:string "hye"^^xsd:string "ibo"^^xsd:string "ido"^^xsd:string "iii"^^xsd:string "iku"^^xsd:string "ile"^^xsd:string
+                "ina"^^xsd:string "ind"^^xsd:string "ipk"^^xsd:string "isl"^^xsd:string "ita"^^xsd:string "jav"^^xsd:string "jpn"^^xsd:string "kal"^^xsd:string "kan"^^xsd:string "kas"^^xsd:string
+                "kat"^^xsd:string "kau"^^xsd:string "kaz"^^xsd:string "khm"^^xsd:string "kik"^^xsd:string "kin"^^xsd:string "kir"^^xsd:string "kom"^^xsd:string "kon"^^xsd:string "kor"^^xsd:string
+                "kua"^^xsd:string "kur"^^xsd:string "lao"^^xsd:string "lat"^^xsd:string "lav"^^xsd:string "lim"^^xsd:string "lin"^^xsd:string "lit"^^xsd:string "ltz"^^xsd:string "lub"^^xsd:string
+                "lug"^^xsd:string "mah"^^xsd:string "mal"^^xsd:string "mar"^^xsd:string "mkd"^^xsd:string "mlg"^^xsd:string "mlt"^^xsd:string "mon"^^xsd:string "mri"^^xsd:string "msa"^^xsd:string
+                "mya"^^xsd:string "nau"^^xsd:string "nav"^^xsd:string "nbl"^^xsd:string "nde"^^xsd:string "ndo"^^xsd:string "nep"^^xsd:string "nld"^^xsd:string "nno"^^xsd:string "nob"^^xsd:string
+                "nor"^^xsd:string "nya"^^xsd:string "oci"^^xsd:string "oji"^^xsd:string "ori"^^xsd:string "orm"^^xsd:string "oss"^^xsd:string "pan"^^xsd:string "pli"^^xsd:string "pol"^^xsd:string
+                "por"^^xsd:string "pus"^^xsd:string "que"^^xsd:string "roh"^^xsd:string "ron"^^xsd:string "run"^^xsd:string "rus"^^xsd:string "sag"^^xsd:string "san"^^xsd:string "sin"^^xsd:string
+                "slk"^^xsd:string "slv"^^xsd:string "sme"^^xsd:string "smo"^^xsd:string "sna"^^xsd:string "snd"^^xsd:string "som"^^xsd:string "sot"^^xsd:string "spa"^^xsd:string "sqi"^^xsd:string
+                "srd"^^xsd:string "srp"^^xsd:string "ssw"^^xsd:string "sun"^^xsd:string "swa"^^xsd:string "swe"^^xsd:string "tah"^^xsd:string "tam"^^xsd:string "tat"^^xsd:string "tel"^^xsd:string
+                "tgk"^^xsd:string "tgl"^^xsd:string "tha"^^xsd:string "tir"^^xsd:string "ton"^^xsd:string "tsn"^^xsd:string "tso"^^xsd:string "tuk"^^xsd:string "tur"^^xsd:string "twi"^^xsd:string
+                "uig"^^xsd:string "ukr"^^xsd:string "urd"^^xsd:string "uzb"^^xsd:string "ven"^^xsd:string "vie"^^xsd:string "vol"^^xsd:string "wln"^^xsd:string "wol"^^xsd:string "xho"^^xsd:string
+                "yid"^^xsd:string "yor"^^xsd:string "zha"^^xsd:string "zho"^^xsd:string "zul"^^xsd:string
+            );
+        ];
+        sh:property [
+            sh:path madmp:personal_data;
+            sh:name "The Dataset Personal Data Schema";
+            sh:description "If any personal data is contained. Allowed values: yes, no, unknown";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+            sh:in ( "yes"^^xsd:string "no"^^xsd:string "unknown"^^xsd:string)
+        ];
+        sh:property [
+            sh:path madmp:preservation_statement;
+            sh:name "The Dataset Preservation Statement Schema";
+            sh:description "Preservation Statement";
+
+        ];
+        sh:property [
+            sh:path madmp:security_and_privacy;
+            sh:name "The Dataset Security and Policy Schema";
+            sh:description "To list all issues and requirements related to security and privacy";
+            sh:property [
+                sh:path terms:description;
+                sh:name "The Dataset Security & Policy Description Schema";
+                sh:description "Description";
+                ex:maxCount 1;
+                ex:datatype xsd:string
+            ];
+            sh:property [
+                sh:path terms:title;
+                sh:name "The Dataset Security & Policy Title Schema";
+                sh:description "Title";
+                sh:minCount 1;
+                ex:maxCount 1;
+                ex:datatype xsd:string
+
+            ]
+        ];
+        sh:property [
+            sh:path madmp:sensitive_data;
+            sh:name "The Dataset Sensitive Data Schema";
+            sh:description "If any sensitive data is contained. Allowed values: yes, no, unknown";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+            sh:in ( "yes"^^xsd:string "no"^^xsd:string "unknown"^^xsd:string)
+        ];
+        sh:property [
+            sh:path madmp:technical_resource;
+            sh:name "The Dataset Technical Resource Schema";
+            sh:description "To list all technical resources needed to implement a DMP";
+            sh:property [
+                sh:path terms:description;
+                sh:name "The Dataset Technical Resource Description Schema";
+                sh:description "Description of the technical resource";
+                ex:maxCount 1;
+                ex:datatype xsd:string
+            ];
+            sh:property [
+                sh:path foaf:name;
+                sh:name "The Dataset Technical Resource Name Schema";
+                sh:description "Name of the technical resource";
+                sh:minCount 1;
+                ex:maxCount 1;
+                ex:datatype xsd:string
+            ]
+        ];
+        sh:property [
+            sh:path terms:title;
+            sh:name "The Dataset Title Schema";
+            sh:description "Title is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.";
+            sh:minCount 1;
+            ex:maxCount 1;
+            ex:datatype xsd:string
+
+        ];
+        sh:property [
+            sh:path madmp:identifier_type;
+            sh:name "he Dataset Type Schema";
+            sh:description "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf http://vocabularies.coar-repositories.org/pubby/resource_type.html";
+            sh:maxCount 1;
+            sh:datatype xsd:string
+        ];
+        sh:property [
+            sh:path madmp:metadata;
+            sh:name "The Dataset Metadata Schema";
+            sh:description "To describe metadata standards used";
+            sh:property [
+                sh:path terms:description;
+                sh:name "The Dataset Metadata Description Schema";
+                sh:description "Description";
+                sh:datatype xsd:string;
+                sh:maxCount 1;
+            ];
+            sh:property [
+                sh:path madmp:language;
+                sh:name "The Dataset Metadata Language Schema";
+                sh:description "Language of the metadata expressed using ISO 639-3.";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:in (
+                    "aar"^^xsd:string "abk"^^xsd:string "afr"^^xsd:string "aka"^^xsd:string "amh"^^xsd:string "ara"^^xsd:string "arg"^^xsd:string "asm"^^xsd:string "ava"^^xsd:string "ave"^^xsd:string
+                    "aym"^^xsd:string "aze"^^xsd:string "bak"^^xsd:string "bam"^^xsd:string "bel"^^xsd:string "ben"^^xsd:string "bih"^^xsd:string "bis"^^xsd:string "bod"^^xsd:string "bos"^^xsd:string
+                    "bre"^^xsd:string "bul"^^xsd:string "cat"^^xsd:string "ces"^^xsd:string "cha"^^xsd:string "che"^^xsd:string "chu"^^xsd:string "chv"^^xsd:string "cor"^^xsd:string "cos"^^xsd:string
+                    "cre"^^xsd:string "cym"^^xsd:string "dan"^^xsd:string "deu"^^xsd:string "div"^^xsd:string "dzo"^^xsd:string "ell"^^xsd:string "eng"^^xsd:string "epo"^^xsd:string "est"^^xsd:string
+                    "eus"^^xsd:string "ewe"^^xsd:string "fao"^^xsd:string "fas"^^xsd:string "fij"^^xsd:string "fin"^^xsd:string "fra"^^xsd:string "fry"^^xsd:string "ful"^^xsd:string "gla"^^xsd:string
+                    "gle"^^xsd:string "glg"^^xsd:string "glv"^^xsd:string "grn"^^xsd:string "guj"^^xsd:string "hat"^^xsd:string "hau"^^xsd:string "hbs"^^xsd:string "heb"^^xsd:string "her"^^xsd:string
+                    "hin"^^xsd:string "hmo"^^xsd:string "hrv"^^xsd:string "hun"^^xsd:string "hye"^^xsd:string "ibo"^^xsd:string "ido"^^xsd:string "iii"^^xsd:string "iku"^^xsd:string "ile"^^xsd:string
+                    "ina"^^xsd:string "ind"^^xsd:string "ipk"^^xsd:string "isl"^^xsd:string "ita"^^xsd:string "jav"^^xsd:string "jpn"^^xsd:string "kal"^^xsd:string "kan"^^xsd:string "kas"^^xsd:string
+                    "kat"^^xsd:string "kau"^^xsd:string "kaz"^^xsd:string "khm"^^xsd:string "kik"^^xsd:string "kin"^^xsd:string "kir"^^xsd:string "kom"^^xsd:string "kon"^^xsd:string "kor"^^xsd:string
+                    "kua"^^xsd:string "kur"^^xsd:string "lao"^^xsd:string "lat"^^xsd:string "lav"^^xsd:string "lim"^^xsd:string "lin"^^xsd:string "lit"^^xsd:string "ltz"^^xsd:string "lub"^^xsd:string
+                    "lug"^^xsd:string "mah"^^xsd:string "mal"^^xsd:string "mar"^^xsd:string "mkd"^^xsd:string "mlg"^^xsd:string "mlt"^^xsd:string "mon"^^xsd:string "mri"^^xsd:string "msa"^^xsd:string
+                    "mya"^^xsd:string "nau"^^xsd:string "nav"^^xsd:string "nbl"^^xsd:string "nde"^^xsd:string "ndo"^^xsd:string "nep"^^xsd:string "nld"^^xsd:string "nno"^^xsd:string "nob"^^xsd:string
+                    "nor"^^xsd:string "nya"^^xsd:string "oci"^^xsd:string "oji"^^xsd:string "ori"^^xsd:string "orm"^^xsd:string "oss"^^xsd:string "pan"^^xsd:string "pli"^^xsd:string "pol"^^xsd:string
+                    "por"^^xsd:string "pus"^^xsd:string "que"^^xsd:string "roh"^^xsd:string "ron"^^xsd:string "run"^^xsd:string "rus"^^xsd:string "sag"^^xsd:string "san"^^xsd:string "sin"^^xsd:string
+                    "slk"^^xsd:string "slv"^^xsd:string "sme"^^xsd:string "smo"^^xsd:string "sna"^^xsd:string "snd"^^xsd:string "som"^^xsd:string "sot"^^xsd:string "spa"^^xsd:string "sqi"^^xsd:string
+                    "srd"^^xsd:string "srp"^^xsd:string "ssw"^^xsd:string "sun"^^xsd:string "swa"^^xsd:string "swe"^^xsd:string "tah"^^xsd:string "tam"^^xsd:string "tat"^^xsd:string "tel"^^xsd:string
+                    "tgk"^^xsd:string "tgl"^^xsd:string "tha"^^xsd:string "tir"^^xsd:string "ton"^^xsd:string "tsn"^^xsd:string "tso"^^xsd:string "tuk"^^xsd:string "tur"^^xsd:string "twi"^^xsd:string
+                    "uig"^^xsd:string "ukr"^^xsd:string "urd"^^xsd:string "uzb"^^xsd:string "ven"^^xsd:string "vie"^^xsd:string "vol"^^xsd:string "wln"^^xsd:string "wol"^^xsd:string "xho"^^xsd:string
+                    "yid"^^xsd:string "yor"^^xsd:string "zha"^^xsd:string "zho"^^xsd:string "zul"^^xsd:string
+                );
+            ];
+            sh:property [
+                sh:path madmp:metadata_standard_id;
+                sh:name: "The Dataset Metadata Standard ID Schema";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:property [
+                    sh:path terms:identifier;
+                    sh:name "The Dataset Metadata Standard Identifier Value Schema";
+                    sh:description "Identifier for the metadata standard used.";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                ];
+                sh:property [
+                    sh:path madmp:identifier_type;
+                    sh:name "The Dataset Metadata Standard Identifier Type Schema";
+                    sh:description "Identifier type. Allowed values: url, other";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:in ("url"^^xsd:string "other"^^xsd:string);
+                ];
+            ];
+        ];
+
+    ];
+    sh:property[
+        sh:path madmp:cost;
+        sh:name "The Cost Schema";
+        sh:property [
+            sh:path madmp:currency_code;
+            sh:name "The Cost Currency Code Schema";
+            sh:description "Allowed values defined by ISO 4217";
+            sh:maxCount 1;
+            sh:in (
+                "AED"^^xsd:string "AFN"^^xsd:string "ALL"^^xsd:string "AMD"^^xsd:string "ANG"^^xsd:string "AOA"^^xsd:string "ARS"^^xsd:string "AUD"^^xsd:string "AWG"^^xsd:string "AZN"^^xsd:string
+                "BAM"^^xsd:string "BBD"^^xsd:string "BDT"^^xsd:string "BGN"^^xsd:string "BHD"^^xsd:string "BIF"^^xsd:string "BMD"^^xsd:string "BND"^^xsd:string "BOB"^^xsd:string "BRL"^^xsd:string
+                "BSD"^^xsd:string "BTN"^^xsd:string "BWP"^^xsd:string "BYN"^^xsd:string "BZD"^^xsd:string "CAD"^^xsd:string "CDF"^^xsd:string "CHF"^^xsd:string "CLP"^^xsd:string "CNY"^^xsd:string
+                "COP"^^xsd:string "CRC"^^xsd:string "CUC"^^xsd:string "CUP"^^xsd:string "CVE"^^xsd:string "CZK"^^xsd:string "DJF"^^xsd:string "DKK"^^xsd:string "DOP"^^xsd:string "DZD"^^xsd:string
+                "EGP"^^xsd:string "ERN"^^xsd:string "ETB"^^xsd:string "EUR"^^xsd:string "FJD"^^xsd:string "FKP"^^xsd:string "GBP"^^xsd:string "GEL"^^xsd:string "GGP"^^xsd:string "GHS"^^xsd:string
+                "GIP"^^xsd:string "GMD"^^xsd:string "GNF"^^xsd:string "GTQ"^^xsd:string "GYD"^^xsd:string "HKD"^^xsd:string "HNL"^^xsd:string "HRK"^^xsd:string "HTG"^^xsd:string "HUF"^^xsd:string
+                "IDR"^^xsd:string "ILS"^^xsd:string "IMP"^^xsd:string "INR"^^xsd:string "IQD"^^xsd:string "IRR"^^xsd:string "ISK"^^xsd:string "JEP"^^xsd:string "JMD"^^xsd:string "JOD"^^xsd:string
+                "JPY"^^xsd:string "KES"^^xsd:string "KGS"^^xsd:string "KHR"^^xsd:string "KMF"^^xsd:string "KPW"^^xsd:string "KRW"^^xsd:string "KWD"^^xsd:string "KYD"^^xsd:string "KZT"^^xsd:string
+                "LAK"^^xsd:string "LBP"^^xsd:string "LKR"^^xsd:string "LRD"^^xsd:string "LSL"^^xsd:string "LYD"^^xsd:string "MAD"^^xsd:string "MDL"^^xsd:string "MGA"^^xsd:string "MKD"^^xsd:string
+                "MMK"^^xsd:string "MNT"^^xsd:string "MOP"^^xsd:string "MRU"^^xsd:string "MUR"^^xsd:string "MVR"^^xsd:string "MWK"^^xsd:string "MXN"^^xsd:string "MYR"^^xsd:string "MZN"^^xsd:string
+                "NAD"^^xsd:string "NGN"^^xsd:string "NIO"^^xsd:string "NOK"^^xsd:string "NPR"^^xsd:string "NZD"^^xsd:string "OMR"^^xsd:string "PAB"^^xsd:string "PEN"^^xsd:string "PGK"^^xsd:string
+                "PHP"^^xsd:string "PKR"^^xsd:string "PLN"^^xsd:string "PYG"^^xsd:string "QAR"^^xsd:string "RON"^^xsd:string "RSD"^^xsd:string "RUB"^^xsd:string "RWF"^^xsd:string "SAR"^^xsd:string
+                "SBD"^^xsd:string "SCR"^^xsd:string "SDG"^^xsd:string "SEK"^^xsd:string "SGD"^^xsd:string "SHP"^^xsd:string "SLL"^^xsd:string "SOS"^^xsd:string "SPL*"^^xsd:string "SRD"^^xsd:string
+                "STN"^^xsd:string "SVC"^^xsd:string "SYP"^^xsd:string "SZL"^^xsd:string "THB"^^xsd:string "TJS"^^xsd:string "TMT"^^xsd:string "TND"^^xsd:string "TOP"^^xsd:string "TRY"^^xsd:string
+                "TTD"^^xsd:string "TVD"^^xsd:string "TWD"^^xsd:string "TZS"^^xsd:string "UAH"^^xsd:string "UGX"^^xsd:string "USD"^^xsd:string "UYU"^^xsd:string "UZS"^^xsd:string "VEF"^^xsd:string
+                "VND"^^xsd:string "VUV"^^xsd:string "WST"^^xsd:string "XAF"^^xsd:string "XCD"^^xsd:string "XDR"^^xsd:string "XOF"^^xsd:string "XPF"^^xsd:string "YER"^^xsd:string "ZAR"^^xsd:string
+                "ZMW"^^xsd:string "ZWD"^^xsd:string
+            );
+        ];
+        sh:property [
+            sh:path terms:description;
+            sh:name "The Cost Description Schema";
+            sh:description "Cost(s) Description";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+        ];
+        sh:property [
+            sh:path terms:title;
+            sh:name "The Cost Title Schema";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+        ];
+        sh:property [
+            sh:path madmp:value;
+            sh:name "The Cost Value Schema";
+            sh:description "Value";
+            sh:maxCount 1;
+            sh:or (
+                [
+                    sh:datatype xsd:integer;
+                ]
+                [
+                    sh:datatype xsd:float;
+                ]
+            );
+            sh:minInclusive 0;
+        ];
+    ];
+    sh:property [
+        sh:path terms:created;
+        sh:name "The DMP Creation Schema";
+        sh:description "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time compliant string";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])T([01]\\d|2[012])(:[0-5]\\d){2}(\\.(\\d){1,3}(Z)?)?$";
+    ];
+    sh:property [
+        sh:path terms:description;
+        sh:name "The DMP Description Schema";
+        sh:description "To provide any free-form text information on a DMP";
+        sh:datatype xsd:string;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path madmp:dmp_id;
+        sh:name "The DMP Identifier Schema";
+        sh:description "Identifier for the DMP itself";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:property [
+            sh:path terms:identifier;
+            sh:name "The DMP Identifier Value Schema";
+            sh:description "Identifier for the DMP";
+            sh:datatype xsd:string;
+            sh:minCount 1;
+            sh:maxCount 1;
+        ];
+        sh:property [
+            sh:path madmp:identifier_type;
+            sh:name "The DMP Identifier Type Schema";
+            sh:description: "The DMP Identifier Type. Allowed values: handle, doi, ark, url, other";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:in ("handle"^^xsd:string "doi"^^xsd:string "ark"^^xsd:string "url"^^xsd:string "other"^^xsd:string);
+        ];
+    ];
+    sh:property [
+        sh:path madmp:ethical_issues_description;
+        sh:name "The DMP Ethical Issues Description Schema";
+        sh:description "To describe ethical issues directly in a DMP";
+        sh:datatype xsd:string;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path madmp:ethical_issues_exist;
+        sh:name "The DMP Ethical Issues Exist Schema";
+        sh:description "To indicate whether there are ethical issues related to data that this DMP describes. Allowed values: yes, no, unknown";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:in ("yes"^^xsd:string "no"^^xsd:string "unknown"^^xsd:string);
+    ];
+    sh:property [
+        sh:path madmp:ethical_issues_report;
+        sh:name "The DMP Ethical Issues Report Schema";
+        sh:description "To indicate where a protocol from a meeting with an ethical commitee can be found";
+        sh:datatype xsd:string;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path madmp:language;
+        sh:name "The DMP Language Schema";
+        sh:description "Language of the DMP expressed using ISO 639-3.";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:in (
+            "aar"^^xsd:string "abk"^^xsd:string "afr"^^xsd:string "aka"^^xsd:string "amh"^^xsd:string "ara"^^xsd:string "arg"^^xsd:string "asm"^^xsd:string "ava"^^xsd:string "ave"^^xsd:string
+            "aym"^^xsd:string "aze"^^xsd:string "bak"^^xsd:string "bam"^^xsd:string "bel"^^xsd:string "ben"^^xsd:string "bih"^^xsd:string "bis"^^xsd:string "bod"^^xsd:string "bos"^^xsd:string
+            "bre"^^xsd:string "bul"^^xsd:string "cat"^^xsd:string "ces"^^xsd:string "cha"^^xsd:string "che"^^xsd:string "chu"^^xsd:string "chv"^^xsd:string "cor"^^xsd:string "cos"^^xsd:string
+            "cre"^^xsd:string "cym"^^xsd:string "dan"^^xsd:string "deu"^^xsd:string "div"^^xsd:string "dzo"^^xsd:string "ell"^^xsd:string "eng"^^xsd:string "epo"^^xsd:string "est"^^xsd:string
+            "eus"^^xsd:string "ewe"^^xsd:string "fao"^^xsd:string "fas"^^xsd:string "fij"^^xsd:string "fin"^^xsd:string "fra"^^xsd:string "fry"^^xsd:string "ful"^^xsd:string "gla"^^xsd:string
+            "gle"^^xsd:string "glg"^^xsd:string "glv"^^xsd:string "grn"^^xsd:string "guj"^^xsd:string "hat"^^xsd:string "hau"^^xsd:string "hbs"^^xsd:string "heb"^^xsd:string "her"^^xsd:string
+            "hin"^^xsd:string "hmo"^^xsd:string "hrv"^^xsd:string "hun"^^xsd:string "hye"^^xsd:string "ibo"^^xsd:string "ido"^^xsd:string "iii"^^xsd:string "iku"^^xsd:string "ile"^^xsd:string
+            "ina"^^xsd:string "ind"^^xsd:string "ipk"^^xsd:string "isl"^^xsd:string "ita"^^xsd:string "jav"^^xsd:string "jpn"^^xsd:string "kal"^^xsd:string "kan"^^xsd:string "kas"^^xsd:string
+            "kat"^^xsd:string "kau"^^xsd:string "kaz"^^xsd:string "khm"^^xsd:string "kik"^^xsd:string "kin"^^xsd:string "kir"^^xsd:string "kom"^^xsd:string "kon"^^xsd:string "kor"^^xsd:string
+            "kua"^^xsd:string "kur"^^xsd:string "lao"^^xsd:string "lat"^^xsd:string "lav"^^xsd:string "lim"^^xsd:string "lin"^^xsd:string "lit"^^xsd:string "ltz"^^xsd:string "lub"^^xsd:string
+            "lug"^^xsd:string "mah"^^xsd:string "mal"^^xsd:string "mar"^^xsd:string "mkd"^^xsd:string "mlg"^^xsd:string "mlt"^^xsd:string "mon"^^xsd:string "mri"^^xsd:string "msa"^^xsd:string
+            "mya"^^xsd:string "nau"^^xsd:string "nav"^^xsd:string "nbl"^^xsd:string "nde"^^xsd:string "ndo"^^xsd:string "nep"^^xsd:string "nld"^^xsd:string "nno"^^xsd:string "nob"^^xsd:string
+            "nor"^^xsd:string "nya"^^xsd:string "oci"^^xsd:string "oji"^^xsd:string "ori"^^xsd:string "orm"^^xsd:string "oss"^^xsd:string "pan"^^xsd:string "pli"^^xsd:string "pol"^^xsd:string
+            "por"^^xsd:string "pus"^^xsd:string "que"^^xsd:string "roh"^^xsd:string "ron"^^xsd:string "run"^^xsd:string "rus"^^xsd:string "sag"^^xsd:string "san"^^xsd:string "sin"^^xsd:string
+            "slk"^^xsd:string "slv"^^xsd:string "sme"^^xsd:string "smo"^^xsd:string "sna"^^xsd:string "snd"^^xsd:string "som"^^xsd:string "sot"^^xsd:string "spa"^^xsd:string "sqi"^^xsd:string
+            "srd"^^xsd:string "srp"^^xsd:string "ssw"^^xsd:string "sun"^^xsd:string "swa"^^xsd:string "swe"^^xsd:string "tah"^^xsd:string "tam"^^xsd:string "tat"^^xsd:string "tel"^^xsd:string
+            "tgk"^^xsd:string "tgl"^^xsd:string "tha"^^xsd:string "tir"^^xsd:string "ton"^^xsd:string "tsn"^^xsd:string "tso"^^xsd:string "tuk"^^xsd:string "tur"^^xsd:string "twi"^^xsd:string
+            "uig"^^xsd:string "ukr"^^xsd:string "urd"^^xsd:string "uzb"^^xsd:string "ven"^^xsd:string "vie"^^xsd:string "vol"^^xsd:string "wln"^^xsd:string "wol"^^xsd:string "xho"^^xsd:string
+            "yid"^^xsd:string "yor"^^xsd:string "zha"^^xsd:string "zho"^^xsd:string "zul"^^xsd:string
+        );
+    ];
+    sh:property [
+        sh:path terms:modified;
+        sh:name "The DMP Modification Schema";
+        sh:description "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])T([01]\\d|2[012])(:[0-5]\\d){2}(\\.(\\d){1,3}(Z)?)?$";
+    ];
+    sh:property [
+        sh:path madmp:project;
+        sh:name "The DMP Project Schema";
+        sh:description "Project related to a DMP";
+        sh:property [
+            sh:path terms:description;
+            sh:name "The DMP Project Description Schema";
+            sh:description "Project description";
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+        ];
+        sh:property [
+            sh:path terms:title;
+            sh:name "The DMP Project Title Schema";
+            sh:description "Project title";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+            sh:minLength 1;
+        ];
+        sh:property [
+            sh:path dcat:startDate;
+            sh:name "The DMP Project Start Date Schema";
+            sh:description "Project start date. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])$";
+        ];
+        sh:property [
+            sh:path dcat:endDate;
+            sh:name "The DMP Project End Date Schema";
+            sh:description "Project end date. Encoded using the relevant ISO 8601 Date and Time compliant string.";
+            sh:datatype xsd:string;
+            sh:maxCount 1;
+            sh:pattern "^\\d{4}-(0[1-9]|1[012])-([012]\\d|3[01])$";
+        ];
+        sh:property [
+            sh:path madmp:funding;
+            sh:name "The DMP Project Funding Schema";
+            sh:path "Funding related with a project";
+            sh:property [
+                sh:path madmp:funder_id;
+                sh:name "The Funder ID Schema";
+                sh:description "Funder ID of the associated project";
+                sh:minCount 1;
+                sh:maxCount 1;
+                sh:property [
+                    sh:path terms:identifier;
+                    sh:name "The Funder ID Value Schema";
+                    sh:description "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                ];
+                sh:property [
+                    sh:path madmp:identifier_type;
+                    sh:name "The Funder ID Type Schema";
+                    sh:description "Identifier type. Allowed values: fundref, url, other";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:in ("fundref"^^xsd:string "url"^^xsd:string "other"^^xsd:string);
+                ];
+            ];
+            sh:property [
+                sh:path madmp:funding_status;
+                sh:name "The Funding Status Schema";
+                sh:description "To express different phases of project lifecycle. Allowed values: planned, applied, granted, rejected";
+                sh:maxCount 1;
+                sh:in ("planned"^^xsd:string "applied"^^xsd:string "granted"^^xsd:string "rejected"^^xsd:string);
+            ];
+            sh:property [
+                sh:path madmp:grant_id;
+                sh:name "The Funding Grant ID Schema";
+                sh:description "Grant ID of the associated project";
+                sh:maxCount 1;
+                sh:property [
+                    sh:path terms:identifier;
+                    sh:name "The Funding Grant ID Value Schema";
+                    sh:description "Grant ID";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:datatype xsd:string;
+                ];
+                sh:property [
+                    sh:path madmp:identifier_type;
+                    sh:name "The Funding Grant ID Type Schema";
+                    sh:description "Identifier type. Allowed values: url, other";
+                    sh:minCount 1;
+                    sh:maxCount 1;
+                    sh:in ("url"^^xsd:string "other"^^xsd:string);
+                ];
+            ];
+        ];
+        sh:property [
+            sh:path terms:title;
+            sh:name "The DMP Title Schema";
+            sh:description "Title of a DMP";
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:datatype xsd:string;
+        ];
+    ];
