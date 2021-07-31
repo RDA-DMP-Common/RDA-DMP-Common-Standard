@@ -481,7 +481,7 @@
                           "$id": "#/properties/dmp/properties/dataset/items/properties/distribution/items/properties/host/properties/url",
                           "type": "string",
                           "format": "uri",
-                          "title": "The Dataset Distribution Host Title Schema",
+                          "title": "The Dataset Distribution Host URL Schema",
                           "description": "The URL of the system hosting a distribution of a dataset",
                           "examples": ["https://zenodo.org"]
                         }
