@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+cff-version: 1.1.0
 message: "If you use the RDA recommendation, please cite it as below."
 authors:
 - family-names: "Miksa"
@@ -11,5 +11,5 @@ authors:
   given-names: "Peter"
   orcid: "https://orcid.org/0000-0002-7171-2334"
 title: "RDA DMP Common Standard for Machine-actionable Data Management Plans"
-doi: "10.15497/rda00039"
-license: "CC-0"
+version: 1.1
+doi: 10.15497/rda00039
