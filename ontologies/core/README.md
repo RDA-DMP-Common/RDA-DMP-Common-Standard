@@ -47,3 +47,4 @@ Versions available:
 * v3.0.0 [2020.05.28] - RDA Hackathon version. Imported third party ontologies into the dcso.
 * v3.0.1 [2020.05.28] - RDA Hackathon version. All properties have been annotated.
 * v3.0.2 [2020.05.28] - RDA Hackathon final version.
+* v4.0.0 [2022.04.10] - Major revision. DCSX no longer referred. Multiple issues addressed.
