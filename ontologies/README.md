@@ -32,3 +32,4 @@ This is still a work in progress. The idea behind having the DMP Common Standard
 ## Acknowledgments
 
 * **[Tomasz Miksa](https://github.com/TomMiksa)**
+* **[Marek Suchánek](https://github.com/MarekSuchanek)**
