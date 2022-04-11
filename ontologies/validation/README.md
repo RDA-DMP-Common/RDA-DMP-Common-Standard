@@ -14,13 +14,15 @@ Versions available:
 
 ## Examples
 
-We use [Shaclex/RDFShape](http://shaclex.herokuapp.com/shExValidate) as validation service. If you experience any trouble with the validation, please try again later as the server might be busy.
-* A [DMP valid example](./valid-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-valid
-* A [DMP failing example](./failing-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-failing
-* A [Dataset valid example](./valid-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-valid
-* A [Dataset failing example](./failing-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-failing
+We use [Shaclex/RDFShape](http://shaclex.herokuapp.com/shExValidate) and http://shex.io/ as validation services. If you experience any trouble with the validation, please try again later as the server might be busy.
 
-## Work in progress
-* Getting a permalink on the validation platforms so people can go directly to the validation without needing to copy & paste
-* Adding the validation for DCSO dataset
+Is there any difference in the examples at RDFShape and ShEx.io? Yes, while RDFShape one allows us to used a URL for validation (linked to examples and shapes at this GitHub repo), ShEx.io uses permalinks so we had to cut string and URLs to get the example running as a permalink. For instance, we have this property and value in one of our examples ```terms:identifier "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf"``` so for ShEx.io we shortened it to ```terms:identifier "https://www.illumina.com/some.pdf"```. We also removed comments, double space, and empty lines from the versions used in ShEx.io.
+
+* A [DMP valid example](./valid-dmp-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-valid (using RDFShape) and https://tinyurl.com/dcso-shexio-dmp-valid (using ShEx.io)
+* A [DMP failing example](./failing-dmp-example_dcso.3.0.2.ttl) validated against the [DMP shape](dcso-dmp.3.0.2.shex), available at https://tinyurl.com/dcso-shex-failing and https://tinyurl.com/dcso-shexio-dmp-failing
+* A [Dataset valid example](./valid-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-valid and https://tinyurl.com/dcso-shexio-dataset-valid
+* A [Dataset failing example](./failing-dataset-example_dcso.3.0.2.ttl) validated against the [Dataset shape](dcso-dataset.3.0.2.shex), available at https://tinyurl.com/dcso-shex-dataset-failing and https://tinyurl.com/dcso-shexio-dataset-failing
+
+## Future work
 * Adding some restrictions regarding lower/uppercase, language, currency and dates
+* Adding support also for SCHAL
