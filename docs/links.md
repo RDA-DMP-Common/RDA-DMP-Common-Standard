@@ -2,6 +2,31 @@
 
 We have collected here links to all important resources created by the [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg) (official website).
 
+## Publications
+- [Tomasz Miksa, Simon Oblasser, and Andreas Rauber. **Automating research data management using machine-actionable data management plans**. ACM Transactions on Management Information Systems, 13(2), dec 2021. ](http://dx.doi.org/10.1145/3490396)
+
+- [Tomasz Miksa, Paul Walk, Peter Neish, Simon Oblasser, Hollydawn Murray, Tom Renner, Marie-Christine Jacquemot-Perbal, João Cardoso, Trond Kvamme, Maria Praetzellis, Marek Suchánek, Rob Hooft, Benjamin Faure, Hanne Moa, Adil Hasan, and Sarah Jones. **Application profile for machine-actionable data management plans**. CODATA Data Science Journal, 20(1):32, October 2021](http://dx.doi.org/10.5334/dsj-2021-032)
+
+- [Tomasz Miksa, Stephanie Simms, Daniel Mietchen, Sarah Jones: **Ten principles for machine-actionable data management plans**. PLOS Computational Biology (in press)](https://doi.org/10.5281/zenodo.1172672)
+
+- [João Cardoso, Leyla Jael Castro, and Tomasz Miksa. **Interconnecting Systems Using Machine-Actionable Data Management Plans Hackathon Report**. Data Science Journal, 20, 2021.](http://dx.doi.org/10.5334/dsj-2021-035)
+
+
+- [Raffael Foidl, Lea Salome Brugger, and Tomasz Miksa.** Automating Evaluation of Machine-Actionable Data Management Plans with Semantic Web Technologies**. In DaMaLOS - 2nd Workshop on Data and Research Objects Management for Linked Open Science : Co-located at the International Semantic Web Conference ISWC 2021. PUBLISSO, November 2021.](https://dx.doi.org/10.4126/FRL01-006429413)
+
+- [Tomasz Miksa, Maroua Jaoua, and Ghaith Arfaoui. **Research Object Crates and Machine-actionable Data Management Plans**. In DaMaLOS - First Workshop on Data and Research Objects Management for Linked Open Science : Co-located at the International Semantic Web Conference ISWC 2020. PUBLISSO, November 2020. ](https://dx.doi.org/10.4126/FRL01-006423291)
+
+- [João Cardoso, Leyla Jael Garcia Castro, Fajar Ekaputra, Marie-Christine Jacquemot-Perbal, Tomasz Miksa, and José Borbinha. **Towards semantic representation of machine-actionable Data Management Plans**. In DaMaLOS - First Workshop on Data and Research Objects Management for Linked Open Science : Co-located at the International Semantic Web Conference ISWC 2020. PUBLISSO, 2020.](http://dx.doi.org/10.4126/FRL01-006423289)
+
+- [Simon Oblasser, Tomasz Miksa, Asanobu Kitamoto: **Finding a Repository with the Help of Machine-Actionable DMPs: Opportunities and Challenges**. IDCC 2020](https://doi.org/10.2218/ijdc.v15i1.704)
+
+- [Tomasz Miksa, Peter Neish, Paul Walk, Andreas Rauber: **Defining requirements for machine-actionable Data Management Plans**. iPres 2018](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
+
+
+- [Tomasz Miksa, João Cardoso, José Luis Borbinha: **Framing the scope of the common data model for machine-actionable Data Management Plans**. BigData 2018: 2733-2742](https://dcicblog.umd.edu/cas/wp-content/uploads/sites/13/2018/12/10.Miksa_.pdf)
+
+- [Asztrik Bakos, Tomasz Miksa, Andreas Rauber: **Research Data Preservation Using Process Engines and Machine-Actionable Data Management Plans**. TPDL 2018: 69-80](https://link.springer.com/chapter/10.1007/978-3-030-00066-0_6)
+
 ## 1st Consultation - scoping the maDMPs
 Collection of user stories to identify scope of maDMPs. 
 
@@ -54,14 +79,7 @@ Work in progress.
 
 - [maDMP tool mock-ups](https://oblassers.github.io/dmap-mockups/)
 
-## Publications
-- [Tomasz Miksa, Peter Neish, Paul Walk, Andreas Rauber: Defining requirements for machine-actionable Data Management Plans. iPres 2018](http://ifs.tuwien.ac.at/~miksa/papers/2018-iPres-maDMPs.pdf)
 
-- [Tomasz Miksa, Stephanie Simms, Daniel Mietchen, Sarah Jones: Ten principles for machine-actionable data management plans. PLOS Computational Biology (in press)](https://doi.org/10.5281/zenodo.1172672)
-
-- [Tomasz Miksa, João Cardoso, José Luis Borbinha: Framing the scope of the common data model for machine-actionable Data Management Plans. BigData 2018: 2733-2742](https://dcicblog.umd.edu/cas/wp-content/uploads/sites/13/2018/12/10.Miksa_.pdf)
-
-- [Asztrik Bakos, Tomasz Miksa, Andreas Rauber: Research Data Preservation Using Process Engines and Machine-Actionable Data Management Plans. TPDL 2018: 69-80](https://link.springer.com/chapter/10.1007/978-3-030-00066-0_6)
 
 
 ## Presentations
@@ -72,6 +90,7 @@ Slides from RDA plenaries
 - [12th Plenary in Gaborone](https://www.rd-alliance.org/system/files/documents/2018-RDA-DMP-Plenary-Gaborone.pdf)
 - [13th Plenary in Philadelphia](https://www.rd-alliance.org/rda-plenary-philadelphia-meeting-slides)
 - [14th Plenary in Helsinki](https://www.rd-alliance.org/p14-helsinki-slides)
+- [15th Plenary and further...](https://www.rd-alliance.org/node/56938/outputs)
 
 ## Workshops
 Workshops ran to collect inputs
