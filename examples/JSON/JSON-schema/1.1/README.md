@@ -1,5 +1,5 @@
 # maDMP JSON schema - version 1.1
-This is the JSON schema for the DMP common standard. Examples against the schema can be found [here](..)
+This is the JSON schema for the DMP common standard. Examples against the schema can be found [here](/examples/JSON/)
 
 ### Changes
 1. Updated cardinality of following properties:
