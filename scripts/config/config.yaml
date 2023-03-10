@@ -1,6 +1,0 @@
-log_level: DEBUG
-reset_all_data: true
-# db_connection_url: 'sqlite:/' # memory database, requires sqlite3
-db_connection_url: 'sqlite://./tmp/db.sqlite' 
-google_sheet_id: "1UatNC3r3skKjy2vGK1sysk6vKGD1F9v8YgdinyGMx7U"
-doc_root: "../docs"

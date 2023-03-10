@@ -1,0 +1,118 @@
+PREFIX te: <http://www.w3.org/2006/time-entry#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcs: <http://ontologi.es/doap-changeset#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcso: <https://w3id.org/dcso/ns/core#>
+prefix dcsx: <https://w3id.org/dcso/ns/extension#>
+prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+start = @<dataset>
+
+<dataset> EXTRA rdf:type {
+  rdf:type [ dcso:Dataset ] ; 
+  #Data properties
+  #mandatory
+  #how to deal with lower/upper case?
+  dcso:personalData ["yes" "no" "unknown" "Yes" "No" "Unknown" "YES" "NO" "UNKNOWN"] {1} ;
+  dcso:sensitiveData ["yes" "no" "unknown" "Yes" "No" "Unknown" "YES" "NO" "UNKNOWN"] {1} ;
+  terms:title xsd:string {1} ;
+  dcso:datasetType xsd:string {1} ;
+  #0 or 1
+  terms:description xsd:string ? ;
+  terms:issued xsd:date OR xsd:dateTime ? ;
+  dcso:preservationStatement xsd:string ? ;
+  #language
+  #0 to n
+  dcso:dataQualityAssurance xsd:string * ;
+  dcat:keyword xsd:string * ;
+  
+  #Object properties
+  #mandatory
+  dcso:hasDatasetId @<id> {1} ;
+  #0 or 1
+  #o to n
+  dcso:hasDistribution @<distribution> * ;
+  dcso:hasMetadata @<metadata> * ;
+  dcso:hasSecurityPrivacy @<secpriv> * ;
+  dcso:hasTechnicalResource @<tecres> * ; 
+}
+
+<distribution> EXTRA rdf:type {
+  rdf:type [ dcat:Distribution ] ; 
+  #mandatory
+  dcso:dataAccess ["open" "shared" "closed" "Open" "Shared" "Closed" "OPEN" "SHARED" "CLOSED"] {1} ;
+  terms:title xsd:string {1} ;
+  #0 or 1
+  dcat:accessURL IRI ? ;
+  dcso:availableUntil xsd:date OR xsd:dateTime ? ;
+  dcat:byteSize xsd:positiveInteger ? ;
+  terms:description xsd:string ? ;
+  dcat:downloadURL IRI ? ;
+  dcso:hasHost @<host> ? ;
+  #0 to n
+  terms:format xsd:string * ;
+  dcso:hasLicense @<license> * ;
+}
+
+<host> EXTRA rdf:type {
+  rdf:type [ dcso:Host ] ;
+  #mandatory
+  terms:title xsd:string {1} ;
+  dcso:url IRI {1} ;
+  #0 or 1
+  dcso:availability xsd:string ? ;
+  dcso:backupFrequency xsd:string ? ;
+  dcso:backupType xsd:string ? ;
+  dcso:certifiedWith ["din31644" "dini-zertifikat" "dsa" "iso16363" "iso16919" "trac" "wds" "coretrustseal"] ? ;
+  terms:description xsd:string ? ;
+  #geoLocation
+  dcso:storageType xsd:string ? ;
+  dcso:supportVersioning ["yes" "no" "unknown" "Yes" "No" "Unknown" "YES" "NO" "UNKNOWN"] ? ;
+  #0 to n
+  dcso:pidSystem ["ark" "arxiv" "bibcode" "doi" "ean13" "eissn" "handle" "igsn" "isbn" "issn" "istc" "lissn" "lsid" "pmid" "purl" "upc" "url" "urn" "other"] * ;
+  
+}
+
+<license> EXTRA rdf:type {
+  rdf:type [ dcso:License ] ;
+  #mandatory
+  dcso:licenseRef IRI ? ;
+  dcso:start xsd:date OR xsd:dateTime ? ;
+}
+
+<metadata> EXTRA rdf:type {
+  rdf:type [ dcso:Metadata ] ;
+  #mandatory
+  #language
+  dcso:hasMetadataStandardId @<id> {1} ;
+  #0 or 1
+  terms:description xsd:string ? ;
+  
+}
+
+<secpriv> EXTRA rdf:type {
+  rdf:type [ dcso:SecurityPrivacy ] ;
+  #mandatory
+  terms:title xsd:string {1} ;
+  #0 or 1
+  terms:description xsd:string ? ;
+}
+
+<tecres> EXTRA rdf:type {
+  rdf:type [ dcso:TechnicalResource ] ; 
+  #mandatory
+  foaf:name xsd:string {1} ;
+  #0 or 1
+  terms:description xsd:string ? ;
+}
+
+<id> EXTRA rdf:type {
+  rdf:type [ dcso:DatasetId dcso:MetadataStandardId dcso:Id ] ; 
+  terms:identifier IRI OR xsd:string {1} ;
+  dcso:identifierType xsd:string {1} ; #e.g., orcid, isni, openid, other
+}

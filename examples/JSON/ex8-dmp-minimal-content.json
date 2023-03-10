@@ -1,0 +1,32 @@
+{
+	"dmp": {
+		"title": "Minimal DMP",
+		"contact": {
+			"contact_id": {
+				"identifier": "http://orcid.org/0000-0000-0000-0000",
+				"type": "orcid"
+			},
+			"mbox": "cc@example.com",
+			"name": "Charlie Chaplin"
+		},
+		"created": "2018-07-23T10:10:23.6",
+		"dmp_id": {
+			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"type": "doi"
+		},
+		"dataset": [
+			{
+				"dataset_id": {
+					"identifier": "https://doi.org/10.0000/00.0.5678",
+					"type": "doi"
+				},
+				"title": "Placeholder dataset",
+				"personal_data": "unknown",
+				"sensitive_data": "unknown"
+			}
+		],
+		"ethical_issues_exist": "unknown",
+		"language": "eng",
+		"modified": "2019-02-06T15:30:42.1"
+	}
+}
