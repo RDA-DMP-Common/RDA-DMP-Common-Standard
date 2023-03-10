@@ -1,0 +1,60 @@
+@prefix : <https://w3id.org/dcso/ns/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcso: <https://w3id.org/dcso/ns/core#> .
+@prefix dcsx: <https://w3id.org/dcso/ns/extension#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcs-cur: <https://w3id.org/dcso/id/iso4217/> .
+@prefix dcs-geo: <https://w3id.org/dcso/id/iso3166-1/> .
+@prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
+@prefix ex: <https://w3id.org/dcso/id/example/> .
+@base <https://w3id.org/dcso/ns/core> .
+
+###  https://w3id.org/dcso/id/example/ds_1
+ex:ds_1 rdf:type owl:NamedIndividual ,
+                  dcso:Dataset ;
+		#mandatory
+		dcso:personalData "no" ;
+		dcso:sensitiveData "no sensitive" ;
+		dcso:datasetType "Dataset" ;
+		dcso:hasDatasetId ex:dsid_1 ;
+		
+		#0 or 1
+		terms:description "This Dataset is awesome!" ; 
+		terms:issued "2019-09-18T00:00:00"^^xsd:dateTime ;
+		dcso:preservationStatement "Volatile data" ; 
+		
+		#0 to n
+		dcso:hasMetadata ex:md_1 ;
+		dcso:hasSecurityPrivacy ex:sp_1 ;
+		dcso:hasTechnicalResource ex:tr_1 ;
+.
+
+###  https://w3id.org/dcso/id/example/dsid_1
+ex:dsid_1 rdf:type owl:NamedIndividual ,
+                    dcso:DatasetId ;
+           dcso:identifierType "url" ;
+           terms:identifier "https://www.dropbox.com/dsid_1" ;
+.
+
+###  https://w3id.org/dcso/id/example/md_1
+ex:md_1 rdf:type owl:NamedIndividual ,
+                    dcso:Metadata ;
+           terms:description "schema.org" ;
+           dcso:hasMetadataStandardId ex:mdid_1 ;
+.
+

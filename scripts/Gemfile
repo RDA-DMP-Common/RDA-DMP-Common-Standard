@@ -1,7 +1,0 @@
-source "https://rubygems.org"
-
-gem 'fileutils'
-gem 'sequel'
-gem 'google-api-client'
-gem 'json'
-gem 'sqlite3'

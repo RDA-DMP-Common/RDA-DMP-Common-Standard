@@ -1,0 +1,122 @@
+@prefix : <https://w3id.org/dcso/ns/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcso: <https://w3id.org/dcso/ns/core#> .
+@prefix dcsx: <https://w3id.org/dcso/ns/extension#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcs-cur: <https://w3id.org/dcso/id/iso4217/> .
+@prefix dcs-geo: <https://w3id.org/dcso/id/iso3166-1/> .
+@prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
+@prefix ex: <https://w3id.org/dcso/id/example/> .
+@base <https://w3id.org/dcso/ns/core> .
+
+###  https://w3id.org/dcso/id/example/dmp_1
+ex:dmp_1 rdf:type owl:NamedIndividual ,
+                  dcso:DMP ;
+         terms:created "2019-09-18T00:00:00"^^xsd:dateTime ;
+         terms:description "This DMP is awesome!" ;                  
+         dcso:ethicalIssuesExist "unknown" ;
+         dcso:ethicalIssuesReport <http://a.url.com> ;
+         terms:language dcs-lang:eng ;
+         terms:modified "2019-09-18T00:00:00"^^xsd:dateTime ; 
+         terms:title "Unidade de Genómica" ;
+         dcso:hasDMPId ex:dmpid_1 ;
+         dcso:hasContact ex:contact_1 ;
+         dcso:hasContributor ex:contact_1 ,
+                             ex:contact_2 
+         #dcso:hasCost ex:cost_1 ;         
+         #dcso:hasProject ex:project_1 ;
+         #dcso:hasDataset ex:dataset_1 ;
+.
+
+###  https://w3id.org/dcso/id/example/dmpid_1
+ex:dmpid_1 rdf:type owl:NamedIndividual ,
+                    dcso:Id ;
+           dcso:identifierType "url" ;
+           terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" .
+
+###  https://w3id.org/dcso/id/example/contact_1
+ex:contact_1 rdf:type owl:NamedIndividual ,
+                      dcso:Contributor ,
+                      dcso:Contact ;
+             dcso:hasContactId ex:id_1 ;
+             dcso:hasContributorId ex:id_1 ;
+             foaf:mbox "rleite@igc.gulbenkian.pt" ;
+             dcso:role "project leader" ;
+             foaf:name "Ricardo Leite" .
+
+###  https://w3id.org/dcso/id/example/id_1
+ex:id_1 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "orcid" ;
+        terms:identifier "0000-0002-9622-3895" .
+
+###  https://w3id.org/dcso/id/example/contact_2
+ex:contact_2 rdf:type owl:NamedIndividual ,
+                      dcso:Contributor ;
+             dcso:hasContributorId ex:id_2 ;
+             foaf:mbox "sladeiro@igc.gulbenkian.pt" ;
+             dcso:role "project leader" ;
+             foaf:name "Susana Ladeiro" .
+
+###  https://w3id.org/dcso/id/example/id_2
+ex:id_2 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "orcid" ;
+        terms:identifier "0000-0003-4333-2008" .
+
+###  https://w3id.org/dcso/id/example/cost_1
+ex:cost_1 rdf:type owl:NamedIndividual ,
+                   dcso:Cost ;
+          dcso:hasCurrencyCode dcs-cur:eur ;
+          dcso:value 100000 ;
+          terms:description "The cost of buying and maintaining equipment for the laboratory." ;
+          terms:title "Equipment" .
+
+###  https://w3id.org/dcso/id/example/project_1
+ex:project_1 rdf:type owl:NamedIndividual ,
+                      dcso:Project ;
+             dcso:hasFunding ex:funding_1 ;
+             dcso:end "2020-12-01T00:00:00"^^xsd:date ;
+             dcso:start "2017-01-01T00:00:00"^^xsd:date ;
+             terms:description "ONEIDA is a project." ;
+             terms:title "ONEIDA" .   
+
+###  https://w3id.org/dcso/id/example/funding_1
+ex:funding_1 rdf:type owl:NamedIndividual ,
+                      dcso:Funding ;
+             dcso:hasFunderId ex:id_4, ex:id_4a ;
+             dcso:hasGrantId ex:id_3 ;
+             dcso:fundingStatus "granted" .       
+
+###  https://w3id.org/dcso/id/example/id_3
+ex:id_3 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "other" ;
+        terms:identifier "03/SAICT/2015" .
+
+###  https://w3id.org/dcso/id/example/id_4
+ex:id_4 rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "DOI" ;
+        terms:identifier "http://dx.doi.org/10.13039/501100000780" .
+
+###  https://w3id.org/dcso/id/example/id_4a
+ex:id_4a rdf:type owl:NamedIndividual ,
+                 dcso:Id ;
+        dcso:identifierType "url" ;
+        terms:identifier                       "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" .

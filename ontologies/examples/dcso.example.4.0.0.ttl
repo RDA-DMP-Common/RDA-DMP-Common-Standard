@@ -1,0 +1,579 @@
+@prefix : <https://w3id.org/dcso/ns/example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/dcso/ns/example> .
+
+<https://w3id.org/dcso/ns/example> rdf:type owl:Ontology ;
+                                    owl:versionIRI <https://w3id.org/dcso/ns/core/4.0.0> ;
+                                    owl:imports <https://w3id.org/dcso/ns/core/4.0.0> ;
+                                    <http://purl.org/dc/terms/contributor> "Tomasz Miksa" ;
+                                    <http://purl.org/dc/terms/creator> "Fajar J. Ekaputra" ,
+                                                                       "João Cardoso" ,
+                                                                       "Leyla Garcia" ,
+                                                                       "Marie Christine Jacquemot" ;
+                                    <http://purl.org/dc/terms/description> "This ontology is an instantiation of an example DMP, that is compliant with version 4.0.0 of the DCSO."^^xsd:string ;
+                                    <http://purl.org/dc/terms/rights> "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+                                    <http://purl.org/dc/terms/title> "DMP example for DCSO version 4.0.0"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/dcso/ns/core#hasContact
+<https://w3id.org/dcso/ns/core#hasContact> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasContactId
+<https://w3id.org/dcso/ns/core#hasContactId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasContributor
+<https://w3id.org/dcso/ns/core#hasContributor> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasContributorId
+<https://w3id.org/dcso/ns/core#hasContributorId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasCost
+<https://w3id.org/dcso/ns/core#hasCost> rdf:type owl:ObjectProperty .
+
+###  https://w3id.org/dcso/ns/core#hasDistribution
+<https://w3id.org/dcso/ns/core#hasDistribution> rdf:type owl:ObjectProperty .
+
+###  https://w3id.org/dcso/ns/core#hasDMPId
+<https://w3id.org/dcso/ns/core#hasDMPId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasDataset
+<https://w3id.org/dcso/ns/core#hasDataset> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasDatasetId
+<https://w3id.org/dcso/ns/core#hasDatasetId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasFunderId
+<https://w3id.org/dcso/ns/core#hasFunderId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasFunding
+<https://w3id.org/dcso/ns/core#hasFunding> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasGrantId
+<https://w3id.org/dcso/ns/core#hasGrantId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasHost
+<https://w3id.org/dcso/ns/core#hasHost> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasLicense
+<https://w3id.org/dcso/ns/core#hasLicense> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasMetadata
+<https://w3id.org/dcso/ns/core#hasMetadata> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasMetadataStandardId
+<https://w3id.org/dcso/ns/core#hasMetadataStandardId> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasProject
+<https://w3id.org/dcso/ns/core#hasProject> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dcso/ns/core#hasSecurityPrivacy
+<https://w3id.org/dcso/ns/core#hasSecurityPrivacy> rdf:type owl:ObjectProperty .
+
+###  https://w3id.org/dcso/ns/core#hasTechnicalResource
+<https://w3id.org/dcso/ns/core#hasTechnicalResource> rdf:type owl:ObjectProperty .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/dcso/ns/core#availability
+<https://w3id.org/dcso/ns/core#availability> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/dcat#accessURL
+<https://w3id.org/dcso/ns/core#accessURL> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#availableUntil
+<https://w3id.org/dcso/ns/core#availableUntil> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#backupFrequency
+<https://w3id.org/dcso/ns/core#backupFrequency> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#backupType
+<https://w3id.org/dcso/ns/core#backupType> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/dcat#byteSize
+<https://w3id.org/dcso/ns/core#byteSize> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#certifiedWith
+<https://w3id.org/dcso/ns/core#certifiedWith> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+<http://www.w3.org/ns/dcat#downloadURL> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#geoLocation
+<https://w3id.org/dcso/ns/core#geoLocation> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/dcat#keyword
+<http://www.w3.org/ns/dcat#keyword> rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/mbox
+<http://xmlns.com/foaf/0.1/mbox> rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#created
+<https://w3id.org/dcso/ns/core#created> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#curencyCode
+<https://w3id.org/dcso/ns/core#curencyCode> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#dataAccess
+<https://w3id.org/dcso/ns/core#dataAccess> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#dataQualityAssurance
+<https://w3id.org/dcso/ns/core#dataQualityAssurance> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#end
+<https://w3id.org/dcso/ns/core#end> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssueDescription
+<https://w3id.org/dcso/ns/core#ethicalIssueDescription> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssuesExist
+<https://w3id.org/dcso/ns/core#ethicalIssuesExist> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssuesReport
+<https://w3id.org/dcso/ns/core#ethicalIssuesReport> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#fundingStatus
+<https://w3id.org/dcso/ns/core#fundingStatus> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#identifier
+<https://w3id.org/dcso/ns/core#identifier> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#identifierType
+<https://w3id.org/dcso/ns/core#identifierType> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#language
+<https://w3id.org/dcso/ns/core#language> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#licenseRef
+<https://w3id.org/dcso/ns/core#licenseRef> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#modified
+<https://w3id.org/dcso/ns/core#modified> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#personalData
+<https://w3id.org/dcso/ns/core#personalData> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#pidSystem
+<https://w3id.org/dcso/ns/core#pidSystem> rdf:type owl:DatatypeProperty .
+
+###  https://w3id.org/dcso/ns/core#preservationStatement
+<https://w3id.org/dcso/ns/core#preservationStatement> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#role
+<https://w3id.org/dcso/ns/core#role> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#type
+<https://w3id.org/dcso/ns/core#type> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#sensitiveData
+<https://w3id.org/dcso/ns/core#sensitiveData> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#supportVersioning
+<https://w3id.org/dcso/ns/core#supportVersioning> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#start
+<https://w3id.org/dcso/ns/core#start> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#startDate
+<https://w3id.org/dcso/ns/core#startDate> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#storageType
+<https://w3id.org/dcso/ns/core#storageType> rdf:type owl:DatatypeProperty .
+
+###  https://w3id.org/dcso/ns/core#value
+<https://w3id.org/dcso/ns/core#value> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#url
+<https://w3id.org/dcso/ns/core#url> rdf:type owl:DatatypeProperty .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/dcso/ns/core#Contact
+<https://w3id.org/dcso/ns/core#Contact> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#ContactId
+<https://w3id.org/dcso/ns/core#ContactId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Contributor
+<https://w3id.org/dcso/ns/core#Contributor> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#ContributorId
+<https://w3id.org/dcso/ns/core#ContributorId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Cost
+<https://w3id.org/dcso/ns/core#Cost> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Distribution
+<https://w3id.org/dcso/ns/core#Distribution> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#DMP
+<https://w3id.org/dcso/ns/core#DMP> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#DMPId
+<https://w3id.org/dcso/ns/core#DMPId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Dataset
+<https://w3id.org/dcso/ns/core#Dataset> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#DatasetId
+<https://w3id.org/dcso/ns/core#DatasetId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#FunderId
+<https://w3id.org/dcso/ns/core#FunderId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Funding
+<https://w3id.org/dcso/ns/core#Funding> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#GrantId
+<https://w3id.org/dcso/ns/core#GrantId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Host
+<https://w3id.org/dcso/ns/core#Host> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#License
+<https://w3id.org/dcso/ns/core#License> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Metadata
+<https://w3id.org/dcso/ns/core#Metadata> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#MetadataStandardId
+<https://w3id.org/dcso/ns/core#MetadataStandardId> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Project
+<https://w3id.org/dcso/ns/core#Project> rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#TechnicalResource
+<https://w3id.org/dcso/ns/core#TechnicalResource> rdf:type owl:Class . 
+
+
+###  https://w3id.org/dcso/ns/core#SecurityPrivacy
+<https://w3id.org/dcso/ns/core#SecurityPrivacy> rdf:type owl:Class . 
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/dcso/ns/example#bernardoSilva
+:bernardoSilva rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/dcso/ns/core#Contributor> ;
+               <https://w3id.org/dcso/ns/core#hasContributorId> :bernardoSilvaId ;
+               <http://xmlns.com/foaf/0.1/mbox> "bernardo.silva@exampleUni.com"^^xsd:string ;
+               <http://xmlns.com/foaf/0.1/name> "Bernardo Silva"^^xsd:string ;
+               <https://w3id.org/dcso/ns/core#role> "Data Steward"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#bernardoSilvaId
+:bernardoSilvaId rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/dcso/ns/core#ContributorId> ;
+                 <https://w3id.org/dcso/ns/core#identifier> "https://orcid.org/1234-9732-8123-5762"^^xsd:string ;
+                 <https://w3id.org/dcso/ns/core#identifierType> "ORCID"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#cost_001
+:cost_001 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/dcso/ns/core#Cost> ;
+          <https://w3id.org/dcso/ns/core#curencyCode> "EUR"^^xsd:string ;
+          <https://w3id.org/dcso/ns/core#value> "1500"^^xsd:integer ;
+          <http://purl.org/dc/terms/description> "Cost 001 refers to the cost of maintaining the digital repository where data will be hosted during and after the end of the project."^^xsd:string ;
+          <http://purl.org/dc/terms/title> "Cost 001 - Digital Repository"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#dataset_001
+:dataset_001 rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/dcso/ns/core#Dataset> ;
+             <https://w3id.org/dcso/ns/core#hasDatasetId> :dataset_001Id ;
+			 <https://w3id.org/dcso/ns/core#hasTechnicalResource> :protege ;
+			 <https://w3id.org/dcso/ns/core#hasMetadata> :ontologyWebLanguage ;
+			 <https://w3id.org/dcso/ns/core#hasSecurityPrivacy> :security_001 ;
+			 <https://w3id.org/dcso/ns/core#hasDistribution> :distribution_001 ;				 
+             <http://purl.org/dc/terms/issued> "2022-07-01T00:00:00"^^xsd:dateTime ;
+             <http://www.w3.org/ns/dcat#keyword> "dmp, dcso, ontology"^^xsd:string ;
+             <https://w3id.org/dcso/ns/core#dataQualityAssurance> "File naming conventions are used throughout the dataset."^^xsd:string ;
+             <https://w3id.org/dcso/ns/core#language> "en"^^xsd:string ;
+             <https://w3id.org/dcso/ns/core#personalData> "no"^^xsd:string ;
+			 <https://w3id.org/dcso/ns/core#preservationStatement> "This example dataset is to be preserved due to its educational value."^^xsd:string ;
+			 <https://w3id.org/dcso/ns/core#type> "ontology"^^xsd:string ;
+             <https://w3id.org/dcso/ns/core#sensitiveData> "no"^^xsd:string ;
+             <http://purl.org/dc/terms/description> "Dataset 001 is an example dataset to help users get an insight on what and how maDMP fields should be expressed in the DCSO."^^xsd:string ;
+             <http://purl.org/dc/terms/rights> "Dataset 001 - maDMP to DCSO example"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#dataset_001Id
+:dataset_001Id rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/dcso/ns/core#DatasetId> ;
+               <https://w3id.org/dcso/ns/core#identifier> "https://doi.org/10.82210/AYNC9E"^^xsd:string ;
+               <https://w3id.org/dcso/ns/core#identifierType> "DOI"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#distribution_001
+:distribution_001 rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/dcso/ns/core#Distribution> ;
+			   <https://w3id.org/dcso/ns/core#hasLicense> :license_001 ;
+			   <https://w3id.org/dcso/ns/core#hasHost> :qtydataverse ;
+               <https://w3id.org/dcso/ns/core#accessURL> "https://doi.org/10.82210/AYNC9E"^^xsd:string ;
+			   <https://w3id.org/dcso/ns/core#availableUntil> "2033-07-01T00:00:00"^^xsd:dateTime ;
+			   <https://w3id.org/dcso/ns/core#byteSize> "0"^^xsd:integer ;
+			   <https://w3id.org/dcso/ns/core#dataAccess> "open"^^xsd:string ;
+			   <http://purl.org/dc/terms/description> "Distribution 001 applies to all datasets which have open access, no ethical issues, no personal data, and that should be preserved for 10 years in a Dataverse repository."^^xsd:string ;
+			   <http://www.w3.org/ns/dcat#downloadURL> "https://qtydataverse.fccn.pt/dataset.xhtml?persistentId=doi.org/10.82210/AYNC9E&version=DRAFT#"^^xsd:anyURI ;
+			   <http://purl.org/dc/terms/format> "text/turtle"^^xsd:string ;
+               <http://purl.org/dc/terms/title> "Distribution 001"^^xsd:string .
+			   
+
+###  https://w3id.org/dcso/ns/example#dmpContact
+:dmpContact rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/dcso/ns/core#Contact> ;
+            <https://w3id.org/dcso/ns/core#hasContactId> :dmpContactId ;
+            <http://xmlns.com/foaf/0.1/mbox> "general@exampleUni.com"^^xsd:string ;
+            <http://xmlns.com/foaf/0.1/name> "Example University Data Management Office"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#dmpContactId
+:dmpContactId rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/dcso/ns/core#ContactId> ;
+              <https://w3id.org/dcso/ns/core#identifier> "590879412"^^xsd:string ;
+              <https://w3id.org/dcso/ns/core#identifierType> "NIF"^^xsd:string ;
+              rdfs:comment "NIF (Numero de Identificacao Fiscal). It is also known as contribution number (Numero de Contribuinte) or personal tax number. NIF is a unique nine-digit number .Each individual or legal entity in Portugal have their NIF number, which is issued by Finance & taxation department to perform operations as such buying property, opening a bank account in Portugal, getting a loan, getting a job, and represent your tax and social-related activities as well as & resident status among others."^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#dmpId
+:dmpId rdf:type owl:NamedIndividual ,
+                <https://w3id.org/dcso/ns/core#DMPId> ;
+       <https://w3id.org/dcso/ns/core#identifier> "https://doi.org/10.82210/TOGCVH"^^xsd:string ;
+       <https://w3id.org/dcso/ns/core#identifierType> "DOI"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#exampleDMP
+:exampleDMP rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/dcso/ns/core#DMP> ;
+            <https://w3id.org/dcso/ns/core#hasContact> :dmpContact ;
+            <https://w3id.org/dcso/ns/core#hasContributor> :bernardoSilva ,
+                                                           :johnDoe ;
+            <https://w3id.org/dcso/ns/core#hasCost> :cost_001 ;
+            <https://w3id.org/dcso/ns/core#hasDMPId> :dmpId ;
+            <https://w3id.org/dcso/ns/core#hasProject> :exampleProject ;
+			<https://w3id.org/dcso/ns/core#hasDataset> :dataset_001 ;
+            <https://w3id.org/dcso/ns/core#created> "2022-03-03T11:31:00"^^xsd:dateTime ;
+            <https://w3id.org/dcso/ns/core#ethicalIssueDescription> "There are no ethical issues, as is refered in the ethical issue report."^^xsd:string ;
+            <https://w3id.org/dcso/ns/core#ethicalIssuesExist> "no"^^xsd:string ;
+            <https://w3id.org/dcso/ns/core#ethicalIssuesReport> "https://doi.org/10.82210/MUZFDV"^^xsd:anyURI ;
+            <https://w3id.org/dcso/ns/core#language> "en"^^xsd:string ;
+            <https://w3id.org/dcso/ns/core#modified> "2022-03-03T11:31:00"^^xsd:dateTime ;
+            <http://purl.org/dc/terms/description> "This is the DMP for the Example Project. A project that Example University is scheduled to begin in the summer of 2022."^^xsd:string ;
+            <http://purl.org/dc/terms/title> "DMP - Example Project"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#exampleFunding
+:exampleFunding rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/dcso/ns/core#Funding> ;
+                <https://w3id.org/dcso/ns/core#hasFunderId> :fctId ;
+                <https://w3id.org/dcso/ns/core#hasGrantId> :exampleGrantId ;
+                <https://w3id.org/dcso/ns/core#fundingStatus> "granted"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#exampleGrantId
+:exampleGrantId rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/dcso/ns/core#GrantId> ;
+                <https://w3id.org/dcso/ns/core#identifier> "EXPL/DCSO/1234/2022"^^xsd:string ;
+                <https://w3id.org/dcso/ns/core#identifierType> "other"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#exampleProject
+:exampleProject rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/dcso/ns/core#Project> ;
+                <https://w3id.org/dcso/ns/core#hasFunding> :exampleFunding ;
+                <https://w3id.org/dcso/ns/core#end> "2023-07-01T00:00:00"^^xsd:dateTime ;
+                <https://w3id.org/dcso/ns/core#start> "2022-07-01T00:00:00"^^xsd:dateTime ;
+                <http://purl.org/dc/terms/description> "The Example Project focuses on describing how a DMP should be represented using the DCSO."^^xsd:string ;
+                <http://purl.org/dc/terms/title> "Example Project"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#fctId
+:fctId rdf:type owl:NamedIndividual ,
+                <https://w3id.org/dcso/ns/core#FunderId> ;
+       <https://w3id.org/dcso/ns/core#identifier> "http://dx.doi.org/10.13039/501100001871"^^xsd:string ;
+       <https://w3id.org/dcso/ns/core#identifierType> "fundref"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#qtydataverse
+:qtydataverse rdf:type owl:NamedIndividual ,
+                <https://w3id.org/dcso/ns/core#Host> ;
+       <https://w3id.org/dcso/ns/core#availability> "99,5"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#backupFrequency> "weekly"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#backupType> "S3 Buckets"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#certifiedWith> "unknown"^^xsd:string ;
+	   <http://purl.org/dc/terms/description> "The qtydataverse is a digital repository hosted by the FCCN and based on the Harvard Dataverse software."^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#geoLocation> "PT"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#pidSystem> "doi"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#storageType> "S3 Buckets"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#supportVersioning> "yes"^^xsd:string ;
+	   <https://w3id.org/dcso/ns/core#url> "https://qtydataverse.fccn.pt/"^^xsd:anyURI ;
+       <http://purl.org/dc/terms/title> "FCCN Quality Dataverse Instance"^^xsd:string .
+	   
+
+###  https://w3id.org/dcso/ns/example#license_001
+:license_001 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/dcso/ns/core#License> ;
+       <https://w3id.org/dcso/ns/core#licenseRef> "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+       <https://w3id.org/dcso/ns/core#startDate> "2022-07-01T00:00:00"^^xsd:dateTime .
+
+
+###  https://w3id.org/dcso/ns/example#johnDoe
+:johnDoe rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/dcso/ns/core#Contributor> ;
+         <https://w3id.org/dcso/ns/core#hasContributorId> :johnDoeId ;
+         <http://xmlns.com/foaf/0.1/mbox> "john.doe@exampleUni.com"^^xsd:string ;
+         <http://xmlns.com/foaf/0.1/name> "John Doe"^^xsd:string ;
+         <https://w3id.org/dcso/ns/core#role> "Principal Investigator"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#johnDoeId
+:johnDoeId rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/dcso/ns/core#ContributorId> ;
+           <https://w3id.org/dcso/ns/core#identifier> "https://orcid.org/1234-0003-9957-4248"^^xsd:string ;
+           <https://w3id.org/dcso/ns/core#identifierType> "ORCID"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#ontologyWebLanguage
+:ontologyWebLanguage rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/dcso/ns/core#Metadata> ;
+		   <https://w3id.org/dcso/ns/core#hasMetadataStandardId> :ontologyWebLanguageId ;
+           <http://purl.org/dc/terms/description> "The Web Ontology Language (OWL) was the standard followed in the creation of the example ontology."^^xsd:string ;
+           <https://w3id.org/dcso/ns/core#language> "en"^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/example#ontologyWebLanguageId
+:ontologyWebLanguageId rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/dcso/ns/core#MetadataStandardId> ;
+		   <https://w3id.org/dcso/ns/core#identifier> "https://www.w3.org/2001/sw/#owl"^^xsd:string ;
+           <https://w3id.org/dcso/ns/core#identifierType> "url"^^xsd:string .
+		   
+
+###  https://w3id.org/dcso/ns/example#protege
+:protege rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/dcso/ns/core#TechnicalResource> ;
+           <http://purl.org/dc/terms/description> "Protege is necessary to open the ontology in a user friendly graphical environment."^^xsd:string ;
+           <http://purl.org/dc/terms/title> "Protege"^^xsd:string .
+		   
+		   
+###  https://w3id.org/dcso/ns/example#security_001
+:security_001 rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/dcso/ns/core#SecurityPrivacy> ;
+           <http://purl.org/dc/terms/description> "Project contributers must not carry data in their personal devices."^^xsd:string ;
+           <http://purl.org/dc/terms/title> "Data in personal devices"^^xsd:string .		   
+		   
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

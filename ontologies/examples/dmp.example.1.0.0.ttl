@@ -1,0 +1,880 @@
+@prefix : <https://w3id.org/dcso/ns/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <https://w3id.org/dcso/id/example/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcso: <https://w3id.org/dcso/ns/core#> .
+@prefix dcsx: <https://w3id.org/dcso/ns/extension#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcs-cur: <https://w3id.org/dcso/id/iso4217/> .
+@prefix dcs-geo: <https://w3id.org/dcso/id/iso3166-1/> .
+@prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://w3id.org/dcso/ns/core> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://w3id.org/dcso/ns/core/3.0.2> ;
+                                 terms:contributor "Daniel Faria" ,
+                                                   "Diogo Proença" ,
+                                                   "Tomasz Miksa" ;
+                                 terms:creator "Fajar J. Ekaputra" ,
+                                               "João Cardoso" ,
+                                               "Leyla Garcia" ,
+                                               "Marie Christine Jacquemot" ;
+                                 terms:description " This ontology aims to represent the DMP Common Standard model, through the usage of semantic web technology. It represents the DMP Common Standard model using the Web Ontology Language (OWL)."@en ;
+                                 terms:rights "http://creativecommons.org/licenses/by/4.0/" ;
+                                 terms:title "The DMP Common Standard Ontology." ;
+                                 vann:preferredNamespacePrefix "dcso" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+terms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/dcso/ns/core#hasContact
+dcso:hasContact rdf:type owl:ObjectProperty ;
+                rdfs:domain dcso:DMP ;
+                rdfs:range dcso:Contact ;
+                rdfs:comment "Any Contact that can provide information on this DMP."^^rdfs:Literal .
+
+
+###  https://w3id.org/dcso/ns/core#hasContactId
+dcso:hasContactId rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dcso:hasId ;
+                  rdfs:domain dcso:Contact ;
+                  rdfs:range dcso:ContactId ;
+                  rdfs:comment "Any ID used to uniquely identified this Contact." .
+
+
+###  https://w3id.org/dcso/ns/core#hasContributor
+dcso:hasContributor rdf:type owl:ObjectProperty ;
+                    rdfs:domain dcso:DMP ;
+                    rdfs:range dcso:Contributor ;
+                    rdfs:comment "Any Contributor involved in the process of the data management described by this DMP as well as any Contributor involved in the creation and management of this DMP itself." .
+
+
+###  https://w3id.org/dcso/ns/core#hasContributorId
+dcso:hasContributorId rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf dcso:hasId ;
+                      rdfs:domain dcso:Contributor ;
+                      rdfs:range dcso:ContributorId ;
+                      rdfs:comment "Any ID used to uniquely identified this Contributor." .
+
+
+###  https://w3id.org/dcso/ns/core#hasCost
+dcso:hasCost rdf:type owl:ObjectProperty ;
+             rdfs:domain dcso:DMP ;
+             rdfs:range dcso:Cost ;
+             rdfs:comment "Any Cost related to data management included in this DMP." .
+
+
+###  https://w3id.org/dcso/ns/core#hasCurrencyCode
+dcso:hasCurrencyCode rdf:type owl:ObjectProperty ;
+                     rdfs:domain dcso:Cost ;
+                     rdfs:range dcsx:CurrencyCode ;
+                     rdfs:comment "A Currency Code used to express values in this Cost." .
+
+
+###  https://w3id.org/dcso/ns/core#hasDMPId
+dcso:hasDMPId rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf dcso:hasId ;
+              rdfs:domain dcso:DMP ;
+              rdfs:range dcso:DMPId ;
+              rdfs:comment "Any ID used to uniquely identified this DMP."^^xsd:string .
+
+
+###  https://w3id.org/dcso/ns/core#hasDataset
+dcso:hasDataset rdf:type owl:ObjectProperty ;
+                rdfs:domain dcso:DMP ;
+                rdfs:range dcso:Dataset ;
+                rdfs:comment "Any Dataset considered under this DMP." .
+
+
+###  https://w3id.org/dcso/ns/core#hasDatasetId
+dcso:hasDatasetId rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dcso:hasId ;
+                  rdfs:domain dcso:Dataset ;
+                  rdfs:range dcso:DatasetId ;
+                  rdfs:comment "Any ID used to uniquely identified this Dataset." .
+
+
+###  https://w3id.org/dcso/ns/core#hasDistribution
+dcso:hasDistribution rdf:type owl:ObjectProperty ;
+                     rdfs:domain dcso:Dataset ;
+                     rdfs:range dcso:Distribution ;
+                     rdfs:comment "Any Distribution, i.e., specific instance, of this Dataset." .
+
+
+###  https://w3id.org/dcso/ns/core#hasFunderId
+dcso:hasFunderId rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dcso:hasId ;
+                 rdfs:domain dcso:Funding ;
+                 rdfs:range dcso:FunderId ;
+                 rdfs:comment "Any ID used to uniquely identified this Funder." .
+
+
+###  https://w3id.org/dcso/ns/core#hasFunding
+dcso:hasFunding rdf:type owl:ObjectProperty ;
+                rdfs:domain dcso:Project ;
+                rdfs:range dcso:Funding ;
+                rdfs:comment "Any Funding granted for this Project." .
+
+
+###  https://w3id.org/dcso/ns/core#hasGeoLocation
+dcso:hasGeoLocation rdf:type owl:ObjectProperty ;
+                    rdfs:domain dcso:Host ;
+                    rdfs:range dcsx:Country ;
+                    rdfs:comment "A Country where a Host, i.e. storage system, is located." .
+
+
+###  https://w3id.org/dcso/ns/core#hasGrantId
+dcso:hasGrantId rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf dcso:hasId ;
+                rdfs:domain dcso:Funding ;
+                rdfs:range dcso:GrantId ;
+                rdfs:comment "Any ID used to uniquely identified a Grant associated to this Funder." .
+
+
+###  https://w3id.org/dcso/ns/core#hasHost
+dcso:hasHost rdf:type owl:ObjectProperty ;
+             rdfs:domain dcso:Distribution ;
+             rdfs:range dcso:Host ;
+             rdfs:comment "Any Host, i., storage system, where this Distribution has been stored." .
+
+
+###  https://w3id.org/dcso/ns/core#hasId
+dcso:hasId rdf:type owl:ObjectProperty ;
+           rdfs:range dcso:Id ;
+           rdfs:comment "Any ID used to uniquely identified a Thing." .
+
+
+###  https://w3id.org/dcso/ns/core#hasLanguage
+dcso:hasLanguage rdf:type owl:ObjectProperty ;
+                 rdfs:domain dcso:DMP ;
+                 rdfs:range dcsx:Language ;
+                 rdfs:comment "Any Language used to express data in this Dataset." .
+
+
+###  https://w3id.org/dcso/ns/core#hasLicense
+dcso:hasLicense rdf:type owl:ObjectProperty ;
+                rdfs:domain dcso:Distribution ;
+                rdfs:range dcso:License ;
+                rdfs:comment "A License used for this Distribution." .
+
+
+###  https://w3id.org/dcso/ns/core#hasMetadata
+dcso:hasMetadata rdf:type owl:ObjectProperty ;
+                 rdfs:domain dcso:DMP ;
+                 rdfs:range dcso:Metadata ;
+                 rdfs:comment "A Metadata standard used to describe data in this Dataset." .
+
+
+###  https://w3id.org/dcso/ns/core#hasMetadataStandardId
+dcso:hasMetadataStandardId rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf dcso:hasId ;
+                           rdfs:domain dcso:Metadata ;
+                           rdfs:range dcso:MetadataStandardId ;
+                           rdfs:comment "Any ID used to uniquely identified this Metadata standard." .
+
+
+###  https://w3id.org/dcso/ns/core#hasProject
+dcso:hasProject rdf:type owl:ObjectProperty ;
+                rdfs:domain dcso:DMP ;
+                rdfs:range dcso:Project ;
+                rdfs:comment "Any Project associated with this DMP." .
+
+
+###  https://w3id.org/dcso/ns/core#hasSecurityPrivacy
+dcso:hasSecurityPrivacy rdf:type owl:ObjectProperty ;
+                        rdfs:domain dcso:Dataset ;
+                        rdfs:range dcso:SecurityPrivacy ;
+                        rdfs:comment "Any specific requirements related to security and privacy of this Dataset." .
+
+
+###  https://w3id.org/dcso/ns/core#hasTechnicalResource
+dcso:hasTechnicalResource rdf:type owl:ObjectProperty ;
+                          rdfs:domain dcso:Dataset ;
+                          rdfs:range dcso:TechnicalResource ;
+                          rdfs:comment "Any Technical Resource, e.g, microscope, needed/used to create or process the data in this Dataset." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/format
+terms:format rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Format according to: https://www.iana.org/assignments/media-types/media-types.xhtml if appropriate, otherwise use the common name for this format" .
+
+
+###  http://purl.org/dc/terms/issued
+terms:issued rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Issued date" .
+
+
+###  http://www.w3.org/ns/dcat#accessURL
+dcat:accessURL rdf:type owl:DatatypeProperty ;
+               rdfs:comment "A URL of the resource that gives access to a distribution of the dataset. e.g. landing page." .
+
+
+###  http://www.w3.org/ns/dcat#byteSize
+dcat:byteSize rdf:type owl:DatatypeProperty ;
+              rdfs:comment "Byte size" .
+
+
+###  http://www.w3.org/ns/dcat#downloadURL
+dcat:downloadURL rdf:type owl:DatatypeProperty ;
+                 rdfs:comment "The URL of the downloadable file in a given format. E.g. CSV file or RDF file." .
+
+
+###  http://www.w3.org/ns/dcat#keyword
+dcat:keyword rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Keyword to describe the dataset" .
+
+
+###  http://xmlns.com/foaf/0.1/mbox
+foaf:mbox rdf:type owl:DatatypeProperty ;
+          rdfs:comment "E_mail address" .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/dcso/ns/core#availability
+dcso:availability rdf:type owl:DatatypeProperty ;
+                  rdfs:domain dcso:Host ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Indicates the availability of the host" .
+
+
+###  https://w3id.org/dcso/ns/core#availableUntil
+dcso:availableUntil rdf:type owl:DatatypeProperty ;
+                    rdfs:domain dcso:Distribution ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:comment "Indicates how long this distribution will be/ should be available" ;
+                    rdfs:label "availableUntil" .
+
+
+###  https://w3id.org/dcso/ns/core#backupFrequency
+dcso:backupFrequency rdf:type owl:DatatypeProperty ;
+                     rdfs:domain dcso:Host ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Backup frequency" ;
+                     rdfs:label "backupFrequency" .
+
+
+###  https://w3id.org/dcso/ns/core#backupType
+dcso:backupType rdf:type owl:DatatypeProperty ;
+                rdfs:domain dcso:Host ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Backup type" ;
+                rdfs:label "backupType" .
+
+
+###  https://w3id.org/dcso/ns/core#certifiedWith
+dcso:certifiedWith rdf:type owl:DatatypeProperty ;
+                   rdfs:domain dcso:Host ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment """Repository certified to a recognised standard
+Suggested values:
+
+    din31644
+    dini-zertifikat
+    dsa
+    iso16363
+    iso16919
+    trac
+    wds
+    coretrustseal
+    none
+    other
+    unknown""" ,
+                                "Validation with ShEx/SHACL" ;
+                   rdfs:label "certifiedWith" .
+
+
+###  https://w3id.org/dcso/ns/core#dataAccess
+dcso:dataAccess rdf:type owl:DatatypeProperty ;
+                rdfs:comment """Indicates access mode for data.
+Allowed Values:
+
+    open
+    shared
+    closed""" ;
+                rdfs:label "dataAccess" .
+
+
+###  https://w3id.org/dcso/ns/core#dataQualityAssurance
+dcso:dataQualityAssurance rdf:type owl:DatatypeProperty ;
+                          rdfs:domain dcso:Dataset ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Assurance quality of data" ;
+                          rdfs:label "dataQualityAssurance" .
+
+
+###  https://w3id.org/dcso/ns/core#datasetType
+dcso:datasetType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain dcso:Dataset ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf http://vocabularies.coar-repositories.org/pubby/resource_type.html" ;
+                 rdfs:label "datasetType" .
+
+
+###  https://w3id.org/dcso/ns/core#end
+dcso:end rdf:type owl:DatatypeProperty ;
+         rdfs:domain dcso:Project ;
+         rdfs:range xsd:dateTime ;
+         rdfs:comment "Project end date" .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssueDescription
+dcso:ethicalIssueDescription rdf:type owl:DatatypeProperty ;
+                             rdfs:domain dcso:DMP ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "To describe ethical issues directly in a DMP" ;
+                             rdfs:label "ethicalIssueDescription" .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssuesExist
+dcso:ethicalIssuesExist rdf:type owl:DatatypeProperty ;
+                        rdfs:domain dcso:DMP ;
+                        rdfs:comment """To indicate whether there are ethical issues related to data that this DMP describes.
+Allowed Values:
+
+    yes
+    no
+    unknown""" ;
+                        rdfs:label "ethicalIssuesExist" .
+
+
+###  https://w3id.org/dcso/ns/core#ethicalIssuesReport
+dcso:ethicalIssuesReport rdf:type owl:DatatypeProperty ;
+                         rdfs:domain dcso:DMP ;
+                         rdfs:range xsd:anyURI ;
+                         rdfs:comment "To indicate where a protocol from a meeting with an ethical commitee can be found" ;
+                         rdfs:label "ethicalIssuesReport" .
+
+
+###  https://w3id.org/dcso/ns/core#fundingStatus
+dcso:fundingStatus rdf:type owl:DatatypeProperty ;
+                   rdfs:domain dcso:Funding ;
+                   rdfs:comment """To express different phases of project lifecycle.
+Allowed Values:
+
+    planned
+    applied
+    granted
+    rejected""" ;
+                   rdfs:label "fundingStatus" .
+
+
+###  https://w3id.org/dcso/ns/core#identifierType
+dcso:identifierType rdf:type owl:DatatypeProperty ;
+                    rdfs:domain dcso:Id ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Identifier type" ,
+                                 "Validation with ShEx/SHACL" ;
+                    rdfs:label "identifierType" .
+
+
+###  https://w3id.org/dcso/ns/core#licenseRef
+dcso:licenseRef rdf:type owl:DatatypeProperty ;
+                rdfs:domain dcso:License ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "" ,
+                             "Link to license document." ;
+                rdfs:label "licenseRef" ;
+                rdfs:seeAlso "https://jats.nlm.nih.gov/archiving/tag-library/1.2/element/ali-license_ref.html" .
+
+
+###  https://w3id.org/dcso/ns/core#personalData
+dcso:personalData rdf:type owl:DatatypeProperty ;
+                  rdfs:domain dcso:Dataset ;
+                  rdfs:comment "Informs about the presence or absence of personal data in the dataset" ;
+                  rdfs:label "personalData" .
+
+
+###  https://w3id.org/dcso/ns/core#pidSystem
+dcso:pidSystem rdf:type owl:DatatypeProperty ;
+               rdfs:domain dcso:Host ;
+               rdfs:comment """PID System
+Suggested values:
+
+    ark
+    arxiv
+    bibcode
+    doi
+    ean13
+    eissn
+    handle
+    igsn
+    isbn
+    issn
+    istc
+    lissn
+    lsid
+    pmid
+    purl
+    upc
+    url
+    urn
+    none
+    unknown
+    other""" ;
+               rdfs:label "pidSystem" .
+
+
+###  https://w3id.org/dcso/ns/core#preservationStatement
+dcso:preservationStatement rdf:type owl:DatatypeProperty ;
+                           rdfs:domain dcso:Dataset ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Preservation statement" ;
+                           rdfs:label "preservationStatement" .
+
+
+###  https://w3id.org/dcso/ns/core#report
+dcso:report rdf:type owl:DatatypeProperty ;
+            rdfs:domain dcso:DMP ;
+            rdfs:range xsd:anyURI .
+
+
+###  https://w3id.org/dcso/ns/core#role
+dcso:role rdf:type owl:DatatypeProperty ;
+          rdfs:domain dcso:Contributor ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Type of contributor" .
+
+
+###  https://w3id.org/dcso/ns/core#sensitiveData
+dcso:sensitiveData rdf:type owl:DatatypeProperty ;
+                   rdfs:domain dcso:Dataset ;
+                   rdfs:comment "Informs about the presence or absence of sensitive data in the dataset" ;
+                   rdfs:label "sensitiveData" .
+
+
+###  https://w3id.org/dcso/ns/core#start
+dcso:start rdf:type owl:DatatypeProperty ;
+           rdfs:domain dcso:Project ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "Project start date" .
+
+
+###  https://w3id.org/dcso/ns/core#startDate
+dcso:startDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain dcso:License ;
+               rdfs:range xsd:dateTime ;
+               rdfs:comment "If date is set in the future, it indicates embargo period." ;
+               rdfs:label "startDate" .
+
+
+###  https://w3id.org/dcso/ns/core#storageType
+dcso:storageType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain dcso:Host ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The type of storage required" ;
+                 rdfs:label "storageType" .
+
+
+###  https://w3id.org/dcso/ns/core#supportVersioning
+dcso:supportVersioning rdf:type owl:DatatypeProperty ;
+                       rdfs:domain dcso:Host ;
+                       rdfs:comment """Informs of the support for versioning
+  Allowed Values:
+
+    yes
+    no
+    unknown""" ;
+                       rdfs:label "supportVersioning" .
+
+
+###  https://w3id.org/dcso/ns/core#url
+dcso:url rdf:type owl:DatatypeProperty ;
+         rdfs:domain dcso:Host ;
+         rdfs:range xsd:anyURI ;
+         rdfs:comment "The URL of the system hosting a distribution of a dataset" .
+
+
+###  https://w3id.org/dcso/ns/core#value
+dcso:value rdf:type owl:DatatypeProperty ;
+           rdfs:domain dcso:Cost ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "Value for cost" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+dcat:Distribution rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#Contact
+dcso:Contact rdf:type owl:Class ;
+             rdfs:subClassOf foaf:Agent ;
+             rdfs:comment "Specifies the party which can provide any information on the DMP. This is not necessarily the DMP creator, and can be a person or an organisation. " .
+
+
+###  https://w3id.org/dcso/ns/core#ContactId
+dcso:ContactId rdf:type owl:Class ;
+               rdfs:subClassOf dcso:Id ;
+               rdfs:comment "Identifier for a contact person" .
+
+
+###  https://w3id.org/dcso/ns/core#Contributor
+dcso:Contributor rdf:type owl:Class ;
+                 rdfs:subClassOf foaf:Agent ;
+                 rdfs:comment "For listing all parties involved in the process of the data management described by this DMP, and those parties involved in the creation and management of the DMP itself. " .
+
+
+###  https://w3id.org/dcso/ns/core#ContributorId
+dcso:ContributorId rdf:type owl:Class ;
+                   rdfs:subClassOf dcso:Id ;
+                   rdfs:comment "Identifier for a contributor person" .
+
+
+###  https://w3id.org/dcso/ns/core#Cost
+dcso:Cost rdf:type owl:Class ;
+          rdfs:comment "Provides a list of costs related to data management" .
+
+
+###  https://w3id.org/dcso/ns/core#DMP
+dcso:DMP rdf:type owl:Class ;
+         rdfs:comment "Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory. " .
+
+
+###  https://w3id.org/dcso/ns/core#DMPId
+dcso:DMPId rdf:type owl:Class ;
+           rdfs:subClassOf dcso:Id ;
+           rdfs:comment "Identifier for a DMP" .
+
+
+###  https://w3id.org/dcso/ns/core#Dataset
+dcso:Dataset rdf:type owl:Class ;
+             rdfs:subClassOf dcat:Dataset ;
+             rdfs:comment "This follows the defintion of Dataset in the W3C DCAT specification. Dataset can be understood as a logical entity depicting data, e.g. raw data. It provides high level information about the data. The granularity of dataset depends on a specific setting. In edge cases it can be a file, but also a collection of files in different formats" .
+
+
+###  https://w3id.org/dcso/ns/core#DatasetId
+dcso:DatasetId rdf:type owl:Class ;
+               rdfs:subClassOf dcso:Id ;
+               rdfs:comment "Identifier for a dataset" .
+
+
+###  https://w3id.org/dcso/ns/core#Distribution
+dcso:Distribution rdf:type owl:Class ;
+                  rdfs:subClassOf dcat:Distribution ;
+                  rdfs:comment "This follows the defintion of Dataset in the W3C DCAT specification. Dataset can be understood as a logical entity depicting data, e.g. raw data. It provides high level information about the data. The granularity of dataset depends on a specific setting. In edge cases it can be a file, but also a collection of files in different formats" .
+
+
+###  https://w3id.org/dcso/ns/core#FunderId
+dcso:FunderId rdf:type owl:Class ;
+              rdfs:subClassOf dcso:Id ;
+              rdfs:comment "Identifier for funders : it is recommended to use CrossRef Funder Registry. " .
+
+
+###  https://w3id.org/dcso/ns/core#Funding
+dcso:Funding rdf:type owl:Class ;
+             rdfs:comment "For specifying details on funded projects, e.g. NSF of EC funded projects. " .
+
+
+###  https://w3id.org/dcso/ns/core#GrantId
+dcso:GrantId rdf:type owl:Class ;
+             rdfs:subClassOf dcso:Id ;
+             rdfs:comment "Identifier for grant" .
+
+
+###  https://w3id.org/dcso/ns/core#Host
+dcso:Host rdf:type owl:Class ;
+          rdfs:comment "Provides information on the system where data is stored. It can be used to provide details on a repository where data is deposited, e.g. a Core Trust Seal certified repository located in Europe that uses DOIs. It can also provide details on systems where data is stored and processed during research, e.g. a high performance computer that uses fast storage with two daily backups. " .
+
+
+###  https://w3id.org/dcso/ns/core#Id
+dcso:Id rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/core#License
+dcso:License rdf:type owl:Class ;
+             rdfs:comment "Used to indicate the license under which data (each specific Distribution) will be made available. It also allows for modelling embargoes. " .
+
+
+###  https://w3id.org/dcso/ns/core#Metadata
+dcso:Metadata rdf:type owl:Class ;
+              rdfs:comment "Provides a pointer to a metadata standard used to describe the data. It does not contain any actual metadata relating to the dataset. " .
+
+
+###  https://w3id.org/dcso/ns/core#MetadataStandardId
+dcso:MetadataStandardId rdf:type owl:Class ;
+                        rdfs:subClassOf dcso:Id ;
+                        rdfs:comment "Identifier for the metadata standard used." .
+
+
+###  https://w3id.org/dcso/ns/core#Project
+dcso:Project rdf:type owl:Class ;
+             rdfs:comment "Describes the project associated with the DMP, if applicable. It can be used to describe any type of project: that is, not only funded projects, but also internal projects, PhD theses, etc. " .
+
+
+###  https://w3id.org/dcso/ns/core#SecurityPrivacy
+dcso:SecurityPrivacy rdf:type owl:Class ;
+                     rdfs:comment "Used to indicate any specific requirements related to security and privacy of a specific dataset, e.g. to indicate that data is not anonymized. " .
+
+
+###  https://w3id.org/dcso/ns/core#TechnicalResource
+dcso:TechnicalResource rdf:type owl:Class ;
+                       rdfs:comment "For specifying equipment needed/used to create or process the data, e.g. a microscope, etc. " .
+
+
+###  https://w3id.org/dcso/ns/extension#Country
+dcsx:Country rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/extension#CurrencyCode
+dcsx:CurrencyCode rdf:type owl:Class .
+
+
+###  https://w3id.org/dcso/ns/extension#Language
+dcsx:Language rdf:type owl:Class .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/dcso/id/example/contactid_1
+ex:contactid_1 rdf:type owl:NamedIndividual ,
+                        dcso:ContactId ,
+                        dcso:ContributorId ;
+               terms:identifier "0000-0002-9622-3895" ;
+               dcso:identifier_type "orcid" .
+
+
+###  https://w3id.org/dcso/id/example/contributor_1
+ex:contributor_1 rdf:type owl:NamedIndividual ,
+                          dcso:Contact ,
+                          dcso:Contributor ;
+                 foaf:mbox "rleite@igc.gulbenkian.pt" ;
+                 foaf:name "Ricardo Leite" ;
+                 dcso:hasContactId ex:contactid_1 ,
+                                   ex:id_1 ;
+                 dcso:hasContributorId ex:contactid_1 ;
+                 dcso:role "Project Leader" .
+
+
+###  https://w3id.org/dcso/id/example/contributor_2
+ex:contributor_2 rdf:type owl:NamedIndividual ,
+                          dcso:Contributor ;
+                 foaf:mbox "sladeiro@igc.gulbenkian.pt" ;
+                 foaf:name "Susana Ladeiro" ;
+                 dcso:hasContactId ex:id_2 ;
+                 dcso:hasContributorId ex:contributorid_1 ;
+                 dcso:role "Data Collector" .
+
+
+###  https://w3id.org/dcso/id/example/contributorid_1
+ex:contributorid_1 rdf:type owl:NamedIndividual ,
+                            dcso:ContributorId ;
+                   terms:identifier "0000-0003-4333-2008" ;
+                   dcso:identifier_type "orcid" .
+
+
+###  https://w3id.org/dcso/id/example/cost_1
+ex:cost_1 rdf:type owl:NamedIndividual ,
+                   dcso:Cost ;
+          terms:description "The cost of buying and maintaining equipment for the laboratory." ;
+          terms:title "Equipment" ;
+          dcso:hasCurrencyCode dcs-cur:eur ;
+          dcso:value 100000 .
+
+
+###  https://w3id.org/dcso/id/example/dataset_1
+ex:dataset_1 rdf:type owl:NamedIndividual ,
+                      dcso:Dataset ;
+             terms:description "Quality Control of DNA and RNA " ;
+             terms:issued "2019-09-18T00:00:00" ;
+             terms:language dcs-lang:eng ;
+             terms:title "Quality Check QC " ;
+             dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC " ;
+             dcso:hasDatasetId ex:datasetid_1 ;
+             dcso:hasDistribution ex:distribution_1 ;
+             dcso:hasSecurityPrivacy ex:sp_1 ;
+             dcso:hasTechnicalResource ex:technicalresource_1 ;
+             dcso:personal_data "no" ;
+             dcso:preservation_statement "Keep record" ;
+             dcso:sensitive_data "no" ;
+             dcso:type "http://purl.org/coar/resource_type/c_18gh" .
+
+
+###  https://w3id.org/dcso/id/example/datasetid_1
+ex:datasetid_1 rdf:type owl:NamedIndividual ,
+                        dcso:DatasetId ;
+               terms:identifier "doi:10.1038/nphys1170" ;
+               dcso:identifier_type "doi" .
+
+
+###  https://w3id.org/dcso/id/example/distribution_1
+ex:distribution_1 rdf:type owl:NamedIndividual ,
+                           dcso:Distribution ;
+                  terms:description "Files will be stored in xls and pfd in the storage server (AFS) " ;
+                  terms:format "application/pdf" ;
+                  terms:title "Quality control file " ;
+                  dcat:access_url "http://example.org/example_url" ;
+                  dcat:download_url "http://example.org/example_url" ;
+                  dcso:available_until "2022-01-01T00:00:00 " ;
+                  dcso:data_access "shared" ;
+                  dcso:hasHost ex:host_1 ;
+                  dcso:hasLicense ex:license_1 .
+
+
+###  https://w3id.org/dcso/id/example/dmp_1
+ex:dmp_1 rdf:type owl:NamedIndividual ,
+                  dcso:DMP ;
+         terms:created "2019-09-18T00:00:00" ;
+         terms:description "This DMP serves to characterize the functioning of the Unidade de Genómica at the Instituto Gulbenkian para a Ciência in Oeiras." ;
+         terms:language dcs-lang:eng ;
+         terms:modified "2019-09-18T00:00:00" ;
+         terms:title "Unidade de Genómica " ;
+         dcso:ethical_issues_exist "unknown" ;
+         dcso:hasContact ex:contributor_1 ;
+         dcso:hasContributor ex:contributor_1 ,
+                             ex:contributor_2 ;
+         dcso:hasCost ex:cost_1 ;
+         dcso:hasDMPId ex:dmpid_1 ;
+         dcso:hasDataset ex:dataset_1 ;
+         dcso:hasProject ex:project_1 .
+
+
+###  https://w3id.org/dcso/id/example/dmpid_1
+ex:dmpid_1 rdf:type owl:NamedIndividual ,
+                    dcso:DMPId ;
+           terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" ;
+           dcso:identifier_type "url" .
+
+
+###  https://w3id.org/dcso/id/example/funderid_1
+ex:funderid_1 rdf:type owl:NamedIndividual ,
+                       dcso:FunderId ;
+              terms:identifier "http://dx.doi.org/10.13039/501100000780" ,
+                               "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" ;
+              dcso:identifier_type "fundref" ,
+                                   "url" .
+
+
+###  https://w3id.org/dcso/id/example/funding_1
+ex:funding_1 rdf:type owl:NamedIndividual ,
+                      dcso:Funding ;
+             dcso:funding_status "granted" ;
+             dcso:hasFunderId ex:funderid_1 ;
+             dcso:hasGrantId ex:grantid_1 .
+
+
+###  https://w3id.org/dcso/id/example/grantid_1
+ex:grantid_1 rdf:type owl:NamedIndividual ,
+                      dcso:GrantId ;
+             terms:identifier "03/SAICT/2015" ;
+             dcso:identifier_type "other" .
+
+
+###  https://w3id.org/dcso/id/example/host_1
+ex:host_1 rdf:type owl:NamedIndividual ,
+                   dcso:Host ;
+          terms:description "Storage server (AFS) managed by IGC IT " ;
+          terms:title "AFS Server" ;
+          dcso:availability 99.5 ;
+          dcso:backup_frequency "daily" ;
+          dcso:backup_type "hard drive" ;
+          dcso:certified_with "none" ;
+          dcso:hasGeoLocation dcs-geo:pt ;
+          dcso:pid_system "none" ;
+          dcso:support_versioning "no" .
+
+
+###  https://w3id.org/dcso/id/example/license_1
+ex:license_1 rdf:type owl:NamedIndividual ,
+                      dcso:License ;
+             dcso:license_ref "https://creativecommons.org/licenses/by/4.0" ;
+             dcso:start_date "2022-01-01T00:00:00 " .
+
+
+###  https://w3id.org/dcso/id/example/metadata_1
+ex:metadata_1 rdf:type owl:NamedIndividual ,
+                       dcso:Metadata ,
+                       dcso:MetadataStandardId ;
+              terms:description "Used index and sample name (sample sheet) " ;
+              terms:identifier "xpto naming convention" ;
+              terms:language dcs-lang:eng ;
+              dcso:hasMetadataStandardId ex:metadataid_1 ;
+              dcso:identifier_type "other" .
+
+
+###  https://w3id.org/dcso/id/example/project_1
+ex:project_1 rdf:type owl:NamedIndividual ,
+                      dcso:Project ;
+             terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance. " ;
+             terms:title "ONEIDA" ;
+             dcso:end "2020-12-01T00:00:00 " ;
+             dcso:hasFunding ex:funding_1 ;
+             dcso:start "2017-01-01T00:00:00 " .
+
+
+###  https://w3id.org/dcso/id/example/sp_1
+ex:sp_1 rdf:type owl:NamedIndividual ,
+                 dcso:SecurityPrivacy ;
+        terms:description "Used index and sample name (sample sheet) " ;
+        terms:title "Access" .
+
+
+###  https://w3id.org/dcso/id/example/technicalresource_1
+ex:technicalresource_1 rdf:type owl:NamedIndividual ,
+                                dcso:TechnicalResource ;
+                       terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html " ;
+                       terms:title "Ilumina sequencer" .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi

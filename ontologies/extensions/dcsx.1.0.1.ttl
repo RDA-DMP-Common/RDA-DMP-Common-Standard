@@ -1,0 +1,4342 @@
+@prefix : <https://w3id.org/dcso/ns/extension#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcso: <https://w3id.org/dcso/ns/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcs-cur: <https://w3id.org/dcso/id/iso4217/> .
+@prefix dcs-geo: <https://w3id.org/dcso/id/iso3166-1/> .
+@prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
+@base <https://w3id.org/dcso/ns/extension> .
+
+<https://w3id.org/dcso/ns/extension> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://w3id.org/dcso/ns/extension/1.0.1> ;
+                                      terms:contributor "Daniel Faria" ,
+                                                        "Diogo Proença" ,
+                                                        "Tomasz Miksa" ;
+                                      terms:creator "Fajar J. Ekaputra" ,
+                                                    "João Cardoso" ,
+                                                    "Marie Christine Jacquemot" ;
+                                      terms:description " This ontology aims to represent additional classes and instances needed to represent DMP data, e.g., Language, Country, and Currency Code."@en ;
+                                      terms:rights "http://creativecommons.org/licenses/by/4.0/" ;
+                                      terms:title "The extension of DMP Common Standard Ontology." ;
+                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "dcsx" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/dcso/ns/extension#Country
+:Country rdf:type owl:Class ;
+         rdfs:comment "A Country corresponds to a geo-location. It is used, for instance, to state where a storage system is located. Country Code based on ISO-3166-1-alpha2"@en .
+
+
+###  https://w3id.org/dcso/ns/extension#CurrencyCode
+:CurrencyCode rdf:type owl:Class ;
+              rdfs:comment "A CurrencyCode is used to express a currency, for instance, used to express values in a Cost. Currency Code based on ISO-4217"@en .
+
+
+###  https://w3id.org/dcso/ns/extension#Language
+:Language rdf:type owl:Class ;
+          rdfs:comment "A Language used to express, for instance, data encoded in a Dataset. Language Code based on ISO 639-3"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/dcso/id/iso3166-1/ad
+dcs-geo:ad rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Andorra" ;
+           rdfs:label "AD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ae
+dcs-geo:ae rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "United Arab Emirates" ;
+           rdfs:label "AE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/af
+dcs-geo:af rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Afghanistan" ;
+           rdfs:label "AF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ag
+dcs-geo:ag rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Antigua and Barbuda" ;
+           rdfs:label "AG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ai
+dcs-geo:ai rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Anguilla" ;
+           rdfs:label "AI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/al
+dcs-geo:al rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Albania" ;
+           rdfs:label "AL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/am
+dcs-geo:am rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Armenia" ;
+           rdfs:label "AM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ao
+dcs-geo:ao rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Angola" ;
+           rdfs:label "AO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/aq
+dcs-geo:aq rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Antarctica" ;
+           rdfs:label "AQ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ar
+dcs-geo:ar rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Argentina" ;
+           rdfs:label "AR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/as
+dcs-geo:as rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "American Samoa" ;
+           rdfs:label "AS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/at
+dcs-geo:at rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Austria" ;
+           rdfs:label "AT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/au
+dcs-geo:au rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Australia" ;
+           rdfs:label "AU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/aw
+dcs-geo:aw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Aruba" ;
+           rdfs:label "AW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ax
+dcs-geo:ax rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Åland Islands" ;
+           rdfs:label "AX" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/az
+dcs-geo:az rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Azerbaijan" ;
+           rdfs:label "AZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ba
+dcs-geo:ba rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bosnia and Herzegovina" ;
+           rdfs:label "BA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bb
+dcs-geo:bb rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Barbados" ;
+           rdfs:label "BB" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bd
+dcs-geo:bd rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bangladesh" ;
+           rdfs:label "BD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/be
+dcs-geo:be rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Belgium" ;
+           rdfs:label "BE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bf
+dcs-geo:bf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Burkina Faso" ;
+           rdfs:label "BF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bg
+dcs-geo:bg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bulgaria" ;
+           rdfs:label "BG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bh
+dcs-geo:bh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bahrain" ;
+           rdfs:label "BH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bi
+dcs-geo:bi rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Burundi" ;
+           rdfs:label "BI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bj
+dcs-geo:bj rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Benin" ;
+           rdfs:label "BJ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bl
+dcs-geo:bl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Barthélemy" ;
+           rdfs:label "BL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bm
+dcs-geo:bm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bermuda" ;
+           rdfs:label "BM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bn
+dcs-geo:bn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Brunei Darussalam" ;
+           rdfs:label "BN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bo
+dcs-geo:bo rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Plurinational State of Bolivia" ;
+           rdfs:label "BO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bq
+dcs-geo:bq rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sint Eustatius and Saba Bonaire" ;
+           rdfs:label "BQ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/br
+dcs-geo:br rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Brazil" ;
+           rdfs:label "BR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bs
+dcs-geo:bs rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bahamas" ;
+           rdfs:label "BS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bt
+dcs-geo:bt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bhutan" ;
+           rdfs:label "BT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bv
+dcs-geo:bv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bouvet Island" ;
+           rdfs:label "BV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bw
+dcs-geo:bw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Botswana" ;
+           rdfs:label "BW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/by
+dcs-geo:by rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Belarus" ;
+           rdfs:label "BY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/bz
+dcs-geo:bz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Belize" ;
+           rdfs:label "BZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ca
+dcs-geo:ca rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Canada" ;
+           rdfs:label "CA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cc
+dcs-geo:cc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cocos (Keeling) Islands" ;
+           rdfs:label "CC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cd
+dcs-geo:cd rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "The Democratic Republic of the Congo" ;
+           rdfs:label "CD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cf
+dcs-geo:cf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Central African Republic" ;
+           rdfs:label "CF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cg
+dcs-geo:cg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Congo" ;
+           rdfs:label "CG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ch
+dcs-geo:ch rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Switzerland" ;
+           rdfs:label "CH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ci
+dcs-geo:ci rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Côte d'Ivoire" ;
+           rdfs:label "CI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ck
+dcs-geo:ck rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cook Islands" ;
+           rdfs:label "CK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cl
+dcs-geo:cl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Chile" ;
+           rdfs:label "CL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cm
+dcs-geo:cm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cameroon" ;
+           rdfs:label "CM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cn
+dcs-geo:cn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "China" ;
+           rdfs:label "CN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/co
+dcs-geo:co rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Colombia" ;
+           rdfs:label "CO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cr
+dcs-geo:cr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Costa Rica" ;
+           rdfs:label "CR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cu
+dcs-geo:cu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cuba" ;
+           rdfs:label "CU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cv
+dcs-geo:cv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cape Verde" ;
+           rdfs:label "CV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cw
+dcs-geo:cw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Curaçao" ;
+           rdfs:label "CW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cx
+dcs-geo:cx rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Christmas Island" ;
+           rdfs:label "CX" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cy
+dcs-geo:cy rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cyprus" ;
+           rdfs:label "CY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/cz
+dcs-geo:cz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Czech Republic" ;
+           rdfs:label "CZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/de
+dcs-geo:de rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Germany" ;
+           rdfs:label "DE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/dj
+dcs-geo:dj rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Djibouti" ;
+           rdfs:label "DJ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/dk
+dcs-geo:dk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Denmark" ;
+           rdfs:label "DK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/dm
+dcs-geo:dm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Dominica" ;
+           rdfs:label "DM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/do
+dcs-geo:do rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Dominican Republic" ;
+           rdfs:label "DO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/dz
+dcs-geo:dz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Algeria" ;
+           rdfs:label "DZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ec
+dcs-geo:ec rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ecuador" ;
+           rdfs:label "EC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ee
+dcs-geo:ee rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Estonia" ;
+           rdfs:label "EE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/eg
+dcs-geo:eg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Egypt" ;
+           rdfs:label "EG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/eh
+dcs-geo:eh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Western Sahara" ;
+           rdfs:label "EH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/er
+dcs-geo:er rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Eritrea" ;
+           rdfs:label "ER" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/es
+dcs-geo:es rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Spain" ;
+           rdfs:label "ES" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/et
+dcs-geo:et rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ethiopia" ;
+           rdfs:label "ET" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fi
+dcs-geo:fi rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Finland" ;
+           rdfs:label "FI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fj
+dcs-geo:fj rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Fiji" ;
+           rdfs:label "FJ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fk
+dcs-geo:fk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Falkland Islands (Malvinas)" ;
+           rdfs:label "FK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fm
+dcs-geo:fm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Federated States of Micronesia" ;
+           rdfs:label "FM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fo
+dcs-geo:fo rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Faroe Islands" ;
+           rdfs:label "FO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/fr
+dcs-geo:fr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "France" ;
+           rdfs:label "FR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ga
+dcs-geo:ga rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Gabon" ;
+           rdfs:label "GA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gb
+dcs-geo:gb rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "United Kingdom" ;
+           rdfs:label "GB" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gd
+dcs-geo:gd rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Grenada" ;
+           rdfs:label "GD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ge
+dcs-geo:ge rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Georgia" ;
+           rdfs:label "GE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gf
+dcs-geo:gf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "French Guiana" ;
+           rdfs:label "GF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gg
+dcs-geo:gg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guernsey" ;
+           rdfs:label "GG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gh
+dcs-geo:gh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ghana" ;
+           rdfs:label "GH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gi
+dcs-geo:gi rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Gibraltar" ;
+           rdfs:label "GI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gl
+dcs-geo:gl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Greenland" ;
+           rdfs:label "GL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gm
+dcs-geo:gm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Gambia" ;
+           rdfs:label "GM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gn
+dcs-geo:gn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guinea" ;
+           rdfs:label "GN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gp
+dcs-geo:gp rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guadeloupe" ;
+           rdfs:label "GP" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gq
+dcs-geo:gq rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Equatorial Guinea" ;
+           rdfs:label "GQ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gr
+dcs-geo:gr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Greece" ;
+           rdfs:label "GR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gs
+dcs-geo:gs rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "South Georgia and the South Sandwich Islands" ;
+           rdfs:label "GS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gt
+dcs-geo:gt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guatemala" ;
+           rdfs:label "GT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gu
+dcs-geo:gu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guam" ;
+           rdfs:label "GU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gw
+dcs-geo:gw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guinea-Bissau" ;
+           rdfs:label "GW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/gy
+dcs-geo:gy rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Guyana" ;
+           rdfs:label "GY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/hk
+dcs-geo:hk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Hong Kong" ;
+           rdfs:label "HK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/hm
+dcs-geo:hm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Heard Island and McDonald Islands" ;
+           rdfs:label "HM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/hn
+dcs-geo:hn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Honduras" ;
+           rdfs:label "HN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/hr
+dcs-geo:hr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Croatia" ;
+           rdfs:label "HR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ht
+dcs-geo:ht rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Haiti" ;
+           rdfs:label "HT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/hu
+dcs-geo:hu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Hungary" ;
+           rdfs:label "HU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/id
+dcs-geo:id rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Indonesia" ;
+           rdfs:label "ID" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ie
+dcs-geo:ie rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ireland" ;
+           rdfs:label "IE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/il
+dcs-geo:il rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Israel" ;
+           rdfs:label "IL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/im
+dcs-geo:im rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Isle of Man" ;
+           rdfs:label "IM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/in
+dcs-geo:in rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "India" ;
+           rdfs:label "IN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/io
+dcs-geo:io rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "British Indian Ocean Territory" ;
+           rdfs:label "IO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/iq
+dcs-geo:iq rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Iraq" ;
+           rdfs:label "IQ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ir
+dcs-geo:ir rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Islamic Republic of Iran" ;
+           rdfs:label "IR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/is
+dcs-geo:is rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Iceland" ;
+           rdfs:label "IS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/it
+dcs-geo:it rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Italy" ;
+           rdfs:label "IT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/je
+dcs-geo:je rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Jersey" ;
+           rdfs:label "JE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/jm
+dcs-geo:jm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Jamaica" ;
+           rdfs:label "JM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/jo
+dcs-geo:jo rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Jordan" ;
+           rdfs:label "JO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/jp
+dcs-geo:jp rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Japan" ;
+           rdfs:label "JP" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ke
+dcs-geo:ke rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Kenya" ;
+           rdfs:label "KE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kg
+dcs-geo:kg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Kyrgyzstan" ;
+           rdfs:label "KG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kh
+dcs-geo:kh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cambodia" ;
+           rdfs:label "KH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ki
+dcs-geo:ki rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Kiribati" ;
+           rdfs:label "KI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/km
+dcs-geo:km rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "omoros" ;
+           rdfs:label "KM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kn
+dcs-geo:kn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Kitts and Nevis" ;
+           rdfs:label "KN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kp
+dcs-geo:kp rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Democratic People's Republic of Korea" ;
+           rdfs:label "KP" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kr
+dcs-geo:kr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Republic of Korea" ;
+           rdfs:label "KR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kw
+dcs-geo:kw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Kuwait" ;
+           rdfs:label "KW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ky
+dcs-geo:ky rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Cayman Islands" ;
+           rdfs:label "KY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/kz
+dcs-geo:kz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Kazakhstan" ;
+           rdfs:label "KZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/la
+dcs-geo:la rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Lao People's Democratic Republic" ;
+           rdfs:label "LA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lb
+dcs-geo:lb rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Lebanon" ;
+           rdfs:label "LB" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lc
+dcs-geo:lc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Lucia" ;
+           rdfs:label "LC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/li
+dcs-geo:li rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Liechtenstein" ;
+           rdfs:label "LI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lk
+dcs-geo:lk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sri Lanka" ;
+           rdfs:label "LK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lr
+dcs-geo:lr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Liberia" ;
+           rdfs:label "LR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ls
+dcs-geo:ls rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Lesotho" ;
+           rdfs:label "LS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lt
+dcs-geo:lt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Lithuania" ;
+           rdfs:label "LT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lu
+dcs-geo:lu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Luxembourg" ;
+           rdfs:label "LU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/lv
+dcs-geo:lv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Latvia" ;
+           rdfs:label "LV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ly
+dcs-geo:ly rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Libya" ;
+           rdfs:label "LY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ma
+dcs-geo:ma rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Morocco" ;
+           rdfs:label "MA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mc
+dcs-geo:mc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Monaco" ;
+           rdfs:label "MC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/md
+dcs-geo:md rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Republic of Moldova" ;
+           rdfs:label "MD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/me
+dcs-geo:me rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Montenegro" ;
+           rdfs:label "ME" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mf
+dcs-geo:mf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Martin (French part)" ;
+           rdfs:label "MF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mg
+dcs-geo:mg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Madagascar" ;
+           rdfs:label "MG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mh
+dcs-geo:mh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Marshall Islands" ;
+           rdfs:label "MH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mk
+dcs-geo:mk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "The Former Yugoslav Republic of Macedonia" ;
+           rdfs:label "MK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ml
+dcs-geo:ml rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mali" ;
+           rdfs:label "ML" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mm
+dcs-geo:mm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Myanmar" ;
+           rdfs:label "MM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mn
+dcs-geo:mn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mongolia" ;
+           rdfs:label "MN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mo
+dcs-geo:mo rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Macao" ;
+           rdfs:label "MO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mp
+dcs-geo:mp rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Northern Mariana Islands" ;
+           rdfs:label "MP" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mq
+dcs-geo:mq rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Martinique" ;
+           rdfs:label "MQ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mr
+dcs-geo:mr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mauritania" ;
+           rdfs:label "MR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ms
+dcs-geo:ms rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Montserrat" ;
+           rdfs:label "MS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mt
+dcs-geo:mt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Malta" ;
+           rdfs:label "MT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mu
+dcs-geo:mu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mauritius" ;
+           rdfs:label "MU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mv
+dcs-geo:mv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Maldives" ;
+           rdfs:label "MV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mw
+dcs-geo:mw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Malawi" ;
+           rdfs:label "MW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mx
+dcs-geo:mx rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mexico" ;
+           rdfs:label "MX" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/my
+dcs-geo:my rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Malaysia" ;
+           rdfs:label "MY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/mz
+dcs-geo:mz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mozambique" ;
+           rdfs:label "MZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/na
+dcs-geo:na rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Namibia" ;
+           rdfs:label "NA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nc
+dcs-geo:nc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "New Caledonia" ;
+           rdfs:label "NC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ne
+dcs-geo:ne rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Niger" ;
+           rdfs:label "NE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nf
+dcs-geo:nf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Norfolk Island" ;
+           rdfs:label "NF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ng
+dcs-geo:ng rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Nigeria" ;
+           rdfs:label "NG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ni
+dcs-geo:ni rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Nicaragua" ;
+           rdfs:label "NI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nl
+dcs-geo:nl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Netherlands" ;
+           rdfs:label "NL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/no
+dcs-geo:no rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Norway" ;
+           rdfs:label "NO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/np
+dcs-geo:np rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Nepal" ;
+           rdfs:label "NP" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nr
+dcs-geo:nr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Nauru" ;
+           rdfs:label "NR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nu
+dcs-geo:nu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Niue" ;
+           rdfs:label "NU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/nz
+dcs-geo:nz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "New Zealand" ;
+           rdfs:label "NZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/om
+dcs-geo:om rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Oman" ;
+           rdfs:label "OM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pa
+dcs-geo:pa rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Panama" ;
+           rdfs:label "PA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pe
+dcs-geo:pe rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Peru" ;
+           rdfs:label "PE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pf
+dcs-geo:pf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "French Polynesia" ;
+           rdfs:label "PF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pg
+dcs-geo:pg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Papua New Guinea" ;
+           rdfs:label "PG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ph
+dcs-geo:ph rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Philippines" ;
+           rdfs:label "PH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pk
+dcs-geo:pk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Pakistan" ;
+           rdfs:label "PK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pl
+dcs-geo:pl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Poland" ;
+           rdfs:label "PL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pm
+dcs-geo:pm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Pierre and Miquelon" ;
+           rdfs:label "PM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pn
+dcs-geo:pn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Pitcairn" ;
+           rdfs:label "PN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pr
+dcs-geo:pr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Puerto Rico" ;
+           rdfs:label "PR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ps
+dcs-geo:ps rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "State of Palestine" ;
+           rdfs:label "PS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pt
+dcs-geo:pt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Portugal" ;
+           rdfs:label "PT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/pw
+dcs-geo:pw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Palau" ;
+           rdfs:label "PW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/py
+dcs-geo:py rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Paraguay" ;
+           rdfs:label "PY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/qa
+dcs-geo:qa rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Qatar" ;
+           rdfs:label "QA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/re
+dcs-geo:re rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Réunion" ;
+           rdfs:label "RE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ro
+dcs-geo:ro rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Romania" ;
+           rdfs:label "RO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/rs
+dcs-geo:rs rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Serbia" ;
+           rdfs:label "RS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ru
+dcs-geo:ru rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Russian Federation" ;
+           rdfs:label "RU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/rw
+dcs-geo:rw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Rwanda" ;
+           rdfs:label "RW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sa
+dcs-geo:sa rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saudi Arabia" ;
+           rdfs:label "SA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sb
+dcs-geo:sb rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Solomon Islands" ;
+           rdfs:label "SB" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sc
+dcs-geo:sc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Seychelles" ;
+           rdfs:label "SC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sd
+dcs-geo:sd rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sudan" ;
+           rdfs:label "SD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/se
+dcs-geo:se rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sweden" ;
+           rdfs:label "SE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sg
+dcs-geo:sg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Singapore" ;
+           rdfs:label "SG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sh
+dcs-geo:sh rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ascension and Tristan da Cunha Saint Helena" ;
+           rdfs:label "SH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/si
+dcs-geo:si rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Slovenia" ;
+           rdfs:label "SI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sj
+dcs-geo:sj rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Svalbard and Jan Mayen" ;
+           rdfs:label "SJ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sk
+dcs-geo:sk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Slovakia" ;
+           rdfs:label "SK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sl
+dcs-geo:sl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sierra Leone" ;
+           rdfs:label "SL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sm
+dcs-geo:sm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "San Marino" ;
+           rdfs:label "SM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sn
+dcs-geo:sn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Senegal" ;
+           rdfs:label "SN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/so
+dcs-geo:so rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Somalia" ;
+           rdfs:label "SO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sr
+dcs-geo:sr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Suriname" ;
+           rdfs:label "SR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ss
+dcs-geo:ss rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "South Sudan" ;
+           rdfs:label "SS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/st
+dcs-geo:st rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sao Tome and Principe" ;
+           rdfs:label "ST" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sv
+dcs-geo:sv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "El Salvador" ;
+           rdfs:label "SV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sx
+dcs-geo:sx rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Sint Maarten (Dutch part)" ;
+           rdfs:label "SX" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sy
+dcs-geo:sy rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Syrian Arab Republic" ;
+           rdfs:label "SY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/sz
+dcs-geo:sz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Swaziland" ;
+           rdfs:label "SZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tc
+dcs-geo:tc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Turks and Caicos Islands" ;
+           rdfs:label "TC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/td
+dcs-geo:td rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Chad" ;
+           rdfs:label "TD" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tf
+dcs-geo:tf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "French Southern Territories" ;
+           rdfs:label "TF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tg
+dcs-geo:tg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Togo" ;
+           rdfs:label "TG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/th
+dcs-geo:th rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Thailand" ;
+           rdfs:label "TH" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tj
+dcs-geo:tj rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Tajikistan" ;
+           rdfs:label "TJ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tk
+dcs-geo:tk rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Tokelau" ;
+           rdfs:label "TK" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tl
+dcs-geo:tl rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Timor-Leste" ;
+           rdfs:label "TL" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tm
+dcs-geo:tm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Turkmenistan" ;
+           rdfs:label "TM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tn
+dcs-geo:tn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Tunisia" ;
+           rdfs:label "TN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/to
+dcs-geo:to rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Tonga" ;
+           rdfs:label "TO" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tr
+dcs-geo:tr rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Turkey" ;
+           rdfs:label "TR" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tt
+dcs-geo:tt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Trinidad and Tobago" ;
+           rdfs:label "TT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tv
+dcs-geo:tv rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Tuvalu" ;
+           rdfs:label "TV" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tw
+dcs-geo:tw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Taiwan" ;
+           rdfs:label "TW" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/tz
+dcs-geo:tz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "United Republic of Tanzania" ;
+           rdfs:label "TZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ua
+dcs-geo:ua rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Ukraine" ;
+           rdfs:label "UA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ug
+dcs-geo:ug rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Uganda" ;
+           rdfs:label "UG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/um
+dcs-geo:um rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "U.S. Minor Outlying Islands" ;
+           rdfs:label "UM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/us
+dcs-geo:us rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "United States" ;
+           rdfs:label "US" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/uy
+dcs-geo:uy rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Uruguay" ;
+           rdfs:label "UY" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/uz
+dcs-geo:uz rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Uzbekistan" ;
+           rdfs:label "UZ" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/va
+dcs-geo:va rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Holy See (Vatican City State)" ;
+           rdfs:label "VA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/vc
+dcs-geo:vc rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Saint Vincent and the Grenadines" ;
+           rdfs:label "VC" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ve
+dcs-geo:ve rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Bolivarian Republic of Venezuela" ;
+           rdfs:label "VE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/vg
+dcs-geo:vg rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "British Virgin Islands" ;
+           rdfs:label "VG" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/vi
+dcs-geo:vi rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "U.S. Virgin Islands" ;
+           rdfs:label "VI" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/vn
+dcs-geo:vn rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Viet Nam" ;
+           rdfs:label "VN" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/vu
+dcs-geo:vu rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Vanuatu" ;
+           rdfs:label "VU" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/wf
+dcs-geo:wf rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Wallis and Futuna" ;
+           rdfs:label "WF" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ws
+dcs-geo:ws rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Samoa" ;
+           rdfs:label "WS" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/ye
+dcs-geo:ye rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Yemen" ;
+           rdfs:label "YE" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/yt
+dcs-geo:yt rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Mayotte" ;
+           rdfs:label "YT" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/za
+dcs-geo:za rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "South Africa" ;
+           rdfs:label "ZA" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/zm
+dcs-geo:zm rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Zambia" ;
+           rdfs:label "ZM" .
+
+
+###  https://w3id.org/dcso/id/iso3166-1/zw
+dcs-geo:zw rdf:type owl:NamedIndividual ,
+                    :Country ;
+           rdfs:comment "Zimbabwe" ;
+           rdfs:label "ZW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/afn
+dcs-cur:afn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Afghan afghani" ;
+            rdfs:label "AFN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/all
+dcs-cur:all rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Albanian lek" ;
+            rdfs:label "ALL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/amd
+dcs-cur:amd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Armenian dram" ;
+            rdfs:label "AMD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ang
+dcs-cur:ang rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Netherlands Antillean guilder" ;
+            rdfs:label "ANG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/aoa
+dcs-cur:aoa rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Angolan kwanza" ;
+            rdfs:label "AOA" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ars
+dcs-cur:ars rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Argentine peso" ;
+            rdfs:label "ARS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/aud
+dcs-cur:aud rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Australian dollar" ;
+            rdfs:label "AUD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/awg
+dcs-cur:awg rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Aruban florin" ;
+            rdfs:label "AWG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/azn
+dcs-cur:azn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Azerbaijani manat" ;
+            rdfs:label "AZN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bam
+dcs-cur:bam rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bosnia and Herzegovina convertible mark" ;
+            rdfs:label "BAM" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bbd
+dcs-cur:bbd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Barbados dollar" ;
+            rdfs:label "BBD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bdt
+dcs-cur:bdt rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bangladeshi taka" ;
+            rdfs:label "BDT" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bgn
+dcs-cur:bgn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bulgarian lev" ;
+            rdfs:label "BGN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bhd
+dcs-cur:bhd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bahraini dinar" ;
+            rdfs:label "BHD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bif
+dcs-cur:bif rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Burundian franc" ;
+            rdfs:label "BIF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bmd
+dcs-cur:bmd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bermudian dollar" ;
+            rdfs:label "BMD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bnd
+dcs-cur:bnd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Brunei dollar" ;
+            rdfs:label "BND" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bob
+dcs-cur:bob rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Boliviano" ;
+            rdfs:label "BOB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bov
+dcs-cur:bov rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bolivian Mvdol (funds code)" ;
+            rdfs:label "BOV" .
+
+
+###  https://w3id.org/dcso/id/iso4217/brl
+dcs-cur:brl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Brazilian real" ;
+            rdfs:label "BRL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bsd
+dcs-cur:bsd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bahamian dollar" ;
+            rdfs:label "BSD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/btn
+dcs-cur:btn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Bhutanese ngultrum" ;
+            rdfs:label "BTN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bwp
+dcs-cur:bwp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Botswana pula" ;
+            rdfs:label "BWP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/byn
+dcs-cur:byn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Belarusian ruble" ;
+            rdfs:label "BYN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/bzd
+dcs-cur:bzd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Belize dollar" ;
+            rdfs:label "BZD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cad
+dcs-cur:cad rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Canadian dollar" ;
+            rdfs:label "CAD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cdf
+dcs-cur:cdf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Congolese franc" ;
+            rdfs:label "CDF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/che
+dcs-cur:che rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "WIR Euro (complementary currency)" ;
+            rdfs:label "CHE" .
+
+
+###  https://w3id.org/dcso/id/iso4217/chf
+dcs-cur:chf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Swiss franc" ;
+            rdfs:label "CHF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/chw
+dcs-cur:chw rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "WIR Franc (complementary currency)" ;
+            rdfs:label "CHW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/clf
+dcs-cur:clf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Unidad de Fomento (funds code)" ;
+            rdfs:label "CLF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/clp
+dcs-cur:clp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Chilean peso" ;
+            rdfs:label "CLP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cny
+dcs-cur:cny rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Renminbi (Chinese) yuan" ;
+            rdfs:label "CNY" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cop
+dcs-cur:cop rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Colombian peso" ;
+            rdfs:label "COP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cou
+dcs-cur:cou rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Unidad de Valor Real (UVR) (funds code)" ;
+            rdfs:label "COU" .
+
+
+###  https://w3id.org/dcso/id/iso4217/crc
+dcs-cur:crc rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Costa Rican colon" ;
+            rdfs:label "CRC" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cuc
+dcs-cur:cuc rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Cuban convertible peso" ;
+            rdfs:label "CUC" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cup
+dcs-cur:cup rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Cuban peso" ;
+            rdfs:label "CUP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/cve
+dcs-cur:cve rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Cape Verdean escudo" ;
+            rdfs:label "CVE" .
+
+
+###  https://w3id.org/dcso/id/iso4217/czk
+dcs-cur:czk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Czech koruna" ;
+            rdfs:label "CZK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/djf
+dcs-cur:djf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Djiboutian franc" ;
+            rdfs:label "DJF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/dkk
+dcs-cur:dkk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Danish krone" ;
+            rdfs:label "DKK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/dop
+dcs-cur:dop rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Dominican peso" ;
+            rdfs:label "DOP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/dzd
+dcs-cur:dzd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Algerian dinar" ;
+            rdfs:label "DZD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ed
+dcs-cur:ed rdf:type owl:NamedIndividual ,
+                    :CurrencyCode ;
+           rdfs:comment "United Arab Emirates dirham" ;
+           rdfs:label "ED" .
+
+
+###  https://w3id.org/dcso/id/iso4217/egp
+dcs-cur:egp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Egyptian pound" ;
+            rdfs:label "EGP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ern
+dcs-cur:ern rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Eritrean nakfa" ;
+            rdfs:label "ERN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/etb
+dcs-cur:etb rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Ethiopian birr" ;
+            rdfs:label "ETB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/eur
+dcs-cur:eur rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Euro" ;
+            rdfs:label "EUR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/fjd
+dcs-cur:fjd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Fiji dollar" ;
+            rdfs:label "FJD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/fkp
+dcs-cur:fkp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Falkland Islands pound" ;
+            rdfs:label "FKP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gbp
+dcs-cur:gbp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Pound sterling" ;
+            rdfs:label "GBP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gel
+dcs-cur:gel rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Georgian lari" ;
+            rdfs:label "GEL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ghs
+dcs-cur:ghs rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Ghanaian cedi" ;
+            rdfs:label "GHS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gip
+dcs-cur:gip rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Gibraltar pound" ;
+            rdfs:label "GIP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gmd
+dcs-cur:gmd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Gambian dalasi" ;
+            rdfs:label "GMD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gnf
+dcs-cur:gnf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Guinean franc" ;
+            rdfs:label "GNF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gtq
+dcs-cur:gtq rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Guatemalan quetzal" ;
+            rdfs:label "GTQ" .
+
+
+###  https://w3id.org/dcso/id/iso4217/gyd
+dcs-cur:gyd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Guyanese dollar" ;
+            rdfs:label "GYD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/hkd
+dcs-cur:hkd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Hong Kong dollar" ;
+            rdfs:label "HKD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/hnl
+dcs-cur:hnl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Honduran lempira" ;
+            rdfs:label "HNL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/hrk
+dcs-cur:hrk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Croatian kuna" ;
+            rdfs:label "HRK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/htg
+dcs-cur:htg rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Haitian gourde" ;
+            rdfs:label "HTG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/huf
+dcs-cur:huf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Hungarian forint" ;
+            rdfs:label "HUF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/idr
+dcs-cur:idr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Indonesian rupiah" ;
+            rdfs:label "IDR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ils
+dcs-cur:ils rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Israeli new shekel" ;
+            rdfs:label "ILS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/inr
+dcs-cur:inr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Indian rupee" ;
+            rdfs:label "INR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/iqd
+dcs-cur:iqd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Iraqi dinar" ;
+            rdfs:label "IQD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/irr
+dcs-cur:irr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Iranian rial" ;
+            rdfs:label "IRR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/isk
+dcs-cur:isk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Icelandic króna" ;
+            rdfs:label "ISK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/jmd
+dcs-cur:jmd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Jamaican dollar" ;
+            rdfs:label "JMD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/jod
+dcs-cur:jod rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Jordanian dinar" ;
+            rdfs:label "JOD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/jpy
+dcs-cur:jpy rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Japanese yen" ;
+            rdfs:label "JPY" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kes
+dcs-cur:kes rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Kenyan shilling" ;
+            rdfs:label "KES" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kgs
+dcs-cur:kgs rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Kyrgyzstani som" ;
+            rdfs:label "KGS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/khr
+dcs-cur:khr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Cambodian riel" ;
+            rdfs:label "KHR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kmf
+dcs-cur:kmf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Comoro franc" ;
+            rdfs:label "KMF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kpw
+dcs-cur:kpw rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "North Korean won" ;
+            rdfs:label "KPW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/krw
+dcs-cur:krw rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "South Korean won" ;
+            rdfs:label "KRW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kwd
+dcs-cur:kwd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Kuwaiti dinar" ;
+            rdfs:label "KWD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kyd
+dcs-cur:kyd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Cayman Islands dollar" ;
+            rdfs:label "KYD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/kzt
+dcs-cur:kzt rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Kazakhstani tenge" ;
+            rdfs:label "KZT" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lak
+dcs-cur:lak rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Lao kip" ;
+            rdfs:label "LAK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lbp
+dcs-cur:lbp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Lebanese pound" ;
+            rdfs:label "LBP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lkr
+dcs-cur:lkr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Sri Lankan rupee" ;
+            rdfs:label "LKR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lrd
+dcs-cur:lrd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Liberian dollar" ;
+            rdfs:label "LRD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lsl
+dcs-cur:lsl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Lesotho loti" ;
+            rdfs:label "LSL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/lyd
+dcs-cur:lyd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Libyan dinar" ;
+            rdfs:label "LYD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mad
+dcs-cur:mad rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Moroccan dirham" ;
+            rdfs:label "MAD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mdl
+dcs-cur:mdl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Moldovan leu" ;
+            rdfs:label "MDL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mga
+dcs-cur:mga rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Malagasy ariary" ;
+            rdfs:label "MGA" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mkd
+dcs-cur:mkd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Macedonian denar" ;
+            rdfs:label "MKD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mmk
+dcs-cur:mmk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Myanmar kyat" ;
+            rdfs:label "MMK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mnt
+dcs-cur:mnt rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mongolian tögrög" ;
+            rdfs:label "MNT" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mop
+dcs-cur:mop rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Macanese pataca" ;
+            rdfs:label "MOP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mru
+dcs-cur:mru rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mauritanian ouguiya" ;
+            rdfs:label "MRU" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mur
+dcs-cur:mur rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mauritian rupee" ;
+            rdfs:label "MUR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mvr
+dcs-cur:mvr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Maldivian rufiyaa" ;
+            rdfs:label "MVR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mwk
+dcs-cur:mwk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Malawian kwacha" ;
+            rdfs:label "MWK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mxn
+dcs-cur:mxn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mexican peso" ;
+            rdfs:label "MXN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mxv
+dcs-cur:mxv rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mexican Unidad de Inversion (UDI) (funds code)" ;
+            rdfs:label "MXV" .
+
+
+###  https://w3id.org/dcso/id/iso4217/myr
+dcs-cur:myr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Malaysian ringgit" ;
+            rdfs:label "MYR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/mzn
+dcs-cur:mzn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Mozambican metical" ;
+            rdfs:label "MZN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/nad
+dcs-cur:nad rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Namibian dollar" ;
+            rdfs:label "NAD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ngn
+dcs-cur:ngn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Nigerian naira" ;
+            rdfs:label "NGN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/nio
+dcs-cur:nio rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Nicaraguan córdoba" ;
+            rdfs:label "NIO" .
+
+
+###  https://w3id.org/dcso/id/iso4217/nok
+dcs-cur:nok rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Norwegian krone" ;
+            rdfs:label "NOK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/npr
+dcs-cur:npr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Nepalese rupee" ;
+            rdfs:label "NPR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/nzd
+dcs-cur:nzd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "New Zealand dollar" ;
+            rdfs:label "NZD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/omr
+dcs-cur:omr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Omani rial" ;
+            rdfs:label "OMR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pab
+dcs-cur:pab rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Panamanian balboa" ;
+            rdfs:label "PAB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pen
+dcs-cur:pen rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Peruvian sol" ;
+            rdfs:label "PEN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pgk
+dcs-cur:pgk rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Papua New Guinean kina" ;
+            rdfs:label "PGK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/php
+dcs-cur:php rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Philippine peso" ;
+            rdfs:label "PHP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pkr
+dcs-cur:pkr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Pakistani rupee" ;
+            rdfs:label "PKR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pln
+dcs-cur:pln rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Polish z?oty" ;
+            rdfs:label "PLN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/pyg
+dcs-cur:pyg rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Paraguayan guaraní" ;
+            rdfs:label "PYG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/qar
+dcs-cur:qar rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Qatari riyal" ;
+            rdfs:label "QAR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ron
+dcs-cur:ron rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Romanian leu" ;
+            rdfs:label "RON" .
+
+
+###  https://w3id.org/dcso/id/iso4217/rsd
+dcs-cur:rsd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Serbian dinar" ;
+            rdfs:label "RSD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/rub
+dcs-cur:rub rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Russian ruble" ;
+            rdfs:label "RUB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/rwf
+dcs-cur:rwf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Rwandan franc" ;
+            rdfs:label "RWF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sar
+dcs-cur:sar rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Saudi riyal" ;
+            rdfs:label "SAR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sbd
+dcs-cur:sbd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Solomon Islands dollar" ;
+            rdfs:label "SBD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/scr
+dcs-cur:scr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Seychelles rupee" ;
+            rdfs:label "SCR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sdg
+dcs-cur:sdg rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Sudanese pound" ;
+            rdfs:label "SDG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sek
+dcs-cur:sek rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Swedish krona/kronor" ;
+            rdfs:label "SEK" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sgd
+dcs-cur:sgd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Singapore dollar" ;
+            rdfs:label "SGD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/shp
+dcs-cur:shp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Saint Helena pound" ;
+            rdfs:label "SHP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sll
+dcs-cur:sll rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Sierra Leonean leone" ;
+            rdfs:label "SLL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/sos
+dcs-cur:sos rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Somali shilling" ;
+            rdfs:label "SOS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/srd
+dcs-cur:srd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Surinamese dollar" ;
+            rdfs:label "SRD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ssp
+dcs-cur:ssp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "South Sudanese pound" ;
+            rdfs:label "SSP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/stn
+dcs-cur:stn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "São Tomé and Príncipe dobra" ;
+            rdfs:label "STN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/svc
+dcs-cur:svc rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Salvadoran colón" ;
+            rdfs:label "SVC" .
+
+
+###  https://w3id.org/dcso/id/iso4217/syp
+dcs-cur:syp rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Syrian pound" ;
+            rdfs:label "SYP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/szl
+dcs-cur:szl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Swazi lilangeni" ;
+            rdfs:label "SZL" .
+
+
+###  https://w3id.org/dcso/id/iso4217/thb
+dcs-cur:thb rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Thai baht" ;
+            rdfs:label "THB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/tjs
+dcs-cur:tjs rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Tajikistani somoni" ;
+            rdfs:label "TJS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/tmt
+dcs-cur:tmt rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Turkmenistan manat" ;
+            rdfs:label "TMT" .
+
+
+###  https://w3id.org/dcso/id/iso4217/tnd
+dcs-cur:tnd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Tunisian dinar" ;
+            rdfs:label "TND" .
+
+
+###  https://w3id.org/dcso/id/iso4217/top
+dcs-cur:top rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Tongan pa?anga" ;
+            rdfs:label "TOP" .
+
+
+###  https://w3id.org/dcso/id/iso4217/try
+dcs-cur:try rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Turkish lira" ;
+            rdfs:label "TRY" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ttd
+dcs-cur:ttd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Trinidad and Tobago dollar" ;
+            rdfs:label "TTD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/twd
+dcs-cur:twd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "New Taiwan dollar" ;
+            rdfs:label "TWD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/tzs
+dcs-cur:tzs rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Tanzanian shilling" ;
+            rdfs:label "TZS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/uah
+dcs-cur:uah rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Ukrainian hryvnia" ;
+            rdfs:label "UAH" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ugx
+dcs-cur:ugx rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Ugandan shilling" ;
+            rdfs:label "UGX" .
+
+
+###  https://w3id.org/dcso/id/iso4217/usd
+dcs-cur:usd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "United States dollar" ;
+            rdfs:label "USD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/usn
+dcs-cur:usn rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "United States dollar (next day) (funds code)" ;
+            rdfs:label "USN" .
+
+
+###  https://w3id.org/dcso/id/iso4217/uyi
+dcs-cur:uyi rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)" ;
+            rdfs:label "UYI" .
+
+
+###  https://w3id.org/dcso/id/iso4217/uyu
+dcs-cur:uyu rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Uruguayan peso" ;
+            rdfs:label "UYU" .
+
+
+###  https://w3id.org/dcso/id/iso4217/uyw
+dcs-cur:uyw rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Unidad previsional" ;
+            rdfs:label "UYW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/uzs
+dcs-cur:uzs rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Uzbekistan som" ;
+            rdfs:label "UZS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/ves
+dcs-cur:ves rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Venezuelan bolívar soberano" ;
+            rdfs:label "VES" .
+
+
+###  https://w3id.org/dcso/id/iso4217/vnd
+dcs-cur:vnd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Vietnamese ??ng" ;
+            rdfs:label "VND" .
+
+
+###  https://w3id.org/dcso/id/iso4217/vuv
+dcs-cur:vuv rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Vanuatu vatu" ;
+            rdfs:label "VUV" .
+
+
+###  https://w3id.org/dcso/id/iso4217/wst
+dcs-cur:wst rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Samoan tala" ;
+            rdfs:label "WST" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xaf
+dcs-cur:xaf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "CFA franc BEAC" ;
+            rdfs:label "XAF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xag
+dcs-cur:xag rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Silver (one troy ounce)" ;
+            rdfs:label "XAG" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xau
+dcs-cur:xau rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Gold (one troy ounce)" ;
+            rdfs:label "XAU" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xba
+dcs-cur:xba rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "European Composite Unit (EURCO) (bond market unit)" ;
+            rdfs:label "XBA" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xbb
+dcs-cur:xbb rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "European Monetary Unit (E.M.U.-6) (bond market unit)" ;
+            rdfs:label "XBB" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xbc
+dcs-cur:xbc rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "European Unit of Account 9 (E.U.A.-9) (bond market unit)" ;
+            rdfs:label "XBC" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xbd
+dcs-cur:xbd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "European Unit of Account 17 (E.U.A.-17) (bond market unit)" ;
+            rdfs:label "XBD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xcd
+dcs-cur:xcd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "East Caribbean dollar" ;
+            rdfs:label "XCD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xdr
+dcs-cur:xdr rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Special drawing rights" ;
+            rdfs:label "XDR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xof
+dcs-cur:xof rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "CFA franc BCEAO" ;
+            rdfs:label "XOF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xpd
+dcs-cur:xpd rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Palladium (one troy ounce)" ;
+            rdfs:label "XPD" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xpf
+dcs-cur:xpf rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "CFP franc (franc Pacifique)" ;
+            rdfs:label "XPF" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xpt
+dcs-cur:xpt rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Platinum (one troy ounce)" ;
+            rdfs:label "XPT" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xsu
+dcs-cur:xsu rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "SUCRE" ;
+            rdfs:label "XSU" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xts
+dcs-cur:xts rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Code reserved for testing" ;
+            rdfs:label "XTS" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xua
+dcs-cur:xua rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "ADB Unit of Account" ;
+            rdfs:label "XUA" .
+
+
+###  https://w3id.org/dcso/id/iso4217/xxx
+dcs-cur:xxx rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "No currency" ;
+            rdfs:label "XXX" .
+
+
+###  https://w3id.org/dcso/id/iso4217/yer
+dcs-cur:yer rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Yemeni rial" ;
+            rdfs:label "YER" .
+
+
+###  https://w3id.org/dcso/id/iso4217/zar
+dcs-cur:zar rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "South African rand" ;
+            rdfs:label "ZAR" .
+
+
+###  https://w3id.org/dcso/id/iso4217/zmw
+dcs-cur:zmw rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Zambian kwacha" ;
+            rdfs:label "ZMW" .
+
+
+###  https://w3id.org/dcso/id/iso4217/zwl
+dcs-cur:zwl rdf:type owl:NamedIndividual ,
+                     :CurrencyCode ;
+            rdfs:comment "Zimbabwean dollar" ;
+            rdfs:label "ZWL" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/aa
+dcs-lang:aa rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Afar" ;
+            rdfs:label "aa" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ab
+dcs-lang:ab rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Abkhazian" ;
+            rdfs:label "ab" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ae
+dcs-lang:ae rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Avestan" ;
+            rdfs:label "ae" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/af
+dcs-lang:af rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Afrikaans" ;
+            rdfs:label "af" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ak
+dcs-lang:ak rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Akan" ;
+            rdfs:label "ak" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/am
+dcs-lang:am rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Amharic" ;
+            rdfs:label "am" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/an
+dcs-lang:an rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Aragonese" ;
+            rdfs:label "an" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ar
+dcs-lang:ar rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Arabic" ;
+            rdfs:label "ar" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/as
+dcs-lang:as rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Assamese" ;
+            rdfs:label "as" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/av
+dcs-lang:av rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Avaric" ;
+            rdfs:label "av" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ay
+dcs-lang:ay rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Aymara" ;
+            rdfs:label "ay" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/az
+dcs-lang:az rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Azerbaijani" ;
+            rdfs:label "az" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ba
+dcs-lang:ba rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bashkir" ;
+            rdfs:label "ba" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/be
+dcs-lang:be rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Belarusian" ;
+            rdfs:label "be" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bg
+dcs-lang:bg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bulgarian" ;
+            rdfs:label "bg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bh
+dcs-lang:bh rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bihari languages" ;
+            rdfs:label "bh" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bi
+dcs-lang:bi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bislama" ;
+            rdfs:label "bi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bm
+dcs-lang:bm rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bambara" ;
+            rdfs:label "bm" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bn
+dcs-lang:bn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bengali" ;
+            rdfs:label "bn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bo
+dcs-lang:bo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tibetan" ;
+            rdfs:label "bo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/br
+dcs-lang:br rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Breton" ;
+            rdfs:label "br" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/bs
+dcs-lang:bs rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bosnian" ;
+            rdfs:label "bs" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ca
+dcs-lang:ca rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Catalan; Valencian" ;
+            rdfs:label "ca" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ce
+dcs-lang:ce rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Chechen" ;
+            rdfs:label "ce" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ch
+dcs-lang:ch rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Chamorro" ;
+            rdfs:label "ch" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/co
+dcs-lang:co rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Corsican" ;
+            rdfs:label "co" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/cr
+dcs-lang:cr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Cree" ;
+            rdfs:label "cr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/cs
+dcs-lang:cs rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Czech" ;
+            rdfs:label "cs" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/cu
+dcs-lang:cu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic" ;
+            rdfs:label "cu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/cv
+dcs-lang:cv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Chuvash" ;
+            rdfs:label "cv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/cy
+dcs-lang:cy rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Welsh" ;
+            rdfs:label "cy" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/da
+dcs-lang:da rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Danish" ;
+            rdfs:label "da" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/de
+dcs-lang:de rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "German" ;
+            rdfs:label "de" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/dv
+dcs-lang:dv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Divehi; Dhivehi; Maldivian" ;
+            rdfs:label "dv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/dz
+dcs-lang:dz rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Dzongkha" ;
+            rdfs:label "dz" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ee
+dcs-lang:ee rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ewe" ;
+            rdfs:label "ee" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/el
+dcs-lang:el rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Greek, Modern (1453-)" ;
+            rdfs:label "el" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/en
+dcs-lang:en rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "English" ;
+            rdfs:label "en" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/eo
+dcs-lang:eo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Esperanto" ;
+            rdfs:label "eo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/es
+dcs-lang:es rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Spanish; Castilian" ;
+            rdfs:label "es" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/et
+dcs-lang:et rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Estonian" ;
+            rdfs:label "et" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/eu
+dcs-lang:eu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Basque" ;
+            rdfs:label "eu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fa
+dcs-lang:fa rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Persian" ;
+            rdfs:label "fa" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ff
+dcs-lang:ff rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Fulah" ;
+            rdfs:label "ff" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fi
+dcs-lang:fi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Finnish" ;
+            rdfs:label "fi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fj
+dcs-lang:fj rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Fijian" ;
+            rdfs:label "fj" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fo
+dcs-lang:fo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Faroese" ;
+            rdfs:label "fo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fr
+dcs-lang:fr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "French" ;
+            rdfs:label "fr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/fy
+dcs-lang:fy rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Western Frisian" ;
+            rdfs:label "fy" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ga
+dcs-lang:ga rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Irish" ;
+            rdfs:label "ga" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/gd
+dcs-lang:gd rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Gaelic; Scottish Gaelic" ;
+            rdfs:label "gd" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/gl
+dcs-lang:gl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Galician" ;
+            rdfs:label "gl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/gn
+dcs-lang:gn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Guarani" ;
+            rdfs:label "gn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/gu
+dcs-lang:gu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Gujarati" ;
+            rdfs:label "gu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/gv
+dcs-lang:gv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Manx" ;
+            rdfs:label "gv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ha
+dcs-lang:ha rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Hausa" ;
+            rdfs:label "ha" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/he
+dcs-lang:he rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Hebrew" ;
+            rdfs:label "he" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/hi
+dcs-lang:hi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Hindi" ;
+            rdfs:label "hi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ho
+dcs-lang:ho rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Hiri Motu" ;
+            rdfs:label "ho" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/hr
+dcs-lang:hr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Croatian" ;
+            rdfs:label "hr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ht
+dcs-lang:ht rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Haitian; Haitian Creole" ;
+            rdfs:label "ht" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/hu
+dcs-lang:hu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Hungarian" ;
+            rdfs:label "hu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/hy
+dcs-lang:hy rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Armenian" ;
+            rdfs:label "hy" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/hz
+dcs-lang:hz rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Herero" ;
+            rdfs:label "hz" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ia
+dcs-lang:ia rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Interlingua (International Auxiliary Language Association)" ;
+            rdfs:label "ia" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/id
+dcs-lang:id rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Indonesian" ;
+            rdfs:label "id" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ie
+dcs-lang:ie rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Interlingue; Occidental" ;
+            rdfs:label "ie" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ig
+dcs-lang:ig rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Igbo" ;
+            rdfs:label "ig" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ii
+dcs-lang:ii rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sichuan Yi; Nuosu" ;
+            rdfs:label "ii" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ik
+dcs-lang:ik rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Inupiaq" ;
+            rdfs:label "ik" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/io
+dcs-lang:io rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ido" ;
+            rdfs:label "io" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/is
+dcs-lang:is rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Icelandic" ;
+            rdfs:label "is" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/it
+dcs-lang:it rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Italian" ;
+            rdfs:label "it" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/iu
+dcs-lang:iu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Inuktitut" ;
+            rdfs:label "iu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ja
+dcs-lang:ja rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Japanese" ;
+            rdfs:label "ja" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/jv
+dcs-lang:jv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Javanese" ;
+            rdfs:label "jv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ka
+dcs-lang:ka rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Georgian" ;
+            rdfs:label "ka" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kg
+dcs-lang:kg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kongo" ;
+            rdfs:label "kg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ki
+dcs-lang:ki rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kikuyu; Gikuyu" ;
+            rdfs:label "ki" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kj
+dcs-lang:kj rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kuanyama; Kwanyama" ;
+            rdfs:label "kj" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kk
+dcs-lang:kk rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kazakh" ;
+            rdfs:label "kk" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kl
+dcs-lang:kl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kalaallisut; Greenlandic" ;
+            rdfs:label "kl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/km
+dcs-lang:km rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Central Khmer" ;
+            rdfs:label "km" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kn
+dcs-lang:kn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kannada" ;
+            rdfs:label "kn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ko
+dcs-lang:ko rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Korean" ;
+            rdfs:label "ko" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kr
+dcs-lang:kr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kanuri" ;
+            rdfs:label "kr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ks
+dcs-lang:ks rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kashmiri" ;
+            rdfs:label "ks" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ku
+dcs-lang:ku rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kurdish" ;
+            rdfs:label "ku" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kv
+dcs-lang:kv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Komi" ;
+            rdfs:label "kv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/kw
+dcs-lang:kw rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Cornish" ;
+            rdfs:label "kw" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ky
+dcs-lang:ky rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kirghiz; Kyrgyz" ;
+            rdfs:label "ky" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/la
+dcs-lang:la rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Latin" ;
+            rdfs:label "la" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lb
+dcs-lang:lb rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Luxembourgish; Letzeburgesch" ;
+            rdfs:label "lb" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lg
+dcs-lang:lg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ganda" ;
+            rdfs:label "lg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/li
+dcs-lang:li rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Limburgan; Limburger; Limburgish" ;
+            rdfs:label "li" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ln
+dcs-lang:ln rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Lingala" ;
+            rdfs:label "ln" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lo
+dcs-lang:lo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Lao" ;
+            rdfs:label "lo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lt
+dcs-lang:lt rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Lithuanian" ;
+            rdfs:label "lt" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lu
+dcs-lang:lu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Luba-Katanga" ;
+            rdfs:label "lu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/lv
+dcs-lang:lv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Latvian" ;
+            rdfs:label "lv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mg
+dcs-lang:mg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Malagasy" ;
+            rdfs:label "mg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mh
+dcs-lang:mh rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Marshallese" ;
+            rdfs:label "mh" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mi
+dcs-lang:mi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Maori" ;
+            rdfs:label "mi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mk
+dcs-lang:mk rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Macedonian" ;
+            rdfs:label "mk" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ml
+dcs-lang:ml rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Malayalam" ;
+            rdfs:label "ml" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mn
+dcs-lang:mn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Mongolian" ;
+            rdfs:label "mn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mr
+dcs-lang:mr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Marathi" ;
+            rdfs:label "mr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ms
+dcs-lang:ms rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Malay" ;
+            rdfs:label "ms" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/mt
+dcs-lang:mt rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Maltese" ;
+            rdfs:label "mt" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/my
+dcs-lang:my rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Burmese" ;
+            rdfs:label "my" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/na
+dcs-lang:na rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Nauru" ;
+            rdfs:label "na" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nb
+dcs-lang:nb rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Bokmål, Norwegian; Norwegian Bokmål" ;
+            rdfs:label "nb" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nd
+dcs-lang:nd rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ndebele, North; North Ndebele" ;
+            rdfs:label "nd" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ne
+dcs-lang:ne rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Nepali" ;
+            rdfs:label "ne" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ng
+dcs-lang:ng rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ndonga" ;
+            rdfs:label "ng" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nl
+dcs-lang:nl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Dutch; Flemish" ;
+            rdfs:label "nl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nn
+dcs-lang:nn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Norwegian Nynorsk; Nynorsk, Norwegian" ;
+            rdfs:label "nn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/no
+dcs-lang:no rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Norwegian" ;
+            rdfs:label "no" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nr
+dcs-lang:nr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ndebele, South; South Ndebele" ;
+            rdfs:label "nr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/nv
+dcs-lang:nv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Navajo; Navaho" ;
+            rdfs:label "nv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ny
+dcs-lang:ny rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Chichewa; Chewa; Nyanja" ;
+            rdfs:label "ny" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/oc
+dcs-lang:oc rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Occitan (post 1500)" ;
+            rdfs:label "oc" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/oj
+dcs-lang:oj rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ojibwa" ;
+            rdfs:label "oj" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/om
+dcs-lang:om rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Oromo" ;
+            rdfs:label "om" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/or
+dcs-lang:or rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Oriya" ;
+            rdfs:label "or" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/os
+dcs-lang:os rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ossetian; Ossetic" ;
+            rdfs:label "os" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/pa
+dcs-lang:pa rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Panjabi; Punjabi" ;
+            rdfs:label "pa" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/pi
+dcs-lang:pi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Pali" ;
+            rdfs:label "pi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/pl
+dcs-lang:pl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Polish" ;
+            rdfs:label "pl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ps
+dcs-lang:ps rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Pushto; Pashto" ;
+            rdfs:label "ps" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/pt
+dcs-lang:pt rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Portuguese" ;
+            rdfs:label "pt" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/qu
+dcs-lang:qu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Quechua" ;
+            rdfs:label "qu" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/rm
+dcs-lang:rm rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Romansh" ;
+            rdfs:label "rm" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/rn
+dcs-lang:rn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Rundi" ;
+            rdfs:label "rn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ro
+dcs-lang:ro rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Romanian; Moldavian; Moldovan" ;
+            rdfs:label "ro" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ru
+dcs-lang:ru rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Russian" ;
+            rdfs:label "ru" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/rw
+dcs-lang:rw rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Kinyarwanda" ;
+            rdfs:label "rw" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sa
+dcs-lang:sa rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sanskrit" ;
+            rdfs:label "sa" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sc
+dcs-lang:sc rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sardinian" ;
+            rdfs:label "sc" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sd
+dcs-lang:sd rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sindhi" ;
+            rdfs:label "sd" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/se
+dcs-lang:se rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Northern Sami" ;
+            rdfs:label "se" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sg
+dcs-lang:sg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sango" ;
+            rdfs:label "sg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/si
+dcs-lang:si rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sinhala; Sinhalese" ;
+            rdfs:label "si" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sk
+dcs-lang:sk rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Slovak" ;
+            rdfs:label "sk" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sl
+dcs-lang:sl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Slovenian" ;
+            rdfs:label "sl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sm
+dcs-lang:sm rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Samoan" ;
+            rdfs:label "sm" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sn
+dcs-lang:sn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Shona" ;
+            rdfs:label "sn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/so
+dcs-lang:so rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Somali" ;
+            rdfs:label "so" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sq
+dcs-lang:sq rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Albanian" ;
+            rdfs:label "sq" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sr
+dcs-lang:sr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Serbian" ;
+            rdfs:label "sr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ss
+dcs-lang:ss rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Swati" ;
+            rdfs:label "ss" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/st
+dcs-lang:st rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sotho, Southern" ;
+            rdfs:label "st" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/su
+dcs-lang:su rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Sundanese" ;
+            rdfs:label "su" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sv
+dcs-lang:sv rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Swedish" ;
+            rdfs:label "sv" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/sw
+dcs-lang:sw rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Swahili" ;
+            rdfs:label "sw" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ta
+dcs-lang:ta rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tamil" ;
+            rdfs:label "ta" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/te
+dcs-lang:te rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Telugu" ;
+            rdfs:label "te" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tg
+dcs-lang:tg rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tajik" ;
+            rdfs:label "tg" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/th
+dcs-lang:th rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Thai" ;
+            rdfs:label "th" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ti
+dcs-lang:ti rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tigrinya" ;
+            rdfs:label "ti" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tk
+dcs-lang:tk rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Turkmen" ;
+            rdfs:label "tk" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tl
+dcs-lang:tl rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tagalog" ;
+            rdfs:label "tl" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tn
+dcs-lang:tn rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tswana" ;
+            rdfs:label "tn" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/to
+dcs-lang:to rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tonga (Tonga Islands)" ;
+            rdfs:label "to" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tr
+dcs-lang:tr rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Turkish" ;
+            rdfs:label "tr" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ts
+dcs-lang:ts rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tsonga" ;
+            rdfs:label "ts" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tt
+dcs-lang:tt rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tatar" ;
+            rdfs:label "tt" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/tw
+dcs-lang:tw rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Twi" ;
+            rdfs:label "tw" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ty
+dcs-lang:ty rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Tahitian" ;
+            rdfs:label "ty" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ug
+dcs-lang:ug rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Uighur; Uyghur" ;
+            rdfs:label "ug" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/uk
+dcs-lang:uk rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Ukrainian" ;
+            rdfs:label "uk" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ur
+dcs-lang:ur rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Urdu" ;
+            rdfs:label "ur" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/uz
+dcs-lang:uz rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Uzbek" ;
+            rdfs:label "uz" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/ve
+dcs-lang:ve rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Venda" ;
+            rdfs:label "ve" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/vi
+dcs-lang:vi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Vietnamese" ;
+            rdfs:label "vi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/vo
+dcs-lang:vo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Volapük" ;
+            rdfs:label "vo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/wa
+dcs-lang:wa rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Walloon" ;
+            rdfs:label "wa" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/wo
+dcs-lang:wo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Wolof" ;
+            rdfs:label "wo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/xh
+dcs-lang:xh rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Xhosa" ;
+            rdfs:label "xh" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/yi
+dcs-lang:yi rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Yiddish" ;
+            rdfs:label "yi" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/yo
+dcs-lang:yo rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Yoruba" ;
+            rdfs:label "yo" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/za
+dcs-lang:za rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Zhuang; Chuang" ;
+            rdfs:label "za" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/zh
+dcs-lang:zh rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Chinese" ;
+            rdfs:label "zh" .
+
+
+###  https://w3id.org/dcso/id/iso639-3/zu
+dcs-lang:zu rdf:type owl:NamedIndividual ,
+                     :Language ;
+            rdfs:comment "Zulu" ;
+            rdfs:label "zu" .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi

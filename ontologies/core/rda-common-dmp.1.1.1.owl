@@ -1,0 +1,1421 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.sysresearch.org/rda-common-dmp#"
+     xml:base="http://www.sysresearch.org/rda-common-dmp"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.sysresearch.org/rda-common-dmp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasCrossReference -->
+
+    <owl:AnnotationProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasCrossReference"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#dataAccessVocabulary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#dataAccessVocabulary">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="xsd:string">$closed$</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="xsd:string">$open$</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="xsd:string">$shared$</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#dictionary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#dictionary">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#fundingStatusVocabulary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#fundingStatusVocabulary">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="xsd:string">$applied$</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="xsd:string">$granted$</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="xsd:string">$planned$</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first xml:lang="xsd:string">$rejected$</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#identifierTypeVocabulary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#identifierTypeVocabulary">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="xsd:string">$DOI$</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="xsd:string">$HTTP URI$</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="xsd:string">$HTTP form$</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first xml:lang="xsd:string">$N/A$</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first xml:lang="xsd:string">$Name$</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first xml:lang="xsd:string">$ORCID$</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#vocabulary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#vocabulary">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary -->
+
+    <rdfs:Datatype rdf:about="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first xml:lang="xsd:string">$no$</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first xml:lang="xsd:string">$unknown$</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first xml:lang="xsd:string">$yes$</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#contactID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#contactID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#datasetID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#datasetID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#dmpID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#dmpID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Provides a TypeIdentifier for a DMP</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#funderID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#funderID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#grantID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#grantID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasContact -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasContact">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Contact for the DMP</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasCost -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasCost">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasDMStaff -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasDMStaff">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasDataset -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasDataset">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasDistribution -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasDistribution">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasFunding -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasFunding">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasHost -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasHost">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasLicence -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasLicence">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Licence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasMetadata -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasMetadata">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Metadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasProject">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasSecurityAndPrivacy -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasSecurityAndPrivacy">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#SecurityAndPrivacy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#hasTechnicalResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#hasTechnicalResource">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#TechnicalResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#metadataID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#metadataID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#Metadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#technicalResourceID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#technicalResourceID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#TechnicalResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#userID -->
+
+    <owl:ObjectProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#userID">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#accessURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#accessURL">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.w3.org/ns/dcat#accessURL</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#availability -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#availability">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#availableTill -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#availableTill">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#backupFrequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#backupFrequency">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#backupType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#backupType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#byteSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#byteSize">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/ns/dcat#byteSize</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#certifiedWith -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#certifiedWith">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#contributorType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#contributorType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#costType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#costType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#vocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#costUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#costUnit">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#costValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#costValue">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#created -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#created">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/created</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#dataAccess -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#dataAccess">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dataAccessVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#dataQualityAssurance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#dataQualityAssurance">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#datasetType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#datasetType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#description">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Metadata"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#SecurityAndPrivacy"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TechnicalResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/description</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#downloadURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#downloadURL">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/ns/dcat#downloadURL</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#ethicalIssuesDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesDescription">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#ethicalIssuesExist -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesExist">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#ethicalIssuesReport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesReport">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#format -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#format">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/format</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#fundingStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#fundingStatus">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#fundingStatusVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#geoLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#geoLocation">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#identifier">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/identifier</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#identifierType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#identifierType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#identifierTypeVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#issued -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#issued">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/issued</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#keyword -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#keyword">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/ns/dcat#keyword</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#language">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/language</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#licence_ref -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#licence_ref">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Licence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://jats.nlm.nih.gov/archiving/tag-library/1.2/element/ali-license_ref.html</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#mbox -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#mbox">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://xmlns.com/foaf/0.1/mbox</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#mediaType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#mediaType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/ns/dcat#mediaType</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#modified -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#modified">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/modified</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#name">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://xmlns.com/foaf/0.1/name</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#personalData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#personalData">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#pidSystem -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#pidSystem">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#preservationStatement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#preservationStatement">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#projectEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#projectEnd">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#projectStart -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#projectStart">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#report -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#report">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#sensitiveData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#sensitiveData">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#startDate">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Licence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#storageType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#storageType">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#supportsVersioning -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#supportsVersioning">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:range rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sysresearch.org/rda-common-dmp#title">
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Cost"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Distribution"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Host"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#Project"/>
+        <rdfs:domain rdf:resource="http://www.sysresearch.org/rda-common-dmp#SecurityAndPrivacy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <hasCrossReference rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/dc/terms/title</hasCrossReference>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Contact -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Contact">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#mbox"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Cost -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Cost">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#costType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#vocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#costUnit"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#costValue"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#DMP -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#DMP">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#hasDataset"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#hasContact"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#created"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesExist"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#language"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#modified"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#ethicalIssuesReport"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#DMStaff -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#DMStaff">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#contributorType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#mbox"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Dataset -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Dataset">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#keyword"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#datasetType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#personalData"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#sensitiveData"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#issued"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#language"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#preservationStatement"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Distribution -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Distribution">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#dataAccess"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dataAccessVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#accessURL"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#availableTill"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#byteSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#downloadURL"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#format"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#mediaType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Funding -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Funding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#fundingStatus"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#fundingStatusVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Host -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Host">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#certifiedWith"/>
+                <owl:someValuesFrom rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#pidSystem"/>
+                <owl:someValuesFrom rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#availability"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#backupFrequency"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#backupType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#geoLocation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#storageType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#dictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#supportsVersioning"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#yesNoUnknownVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Licence -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Licence">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#licence_ref"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#startDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Metadata -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Metadata">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#language"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#Project -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#Project">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#projectEnd"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#projectStart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#SecurityAndPrivacy -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#SecurityAndPrivacy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#TechnicalResource -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#TechnicalResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sysresearch.org/rda-common-dmp#TypeIdentifier -->
+
+    <owl:Class rdf:about="http://www.sysresearch.org/rda-common-dmp#TypeIdentifier">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#contactID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Contact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#funderID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#grantID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Funding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#metadataID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#Metadata"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#technicalResourceID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#TechnicalResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#userID"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMStaff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#dmpID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.sysresearch.org/rda-common-dmp#DMP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.sysresearch.org/rda-common-dmp#identifierType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.sysresearch.org/rda-common-dmp#identifierTypeVocabulary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The type identifier class</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
