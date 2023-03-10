@@ -15,6 +15,13 @@
 			"contact_id": {
 				"identifier": "https://www.tiss.tuwien.ac.at/person/2351952424",
 				"type": "other"
+			},
+			"affiliation": {
+				"name": "Reasearch Data Alliance",
+				"affiliation_id": {
+					"identifier": "https://ror.org/05dc6w374",
+					"type": "ror"
+				}
 			}
 		},
 		"contributor": [
@@ -24,6 +31,13 @@
 				"contributor_id": {
 					"identifier": "https://orcid.org/0000-0002-0000-0000",
 					"type": "orcid"
+				},
+				"affiliation": {
+					"name": "Reasearch Data Alliance",
+					"affiliation_id": {
+						"identifier": "https://ror.org/05dc6w374",
+						"type": "ror"
+					}
 				},
 				"role": [
 					"ProjectLeader"
@@ -35,6 +49,9 @@
 				"contributor_id": {
 					"identifier": "https://orcid.org/0000-0002-4929-7875",
 					"type": "orcid"
+				},
+				"affiliation": {
+					"name": "Example University"
 				},
 				"role": [
 					"ContactPerson",
