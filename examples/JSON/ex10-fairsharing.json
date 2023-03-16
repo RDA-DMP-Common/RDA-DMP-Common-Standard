@@ -1,0 +1,64 @@
+{
+  "dmp": {
+    "title": "DMP including FAIRsharing DOIs",
+    "contact": {
+      "contact_id": {
+        "identifier": "http://orcid.org/0000-0000-0000-0000",
+        "type": "orcid"
+      },
+      "mbox": "cc@example.com",
+      "name": "Charlie Chaplin"
+    },
+    "created": "2023-03-15T10:10:23.6",
+    "dmp_id": {
+      "identifier": "https://doi.org/10.0000/00.0.1269",
+      "type": "doi"
+    },
+    "dataset": [
+      {
+		"title": "Puerto Rico Long-Term Coral Reef Monitoring Program Database Compilation",
+        "dataset_id": {
+          "identifier": "https://doi.org/10.15468/heuugg",
+          "type": "doi"
+        },
+        "distribution": [
+          {
+            "title": "Puerto Rico Long-Term Coral Reef Monitoring Program Database Compilation",
+            "description": "The Puerto Rico Long-Term Coral Reef Monitoring Program (PRCRMP) database compilation includes raw biological data (by transect) from reef locations around the Puerto Rican archipelago. Substrate cover by sessile-benthic categories and fish, and motile megabenthic invertebrate taxonomic composition and densities have been characterized in these stations, with variable sampling event frequencies between 1999 to 2021. At present, 42 permanent stations are surveyed biannually (21 per year). For the benthic characterization, a set of five 10-meter-long permanent transects are surveyed at each station. Sessile-benthic reef communities are characterized by the continuous intercept chain-link method, following the Caribbean Coastal Marine Productivity (CARICOMP) (1994) protocol. Demersal diurnal non-cryptic reef fish populations and motile megabenthic invertebrates are surveyed by sets of five 10 x 3 meters wide (30 m2) belt-transects centered along the reference line of transects used for sessile-benthic characterizations at each reef station. From 2004-2013, a diver completed an Active Search Census (ASEC) survey for 30 minutes annotating sizes and abundances of fish and macroinvertebrate species of interest. From 2015, the ASEC survey methodology was replaced by 20 x 3 meters (60 m2) band transects to identify commercially and ecologically important fish and megabenthic invertebrate species. Upon completion of the 10 meters belt-transect survey, the diver swims along the same depth and physiographic reef zone for an extra 10 meters to complete the 60 m2 transect. For each fish individual within the ASEC survey (2004-2013) and 60m2 band transects (2015-2021), a visual fork length (FL) estimate in centimeters is recorded. Fish length estimations are provided by the median of 5cm interval size classes. The cephalothorax length (measurement from the tip of the rostrum to end of the thorax), also known as carapace length (CL) in centimeters is used to report the size of lobsters (Panulirus spp., Scyllarides spp.) within belt-transects. Queen conch (Lobatus gigas) length is reported as the total (diagonal) shell length in centimeters. With the length-weight relationship information available in FishBase.org, biomass estimates are calculated for a subset of commercially and ecologically important fish species. The PRCRMP database was made possible with support from the National Oceanic and Atmospheric Administrations Coral Reef Conservation Program.",
+            "format": [
+              "text/xml"
+            ],
+            "byte_size": 12288,
+            "data_access": "open",
+            "license": [
+              {
+                "license_ref": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                "start_date": "2022-02-13"
+              }
+            ],
+            "metadata": [
+              {
+                "description": "The Ecological Metadata Language (EML) metadata standard was originally developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. It has been developed to document any research data, and as such can be used outside of these original subject areas. EML is implemented as a series of XML document types that can by used in a modular and extensible manner to document ecological data. Each EML module is designed to describe one logical part of the total metadata that should be included with any ecological dataset.",
+                "language": "eng",
+                "metadata_standard_id": {
+                  "identifier": "https://doi.org/10.25504/FAIRsharing.r3vtvx",
+                  "type": "doi"
+                }
+              }
+            ],
+            "host": {
+              "title": "GBIF.org",
+              "url": "https://doi.org/10.25504/FAIRsharing.zv11j3",
+              "description": "GBIF\u2014the Global Biodiversity Information Facility\u2014is an international network and data infrastructure funded by the world's governments and aimed at providing anyone, anywhere, open access to data about all types of life on Earth. Strictly speaking, GBIF is not a data repository. Rather, GBIF indexes thousands of datasets through a distributed infrastructure involving more than 100 formal participants that supports hundreds of data-publishing institutions worldwide. GBIF.org makes the FAIR and open data discoverable and citable, assigning each download a DOI and storing it for an extended period of time. More than three peer-reviewed research articles make use of data from the GBIF network every day, in studies spanning the impacts of climate change, the spread of pests and diseases, priority areas for conservation and food security. To share data with GBIF, follow this quick guide: http://www.gbif.org/publishing-data/quick-guide. To deposit or host data, we suggest using one of the trusted data hosting centres (DHC) listed in FAIRsharing.org that uses GBIF's IPT (Integrated Publishing Toolkit) software. The DHC provides data publishers with a hosted IPT account enabling them to manage and publish datasets through GBIF.org."
+            }
+          }
+        ],
+        "personal_data": "no",
+        "sensitive_data": "no"
+      }
+    ],
+    "ethical_issues_exist": "no",
+    "language": "eng",
+    "modified": "2019-02-06T15:30:42.1"
+  }
+}
