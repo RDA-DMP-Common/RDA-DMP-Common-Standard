@@ -409,7 +409,8 @@
 			 <https://w3id.org/dcso/ns/core#type> "ontology"^^xsd:string ;
              <https://w3id.org/dcso/ns/core#sensitiveData> "no"^^xsd:string ;
              <http://purl.org/dc/terms/description> "Dataset 001 is an example dataset to help users get an insight on what and how maDMP fields should be expressed in the DCSO."^^xsd:string ;
-             <http://purl.org/dc/terms/rights> "Dataset 001 - maDMP to DCSO example"^^xsd:string .
+             <http://purl.org/dc/terms/rights> "Dataset 001 - maDMP to DCSO example"^^xsd:string ;
+ 	     <http://purl.org/dc/terms/title> "Dataset 001"^^xsd:string .
 
 
 ###  https://w3id.org/dcso/ns/example#dataset_001Id
