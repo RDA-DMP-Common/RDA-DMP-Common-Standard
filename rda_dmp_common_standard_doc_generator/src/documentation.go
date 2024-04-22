@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/goki/ki/ki"
-	"github.com/sirupsen/logrus"
 	"os"
 	"path/filepath"
+
+	"github.com/goki/ki/ki"
+	"github.com/sirupsen/logrus"
 )
 
 func generateDoc() {
@@ -43,7 +44,7 @@ func generateDoc() {
 }
 
 func generateTable(property Property) string {
-	columns := [5]string{"Name", "Description", "Data Type", "Cardinality", "Example Value"}
+	columns := [6]string{"Name", "Description", "Data Type", "Cardinality", "Example Value", "User-friendly Question"}
 	html := "<table style=\"width: 99%;\"><thead><tr>"
 	for _, col := range columns {
 		html += fmt.Sprintf("<th>%s</th>", col)
@@ -74,6 +75,7 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.DataType.Label))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.Cardinality))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.ExampleValue))
+	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.Question))
 	html += "</tr>\n"
 	return html
 }

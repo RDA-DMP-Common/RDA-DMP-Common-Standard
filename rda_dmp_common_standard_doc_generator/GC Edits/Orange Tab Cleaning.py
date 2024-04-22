@@ -8,6 +8,9 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # Read the Excel file using pandas
 df = pd.read_excel("GC-RDA maDMP Excel Workbook.xlsx", sheet_name="Git test sort orange tab")
 
+# Rename the "Front-end user-friendly question" column to "Question"
+df = df.rename(columns={"Front-end user-friendly question": "Question"})
+
 # Remove trailing slashes from the 'Fieldname' column
 df['Fieldname'] = df['Fieldname'].str.rstrip('/')
 
@@ -54,7 +57,7 @@ df['label_machine'] = df['id']
 df['vocabulary'] = df['Data type'].apply(lambda x: 'gc_rda_dmp_extension' if x != 'term' else '')
 
 # Keep only the specified columns
-df = df[['Fieldname', 'Added GitHub Application Profile', 'id', 'vocabulary', 'label_human', 'label_machine', 'Data type', 'parent_property', 'Cardinality', 'Example response']]
+df = df[['Fieldname', 'Added GitHub Application Profile', 'id', 'vocabulary', 'label_human', 'label_machine', 'Data type', 'parent_property', 'Cardinality', 'Example response', 'Question']]
 
 # Define a function to process each group
 def process_group(group):
@@ -78,6 +81,9 @@ df['parent_property'] = df['parent_fieldname'].map(fieldname_to_id).fillna(df['p
 
 # Drop the 'parent_fieldname' column
 df = df.drop(columns=['parent_fieldname'])
+
+# Order by "human label"
+df = df.sort_values(by=['label_human', 'id'])
 
 # Save the modified DataFrame to a new Excel file
 df.to_excel("Application Profile.xlsx", index=False)

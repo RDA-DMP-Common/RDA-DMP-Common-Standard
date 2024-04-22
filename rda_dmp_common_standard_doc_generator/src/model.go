@@ -23,6 +23,7 @@ type Property struct {
 	Description  string     `csv:"description"`
 	Uri          string     `csv:"uri"`
 	ExampleValue string     `csv:"example_value"`
+	Question string `csv:"Question"`
 	Notes        string     `csv:"notes"`
 	Cardinality  string     `csv:"cardinality"`
 	VocabularyID string     `csv:"vocabulary"`
