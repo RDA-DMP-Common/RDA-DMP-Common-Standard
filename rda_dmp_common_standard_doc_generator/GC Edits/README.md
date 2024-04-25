@@ -1,8 +1,8 @@
-# GC-RDA maDMP Data Conversion Guide
+# GC-RDA maDMP Data Migration Guide
 
 ## Overview
 
-This guide outlines the process of converting data from the GC-RDA maDMP Excel Workbook into the GC-RDA maDMP Application Profile. The Excel Workbook contains two relevant sheets: "Git test sort orange tab" and "GC maDMP Master Sheet". The "GC maDMP Master Sheet" serves as the primary source for updates and changes, while the "Git test sort orange tab" serves as the connection between the master sheet and the application profile.
+This guide outlines the process of migrating data from the GC-RDA maDMP Excel Workbook into the GC-RDA maDMP Application Profile. The Excel Workbook contains two relevant sheets: "Git test sort orange tab" and "GC maDMP Master Sheet". The "GC maDMP Master Sheet" serves as the primary source for updates and changes, while the "Git test sort orange tab" serves as the connection between the master sheet and the application profile.
 
 ## Application Profile Overview
 
