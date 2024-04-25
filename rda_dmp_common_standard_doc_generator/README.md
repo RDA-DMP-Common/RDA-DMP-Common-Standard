@@ -1,8 +1,9 @@
 # RDA DMP Common Standard Documentation Generator
 
-A utility, written in `Go`, for generating the Web documentation of the RDA DMP Common Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/u/1/d/1UatNC3r3skKjy2vGK1sysk6vKGD1F9v8YgdinyGMx7U/edit#gid=1487393314) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
+A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/u/1/d/1UatNC3r3skKjy2vGK1sysk6vKGD1F9v8YgdinyGMx7U/edit#gid=1487393314) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
 
-Written by Paul Walk (paul@paulwalk.net)
+Written by Paul Walk (paul@paulwalk.net)\
+Revised by Esther Liu (esther.liu@uwaterloo.ca)
 
 ## Prerequisites
 
@@ -11,13 +12,17 @@ Written by Paul Walk (paul@paulwalk.net)
 
 ## Instructions to compile and run this utility
 
-### 1. Download required packages
+### 1. Initialize the module and download required packages
 ```bash
-go get -u github.com/sirupsen/logrus
+go mod init github.com/FAIRERdata/maDMP-Standard/tree/tests/rda_dmp_common_standard_doc_generator
+
+go get -u github.com/sirupsen/logrus@67a7fdcf741f4d5cee82cb9800994ccfd4393ad0
 go get -u gopkg.in/yaml.v3
-go get -u github.com/gocarina/gocsv
+go get -u github.com/gocarina/gocsv@c6a9c812ac269510ec596e469aff422e694ec6fd
 go get -u github.com/jinzhu/gorm
 go get -u github.com/goki/ki/ki
+
+go get -u github.com/jinzhu/gorm/dialects/sqlite@v1.9.16
 ```
 
 ### 2. Compile the sources
