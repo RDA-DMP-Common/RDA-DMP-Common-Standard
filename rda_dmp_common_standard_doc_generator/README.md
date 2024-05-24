@@ -3,14 +3,17 @@
 A utility, written in `Go`, for generating the Web documentation of the GCWG-RDA maDMP Standard. This utility uses the sources held in a set of [5 Google Spreadsheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343#) which are "published" in `CSV` format at the URLs listed in the config file: [config.yaml](config.yaml), and creates the resulting documentation as a file called "README.md" which is, by default, written into the `output` folder.
 
 Written by Paul Walk (paul@paulwalk.net)\
-Revised by Esther Liu (esther.liu@uwaterloo.ca)
+Revised by Esther Liu (esther.liu@uwaterloo.ca), Emily Chu (ewchu@uwaterloo.ca)
 
 ## Prerequisites
 
 1. A working [Go](https://golang.org) environment (with `GOPATH` environment variable set correctly)
 2. This Github repository, checked out into a working copy
+3. [GCC compiler 64-bit](https://jmeubank.github.io/tdm-gcc/) installed and found in the path 
 
 ## Instructions to compile and run this utility
+
+These instruction work as written for VS Code. If using other editors or the Command Prompt, syntax may need to be slightly modified. 
 
 ### 1. Initialize the module and download required packages
 ```bash
@@ -40,6 +43,8 @@ This will build an executable file called `rda_dmp_common_standard_doc_generator
 This utility uses a [single configuration file](config.yaml) for all of it's configuration (i.e. it takes no arguments). The configuration file must exist in the same directory as the executable. In most circumstances, you should be able to use the configuration file provided in this repository.
 
 ### 4. Run the utility
+
+Use `cd ..` to go back to `rda_dmp_common_standard_doc_generator` folder and run: 
 
 ```bash
 ./rda_dmp_common_standard_doc_generator
