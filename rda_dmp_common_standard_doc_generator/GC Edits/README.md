@@ -36,14 +36,21 @@ Always perform checks from random sampling after mapping to ensure correctness. 
 
 ## Conversion Workflow
 
+This conversion workflow details how to update changes from "GC maDMP Master Sheet" to "Git test sort orange tab" to "Application Profile Properties Sheet". All changes are done through the GC-RDA maDMP Excel Workbook and GC-RDA maDMP Application Profile. 
+
 1. **Alignment Check:**
-   - Before initiating any data migration, ensure that the "Git test sort orange tab" is aligned with the information in the "GC maDMP Master Sheet" inside the workbook file.
+   - Before initiating any data migration, ensure that the "Git test sort orange tab" is aligned with the information in the "GC maDMP Master Sheet" inside the workbook file. This means to check if the rows of both "Git test sort orange tab" and "GC maDMP Master Sheet" have the same "Property ID".
+   - To ensure the same alignment, sort using Step 2 and then manually check if they are alligned.
 
 2. **Mapping from Master Sheet to Git Sort Sheet:**
    - To map data from the "GC maDMP Master Sheet" to the "Git test sort orange tab", sort the "Git test sort orange tab" based on the "Sort order in orange tab" column.
 
 3. **Mapping from Git Sort Sheet to Application Profile Properties Sheet:**
    - To map data from the "Git test sort orange tab" to the properties sheet of the application profile, sort both files on the "Property ID" column.
+   - Check if "dmp" as a Property ID exists in "Git test sort orange tab". 
+   - When making column changes to the original columns, add a temporary column on the properties sheet of the application profile and copy and paste the column from "Git test sort orange tab" to the temporary column.
+   - If "dmp" does not exist in "Git test sort orange tab" but exists in the application profile properties, find where they are misalligned and add an empty row to the temporary column.
+   - When the information is correctly alligned, copy and paste the temporary column to the original column. Delete the temporary column when finished
 
 ---
 
