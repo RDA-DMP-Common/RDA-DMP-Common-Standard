@@ -3,18 +3,3 @@
 
 @import "{{ site.theme }}";
 
-.container {
-  width: 180px;
-  height: 600px;
-  overflow-y: scroll;
-
-  transform: rotate(-90deg);
-}
-
-.content {
-  width: 140px;
-  height: 140px;
-  margin: 10px;
-  
-  transform: rotate(90deg);
-}
