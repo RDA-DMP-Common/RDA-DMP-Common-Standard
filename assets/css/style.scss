@@ -3,22 +3,9 @@
 
 @import "{{ site.theme }}";
 
-th.Name, th.Description, th.Data.Type, th.Example.Value, th.User-friendly.Question {
-  width: 10%;
-}
-th.Cardinality {
-  width: 30% ;
-}
-
-.main-content table th {
-}
-table { 
-    margin-left: auto;
-    margin-right: auto;
-    width: 120%;
-}
-
 .main-content table {
   word-break: break-word;
-  width: 120%;
+  width: 115%;
+  margin-left: auto;
+  margin-right: auto;
 }
