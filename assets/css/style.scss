@@ -3,3 +3,11 @@
 
 @import "{{ site.theme }}";
 
+th.Name, th.Description, th.Data.Type, th.Cardinality, th.Example.Value, th.User-friendly.Question {
+  width: 15%
+}
+
+table { 
+    margin-left: auto;
+    margin-right: auto;
+}
