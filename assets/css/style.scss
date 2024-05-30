@@ -4,9 +4,12 @@
 @import "{{ site.theme }}";
 
 th.Name, th.Description, th.Data.Type, th.Cardinality, th.Example.Value, th.User-friendly.Question {
-  width: 15%
+  width: 10%
 }
 
+.main-content table th {
+  width: 110%;
+}
 table { 
     margin-left: auto;
     margin-right: auto;
