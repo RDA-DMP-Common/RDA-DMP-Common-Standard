@@ -3,8 +3,11 @@
 
 @import "{{ site.theme }}";
 
-th.Name, th.Description, th.Data.Type, th.Cardinality, th.Example.Value, th.User-friendly.Question {
+th.Name, th.Description, th.Data.Type, th.Example.Value, th.User-friendly.Question {
   width: 10%;
+}
+th.Cardinality {
+  width: 30% ;
 }
 
 .main-content table th {
@@ -12,9 +15,9 @@ th.Name, th.Description, th.Data.Type, th.Cardinality, th.Example.Value, th.User
 table { 
     margin-left: auto;
     margin-right: auto;
-    width: 200%;
 }
 
 .main-content table {
   word-break: break-word;
+  width: 120%;
 }
