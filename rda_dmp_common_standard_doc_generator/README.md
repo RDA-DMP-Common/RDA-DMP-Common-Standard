@@ -63,3 +63,19 @@ Anytime you want to 'refresh' the local documentation file from the Google Sprea
 
 ### 5. Publish the new documentation
 Simply copy or move the `README.md` file from the `output` folder to the top level folder of this Github repository (replacing the one that is there).
+
+## Styling Github Pages Website
+After the `README.md` file is uploaded, the [website](https://fairerdata.github.io/maDMP-Standard/) is automatically deployed. 
+
+The current website theme is the Jekyll theme [Cayman](https://github.com/pages-themes/cayman). 
+
+If changes to the default styling of the website need to be made (e.g. changes to the width of tables, font-size, colours, etc.) to better suit the information presented, edit the `SCSS` styling sheet. 
+
+Use the [style.scss](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/assets/css/style.scss) sheet found in this repository path `maDMP-Standard/assets/css`. 
+CSS code should be written underneath the comment 
+
+```/* Following is css code to change the default styling of the Jekyll theme */```
+
+Comparing with the default stylings of the Cayman theme [style sheet](https://github.com/pages-themes/cayman/blob/master/_sass/jekyll-theme-cayman.scss) and `style.scss` can determine the corresponding elements which need to be overrided/changed. Using Inspect Element on the website can also determine the corresponding elements to refer to in the CSS code.
+
+
