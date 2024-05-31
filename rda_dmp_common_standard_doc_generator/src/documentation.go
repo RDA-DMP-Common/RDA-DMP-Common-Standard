@@ -11,7 +11,7 @@ import (
 
 func generateDoc() {
 	content := fmt.Sprintf("<h1>%s</h1>", config.DocTitle)
-	content += "<table><tr><td valign=\"top\">"
+	content += "<table id=\"table1\"><tr><td valign=\"top\">"
 	var entityDescriptions []EntityDescription
 	db.Find(&entityDescriptions)
 	for _, ed := range entityDescriptions {
