@@ -35,13 +35,13 @@ th:nth-child(3){
   width: 12%; /* sets column width for Data Type */
 }
 th:nth-child(4){
-  width: 6%; /* sets column width for Cardinality */
+  width: 7%; /* sets column width for Cardinality */
 }
 th:nth-child(5){
   width: 15%; /* sets column width for Example Value */
 }
 th:nth-child(6){
-  width: 22%; /* sets column width for User-friendly Question */
+  width: 21%; /* sets column width for User-friendly Question */
 }
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
