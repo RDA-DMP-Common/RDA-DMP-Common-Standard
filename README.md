@@ -1,4 +1,4 @@
-<h1>GCWG-RDA maDMP Common Standard for machine-actionable Data Management Plans</h1><table><tr><td id="table1", valign="top"><h3>About this document</h3>
+<h1>GCWG-RDA maDMP Common Standard for machine-actionable Data Management Plans</h1><table><tr><td id="table1" valign="top"><h3>About this document</h3>
 This is a metadata application profile to provide basic interoperability between systems producing or consuming machine-actionable data management plans (maDMPS). Further fields can be added in specific deployments, but they do not guarantee interoperability. DMP tools can use any other fields in their internal data models.
 
 This application profile is intended to cover a wide range of use cases and does not set any business (e.g. funder specific) requirements. It represents information over the whole DMP lifecycle.
