@@ -78,4 +78,6 @@ CSS code should be written underneath the comment
 
 Comparing with the default stylings of the Cayman theme [style sheet](https://github.com/pages-themes/cayman/blob/master/_sass/jekyll-theme-cayman.scss) and `style.scss` can determine the corresponding elements which need to be overrided/changed. Using Inspect Element on the website can also determine the corresponding elements to refer to in the CSS code.
 
+Modifying a specific element on the website may need an `id` associated with the element. Assigning an `id` can be done by either modifying the [documentation.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/documentation.go) code. Or manually through the outputted [README.md](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) file. Note that if manually done, each time the README.md file is regenerated, the changes must be done again.
+
 
