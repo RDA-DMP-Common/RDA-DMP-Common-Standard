@@ -59,39 +59,27 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	padding: 0;
 	background: white;
 	}
-#nav ul ul li:hover li{
-	display: block;
-}
 
-#nav li {
-	display: block;
-}
-
-#nav li a {
-	color: black;
-	display: block;
-	text-decoration: none;
-}
-
-	/* Style the dropdown menu */
 #nav ul ul {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+#nav ul ul li {
 	position: absolute;
 	top: 100%;
 	display: none;
 }
-
-#nav li ul {
-	display: block;
+.navbar ul ul li {
+  display: block;
 }
 
-#nav li ul:hover li {
-	display: block;
-	background-color: black;
+.navbar li:hover ul {
+  display: block;
 }
 
-#nav ul ul li {
-	display: block;
-}
+
 
 
 
