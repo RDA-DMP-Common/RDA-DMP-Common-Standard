@@ -71,11 +71,15 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	text-decoration: none;
 }
 
+#nav li ul {
+	display: block;
+}
+
 	/* Style the dropdown menu */
 #nav ul ul {
 	position: absolute;
 	top: 100%;
-	display: block;
+	display: none;
 }
 
 #nav ul ul li {
