@@ -46,73 +46,54 @@ th:nth-child(6){
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
- .nav {
-  list-style: none inside;
+#nav {
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+#nav li {
+  float: left;
+  display: block;
+  background: #4B4B4B;
+  position: relative;
+  z-index: 500;
+  margin: 0 1px;
+}
+
+#nav li a {
+  display: block;
+  padding: 6px 5px 0 5px;
+  font-weight: 700;
+  height: 20px;
+  text-decoration: none;
+  color: #fff;
   text-align: center;
 }
-
-.nav li {
-  display: block;
-  position: relative;
-  float: left;
-  background: #24af15;
-  /* menu background color */
-}
-
-.nav li a {
-  display: block;
-  padding: 0;
-  text-decoration: none;
-  width: 200px;
-  /* this is the width of the menu items */
-  line-height: 35px;
-  /* this is the hieght of the menu items */
-  color: #ffffff;
-  /* list item font color */
-}
-
-.nav li li a {
-  font-size: 80%;
-}
-
-
-/* smaller font size for sub menu items */
-
-.nav li:hover {
-  background: #003f20;
-}
-
-
-/* highlights current hovered list item and the parent list items when hovering over sub menues */
-
-.nav ul {
+#nav ul {
   position: absolute;
-  padding: 0;
   left: 0;
   display: none;
-  /* hides sublists */
+  margin: 0 0 0 -1px;
+  padding: 0;
+  list-style: none;
 }
 
-.nav li:hover ul ul {
-  display: none;
+#nav ul li {
+  float: left;
+  border-top: 1px solid #fff;
+  width: 100%;
+  white-space: nowrap;
 }
 
-/* hides sub-sublists */
-
-.nav li:hover ul {
+#nav ul a {
   display: block;
+  height: 15px;
+  padding:  6px 5px;
+  color: #fff;
+  text-align: left;
 }
-
-/* shows sublist on hover */
-
-.nav li li:hover ul {
-  display: block;
-  /* shows sub-sublist on hover */
-  margin-left: 200px;
-  /* this should be the same width as the parent list item */
-  margin-top: -35px;
-  /* aligns top of sub menu with top of list item */
+#nav a:hover {
+  text-decoration: none;
+  background-color: #F86808;
 }
 
