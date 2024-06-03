@@ -59,7 +59,9 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 		padding: 0;
     background: black;
 	}
-
+#nav li {
+	display: block;
+}
 	#nav ul li {
 		display: none;
 		background: blue;
@@ -73,9 +75,8 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	}
 
 	/* Style the dropdown menu */
-	#nav ul ul ul {
+	#nav ul ul {
 		position: absolute;
-		top: 100%;
 		display: none;
 		background: red;
 	}
@@ -84,7 +85,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 		display: block;
 	}
 
-	#nav ul li:hover ul {
+	#nav ul li:hover ul li {
 		display: block;
 	}
 
