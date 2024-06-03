@@ -62,6 +62,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 
 	#nav ul li {
 		display: block;
+		background: blue;
 	}
 
 	#nav ul li a {
@@ -76,6 +77,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 		position: absolute;
 		top: 100%;
 		display: none;
+		background: red;
 	}
 
 	#nav ul ul ul li {
