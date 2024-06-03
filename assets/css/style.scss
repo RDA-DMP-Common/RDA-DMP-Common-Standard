@@ -65,6 +65,14 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 }
 #nav li:hover {background: #555;}
 
+#nav ul li ul {
+position: absolute;
+  width: 200px;
+  display: none;
+background: red;
+}
+
+}
 	#nav ul li a {
 		color: white;
 		display: block;
