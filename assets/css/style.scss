@@ -46,14 +46,14 @@ th:nth-child(6){
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
- #nav {
+ #dmp_tree {
   list-style: none inside;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-#nav li {
+#dmp_tree li {
   display: block;
   position: relative;
   float: left;
@@ -61,7 +61,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
   /* menu background color */
 }
 
-#nav li a {
+#dmp_tree li a {
   display: block;
   padding: 0;
   text-decoration: none;
@@ -73,7 +73,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
   /* list item font color */
 }
 
-#nav li li a {
+#dmp_tree li li a {
   font-size: 80%;
 }
 
