@@ -48,7 +48,7 @@ th:nth-child(6){
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
 #nav {
-	background-color: #333;
+	background-color: white;
 	position: relative;
 	z-index: 999;
 }
@@ -82,7 +82,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	display: block;
 }
 
-#nav li:hover ul {
+#nav ul li:hover ul {
 	display: block;
 }
 
