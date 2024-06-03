@@ -75,7 +75,7 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 #nav ul ul {
 	position: absolute;
 	top: 100%;
-	display: none;
+	display: block;
 }
 
 #nav ul ul li {
