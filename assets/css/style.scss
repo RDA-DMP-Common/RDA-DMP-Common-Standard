@@ -47,11 +47,8 @@ th:nth-child(6){
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
 #nav {
-
 background-color: #333;
-
 position: relative;
-
 z-index: 999;
 
 }
@@ -63,7 +60,7 @@ padding: 0;
 }
 
 #nav li {
-  display: block;
+  display: inline block;
 }
 
 #nav li a {
