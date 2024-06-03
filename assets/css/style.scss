@@ -46,3 +46,72 @@ th:nth-child(6){
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
+ #nav {
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#nav li {
+  display: block;
+  position: relative;
+  float: left;
+  background: #24af15;
+  /* menu background color */
+}
+
+#nav li a {
+  display: block;
+  padding: 0;
+  text-decoration: none;
+  width: 200px;
+  /* this is the width of the menu items */
+  line-height: 35px;
+  /* this is the hieght of the menu items */
+  color: #ffffff;
+  /* list item font color */
+}
+
+#nav li li a {
+  font-size: 80%;
+}
+
+
+/* smaller font size for sub menu items */
+
+#dmp-tree li:hover {
+  background: #003f20;
+}
+
+
+/* highlights current hovered list item and the parent list items when hovering over sub menues */
+
+#dmp_tree ul {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  display: none;
+  /* hides sublists */
+}
+
+#dmp_tree li:hover ul ul {
+  display: none;
+}
+
+/* hides sub-sublists */
+
+#dmp_tree li:hover ul {
+  display: block;
+}
+
+/* shows sublist on hover */
+
+#dmp_tree li li:hover ul {
+  display: block;
+  /* shows sub-sublist on hover */
+  margin-left: 200px;
+  /* this should be the same width as the parent list item */
+  margin-top: -35px;
+  /* aligns top of sub menu with top of list item */
+
