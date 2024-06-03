@@ -71,11 +71,11 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	top: 100%;
 	display: none;
 }
-.navbar ul ul li {
+#nav ul ul li {
   display: block;
 }
 
-.navbar li:hover ul {
+#nav li:hover ul {
   display: block;
 }
 
