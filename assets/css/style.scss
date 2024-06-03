@@ -59,9 +59,11 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 		padding: 0;
     background: black;
 	}
+
 #nav li {
 	display: block;
 }
+#nav li:hover {background: #555;}
 
 	#nav ul li a {
 		color: white;
