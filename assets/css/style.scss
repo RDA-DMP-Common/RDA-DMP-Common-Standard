@@ -59,6 +59,9 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	padding: 0;
 	background: white;
 	}
+#nav ul ul li:hover li{
+	display: block;
+}
 
 #nav li {
 	display: block;
@@ -67,7 +70,6 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 #nav li a {
 	color: black;
 	display: block;
-	padding: 10px 20px;
 	text-decoration: none;
 }
 
@@ -91,14 +93,6 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	display: block;
 }
 
-#nav ul li:hover ul {
-	display: block;
-}
-
-/* Change the background color of dropdown links on hover */
-#nav ul ul li a:hover {
-	background-color: #555;
-}
 
 
 
