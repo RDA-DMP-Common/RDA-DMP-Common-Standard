@@ -78,8 +78,12 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	
 }
 
-#nav ul ul:hover ul {
+#nav ul ul:hover ul li {
 	display: block;
+}
+
+#nav ul ul:hover li {
+	display:block;
 }
 
 #nav ul ul li{
