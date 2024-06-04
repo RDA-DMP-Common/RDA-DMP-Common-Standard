@@ -72,11 +72,16 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 
 #nav ul ul {
 	position: absolute;
-		top: 100%;
-		display: block;
+	top: 100%;
+	display: none;
 	background: pink;
 	
 }
+
+#nav ul:hover ul ul {
+	display: block;
+}
+
 #nav ul ul li{
 	display: block;
 }
