@@ -61,10 +61,6 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	background: black;
 	}
 
-#nav li {
-	display: block;
-}
-
 #nav li:hover {
 	background: #555;
 }
@@ -77,10 +73,6 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 }
 
 #nav ul:hover ul ul {
-	display: block;
-}
-
-#nav ul ul li{
 	display: block;
 }
 
