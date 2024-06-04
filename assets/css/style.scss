@@ -47,11 +47,12 @@ th:nth-child(6){
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
-/* Drop down menu css (unfinished) 
+
 #nav {
 	background-color: #333;
 	position: relative;
 	z-index: 999;
+	
 }
 
 #nav ul {
@@ -72,7 +73,8 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 #nav ul ul {
 	position: absolute;
 		top: 100%;
-		display: none;
+		display: block;
+	background: pink;
 	
 }
 #nav ul ul li{
