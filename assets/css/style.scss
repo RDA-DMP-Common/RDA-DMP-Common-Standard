@@ -47,6 +47,10 @@ th:nth-child(6){
 
 table#table1 tr td:first-child{width:60%;} /* changes the first table column width (i.e. the section "About this Document") */
 
+.main-content table td {
+	padding: 0.3rem 0.3rem;
+}
+
 /* unfinished 
 #nav {
 	background-color: #333;
