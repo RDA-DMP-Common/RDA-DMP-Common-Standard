@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/goki/ki/ki"
 	"github.com/sirupsen/logrus"
@@ -64,17 +65,22 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 	var values []Value
 	db.Where("property_id = ?", property.ID).Order("list_order asc").Find(&values)
 	if len(values) > 0 {
-		description += fmt.Sprintf("%s,", value.Label)
-		description := strings.Replace(description, ",","",-1)
+		description += "<br> Allowed Values: <ul>"
+		for _, value := range values {
+			description += fmt.Sprintf("%s, ", value.Label)
+		}
+
 		// old
 		//description += "<br/>Allowed Values:<ul>"
 		//for _, value := range values {
-		//	description += fmt.Sprintf("<li>%s</li>", value.Label)	
-	//	}
-	//	description += "</ul>"
+		//	description += fmt.Sprintf("<li>%s</li>", value.Label)
+		//	}
+		//	description += "</ul>"
 	}
+	trim_desc := strings.Trim(description, ", ")
+	trim_desc += "</ul>"
 	html := fmt.Sprintf("<tr><td valign=\"top\"><a id=\"%s\" href=\"#%s_tree\">%s</a></td>", node.Name(), node.Name(), property.LabelMachine)
-	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(description))
+	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(trim_desc))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.DataType.Label))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.Cardinality))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.ExampleValue))
