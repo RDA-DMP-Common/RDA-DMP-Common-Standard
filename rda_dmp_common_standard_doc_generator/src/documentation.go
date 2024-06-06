@@ -64,11 +64,14 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 	var values []Value
 	db.Where("property_id = ?", property.ID).Order("list_order asc").Find(&values)
 	if len(values) > 0 {
-		description += "<br/>Allowed Values:<ul>"
-		for _, value := range values {
-			description += fmt.Sprintf("<li>%s</li>", value.Label)
-		}
-		description += "</ul>"
+		description += fmt.Sprintf("%s,", value.Label)
+		description := strings.Replace(description, ",","",-1)
+		// old
+		//description += "<br/>Allowed Values:<ul>"
+		//for _, value := range values {
+		//	description += fmt.Sprintf("<li>%s</li>", value.Label)	
+	//	}
+	//	description += "</ul>"
 	}
 	html := fmt.Sprintf("<tr><td valign=\"top\"><a id=\"%s\" href=\"#%s_tree\">%s</a></td>", node.Name(), node.Name(), property.LabelMachine)
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(description))
