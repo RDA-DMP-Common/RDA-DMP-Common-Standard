@@ -80,4 +80,6 @@ Comparing with the default stylings of the Cayman theme [style sheet](https://gi
 
 Modifying a specific element on the website may need an `id` associated with the element. Assigning an `id` can be done by either modifying the [documentation.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/documentation.go) code. Or manually through the outputted [README.md](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/README.md) file. Note that if manually done, each time the README.md file is regenerated, the changes must be done again.
 
+Modifying the structure of the README.md file can be done through modifying the [documentation.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/documentation.go) or [tree.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/tree.go).
+
 
