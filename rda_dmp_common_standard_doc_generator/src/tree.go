@@ -8,7 +8,8 @@ import (
 
 func generateHtmlTree() string {
 	logrus.Debugf("Generating tree")
-	html := "<ul>"
+	html := "<nav>"
+	html += "<ul>"
 	treeDepth := 0
 	finalNodeDepth := 0
 	var treeFunction ki.Func
@@ -39,6 +40,7 @@ func generateHtmlTree() string {
 	for i := 0; i <= finalNodeDepth; i++ {
 		html += "</ul>"
 	}
+	html += "</nav>"
 	return html
 }
 
