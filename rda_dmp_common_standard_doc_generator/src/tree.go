@@ -22,11 +22,12 @@ func generateHtmlTree() string {
 			stepsBack := treeDepth - level
 			for i := 1; i <= stepsBack; i++ {
 				html += "</ul>"
+				html += "</li>"
 			}
 		}
 		treeDepth = level
 		if k.HasChildren() {
-			html += fmt.Sprintf("<li id=\"%s_tree\"><a href=\"#%s_table\">%s</a></li>", k.Name(), k.Name(), property.LabelMachine)
+			html += fmt.Sprintf("<li id=\"%s_tree\"><a href=\"#%s_table\">%s</a>", k.Name(), k.Name(), property.LabelMachine)
 			//html+= fmt.Sprintf("<li>%s %s %s</li>",k.Name(),strconv.Itoa(level),strconv.Itoa(treeDepth))
 		} else {
 			html += fmt.Sprintf("<li id=\"%s_tree\"><a href=\"#%s\">%s</a></li>", k.Name(), k.Name(), property.LabelMachine)
