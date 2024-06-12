@@ -51,37 +51,16 @@ table#table1 tr td:first-child{width:60%;} /* changes the first table column wid
 	padding: 0.3rem 0.3rem;
 }
 
-/* unfinished 
-#nav {
-	background-color: #333;
-	position: relative;
-	z-index: 999;
-}
-
-#nav ul {
+nav {
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background: black;
-	}
-
-#nav li:hover {
-	background: #555;
+}
+nav ul {
+	list-style-type: none;
+ }
+nav ul ul ul li {
+        display: none;
 }
 
-#nav ul ul {
-	position: absolute;
-	top: 100%;
-	display: none;
-	background: pink;
+nav ul ul li:hover ul li{
+        display: block;
 }
-
-#nav ul:hover ul ul li {
-	display: block;
-}
-
-#nav li:hover ul ul {
-	display: block;
-}
-
-*/
