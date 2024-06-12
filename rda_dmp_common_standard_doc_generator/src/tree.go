@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/goki/ki/ki"
 	"github.com/sirupsen/logrus"
 )
@@ -22,6 +23,7 @@ func generateHtmlTree() string {
 		} else if level < treeDepth {
 			stepsBack := treeDepth - level
 			for i := 1; i <= stepsBack; i++ {
+
 				html += "</ul>"
 				html += "</li>"
 			}
@@ -37,7 +39,9 @@ func generateHtmlTree() string {
 		return true
 	}
 	rootProperty.FuncDownMeFirst(treeDepth, rootProperty, treeFunction)
-	for i := 0; i <= finalNodeDepth; i++ {
+	html += "</ul>"
+	html += "</li>"
+	for i := 1; i <= finalNodeDepth; i++ {
 		html += "</ul>"
 	}
 	html += "</nav>"
