@@ -1,5 +1,5 @@
 <center><h2 style="color: red;">[UNDER DEVELOPMENT]</h2></center>
-<h1>GCWG-RDA maDMP Common Standard for machine-actionable Data Management Plans</h1><table id="table1"><tr><td valign="top"><h3>About this document</h3>
+<h1>GCWG-RDA maDMP Metadata Application Profile (MAP)<br>for machine-actionable Data Management Plans</h1><table id="table1"><tr><td valign="top"><h3>About this document</h3>
 This is a metadata application profile (MAP) to provide basic interoperability between systems producing or consuming machine-actionable data management plans (maDMP's). Further fields can be added in specific deployments, but they do not guarantee interoperability. maDMP tools can use any other fields in their internal data models. A link to the companion GCWG-RDA JSON schema will be available here shortly after we've fixed some issues in the structure of this MAP. 
 
 This MAP is a GCWG extension of the international Research Data Alliance (RDA) common maDMP concensus standard to collect additional information required in the context of a government or other large organization building automated systems to support enterprise information management. This will enable policies, programs, and services to plan and improve delivery of scientific and other types of knowledge while increasing efficiency and reducing costs. 
