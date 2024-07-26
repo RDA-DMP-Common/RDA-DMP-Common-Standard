@@ -82,4 +82,10 @@ Modifying a specific element on the website may need an `id` associated with the
 
 Modifying the structure of the README.md file can be done through modifying the [documentation.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/documentation.go) or [tree.go](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/src/tree.go).
 
+For changing the title of the Github page, change the `document_title` in [config.yaml](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/rda_dmp_common_standard_doc_generator/config.yaml).
+
+Changes to the html layout theme can be done in the file [default.html](https://github.com/FAIRERdata/maDMP-Standard/blob/Master/_layouts/default.html).
+
+
+
 
