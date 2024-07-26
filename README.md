@@ -7,7 +7,7 @@ This MAP is intended to cover a wide range of use cases and does not set any bus
 
 For more information see <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/examples/JSON">examples</a>, <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/FAQ.md">FAQ</a> and <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/links.md">useful links to consultations, documents, tools, prototypes, etc.</a> developed by the working group.
 
-<img src="docs/diagrams/fairer maDMP-diagram.png"/>
+<img src="docs/diagrams/maDMP Conceptual Model.png"/>
 
 
 <h3>maDMP</h3>
