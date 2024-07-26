@@ -11,7 +11,10 @@ import (
 )
 
 func generateDoc() {
-	content := fmt.Sprintf("<h1>%s</h1>", config.DocTitle)
+	// under development label (remove when needed) 
+	content := "<center><h2 style="color: red;">[UNDER DEVELOPMENT]</h2></center>"
+	// content starting here
+	content += fmt.Sprintf("<h1>%s</h1>", config.DocTitle)
 	content += "<table id=\"table1\"><tr><td valign=\"top\">"
 	var entityDescriptions []EntityDescription
 	db.Find(&entityDescriptions)
