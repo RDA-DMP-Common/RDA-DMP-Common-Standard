@@ -11,9 +11,7 @@ import (
 )
 
 func generateDoc() {
-	// under development label (remove when needed) 
-	content := "<center><h2 style="color: red;">[UNDER DEVELOPMENT]</h2></center>"
-	// content starting here
+	content := "<center><h2 style='color: red;'>UNDER DEVELOPMENT</h2></center>"
 	content += fmt.Sprintf("<h1>%s</h1>", config.DocTitle)
 	content += "<table id=\"table1\"><tr><td valign=\"top\">"
 	var entityDescriptions []EntityDescription
@@ -81,7 +79,9 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 		//	description += "</ul>"
 	}
 	trim_desc := strings.Trim(description, ", ")
-	trim_desc += "</ul>"
+	if len(values) > 0 {
+		trim_desc += "</ul>"
+	}
 	html := fmt.Sprintf("<tr><td valign=\"top\"><a id=\"%s\" href=\"#%s_tree\">%s</a></td>", node.Name(), node.Name(), property.LabelMachine)
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(trim_desc))
 	html += fmt.Sprintf("<td valign=\"top\">%s</td>", processContentForTableCell(property.DataType.Label))
