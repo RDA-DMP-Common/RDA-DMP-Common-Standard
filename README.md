@@ -6,7 +6,7 @@
 
 <p>The maDMP MAP is intended to cover a wide range of use cases and does not set any business requirements. It represents information collected over the whole data lifecycle from conception through to disposition. The required information is minimized to apply across all use cases. The remaining information in the MAP is set to optional to allow each organization to chose what is relevant to them but still remain interoperable. If you see opportunities for improvement to this MAP, we invite you to join the GC maDMP WG</p>
 
-<p>For more information see <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/examples/JSON">examples</a>, <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/FAQ.md">FAQ</a> and <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/links.md">useful links to consultations, documents, tools, prototypes, etc.</a> developed by the working group.
+<p>For more information see <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/examples/JSON">examples</a>, <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/FAQ.md">FAQ</a> and <a href="https://github.com/FAIRERdata/maDMP-Standard/tree/Tests/docs/links.md">useful links to consultations, documents, tools, prototypes, etc.</a> developed by the working group.</p>
 
 <img src="docs/diagrams/GCWG-RDA maDMP Conceptual Model.png"/>
 
