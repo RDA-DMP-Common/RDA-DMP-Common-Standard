@@ -1,5 +1,5 @@
 output_folder_path: "./output"
-document_title: "GCWG-RDA maDMP Metadata Application Profile (MAP)<br>for machine-actionable Data Management Plans"
+document_title: "GCWG-RDA maDMP Metadata Application Profile (MAP) for machine-actionable Data Management Plans"
 document_footer: "Published by [RDA DMP Common Standards WG](https://www.rd-alliance.org/groups/dmp-common-standards-wg) (Tomasz Miksa, Peter Neith and Paul Walk)."
 google_sheets_csv_urls:
   Property: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTLLFvV7jnRCAdef34_JgN6py7GPNQGZkizXr6dEUW-X2oEA_AZQXLjrQxHcHZZsIMWQCS3mqOPxlKx/pub?gid=750759343&single=true&output=csv'
