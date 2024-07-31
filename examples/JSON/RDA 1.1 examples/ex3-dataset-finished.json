@@ -1,0 +1,53 @@
+{
+	"dmp": {
+		"title": "DMP for a finished project",
+		"description": "Project has ended. Data is published.",
+		"created": "2018-07-23T10:10:23.6",
+		"modified": "2019-02-22T15:10:56.9",
+		"project": [],
+		"contact": {
+			"mbox": "TMiksa@sba-research.org",
+			"name": "Tomasz Miksa",
+			"contact_id": {
+				"identifier": "https://orcid.org/0000-0000-0000-0000",
+				"type": "orcid"
+			}
+		},
+		"language": "eng",
+		"ethical_issues_exist": "no",
+		"dmp_id": {
+			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"type": "doi"
+		},
+		"dataset": [
+			{
+				"title": "Source Code",
+				"description": "Proof of concept implementation",
+				"type": "software",
+				"issued": "2019-01-30",
+				"dataset_id": {
+					"identifier": "10.5281/zenodo.1200361",
+					"type": "doi"
+				},
+				"personal_data": "no",
+				"sensitive_data": "no",
+				"data_quality_assurance": ["The code has been reviewed by... and follows naming convention..."],
+				"distribution": [
+					{
+						"title": "Java code",
+						"description": "Final realase implemented using... to...",
+						"access_url": "http://github.com/some-repo...",
+						"data_access": "open",
+						"license": [
+							{
+								"license_ref": "https://creativecommons.org/licenses/by/4.0/",
+								"start_date": "2019-01-30"
+							}
+						],
+						"available_until": "2029-01-30"
+					}
+				]
+			}
+		]
+	}
+}

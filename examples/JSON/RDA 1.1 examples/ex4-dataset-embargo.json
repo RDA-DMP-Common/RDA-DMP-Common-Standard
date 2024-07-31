@@ -1,0 +1,53 @@
+{
+	"dmp": {
+		"title": "Embargo DMP",
+		"description": "Data will be shared after two years (embargo)",
+		"created": "2018-07-23T10:10:23.6",
+		"modified": "2019-02-22T15:10:56.9",
+		"project": [],
+		"contact": {
+			"mbox": "TMiksa@sba-research.org",
+			"name": "Tomasz Miksa",
+			"contact_id": {
+				"identifier": "https://orcid.org/0000-0000-0000-0000",
+				"type": "orcid"
+			}
+		},
+		"language": "eng",
+		"ethical_issues_exist": "no",
+		"dmp_id": {
+			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"type": "doi"
+		},
+		"dataset": [
+			{
+				"title": "Cool data",
+				"description": "Data which shows...",
+				"dataset_id": {
+					"identifier": "10.5281/zenodo.1200361",
+					"type": "doi"
+				},
+				"type": "document",
+				"issued": "2019-06-30",
+				"personal_data": "no",
+				"sensitive_data": "unknown",
+				"distribution": [
+					{
+						"title": "Raw data",
+						"description": "CSV file showing... Embargoed until licence->start_date below",
+						"format": ["text/csv"],
+						"byte_size": 100000,
+						"data_access": "open",
+						"license": [
+							{
+								"license_ref": "https://creativecommons.org/licenses/by/4.0/",
+								"start_date": "2021-06-30"
+							}
+						],
+						"available_until": "2029-01-30"
+					}
+				]
+			}
+		]
+	}
+}

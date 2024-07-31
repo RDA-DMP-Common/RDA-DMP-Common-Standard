@@ -1,0 +1,58 @@
+{
+	"dmp": {
+		"title": "Super secret data DMP",
+		"description": "DMP with super secret and sensitive data that cannot be shared",
+		"created": "2018-07-23T10:10:23.6",
+		"modified": "2019-02-22T15:10:56.9",
+		"project": [],
+		"contact": {
+			"mbox": "TMiksa@sba-research.org",
+			"name": "Tomasz Miksa",
+			"contact_id": {
+				"identifier": "https://orcid.org/0000-0000-0000-0000",
+				"type": "orcid"
+			}
+		},
+		"language": "eng",
+		"ethical_issues_exist": "no",
+		"dmp_id": {
+			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"type": "doi"
+		},
+		"dataset": [
+			{
+				"title": "Interviews",
+				"description": "Audio recordings of interviews",
+				"type": "audio",
+				"personal_data": "yes",
+				"sensitive_data": "yes",
+				"dataset_id": {
+					"identifier": "10.5281/zenodo.1200361",
+					"type": "doi"
+				},
+				"security_and_privacy": [
+					{
+						"title": "Special security requirement",
+						"description": "Data must be kept in a locked room, because..."
+					},
+					{
+						"title": "Privacy requirement",
+						"description": "Data cannot be shared even in an anonymised form, ..."
+					}
+				],
+				"data_quality_assurance": ["File naming conventions used to..."],
+				"preservation_statement": "High cultural value. Can be migrated to other formats if needed",
+				"distribution": [
+					{
+						"title": "Collection of recordings",
+						"description": "All interviews with people from...",
+						"format": ["audio/mpeg3"],
+						"byte_size": 6934576883,
+						"data_access": "closed",
+						"available_until": "2029-01-30"
+					}
+				]
+			}
+		]
+	}
+}
