@@ -63,10 +63,17 @@ func generateTable(property Property) string {
 func getNodeAsHtmlTableRow(node ki.Ki) string {
 	property := findPropertyById(node.Name())
 	description := property.Description
+	description += "<br>"
+	description += fmt.Sprintf("DEPENDENCY: <ul> %s", property.DependencyType)
+	if property.DependencyReason != "" {
+		description += fmt.Sprintf(", %s</ul>", property.DependencyReason)
+	} else {
+		description += "</ul>"
+	}
 	var values []Value
 	db.Where("property_id = ?", property.ID).Order("list_order asc").Find(&values)
 	if len(values) > 0 {
-		description += "<br> Allowed Values: <ul>"
+		description += "ALLOWED VALUES: <ul>"
 		for _, value := range values {
 			description += fmt.Sprintf("%s, ", value.Label)
 		}

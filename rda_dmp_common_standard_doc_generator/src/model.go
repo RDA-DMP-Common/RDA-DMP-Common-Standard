@@ -15,21 +15,23 @@ type EntityDescription struct {
 }
 
 type Property struct {
-	ki.Node      `gorm:"-"`
-	ID           string     `gorm:"primary_key" csv:"id"`
-	ParentId     string     `csv:"parent_property"`
-	LabelMachine string     `csv:"label_machine"`
-	LabelHuman   string     `csv:"label_human"`
-	Description  string     `csv:"description"`
-	Uri          string     `csv:"uri"`
-	ExampleValue string     `csv:"example_value"`
-	Question string `csv:"Question"`
-	Notes        string     `csv:"notes"`
-	Cardinality  string     `csv:"cardinality"`
-	VocabularyID string     `csv:"vocabulary"`
-	Vocabulary   Vocabulary `gorm:"foreignkey:VocabularyID"`
-	DataTypeID   string     `csv:"data_type"`
-	DataType     DataType   `gorm:"foreignkey:DataTypeID"`
+	ki.Node          `gorm:"-"`
+	ID               string     `gorm:"primary_key" csv:"id"`
+	ParentId         string     `csv:"parent_property"`
+	LabelMachine     string     `csv:"label_machine"`
+	LabelHuman       string     `csv:"label_human"`
+	Description      string     `csv:"description"`
+	Uri              string     `csv:"uri"`
+	ExampleValue     string     `csv:"example_value"`
+	Question         string     `csv:"Question"`
+	DependencyType   string     `csv:"dependency_type"`
+	DependencyReason string     `csv:"dependency_reason"`
+	Notes            string     `csv:"notes"`
+	Cardinality      string     `csv:"cardinality"`
+	VocabularyID     string     `csv:"vocabulary"`
+	Vocabulary       Vocabulary `gorm:"foreignkey:VocabularyID"`
+	DataTypeID       string     `csv:"data_type"`
+	DataType         DataType   `gorm:"foreignkey:DataTypeID"`
 }
 
 type Value struct {
