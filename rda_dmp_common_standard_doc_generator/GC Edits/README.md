@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide outlines the process of migrating data from the GC-RDA maDMP Excel Workbook into the GC-RDA maDMP Application Profile. The Excel Workbook contains two relevant sheets: "Git test sort orange tab" and "GC maDMP Master Sheet". The "GC maDMP Master Sheet" serves as the primary source for updates and changes, while the "Git test sort orange tab" serves as the connection between the master sheet and the application profile.
+This guide outlines the process of migrating data from the GC-RDA maDMP Excel Workbook into the GC-RDA maDMP Application Profile. The Excel Workbook contains two relevant sheets: "Git test sort orange tab" and "GC maDMP Master Sheet". The "GC maDMP Master Sheet" serves as the primary source for updates and changes, while the "Git test sort orange tab" serves as the connection between the master sheet and the application profile. 
 
 ## Application Profile Overview
 
@@ -33,6 +33,8 @@ Please note the following guidelines for handling changes:
   - Column changes, such as adding or removing information (fields) from the application profile, require modifications in the Go code. Refer to the [maDMP Standard GitHub repository](https://github.com/FAIRERdata/maDMP-Standard/blob/Tests/rda_dmp_common_standard_doc_generator/README.md) for instructions on updating the Go code to reflect these changes.
 
 Always perform checks from random sampling after mapping to ensure correctness. Please note that there is an overall "dmp" field in the application profile, while it might not exist in the "Git test sort orange tab".
+
+Note that the **vocabularies** sheet, **vocabulary** in **properties** sheet and **values** sheet does not affect the output appearance of the Github pages website. 
 
 ## Conversion Workflow
 
