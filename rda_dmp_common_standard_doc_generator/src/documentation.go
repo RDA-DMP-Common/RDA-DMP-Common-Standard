@@ -64,11 +64,9 @@ func getNodeAsHtmlTableRow(node ki.Ki) string {
 	property := findPropertyById(node.Name())
 	description := property.Description
 	description += "<br>"
-	description += fmt.Sprintf("DEPENDENCY: <ul> %s", property.DependencyType)
+	description += fmt.Sprintf("REQUIREMENT: <ul>%s</ul>", property.DependencyType)
 	if property.DependencyReason != "" {
-		description += fmt.Sprintf(", %s</ul>", property.DependencyReason)
-	} else {
-		description += "</ul>"
+		description += fmt.Sprintf("DEPENDENCY: <ul>%s</ul>", property.DependencyReason)
 	}
 	var values []Value
 	db.Where("property_id = ?", property.ID).Order("list_order asc").Find(&values)
