@@ -1,3 +1,4 @@
+## Full details in [conversion.docx](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FFAIRERdata%2FmaDMP-Standard%2FMaster%2Frda_dmp_common_standard_doc_generator%2FConversion%2Fdocumentation%2Fconversion.docx&wdOrigin=BROWSELINK)
 ## Introduction 
 
 The <b>GC-RDA maDMP Excel Workbook</b> contains information such as fieldnames, property ids, descriptions, example values, user-friendly questions, data types, allowed values, cardinalities, requirements, and dependencies. 
