@@ -41,7 +41,7 @@ def merge_dicts(d1, d2):
             d1[key] = d2[key]
 
 # Load the CSV file (adjust the path as necessary)
-df = pd.read_csv('dmp_structure.csv', encoding='ISO-8859-1')
+df = pd.read_csv('input/dmp_structure.csv', encoding='ISO-8859-1')
 
 # Adjust data types based on patterns
 df["data_type"] = np.where(df["data_type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['data_type'])
@@ -61,8 +61,8 @@ df.loc[df['fieldname'].str.contains('mbox', case=False, na=False), 'format'] = '
 # Initialize the base schema
 json_schema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://example.com/your-schema-id.json",  # Update this to the appropriate $id
-    "title": "Your Schema Title",  # Add a meaningful title for your schema
+    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/8fa66633705a08df46a31411dec16c2ffba608ce/examples/JSON/GC-RDA%20JSON-schema/GC-RDA-maDMP-schema.json",  # Update this to the appropriate $id
+    "title": "GC-RDA maDMP Schema",  # Add a meaningful title for your schema
     "type": "object",
     "properties": {}
 }

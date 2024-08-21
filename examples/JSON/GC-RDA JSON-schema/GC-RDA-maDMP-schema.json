@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://example.com/your-schema-id.json",
-    "title": "Your Schema Title",
+    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/8fa66633705a08df46a31411dec16c2ffba608ce/examples/JSON/GC-RDA%20JSON-schema/GC-RDA-maDMP-schema.json",
+    "title": "GC-RDA maDMP Schema",
     "type": "object",
     "properties": {
         "dmp": {
