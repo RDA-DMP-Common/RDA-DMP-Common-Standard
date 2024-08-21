@@ -56,7 +56,7 @@ if (df.columns.values.tolist() == column_header):
 else:
     print('Column names are not the same')
 
-# drop columns by column name if they exist and keeo all columns in kept_columns
+# drop columns by column name if they exist and keep all columns in kept_columns
 kept_columns = ['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)','Property ID', 'Description', 'Cardinality RDA', 'Cardinality', 
                  'GC DMP Requirement', ' "required IF/WHEN" dependency', 
                  'Front-end user-friendly question', 'Example value', 'Data type', 
