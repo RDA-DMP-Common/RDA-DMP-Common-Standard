@@ -54,15 +54,14 @@ column_header = ['New row numbers (sorted on fieldname)',
 if (df.columns.values.tolist() == column_header):
     print("Column names are the same")
 else:
-    raise ValueError('Column names are not the same')
+    print('Column names are not the same')
 
-# drop columns by column name if they exist 
-drop_columns = ['New row numbers (sorted on fieldname)', 'Row numbers (before sorting on fieldname)', 
-         'Old row numbers', 'Allowed Values\n(for JSON schema file)',
-         'LAC requirement at time of transfer for archival datasets', 'GC Open Data Metadata Mapping\n(Jessica & Dominique only)',
-         'DataCite Record for DMP (Mandatory, Optional, Recommended)', 'Corresponding DataCite field(s)',
-         'DataCite Record for Dataset (M, O, R)', 'Corresponding DataCite field(s).1']
-df_drop = df.drop(drop_columns, axis=1, errors='ignore')
+# drop columns by column name if they exist and keeo all columns in kept_columns
+kept_columns = ['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)','Property ID', 'Description', 'Cardinality RDA', 'Cardinality', 
+                 'GC DMP Requirement', ' "required IF/WHEN" dependency', 
+                 'Front-end user-friendly question', 'Example value', 'Data type', 
+                 'Allowed Values\n(controlled vocabulary)']
+df_drop = df.loc[:, kept_columns]
 
 '''
 properties sheet 
@@ -128,17 +127,16 @@ def get_parent_property(s):
 # apply the function to the entire column
 df_drop['parent_property'] = df_drop['id_without_slash'].apply(get_parent_property)
 
-# drops columns for the properties sheet for the application profile
-df_prop = df_drop.drop(['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)',
-                        'Cardinality RDA', 'Allowed Values\n(controlled vocabulary)','id_without_slash'], axis=1)
 # header order of the properties sheet in application profile
 header_list = ['id','vocabulary','label_human', 'label_machine', 'data_type', 'parent_property',
                          'cardinality', 'description', 'example_value', 'question', 'uri', 'dependency_type','dependency_reason','notes']
 # rearrange dataframe to suit the header order
-df_prop = df_prop.reindex(columns = header_list) 
+df_prop = df_drop.reindex(columns = header_list) 
 
 # fill NA with empty spaces
 df_prop = df_prop.fillna('')
+# drop all other columns unless they're in header_list
+df_prop = df_prop[header_list]
 
 '''
 values sheet
@@ -197,12 +195,12 @@ values_sheet = spreadsheet.worksheet("values")
 # Update the Google Sheet with the DataFrame data
 properties_sheet.update(range_name='A1', values=[df_prop.columns.tolist()] + df_prop.values.tolist())
 values_sheet.update(range_name="A1", values=[df_values.columns.tolist()] + df_values.values.tolist())
-
 '''
+
 manual to excel if needed
 '''
-#df_prop.to_excel('output/properties.xlsx', index=False)
-#df_values.to_excel('output/values.xlsx', index=False)
+df_prop.to_excel('output/properties.xlsx', index=False)
+df_values.to_excel('output/values.xlsx', index=False)
 
 
 
