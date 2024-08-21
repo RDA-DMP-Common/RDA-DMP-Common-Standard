@@ -61,7 +61,7 @@ df.loc[df['fieldname'].str.contains('mbox', case=False, na=False), 'format'] = '
 # Initialize the base schema
 json_schema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/8fa66633705a08df46a31411dec16c2ffba608ce/examples/JSON/GC-RDA%20JSON-schema/GC-RDA-maDMP-schema.json",  # Update this to the appropriate $id
+    "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GC-RDA JSON-schema/GC-RDA-maDMP-schema.json",  # Update this to the appropriate $id
     "title": "GC-RDA maDMP Schema",  # Add a meaningful title for your schema
     "type": "object",
     "properties": {}
