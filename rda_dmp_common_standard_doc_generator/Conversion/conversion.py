@@ -199,8 +199,8 @@ values_sheet.update(range_name="A1", values=[df_values.columns.tolist()] + df_va
 
 manual to excel if needed
 '''
-df_prop.to_excel('output/properties.xlsx', index=False)
-df_values.to_excel('output/values.xlsx', index=False)
+#df_prop.to_excel('output/properties.xlsx', index=False)
+#df_values.to_excel('output/values.xlsx', index=False)
 
 
 
