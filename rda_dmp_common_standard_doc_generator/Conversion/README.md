@@ -29,7 +29,7 @@ Only two of the sheets are relevant for changing the GitHub website: the propert
    ```bash
  py -m pip install pandas numpy gspread oauth2client
 ```
-6.	Ensure that the relevant column header names are the same in the Python script and input file (examples: Property ID, Description, etc.). If they are not, a print message will show up in the terminal and say that the “Column names are not the same.” When this happens, there is a possibility that the outputs will not be correct. Please change the Python code to have the updated names in the variable kept_columns 
+6.	Ensure that the relevant column header names (those in kept_columns variable) are the same in the Python script and input file (examples: Property ID, Description, etc.). If they are not, a print message will show up in the terminal and say that the “Column names are not the same.” When this happens, there is a possibility that the outputs will not be correct. Please change the Python code to have the updated names in the variable kept_columns 
 7.	Run the Python code. If ran successfully, the properties and values sheet in the Application Profile will have been updated. Note that the number of rows in the properties sheet should be number of rows in the input sheet + 1. The extra row is to account for the root ("dmp").
 
 <b>NOTE</b>: If there is trouble with the Google Service Account not functioning, manual outputs of the properties and values sheet can be done with the last two lines of code.
