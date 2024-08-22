@@ -7,6 +7,7 @@ import urllib.parse
 '''
 Script name:    conversion.py
 Date written:   8/15/2024
+Last updated:   8/22/2024
 Software:       Python 3.11.0 64-bit 
                 Visual Studio Code (1.92.1)
 
@@ -50,17 +51,19 @@ column_header = ['New row numbers (sorted on fieldname)',
                  'Corresponding DataCite field(s)', 'DataCite Record for Dataset (M, O, R)', 
                  'Corresponding DataCite field(s).1']
 
-# Checks if the column header names are the same
-if (df.columns.values.tolist() == column_header):
+# columns that are necessary for properties sheet
+kept_columns = ['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)','Property ID', 'Description', 'Cardinality RDA', 'Cardinality', 
+                 'GC DMP Requirement', ' "required IF/WHEN" dependency', 
+                 'Front-end user-friendly question', 'Example value', 'Data type', 
+                 'Allowed Values\n(controlled vocabulary)']
+
+# Checks if the column header names for the kept columns are the same
+if all(col in df.columns for col in kept_columns):
     print("Column names are the same")
 else:
     print('Column names are not the same')
 
 # drop columns by column name if they exist and keep all columns in kept_columns
-kept_columns = ['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)','Property ID', 'Description', 'Cardinality RDA', 'Cardinality', 
-                 'GC DMP Requirement', ' "required IF/WHEN" dependency', 
-                 'Front-end user-friendly question', 'Example value', 'Data type', 
-                 'Allowed Values\n(controlled vocabulary)']
 df_drop = df.loc[:, kept_columns]
 
 '''
