@@ -62,7 +62,7 @@ df.loc[df['fieldname'].str.contains('mbox', case=False, na=False), 'format'] = '
 json_schema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GC-RDA JSON-schema/GC-RDA-maDMP-schema.json",  # Update this to the appropriate $id
-    "title": "GC-RDA maDMP Schema",  # Add a meaningful title for your schema
+    "title": "GCWG-RDA maDMP Schema",  # Add a meaningful title for your schema
     "type": "object",
     "properties": {}
 }
@@ -133,8 +133,8 @@ for _, row in df.iterrows():
         json_schema.setdefault("required", []).append(required_field)
 
 # Output the generated JSON schema as a JSON file or print it out
-with open('GC-RDA-maDMP-schema.json', 'w') as f:
-    json.dump(json_schema, f, indent=4)
+with open('GC-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
+    json.dump(json_schema, f, indent=4, ensure_ascii=False)
 
 # Or, print it out to see the result
 print(json.dumps(json_schema, indent=4))
