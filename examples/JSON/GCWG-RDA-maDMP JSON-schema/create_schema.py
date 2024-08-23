@@ -1,20 +1,16 @@
 import pandas as pd
 import json
 import numpy as np
+import urllib.parse
 
 # Function to build a nested dictionary for a given path
-def build_nested_dict(keys, value, parent_path, required_fields):
+def build_nested_dict(keys, value, parent_path):
     if len(keys) == 1:
         # Add the $id and title for the field
         value["$id"] = f"{parent_path}/properties/{keys[0]}"
         value["title"] = f"The {keys[0].capitalize()} Schema"
-        
-        # If the field is required, add it to the required fields list
-        if keys[0] in required_fields:
-            return {keys[0]: value}, keys[0]
-        else:
-            return {keys[0]: value}, None
-    
+        return {keys[0]: value}
+
     # Create an intermediate object for nested data structure
     nested_object = {
         "$id": f"{parent_path}/properties/{keys[0]}",
@@ -22,15 +18,11 @@ def build_nested_dict(keys, value, parent_path, required_fields):
         "title": f"The {keys[0].capitalize()} Schema",
         "properties": {}
     }
-    
+
     # Recursively build the nested object
-    nested_object["properties"], child_required = build_nested_dict(keys[1:], value, nested_object["$id"], required_fields)
-    
-    # If any child is required, add it to the parent required list
-    if child_required:
-        nested_object.setdefault("required", []).append(child_required)
-    
-    return {keys[0]: nested_object}, None
+    nested_object["properties"] = build_nested_dict(keys[1:], value, nested_object["$id"])
+
+    return {keys[0]: nested_object}
 
 # Function to merge dictionaries, handling cases where non-nested values exist
 def merge_dicts(d1, d2):
@@ -41,22 +33,30 @@ def merge_dicts(d1, d2):
             d1[key] = d2[key]
 
 # Load the CSV file (adjust the path as necessary)
-df = pd.read_csv('input/dmp_structure.csv', encoding='ISO-8859-1')
+google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
+worksheet_name = 'GC maDMP Master Sheet'
+# URL-encode the worksheet name
+encoded_worksheet_name = urllib.parse.quote(worksheet_name)
+# Construct the URL for the CSV export
+url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
+
+# Read the data into a pandas DataFrame
+df = pd.read_csv(url, encoding='utf-8')
 
 # Adjust data types based on patterns
-df["data_type"] = np.where(df["data_type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['data_type'])
-df["data_type"] = np.where(df["data_type"].str.contains('DateTime.', case=True, na=False), "date-time", df['data_type'])
-df["data_type"] = np.where(df["data_type"].str.contains('Date.', case=True, na=False), "date", df['data_type'])
-df["data_type"] = np.where(df["data_type"].str.contains('string', case=True, na=False), "string", df['data_type'])
+df["Data type"] = np.where(df["Data type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['Data type'])
+df["Data type"] = np.where(df["Data type"].str.contains('DateTime.', case=True, na=False), "date-time", df['Data type'])
+df["Data type"] = np.where(df["Data type"].str.contains('Date.', case=True, na=False), "date", df['Data type'])
+df["Data type"] = np.where(df["Data type"].str.contains('string', case=True, na=False), "string", df['Data type'])
 
-df["fieldname"] = df["fieldname"].str.rstrip("/")
+df["Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"] = df["Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"].str.rstrip("/")
 df['format'] = None
 
 # Set the format based on data type
-df.loc[df['data_type'] == 'date', 'format'] = 'date'
-df.loc[df['data_type'] == 'date-time', 'format'] = 'date-time'
-df.loc[df['data_type'] == 'URI', 'format'] = 'uri'
-df.loc[df['fieldname'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
+df.loc[df['Data type'] == 'date', 'format'] = 'date'
+df.loc[df['Data type'] == 'date-time', 'format'] = 'date-time'
+df.loc[df['Data type'] == 'URI', 'format'] = 'uri'
+df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
 
 # Initialize the base schema
 json_schema = {
@@ -64,19 +64,24 @@ json_schema = {
     "$id": "https://github.com/FAIRERdata/maDMP-Standard/blob/Master/examples/JSON/GCWG-RDA-maDMP JSON-schema/GCWG-RDA-maDMP-schema.json",  # Update this to the appropriate $id
     "title": "GCWG-RDA-maDMP-Schema",  # schema title
     "type": "object",
-    "properties": {}
+    "properties": {},
+    "additionalProperties": False,
+    "required": ["dmp"]  # Add "dmp" to the top-level required array
 }
+
+# A dictionary to track the required fields at each level
+required_fields_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df.iterrows():
-    field_path = row['fieldname'].split('/')
-    data_type = row['data_type'].lower()  # Convert to lowercase for easier matching
-    allowed_values = row['allowed_values']
-    example_value = row['example_value']
-    description = row['description']
-    question = row['question']
+    field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
+    data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
+    allowed_values = row['Allowed Values\n(for JSON schema file)']
+    example_value = row['Example value']
+    description = row['Description']
+    question = row['Front-end user-friendly question']
     format = row['format']
-    requirement = row['requirement']  # New column for requirement
+    requirement = row['GC DMP Requirement']  # New column for requirement
     required_when = row['required when']
 
     # Determine JSON schema type based on the data type
@@ -84,7 +89,7 @@ for _, row in df.iterrows():
         json_type = "string"
     elif "date" in data_type:
         json_type = "string"
-    elif data_type == "nested data structure":
+    elif "nested data structure" in data_type:
         json_type = "object"
     elif data_type == "controlled vocabulary":
         json_type = "string"
@@ -98,7 +103,7 @@ for _, row in df.iterrows():
         "type": json_type
     }
 
-    # Add description if not empty
+    # Add Description if not empty
     if pd.notna(description) and description.strip():
         schema_object["description"] = description
 
@@ -113,24 +118,36 @@ for _, row in df.iterrows():
 
     if pd.notna(format):
         schema_object["format"] = format
-    
+
     if pd.notna(required_when):
         schema_object["requiredWhen"] = [v.strip() for v in required_when.split(',')]
 
-    # Collect required fields
-    required_fields = []
+    # Check if the current field is required
     if pd.notna(requirement) and requirement.strip().lower() == 'required':
-        required_fields.append(field_path[-1])
+        parent_path = "/".join(field_path[:-1])
+        child_name = field_path[-1]
+
+        # Add the child name to the required fields for the parent path
+        if parent_path not in required_fields_dict:
+            required_fields_dict[parent_path] = []
+        required_fields_dict[parent_path].append(child_name)
 
     # Create the nested dictionary for this field path, adding $id and title dynamically
-    nested_dict, required_field = build_nested_dict(field_path, schema_object, "#", required_fields)
+    nested_dict = build_nested_dict(field_path, schema_object, "#")
 
     # Merge the nested dictionary into the base schema properties
     merge_dicts(json_schema['properties'], nested_dict)
 
-    # If the current field is required, add it to the required list
-    if required_field:
-        json_schema.setdefault("required", []).append(required_field)
+# Assign required fields to the correct parent objects in the JSON schema
+def assign_required_fields(schema, path=""):
+    if "properties" in schema:
+        for prop_name, prop_value in schema["properties"].items():
+            current_path = f"{path}/{prop_name}".strip("/")
+            if current_path in required_fields_dict:
+                prop_value["required"] = required_fields_dict[current_path]
+            assign_required_fields(prop_value, current_path)
+
+assign_required_fields(json_schema)
 
 # Output the generated JSON schema as a JSON file or print it out
 with open('GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
