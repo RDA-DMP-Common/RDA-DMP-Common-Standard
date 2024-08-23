@@ -43,6 +43,11 @@ url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out
 # Read the data into a pandas DataFrame
 df = pd.read_csv(url, encoding='utf-8')
 
+# Columns that are necessary to generate the schema
+kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)",
+                'Allowed Values\n(for JSON schema file)', 'Example value', 'Description', 
+                'Front-end user-friendly question', 'GC DMP Requirement', 'required when']
+
 # Adjust data types based on patterns
 df["Data type"] = np.where(df["Data type"].str.contains('controlled vocabulary', case=True, na=False), "controlled vocabulary", df['Data type'])
 df["Data type"] = np.where(df["Data type"].str.contains('DateTime.', case=True, na=False), "date-time", df['Data type'])
