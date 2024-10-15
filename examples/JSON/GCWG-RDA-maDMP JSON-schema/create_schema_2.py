@@ -4,6 +4,10 @@ import numpy as np
 import urllib.parse
 import re
 
+"""
+replace conditional require with conditional appear, add required_When_nested_structure_exist
+"""
+
 # Function to build a nested dictionary for a given path
 def build_nested_dict(keys, value, parent_path):
     if len(keys) == 1:
@@ -82,7 +86,8 @@ kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlin
                 'Allowed Values\n(for JSON schema file)', 'Example value', 'Description', 
                 'Front-end user-friendly question', 'GC DMP Requirement', 'required when',
                 ## newly added column
-                '"required IF/WHEN" dependency', 'Cardinality'
+                '"required IF/WHEN" dependency', 'Cardinality', 'conditional appear prerequisite path', 
+                'conditional appear prerequisite value'
                 ]
 
 # Adjust data types based on patterns
@@ -114,7 +119,6 @@ json_schema = {
 # A dictionary to track the required fields at each level
 required_fields_dict = {}
 ## newly added column
-conditional_required_dict = {}
 conditional_appear_dict = {}
 one_to_n_array_list = []
 zero_to_n_array_list = []
@@ -134,18 +138,17 @@ for _, row in df.iterrows():
     ## newly added column
     required_IF_dependency = row[' "required IF/WHEN" dependency']
     cardinality = row['Cardinality']
+    prerequisite_path = row['conditional appear prerequisite path']
+    prerequisite_values = row['conditional appear prerequisite value']
+
     '''
-    for now there are two kinds of dependencies:
-        1. conditional require
-            if certain value(s) is selected, then some fields are required, under the same sub-schema
-            Example: approval_status
-        2. conditional appear:
+        conditional appear:
             if certain value(s) is selected, then some sub-schema are shown, others are hiden
             Example: business
     '''
 
     # delete
-    if "contributor" not in field_path and "access" not in field_path and "approval" not in field_path:
+    if "approval" not in field_path: # and "approval" not in field_path:
         continue
 
     parent_path = "/".join(field_path[:-1])
@@ -206,46 +209,18 @@ for _, row in df.iterrows():
     ## newly added column
     # build dependencies, check "required IF" condition
     if pd.notna(required_IF_dependency) and requirement.strip().lower() == 'required if':
-        # condition 2:
-        if "chosen" in required_IF_dependency:
-            appearing_sub_schema = re.findall(r'"(.*?)"', required_IF_dependency)
-            prerequisite = required_IF_dependency.split()[-1].split('/')[-1]
-
-            #parent_path = "/".join(field_path[:-1])
-            #child_name = field_path[-1]
+        if pd.notna(prerequisite_path) and pd.notna(prerequisite_values):
+            prerequisite = prerequisite_path.split('/')[-1]
+            prerequisite_values = [x.strip() for x in prerequisite_values.split(',')]
 
             if parent_path not in conditional_appear_dict:
                 conditional_appear_dict[parent_path] = []
-            conditional_appear_dict[parent_path].append((child_name, prerequisite))
-
-            #print(prerequisite)
-        # condition 1:
-        elif "=" in required_IF_dependency: 
-            prerequisite_values = re.findall(r'"(.*?)"', required_IF_dependency)
-            prerequisite = re.search(r'if\s+(\w+)\s*=', required_IF_dependency).group(1)
-            prerequisite_path  = prerequisite.split('_')
-            print(prerequisite_path)
-
-            #parent_path = "/".join(field_path[:-1])
-            #child_name = field_path[-1]
-
-            ##
-            conditional_required_schema = {
-                "if":{
-                    "properties":{
-                    prerequisite_path[-1]:{"enum":prerequisite_values}
-                    },
-                    "required": [prerequisite_path[-1]]
-                },
-                "then": {"required": [child_name]}
-            }
-
-            # Add the conditional_required schema to the required fields for the parent path
-            if parent_path not in conditional_required_dict:
-                conditional_required_dict[parent_path] = []
-            conditional_required_dict[parent_path].append(conditional_required_schema)
+            conditional_appear_dict[parent_path].append((child_name, prerequisite, prerequisite_values))
         else:
             print("Error: the required_IF_dependency is not in the correct format")
+
+
+        
     
     # Check if the current field is an array (cardinality = 1..n)
     if pd.notna(cardinality) and cardinality.strip().lower() == '1..n':
@@ -267,6 +242,7 @@ for _, row in df.iterrows():
     # Create the nested dictionary for this field path, adding $id and title dynamically
     nested_dict = build_nested_dict(field_path, schema_object, "#")
 
+    print(json.dumps(nested_dict, indent=4))
 
     # Merge the nested dictionary into the base schema properties
     merge_dicts(json_schema['properties'], nested_dict)
@@ -274,11 +250,17 @@ for _, row in df.iterrows():
     #print(json.dumps(json_schema, indent=4))
     #print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-#print(json.dumps(conditional_required_dict, indent=4))
+#print(json.dumps(conditional_appear_dict, indent=4))
 
 ## merge 'if then' scripts inside conditional_required_dict
-merge_conditional_required_dicts(conditional_required_dict)
+#merge_conditional_required_dicts(conditional_required_dict)
 #print(json.dumps(conditional_required_dict, indent=4))
+
+
+
+
+
+
 
 # Assign required fields to the correct parent objects in the JSON schema
 def assign_required_fields(schema, path=""):
@@ -289,12 +271,18 @@ def assign_required_fields(schema, path=""):
                 prop_value["required"] = required_fields_dict[current_path]
 
             ## newly added column
-            # add conditional required fields
-            if current_path in conditional_required_dict:
-                if "allOf" not in prop_value:
-                    prop_value["allOf"] = []
-                prop_value["allOf"].append(conditional_required_dict[current_path])
+            # add requiredWhen fields
+            if current_path in require_when_nested_structure_exist:
+                if "required" not in prop_value:
+                    prop_value["required"] = []
+                prop_value["required"].extend(require_when_nested_structure_exist[current_path])
 
+            assign_required_fields(prop_value, current_path)
+
+def apply_conditionals(schema, path=""):
+    if "properties" in schema:
+        for prop_name, prop_value in schema["properties"].items():
+            current_path = f"{path}/{prop_name}".strip("/")
             # add conditional appear fields
             if current_path in conditional_appear_dict:
                 #print(current_path)
@@ -302,11 +290,12 @@ def assign_required_fields(schema, path=""):
                 for child_name_pair in conditional_appear_dict[current_path]:
                     child_name = child_name_pair[0]
                     prerequisite = child_name_pair[1]
+                    prerequisite_values = child_name_pair[2]
                     appearing_sub_schemas = {
                                         "if": {
                                             "properties": {
                                                 prerequisite: {
-                                                "const": child_name
+                                                "enum": prerequisite_values
                                                 }
                                             }
                                         },
@@ -326,13 +315,13 @@ def assign_required_fields(schema, path=""):
                 prop_value["allOf"].extend(temp_list)
 
             # add requiredWhen fields
-            if current_path in require_when_nested_structure_exist:
-                if "required" not in prop_value:
-                    prop_value["required"] = []
-                prop_value["required"].extend(require_when_nested_structure_exist[current_path])
+            #if current_path in require_when_nested_structure_exist:
+            #    if "required" not in prop_value:
+            #        prop_value["required"] = []
+            #    prop_value["required"].extend(require_when_nested_structure_exist[current_path])
 
 
-            assign_required_fields(prop_value, current_path)
+            apply_conditionals(prop_value, current_path)
 
 # add array layer in schemas (move the properties into the array layer)
 def add_array_layer(schema, path=""):
@@ -359,15 +348,18 @@ def add_array_layer(schema, path=""):
 
 
 assign_required_fields(json_schema)
+apply_conditionals(json_schema)
 add_array_layer(json_schema)
 
 #print(json.dumps(conditional_required_dict, indent=4))
 #print(json.dumps(conditional_appear_dict, indent=4))
 #print(one_to_n_array_list)
-print(json.dumps(require_when_nested_structure_exist, indent=4))
+#print(json.dumps(require_when_nested_structure_exist, indent=4))
+#print(json.dumps(required_fields_dict, indent=4))
+
 
 # Output the generated JSON schema as a JSON file or print it out
-with open('test_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
+with open('test3_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
     json.dump(json_schema, f, indent=4, ensure_ascii=False)
 """
 # Or, print it out to see the result
