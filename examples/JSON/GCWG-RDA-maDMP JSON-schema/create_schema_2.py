@@ -5,7 +5,7 @@ import urllib.parse
 import re
 
 """
-replace conditional require with conditional appear, add required_When_nested_structure_exist
+added order of the columns in the CSV file, deleted merge_conditional_required_dicts function
 """
 
 # Function to build a nested dictionary for a given path
@@ -37,38 +37,6 @@ def merge_dicts(d1, d2):
         else:
             d1[key] = d2[key]
 
-# Function to merge the 'if then' expressions in conditional required dictionaries
-def merge_conditional_required_dicts(conditional_required_dicts):
-    for key, value in conditional_required_dicts.items():
-        if value.__len__() > 1:
-            merged = {}
-            for item in value:
-                # Convert the dictionary in 'key1' to a string (json) to make it hashable
-                key1_as_str = json.dumps(item['if'], sort_keys=True)
-                
-                # Add the value of 'key2' to the corresponding 'key1'
-                if key1_as_str not in merged:
-                    merged[key1_as_str] = []
-                merged[key1_as_str].append(item['then'])
-            
-            # Convert the string back to a dictionary
-            merged_result = [{ 'if': json.loads(k), 'then': v} for k, v in merged.items()][0]
-            #print(json.dumps(merged_result, indent=4))
-
-            # now merge the required fields in 'then' dictionaries
-            merge_required = {"required": []}
-            # Iterate over each dictionary and extend the 'required' list
-            for d in merged_result["then"]:
-                merge_required["required"].extend(d["required"])
-            
-            #print(json.dumps(merge_required, indent=4))
-
-            # Add the merged 'required' list to the 'then' dictionary
-            merged_result["then"] = merge_required
-            #print(json.dumps(merged_result, indent=4))
-
-            conditional_required_dicts[key] = merged_result
-
 
 # Load the CSV file (adjust the path as necessary)
 google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A' #'1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
@@ -87,7 +55,7 @@ kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlin
                 'Front-end user-friendly question', 'GC DMP Requirement', 'required when',
                 ## newly added column
                 '"required IF/WHEN" dependency', 'Cardinality', 'conditional appear prerequisite path', 
-                'conditional appear prerequisite value'
+                'conditional appear prerequisite value', 'logic order of subquestions under each chapter'
                 ]
 
 # Adjust data types based on patterns
@@ -104,6 +72,24 @@ df.loc[df['Data type'] == 'date', 'format'] = 'date'
 df.loc[df['Data type'] == 'date-time', 'format'] = 'date-time'
 df.loc[df['Data type'] == 'URI', 'format'] = 'uri'
 df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
+
+# sort the dataframe based on the 'logic order of subquestions under each chapter' column
+# Define a function to split the string into a list of integers
+def sort_key(value):
+    if pd.isna(value):
+        return [100]
+    print(value)
+    return [int(x.strip()) for x in str(value).split('.')]
+# Sort the column by the parsed numeric values
+df_sorted = df.sort_values(by='logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
+# Reset index if necessary
+df_sorted = df_sorted.reset_index(drop=True)
+
+# save the sorted dataframe to a csv file
+columns_2_save = ['logic order of subquestions under each chapter', 
+          "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"]
+df_sorted[columns_2_save].to_csv('GCWG-RDA-maDMP-schema-sorted.csv', index=False)
+
 
 # Initialize the base schema
 json_schema = {
@@ -125,7 +111,7 @@ zero_to_n_array_list = []
 require_when_nested_structure_exist = {}
 
 # Iterate through each row and construct the schema
-for _, row in df.iterrows():
+for _, row in df_sorted.iterrows():
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
     allowed_values = row['Allowed Values\n(for JSON schema file)']
@@ -141,14 +127,10 @@ for _, row in df.iterrows():
     prerequisite_path = row['conditional appear prerequisite path']
     prerequisite_values = row['conditional appear prerequisite value']
 
-    '''
-        conditional appear:
-            if certain value(s) is selected, then some sub-schema are shown, others are hiden
-            Example: business
-    '''
+
 
     # delete
-    if "approval" not in field_path: # and "approval" not in field_path:
+    if "contributor" not in field_path and "cost" not in field_path:
         continue
 
     parent_path = "/".join(field_path[:-1])
@@ -359,7 +341,7 @@ add_array_layer(json_schema)
 
 
 # Output the generated JSON schema as a JSON file or print it out
-with open('test3_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
+with open('test4_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
     json.dump(json_schema, f, indent=4, ensure_ascii=False)
 """
 # Or, print it out to see the result
