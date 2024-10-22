@@ -5,7 +5,7 @@ import urllib.parse
 import re
 
 """
-added order of the columns in the CSV file, deleted merge_conditional_required_dicts function
+fixed cost_value and cost_unit conditional appear bug, now unit appear if value is > 0
 """
 
 # Function to build a nested dictionary for a given path
@@ -55,7 +55,7 @@ kept_columns = ["Data type", "Common standard fieldname\n(click on blue hyperlin
                 'Front-end user-friendly question', 'GC DMP Requirement', 'required when',
                 ## newly added column
                 '"required IF/WHEN" dependency', 'Cardinality', 'conditional appear prerequisite path', 
-                'conditional appear prerequisite value', 'logic order of subquestions under each chapter'
+                'conditional appear prerequisite value', 'Logic order of subquestions under each chapter'
                 ]
 
 # Adjust data types based on patterns
@@ -81,12 +81,12 @@ def sort_key(value):
     print(value)
     return [int(x.strip()) for x in str(value).split('.')]
 # Sort the column by the parsed numeric values
-df_sorted = df.sort_values(by='logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
+df_sorted = df.sort_values(by='Logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
 # Reset index if necessary
 df_sorted = df_sorted.reset_index(drop=True)
 
 # save the sorted dataframe to a csv file
-columns_2_save = ['logic order of subquestions under each chapter', 
+columns_2_save = ['Logic order of subquestions under each chapter', 
           "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"]
 df_sorted[columns_2_save].to_csv('GCWG-RDA-maDMP-schema-sorted.csv', index=False)
 
@@ -122,7 +122,7 @@ for _, row in df_sorted.iterrows():
     requirement = row['GC DMP Requirement']  # New column for requirement
     required_when = row['required when']
     ## newly added column
-    required_IF_dependency = row[' "required IF/WHEN" dependency']
+    required_IF_dependency = row['"required IF/WHEN" dependency']
     cardinality = row['Cardinality']
     prerequisite_path = row['conditional appear prerequisite path']
     prerequisite_values = row['conditional appear prerequisite value']
@@ -130,7 +130,7 @@ for _, row in df_sorted.iterrows():
 
 
     # delete
-    if "contributor" not in field_path and "cost" not in field_path:
+    if "cost" not in field_path: # and "cost" not in field_path:
         continue
 
     parent_path = "/".join(field_path[:-1])
@@ -261,7 +261,12 @@ def assign_required_fields(schema, path=""):
 
             assign_required_fields(prop_value, current_path)
 
-def apply_conditionals(schema, path=""):
+def apply_conditionals_appear(schema, path=""):
+    """
+    for now, conditions are all required IF
+    1. some options are chosen in the prerequisite fields
+    2. some values are entered into the prerequisite fields
+    """
     if "properties" in schema:
         for prop_name, prop_value in schema["properties"].items():
             current_path = f"{path}/{prop_name}".strip("/")
@@ -273,24 +278,45 @@ def apply_conditionals(schema, path=""):
                     child_name = child_name_pair[0]
                     prerequisite = child_name_pair[1]
                     prerequisite_values = child_name_pair[2]
-                    appearing_sub_schemas = {
-                                        "if": {
-                                            "properties": {
-                                                prerequisite: {
-                                                "enum": prerequisite_values
+
+                    if prerequisite_values[0] == "special!!!": # condition2
+                        appearing_sub_schemas = {
+                                            "if": {
+                                                "properties": {
+                                                    prerequisite: {
+                                                    prerequisite_values[1]: int(prerequisite_values[2])
+                                                    }
                                                 }
-                                            }
-                                        },
-                                        "then": {
-                                            "properties": {
-                                                child_name: prop_value["properties"].pop(child_name)
                                             },
-                                            "required": [
-                                                child_name
-                                            ]
+                                            "then": {
+                                                "properties": {
+                                                    child_name: prop_value["properties"].pop(child_name)
+                                                },
+                                                "required": [
+                                                    child_name
+                                                ]
+                                            }
                                         }
-                                    }
-                    temp_list.append(appearing_sub_schemas)
+                        temp_list.append(appearing_sub_schemas)
+                    else: # condition1
+                        appearing_sub_schemas = {
+                                            "if": {
+                                                "properties": {
+                                                    prerequisite: {
+                                                    "enum": prerequisite_values
+                                                    }
+                                                }
+                                            },
+                                            "then": {
+                                                "properties": {
+                                                    child_name: prop_value["properties"].pop(child_name)
+                                                },
+                                                "required": [
+                                                    child_name
+                                                ]
+                                            }
+                                        }
+                        temp_list.append(appearing_sub_schemas)
                 #print(json.dumps(temp_list, indent=4))
                 if "allOf" not in prop_value:
                     prop_value["allOf"] = []
@@ -303,7 +329,7 @@ def apply_conditionals(schema, path=""):
             #    prop_value["required"].extend(require_when_nested_structure_exist[current_path])
 
 
-            apply_conditionals(prop_value, current_path)
+            apply_conditionals_appear(prop_value, current_path)
 
 # add array layer in schemas (move the properties into the array layer)
 def add_array_layer(schema, path=""):
@@ -330,7 +356,7 @@ def add_array_layer(schema, path=""):
 
 
 assign_required_fields(json_schema)
-apply_conditionals(json_schema)
+apply_conditionals_appear(json_schema)
 add_array_layer(json_schema)
 
 #print(json.dumps(conditional_required_dict, indent=4))
