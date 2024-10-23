@@ -2,10 +2,10 @@ import pandas as pd
 import json
 import numpy as np
 import urllib.parse
-import re
+
 
 """
-fixed cost_value and cost_unit conditional appear bug, now unit appear if value is > 0
+add "general info" chapter level for order 1.X properties
 """
 
 # Function to build a nested dictionary for a given path
@@ -78,7 +78,7 @@ df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maD
 def sort_key(value):
     if pd.isna(value):
         return [100]
-    print(value)
+    #print(value)
     return [int(x.strip()) for x in str(value).split('.')]
 # Sort the column by the parsed numeric values
 df_sorted = df.sort_values(by='Logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
@@ -109,6 +109,7 @@ conditional_appear_dict = {}
 one_to_n_array_list = []
 zero_to_n_array_list = []
 require_when_nested_structure_exist = {}
+chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
@@ -126,12 +127,14 @@ for _, row in df_sorted.iterrows():
     cardinality = row['Cardinality']
     prerequisite_path = row['conditional appear prerequisite path']
     prerequisite_values = row['conditional appear prerequisite value']
-
+    order = str(row['Logic order of subquestions under each chapter']).split('.')
 
 
     # delete
-    if "cost" not in field_path: # and "cost" not in field_path:
+    if "approval" not in field_path and "cost" not in field_path:
         continue
+    #if order[0] > '2':
+    #    continue
 
     parent_path = "/".join(field_path[:-1])
     child_name = field_path[-1]
@@ -176,6 +179,12 @@ for _, row in df_sorted.iterrows():
         if parent_path not in require_when_nested_structure_exist:
             require_when_nested_structure_exist[parent_path] = []
         require_when_nested_structure_exist[parent_path].append(child_name)
+
+    # find the chapter 1 properties
+    if order[0] == '1' and len(order) == 2:
+        if parent_path not in chapter_1_dict:
+            chapter_1_dict[parent_path] = []
+        chapter_1_dict[parent_path].append(child_name)
     
 
     # Check if the current field is required
@@ -224,7 +233,7 @@ for _, row in df_sorted.iterrows():
     # Create the nested dictionary for this field path, adding $id and title dynamically
     nested_dict = build_nested_dict(field_path, schema_object, "#")
 
-    print(json.dumps(nested_dict, indent=4))
+    #print(json.dumps(nested_dict, indent=4))
 
     # Merge the nested dictionary into the base schema properties
     merge_dicts(json_schema['properties'], nested_dict)
@@ -354,20 +363,46 @@ def add_array_layer(schema, path=""):
 
             add_array_layer(prop_value, current_path)
 
+# move chapter 1 properties to under chapter 1 (general info) level
+def move_to_chapter_1(schema, path=""):
+    if "properties" in schema:
+        for prop_name, prop_value in schema["properties"].items():
+            current_path = f"{path}/{prop_name}".strip("/")
+            if current_path in chapter_1_dict:
+
+                chapter_1_properties = {}
+                for property in chapter_1_dict[current_path]:
+                    chapter_1_properties[property] = prop_value["properties"].pop(property)
+
+                schema["properties"][prop_name] = {
+                    "type": "object",
+                    "properties": {
+                        "general_info": {
+                            "type": "object",
+                            "properties": chapter_1_properties
+                        }
+                    }
+                }
+
+
+
+            move_to_chapter_1(prop_value, current_path)
 
 assign_required_fields(json_schema)
 apply_conditionals_appear(json_schema)
 add_array_layer(json_schema)
+move_to_chapter_1(json_schema)
 
 #print(json.dumps(conditional_required_dict, indent=4))
 #print(json.dumps(conditional_appear_dict, indent=4))
 #print(one_to_n_array_list)
 #print(json.dumps(require_when_nested_structure_exist, indent=4))
 #print(json.dumps(required_fields_dict, indent=4))
+print(json.dumps(chapter_1_dict, indent=4))
 
 
 # Output the generated JSON schema as a JSON file or print it out
-with open('test4_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
+with open('test_GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
     json.dump(json_schema, f, indent=4, ensure_ascii=False)
 """
 # Or, print it out to see the result
