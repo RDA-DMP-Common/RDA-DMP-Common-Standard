@@ -6,6 +6,7 @@ import urllib.parse
 
 """
 add "general info" chapter level for order 1.X properties
+fixed bug resulting from moving properties to chapter 1, added required fields to the chapter 1 properties 
 """
 
 # Function to build a nested dictionary for a given path
@@ -131,8 +132,8 @@ for _, row in df_sorted.iterrows():
 
 
     # delete
-    if "approval" not in field_path and "cost" not in field_path:
-        continue
+    #if "contributor" not in field_path: # and "cost" not in field_path:
+    #    continue
     #if order[0] > '2':
     #    continue
 
@@ -371,17 +372,19 @@ def move_to_chapter_1(schema, path=""):
             if current_path in chapter_1_dict:
 
                 chapter_1_properties = {}
+                chapter_1_required_list = []
                 for property in chapter_1_dict[current_path]:
                     chapter_1_properties[property] = prop_value["properties"].pop(property)
 
-                schema["properties"][prop_name] = {
+                    # remove the required fields from the parent object
+                    if property in schema["properties"][prop_name]["required"]:
+                        schema["properties"][prop_name]["required"].remove(property)
+                        chapter_1_required_list.append(property)
+
+                schema["properties"][prop_name]["properties"]["general_info"]= {
                     "type": "object",
-                    "properties": {
-                        "general_info": {
-                            "type": "object",
-                            "properties": chapter_1_properties
-                        }
-                    }
+                    "properties": chapter_1_properties,
+                    "required": chapter_1_required_list
                 }
 
 
