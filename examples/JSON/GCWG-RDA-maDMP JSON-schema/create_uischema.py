@@ -3,7 +3,7 @@ import json
 import urllib.parse
 
 """
-create the ui schema based on the google sheet for the RDA maDMP JSON schema
+added chapter 1 level (general_info) to the schema
 """
 
 def create_nested_structure(schema, prop_path_list, prop_names):
@@ -56,6 +56,7 @@ ui_schema_draft = {
 
 # A dictionary to track the cardinality fields at each level
 array_list = []
+chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
@@ -64,12 +65,18 @@ for _, row in df_sorted.iterrows():
     cardinality = row['Cardinality']
 
     # delete
-    if "approval" not in field_path and "cost" not in field_path:
-        continue
+    #if "approval" not in field_path and "cost" not in field_path:
+    #    continue
 
     parent_path = "/".join(field_path[:-1])
     child_name = field_path[-1]
     
+    # add chapter 1 level
+    if order[0] == '1' and len(order) == 2:
+        if parent_path not in chapter_1_dict:
+            chapter_1_dict[parent_path] = []
+        chapter_1_dict[parent_path].append(child_name)
+
     if parent_path not in ui_schema_draft:
         ui_schema_draft[parent_path] = []
     ui_schema_draft[parent_path].append(child_name)
@@ -114,11 +121,24 @@ def add_array_layer(schema, path=""):
 
             add_array_layer(prop_value, current_path)
 
+# move properties to chapter 1 level, and
+def move_to_chapter_1(schema, chapter_1_dict):
+    # remove the chapter 1 properties from the original location
+    schema["dmp"]["ui:order"] = [item for item in schema["dmp"]["ui:order"] if item not in chapter_1_dict["dmp"]]
+    # add the chapter 1 (general_info) to dmp order level
+    schema["dmp"]["ui:order"].insert(0, "general_info")
+    # add the chapter 1  and chapter 1 property orders
+    schema["dmp"]["general_info"] = {
+        "ui:order": chapter_1_dict["dmp"]
+    }
+
+
 #print(array_list)
 add_array_layer(ui_schema)
+move_to_chapter_1(ui_schema, chapter_1_dict)
 
-with open('ui-schema2.json', 'w', encoding='utf-8') as f:
+with open('ui-schema.json', 'w', encoding='utf-8') as f:
     json.dump(ui_schema, f, indent=4, ensure_ascii=False)
 
-
+print(chapter_1_dict)
 print("UI schema has been generated successfully!")
