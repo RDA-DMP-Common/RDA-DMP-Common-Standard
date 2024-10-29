@@ -5,8 +5,10 @@ import urllib.parse
 
 
 """
-add "general info" chapter level for order 1.X properties
-fixed bug resulting from moving properties to chapter 1, added required fields to the chapter 1 properties 
+X add "general info" chapter level for order 1.X properties
+X fixed bug resulting from moving properties to chapter 1, added required fields to the chapter 1 properties 
+removed the ordering part, whcih is moved to the ui schema part
+need to add title to general_info
 """
 
 # Function to build a nested dictionary for a given path
@@ -74,22 +76,7 @@ df.loc[df['Data type'] == 'date-time', 'format'] = 'date-time'
 df.loc[df['Data type'] == 'URI', 'format'] = 'uri'
 df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
 
-# sort the dataframe based on the 'logic order of subquestions under each chapter' column
-# Define a function to split the string into a list of integers
-def sort_key(value):
-    if pd.isna(value):
-        return [100]
-    #print(value)
-    return [int(x.strip()) for x in str(value).split('.')]
-# Sort the column by the parsed numeric values
-df_sorted = df.sort_values(by='Logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
-# Reset index if necessary
-df_sorted = df_sorted.reset_index(drop=True)
 
-# save the sorted dataframe to a csv file
-columns_2_save = ['Logic order of subquestions under each chapter', 
-          "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"]
-df_sorted[columns_2_save].to_csv('GCWG-RDA-maDMP-schema-sorted.csv', index=False)
 
 
 # Initialize the base schema
@@ -113,7 +100,7 @@ require_when_nested_structure_exist = {}
 chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
-for _, row in df_sorted.iterrows():
+for _, row in df.iterrows():
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
     allowed_values = row['Allowed Values\n(for JSON schema file)']
@@ -132,7 +119,7 @@ for _, row in df_sorted.iterrows():
 
 
     # delete
-    #if "contributor" not in field_path: # and "cost" not in field_path:
+    #if "indigenous_considerations" not in field_path: # and "cost" not in field_path:
     #    continue
     #if order[0] > '2':
     #    continue
