@@ -7,7 +7,9 @@ import urllib.parse
 """
 X add "general info" chapter level for order 1.X properties
 X fixed bug resulting from moving properties to chapter 1, added required fields to the chapter 1 properties 
-removed the ordering part, whcih is moved to the ui schema part
+X removed the ordering part, whcih is moved to the ui schema part
+removed "schema" from titles, fixed cardinality finiding logic issue
+
 need to add title to general_info
 """
 
@@ -16,14 +18,14 @@ def build_nested_dict(keys, value, parent_path):
     if len(keys) == 1:
         # Add the $id and title for the field
         value["$id"] = f"{parent_path}/properties/{keys[0]}"
-        value["title"] = f"The {keys[0].capitalize()} schema"
+        value["title"] = f"{keys[0].capitalize()}"
         return {keys[0]: value}
 
     # Create an intermediate object for nested data structure
     nested_object = {
         "$id": f"{parent_path}/properties/{keys[0]}",
         "type": "object",
-        "title": f"The {keys[0].capitalize()} Schema",
+        "title": f"{keys[0].capitalize()}",
         "properties": {}
     }
 
@@ -101,6 +103,11 @@ chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df.iterrows():
+    
+    # delete
+    if pd.isna(row['Data type']):
+        continue
+
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
     allowed_values = row['Allowed Values\n(for JSON schema file)']
@@ -119,7 +126,15 @@ for _, row in df.iterrows():
 
 
     # delete
-    #if "indigenous_considerations" not in field_path: # and "cost" not in field_path:
+    """
+    if "dataset" in field_path:
+        if len(field_path) != 2:
+            if "dataset_documentation" not in field_path: # and "cost" not in field_path:
+                continue
+    else:
+        continue
+    """
+    #if "dataset_documentation" not in field_path: # and "cost" not in field_path:
     #    continue
     #if order[0] > '2':
     #    continue
@@ -203,19 +218,13 @@ for _, row in df.iterrows():
     
     # Check if the current field is an array (cardinality = 1..n)
     if pd.notna(cardinality) and cardinality.strip().lower() == '1..n':
-        # check if all of the parents are not in the array_fields_list
         array_path = "/".join(field_path)
-        all_not_in_dict = all( item not in array_path for item in one_to_n_array_list)
-        if all_not_in_dict:
-            one_to_n_array_list.append(array_path)
+        one_to_n_array_list.append(array_path)
     
     # Check if the current field is an array (cardinality = 0..n)
     if pd.notna(cardinality) and cardinality.strip().lower() == '0..n':
-        # check if all of the parents are not in the array_fields_list
         array_path = "/".join(field_path)
-        all_not_in_dict = all( item not in array_path for item in zero_to_n_array_list)
-        if all_not_in_dict:
-            zero_to_n_array_list.append(array_path)
+        zero_to_n_array_list.append(array_path)
 
             
     # Create the nested dictionary for this field path, adding $id and title dynamically

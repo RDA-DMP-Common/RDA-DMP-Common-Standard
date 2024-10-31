@@ -3,7 +3,8 @@ import json
 import urllib.parse
 
 """
-added chapter 1 level (general_info) to the schema
+X added chapter 1 level (general_info) to the schema
+fixed cardinality finidng logic issue
 """
 
 def create_nested_structure(schema, prop_path_list, prop_names):
@@ -60,13 +61,23 @@ chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
 for _, row in df_sorted.iterrows():
+    # delete
+    if pd.isna(row['Logic order of subquestions under each chapter']):
+        continue
+
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     order = str(row['Logic order of subquestions under each chapter']).split('.')
     cardinality = row['Cardinality']
 
     # delete
-    #if "approval" not in field_path and "cost" not in field_path:
-    #    continue
+    """
+    if "dataset" in field_path:
+        if len(field_path) != 2:
+            if "dataset_documentation" not in field_path: # and "cost" not in field_path:
+                continue
+    else:
+        continue
+    """
 
     parent_path = "/".join(field_path[:-1])
     child_name = field_path[-1]
@@ -83,16 +94,13 @@ for _, row in df_sorted.iterrows():
 
     # Check if the current field is an array (cardinality = 1..n)
     if pd.notna(cardinality) and cardinality.strip().lower() == '1..n' or cardinality.strip().lower() == '0..n':
-        # check if all of the parents are not in the array_fields_list
         array_path = "/".join(field_path)
-        all_not_in_dict = all( item not in array_path for item in array_list)
-        if all_not_in_dict:
-            array_list.append(array_path)
+        array_list.append(array_path)
     
 
 # Output the generated JSON schema as a JSON file or print it out
-#with open('ui-schema2_draft.json', 'w', encoding='utf-8') as f:
-#    json.dump(ui_schema_draft, f, indent=4, ensure_ascii=False)
+with open('ui-schema2_draft.json', 'w', encoding='utf-8') as f:
+    json.dump(ui_schema_draft, f, indent=4, ensure_ascii=False)
 
 
 ###### transform ui schema draft to ui schema
@@ -135,10 +143,11 @@ def move_to_chapter_1(schema, chapter_1_dict):
 
 #print(array_list)
 add_array_layer(ui_schema)
-move_to_chapter_1(ui_schema, chapter_1_dict)
+if chapter_1_dict != {}: # if chapter
+    move_to_chapter_1(ui_schema, chapter_1_dict)
 
 with open('ui-schema.json', 'w', encoding='utf-8') as f:
     json.dump(ui_schema, f, indent=4, ensure_ascii=False)
 
-print(chapter_1_dict)
+print(array_list)
 print("UI schema has been generated successfully!")
