@@ -3,8 +3,7 @@ import json
 import urllib.parse
 
 """
-X added chapter 1 level (general_info) to the schema
-fixed cardinality finidng logic issue
+Python script to generate the UI schema of the maDMP JSON schema based on the Orange Tab.
 """
 
 def create_nested_structure(schema, prop_path_list, prop_names):
@@ -69,7 +68,7 @@ for _, row in df_sorted.iterrows():
     order = str(row['Logic order of subquestions under each chapter']).split('.')
     cardinality = row['Cardinality']
 
-    # delete
+    # delete, filter certain rows base don field path
     """
     if "dataset" in field_path:
         if len(field_path) != 2:
@@ -99,8 +98,8 @@ for _, row in df_sorted.iterrows():
     
 
 # Output the generated JSON schema as a JSON file or print it out
-with open('ui-schema2_draft.json', 'w', encoding='utf-8') as f:
-    json.dump(ui_schema_draft, f, indent=4, ensure_ascii=False)
+#with open('ui-schema2_draft.json', 'w', encoding='utf-8') as f:
+#    json.dump(ui_schema_draft, f, indent=4, ensure_ascii=False)
 
 
 ###### transform ui schema draft to ui schema
@@ -146,8 +145,8 @@ add_array_layer(ui_schema)
 if chapter_1_dict != {}: # if chapter
     move_to_chapter_1(ui_schema, chapter_1_dict)
 
-with open('ui-schema.json', 'w', encoding='utf-8') as f:
+with open('ui_schema.json', 'w', encoding='utf-8') as f:
     json.dump(ui_schema, f, indent=4, ensure_ascii=False)
 
-print(array_list)
+#print(array_list)
 print("UI schema has been generated successfully!")
