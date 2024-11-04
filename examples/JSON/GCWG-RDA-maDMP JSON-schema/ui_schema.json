@@ -1,0 +1,510 @@
+{
+    "dmp": {
+        "ui:order": [
+            "general_info",
+            "contributor",
+            "approval",
+            "project",
+            "cost",
+            "indigenous_considerations",
+            "dataset",
+            "contact"
+        ],
+        "dmp_id": {
+            "ui:order": [
+                "identifier",
+                "type"
+            ]
+        },
+        "contributor": {
+            "items": {
+                "ui:order": [
+                    "name",
+                    "role",
+                    "mbox",
+                    "contributor_id",
+                    "affiliation"
+                ],
+                "contributor_id": {
+                    "ui:order": [
+                        "identifier",
+                        "type"
+                    ]
+                },
+                "affiliation": {
+                    "items": {
+                        "ui:order": [
+                            "type",
+                            "business",
+                            "educational_institution",
+                            "government_department_or_agency",
+                            "non_profit",
+                            "other",
+                            "country",
+                            "province_state"
+                        ],
+                        "business": {
+                            "ui:order": [
+                                "name",
+                                "business_id"
+                            ],
+                            "business_id": {
+                                "ui:order": [
+                                    "identifier",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "educational_institution": {
+                            "ui:order": [
+                                "name",
+                                "department",
+                                "educational_institution_id"
+                            ],
+                            "educational_institution_id": {
+                                "ui:order": [
+                                    "identifier",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "government_department_or_agency": {
+                            "ui:order": [
+                                "name",
+                                "code",
+                                "organizational_group",
+                                "organizational_subgroup"
+                            ]
+                        },
+                        "non_profit": {
+                            "ui:order": [
+                                "name",
+                                "non_profit_id"
+                            ],
+                            "non_profit_id": {
+                                "ui:order": [
+                                    "identifier",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "country": {
+                            "ui:order": [
+                                "country_name",
+                                "country_code"
+                            ]
+                        },
+                        "province_state": {
+                            "ui:order": [
+                                "name",
+                                "code"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "approval": {
+            "ui:order": [
+                "status",
+                "description",
+                "by_name",
+                "by_position",
+                "by_mbox",
+                "date"
+            ]
+        },
+        "project": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "description",
+                    "start",
+                    "end",
+                    "funding",
+                    "partner_organization",
+                    "succession_plan"
+                ],
+                "funding": {
+                    "items": {
+                        "ui:order": [
+                            "source",
+                            "funder_id",
+                            "funding_status",
+                            "grant_id"
+                        ],
+                        "source": {
+                            "items": {
+                                "ui:order": [
+                                    "type",
+                                    "description"
+                                ]
+                            }
+                        },
+                        "funder_id": {
+                            "ui:order": [
+                                "identifier",
+                                "type"
+                            ]
+                        },
+                        "grant_id": {
+                            "ui:order": [
+                                "identifier",
+                                "type"
+                            ]
+                        }
+                    }
+                },
+                "partner_organization": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "agreement",
+                            "partner_organization_id"
+                        ],
+                        "agreement": {
+                            "ui:order": [
+                                "description",
+                                "type",
+                                "agreement_download_url"
+                            ]
+                        },
+                        "partner_organization_id": {
+                            "ui:order": [
+                                "identifier",
+                                "type"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "cost": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "description",
+                    "currency_code",
+                    "value"
+                ]
+            }
+        },
+        "indigenous_considerations": {
+            "ui:order": [
+                "exist",
+                "description",
+                "dmp_discussion",
+                "community_approval",
+                "community_approval_description",
+                "group_identification",
+                "government_name",
+                "indigenous_control_over_data",
+                "language",
+                "characters",
+                "research_method",
+                "indian_band_name",
+                "indian_band_number",
+                "traditional_knowledge",
+                "traditional_knowledge_classification_code",
+                "traditional_knowledge_classification_description"
+            ]
+        },
+        "dataset": {
+            "items": {
+                "ui:order": [
+                    "title",
+                    "dataset_id",
+                    "description",
+                    "subject",
+                    "keyword",
+                    "type",
+                    "data_class",
+                    "geodetic_datum",
+                    "geographic_coverage",
+                    "industry_NAICS",
+                    "dataset_documentation",
+                    "data_completeness",
+                    "issued",
+                    "language",
+                    "data_criticality",
+                    "data_governance_description",
+                    "personal_data",
+                    "sensitive_data",
+                    "security_and_privacy",
+                    "preservation_statement",
+                    "supported_works_url",
+                    "collection",
+                    "technical_resource",
+                    "data_quality_assurance",
+                    "linked_data_star_rating",
+                    "intellectual_property",
+                    "metadata",
+                    "distribution",
+                    "disposition_planning",
+                    "computing_environment"
+                ],
+                "dataset_id": {
+                    "ui:order": [
+                        "identifier",
+                        "type"
+                    ]
+                },
+                "subject": {
+                    "ui:order": [
+                        "classification_code",
+                        "classification_description"
+                    ]
+                },
+                "industry_NAICS": {
+                    "ui:order": [
+                        "code",
+                        "name"
+                    ]
+                },
+                "dataset_documentation": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "description",
+                            "access_url",
+                            "download_url"
+                        ]
+                    }
+                },
+                "security_and_privacy": {
+                    "items": {
+                        "ui:order": [
+                            "title",
+                            "description",
+                            "privacy_impact_assessment"
+                        ],
+                        "privacy_impact_assessment": {
+                            "ui:order": [
+                                "approved",
+                                "approved_by",
+                                "download_url",
+                                "registered",
+                                "required"
+                            ]
+                        }
+                    }
+                },
+                "collection": {
+                    "ui:order": [
+                        "data_collection_earliest_start_date",
+                        "data_collection_latest_end_date",
+                        "data_start_date",
+                        "data_update_frequency",
+                        "data_last_updated",
+                        "data_latest_end_date",
+                        "dataset_size",
+                        "dataset_size_units",
+                        "growth_annual_terabytes",
+                        "data_source",
+                        "data_source_description",
+                        "data_source_external",
+                        "data_source_external_description",
+                        "data_aggregation",
+                        "data_aggregation_description",
+                        "data_integration",
+                        "data_integration_description",
+                        "data_integration_sources",
+                        "synthetic_data",
+                        "synthetic_data_ai",
+                        "synthetic_data_description",
+                        "algorithmic_impact_assessment_conducted",
+                        "algorithmic_impact_assessment_conducted_uri"
+                    ]
+                },
+                "technical_resource": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "description"
+                        ]
+                    }
+                },
+                "intellectual_property": {
+                    "ui:order": [
+                        "copyright_description",
+                        "copyright_extent",
+                        "copyright_holder",
+                        "other"
+                    ]
+                },
+                "metadata": {
+                    "items": {
+                        "ui:order": [
+                            "description",
+                            "language",
+                            "metadata_standard_id"
+                        ],
+                        "metadata_standard_id": {
+                            "ui:order": [
+                                "identifier",
+                                "type"
+                            ]
+                        }
+                    }
+                },
+                "distribution": {
+                    "items": {
+                        "ui:order": [
+                            "title",
+                            "description",
+                            "access_url",
+                            "download_url",
+                            "file_path",
+                            "status",
+                            "status_description",
+                            "data_access",
+                            "available_until",
+                            "byte_size",
+                            "data_size",
+                            "data_size_units",
+                            "format",
+                            "character_encoding_standard",
+                            "character_unicode_block_code",
+                            "character_unicode_block_name",
+                            "quality_control_level",
+                            "license",
+                            "protection_level",
+                            "security_classification_level",
+                            "data_security-privacy_measures",
+                            "disposition_planning",
+                            "disposition_action_completed",
+                            "host",
+                            "physical_data_asset"
+                        ],
+                        "license": {
+                            "items": {
+                                "ui:order": [
+                                    "license_ref",
+                                    "start_date"
+                                ]
+                            }
+                        },
+                        "disposition_planning": {
+                            "ui:order": [
+                                "archival_value",
+                                "legal_issues",
+                                "required_destruction",
+                                "required_perpetual_use",
+                                "retention_review_trigger_date"
+                            ]
+                        },
+                        "disposition_action_completed": {
+                            "ui:order": [
+                                "authorization_number",
+                                "date",
+                                "description",
+                                "type"
+                            ]
+                        },
+                        "host": {
+                            "ui:order": [
+                                "title",
+                                "description",
+                                "url",
+                                "storage_type",
+                                "pid_system",
+                                "support_checksum",
+                                "support_versioning",
+                                "data_priority",
+                                "availability",
+                                "backup_frequency",
+                                "backup_type",
+                                "certified_with",
+                                "data_processing_minimum_cpu_cores",
+                                "data_processing_minimum_cpu_speed_Ghz",
+                                "data_processing_minimum_machine_type",
+                                "data_processing_minimum_RAM_Gb",
+                                "data_transfer_maximum_latency_msec",
+                                "data_transfer_minimum_throughput_Mbps",
+                                "geo_location"
+                            ]
+                        },
+                        "physical_data_asset": {
+                            "items": {
+                                "ui:order": [
+                                    "description",
+                                    "type",
+                                    "building_city",
+                                    "building_name",
+                                    "building_room_number",
+                                    "computer_name_full"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "disposition_planning": {
+                    "ui:order": [
+                        "retention_review_trigger",
+                        "retention_review_trigger_description",
+                        "retention_review_trigger_date",
+                        "archival_value",
+                        "archival_value_description",
+                        "legal_issues",
+                        "legal_issues_description.",
+                        "remaining_distributions",
+                        "required_destruction",
+                        "required_destruction_description",
+                        "required_perpetual_use",
+                        "required_perpetual_use_description"
+                    ]
+                },
+                "computing_environment": {
+                    "items": {
+                        "ui:order": [
+                            "computer_code_description",
+                            "computer_code_download",
+                            "computer_code_license",
+                            "computer_code_programming_language",
+                            "software_name",
+                            "software_description",
+                            "proprietary_software",
+                            "proprietary_software_justification",
+                            "proprietary_software_migration_plan",
+                            "proprietary_software_migration_plan_description",
+                            "software_download",
+                            "operating_system_name",
+                            "operating_system_description"
+                        ]
+                    }
+                }
+            }
+        },
+        "contact": {
+            "ui:order": [
+                "name",
+                "mbox",
+                "contact_id"
+            ],
+            "contact_id": {
+                "ui:order": [
+                    "identifier",
+                    "type"
+                ]
+            }
+        },
+        "general_info": {
+            "ui:order": [
+                "title",
+                "description",
+                "dmp_id",
+                "created",
+                "modified",
+                "language",
+                "access",
+                "protection_level",
+                "security_classification_level",
+                "schema_version",
+                "schema_version_uri",
+                "ethical_issues_exist",
+                "ethical_issues_description",
+                "ethical_issues_report"
+            ]
+        }
+    }
+}
