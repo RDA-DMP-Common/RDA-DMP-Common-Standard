@@ -11,7 +11,7 @@ import (
 )
 
 func generateDoc() {
-	content := "<center><h2 style='color: red;'>UNDER DEVELOPMENT</h2></center>"
+	content := "<center><h2 style='color: red;'>DRAFT</h2></center>"
 	content += fmt.Sprintf("<center><h1 style='font-size: 1.2em;'>%s</h1></center>", config.DocTitle)
 	content += "<table id=\"table1\"><tr><td valign=\"top\">"
 	var entityDescriptions []EntityDescription
