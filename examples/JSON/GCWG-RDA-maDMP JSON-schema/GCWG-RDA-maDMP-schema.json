@@ -850,6 +850,7 @@
                             },
                             "contributor_id": {
                                 "type": "object",
+                                "description": "Identifier of the contributor",
                                 "$id": "#/properties/dmp/properties/contributor/properties/contributor_id",
                                 "title": "Contributor_id",
                                 "properties": {
@@ -1176,13 +1177,18 @@
                         "properties": {
                             "collection": {
                                 "type": "object",
-                                "description": "Information on collection of the data.",
+                                "description": "Information on how the data is collected.",
                                 "$id": "#/properties/dmp/properties/dataset/properties/collection",
                                 "title": "Collection",
                                 "properties": {
                                     "algorithmic_impact_assessment_conducted": {
                                         "type": "string",
                                         "description": "To indicate if an algorithmic impact assessment has been conducted related to these data.  https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
                                         "example": "yes",
                                         "question": "Has an algorithmic impact assessment been conducted related to these data?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/algorithmic_impact_assessment_conducted",
@@ -1285,27 +1291,36 @@
                                     },
                                     "data_source": {
                                         "type": "string",
-                                        "description": "Describes how the data were collected",
+                                        "description": "Source of the data",
                                         "example": "field analyzer",
+                                        "question": "What is the source of the data",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source",
                                         "title": "Data_source"
                                     },
                                     "data_source_description": {
                                         "type": "string",
                                         "description": "To describe the dataset sources of data ",
+                                        "question": "describe the source of the data",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_description",
                                         "title": "Data_source_description"
                                     },
                                     "data_source_external": {
                                         "type": "string",
                                         "description": "To indicate if a data source used in the dataset was external",
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "unknown"
+                                        ],
                                         "example": "yes",
+                                        "question": "Is the data source external",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_external",
                                         "title": "Data_source_external"
                                     },
                                     "data_source_external_description": {
                                         "type": "string",
                                         "description": "To describe the external source used in the dataset ",
+                                        "question": "describe the external source ",
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_external_description",
                                         "title": "Data_source_external_description"
                                     },
@@ -2055,6 +2070,23 @@
                                         "character_encoding_standard": {
                                             "type": "string",
                                             "description": "Character encoding standard used in the distribution",
+                                            "enum": [
+                                                "UTF-32",
+                                                "UTF-16",
+                                                "UTF-EBCDIC",
+                                                "UTF-8",
+                                                "UTF-7",
+                                                "UTF-1",
+                                                "ISO 8859-7",
+                                                "ISO 8859-6",
+                                                "ISO 8859-5",
+                                                "ISO 8859-4",
+                                                "ISO 8859-3",
+                                                "ISO 8859-2",
+                                                "ISO 8859-1",
+                                                "GB18030",
+                                                "ASCII"
+                                            ],
                                             "example": "UTF-16",
                                             "question": "What character encoding standard is used for the data?",
                                             "requiredWhen": [
@@ -29998,7 +30030,7 @@
                         },
                         "title": {
                             "type": "string",
-                            "description": "Title of a DMP",
+                            "description": "Title of the DMP",
                             "example": "The most exciting project ever.",
                             "question": "What is the title of this maDMP?",
                             "$id": "#/properties/dmp/properties/title",
