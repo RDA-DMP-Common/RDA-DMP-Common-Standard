@@ -68,7 +68,7 @@ for _, row in df_sorted.iterrows():
     order = str(row['Logic order of subquestions under each chapter']).split('.')
     cardinality = row['Cardinality']
 
-    # delete, filter certain rows base don field path
+    # delete, filter certain rows based on field path
     """
     if "dataset" in field_path:
         if len(field_path) != 2:
