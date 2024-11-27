@@ -2,14 +2,12 @@
     {
       "name_n_version": "GCWG RDA maDMP Schema pre-publish version",
       "schema": "GCWG-RDA-maDMP-schema.json",
-      "uischema": "ui_schema.json",
-      "toc": "table_of_contents.json"
+      "uischema": "ui_schema.json"
     },
     {
-      "name_n_version": "Dummy Schema",
+      "name_n_version": "Dummy Schema dummy version",
       "schame": "Another-schema.json",
-      "uischema": "ui_schema.json",
-      "toc": "table_of_contents.json"
+      "uischema": "ui_schema.json"
     }
   ]
   

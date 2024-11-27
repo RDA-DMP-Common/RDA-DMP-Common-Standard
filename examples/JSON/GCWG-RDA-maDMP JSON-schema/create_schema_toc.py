@@ -3,6 +3,10 @@ import json
 import numpy as np
 import urllib.parse
 
+"""
+Depreciated: This script is no longer used. The TOC is now generated in the maDMP-Generation-Form.
+"""
+
 '''
 This script generates the Table of Contents (TOC) in for the maDMP schema based on the Orange Tab. 
 - The TOC is in the form of html, and can be immediately used in the form at https://github.com/FAIRERdata/maDMP-Generation-Form.
