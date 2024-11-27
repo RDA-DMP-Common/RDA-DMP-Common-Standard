@@ -647,7 +647,7 @@
                                                             },
                                                             "educational_institution_id": {
                                                                 "type": "object",
-                                                                "description": "Educational institution identifier\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html \n",
+                                                                "description": "Educational institution identifier\nFrom ‘List of designated educational institutions’\n<a href=\"https://www.canada.ca/en/employment-social-development/programs/designated-schools.html\">www.canada.ca</a> \n",
                                                                 "requiredWhen": [
                                                                     "educational_institution"
                                                                 ],
@@ -672,7 +672,7 @@
                                                             },
                                                             "name": {
                                                                 "type": "string",
-                                                                "description": "Name of educational_institution.\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html ",
+                                                                "description": "Name of educational_institution.\nFrom ‘List of designated educational institutions’\n<a href=\"https://www.canada.ca/en/employment-social-development/programs/designated-schools.html\">www.canada.ca</a> ",
                                                                 "question": "What is the contributor's educational institution name?",
                                                                 "requiredWhen": [
                                                                     "educational_institution"
@@ -712,7 +712,7 @@
                                                         "properties": {
                                                             "code": {
                                                                 "type": "string",
-                                                                "description": "Government department code. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
+                                                                "description": "Government department code. Example: <a href=\"https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                                                                 "example": "7",
                                                                 "question": "What is the contributor's government department code?",
                                                                 "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/code",
@@ -720,7 +720,7 @@
                                                             },
                                                             "name": {
                                                                 "type": "string",
-                                                                "description": "Government department name. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
+                                                                "description": "Government department name. Example: <a href=\"https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                                                                 "example": "Environment (Department of the)",
                                                                 "question": "What is the contributor's government department name?",
                                                                 "requiredWhen": [
@@ -903,7 +903,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string",
-                                    "description": "Type of contributor (e.g., author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
+                                    "description": "Type of contributor (e.g., cited responsability party, distribution contact, author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
                                     "example": "Data steward",
                                     "question": "What is the contributor's role?",
                                     "$id": "#/properties/dmp/properties/contributor/properties/role",
@@ -947,6 +947,49 @@
                                 ],
                                 "$id": "#/properties/dmp/properties/cost/properties/title",
                                 "title": "Title"
+                            },
+                            "cost_documentation": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Any external material documenting the cost",
+                                    "$id": "#/properties/dmp/properties/cost/properties/cost_documentation",
+                                    "title": "Cost_documentation",
+                                    "properties": {
+                                        "access_url": {
+                                            "type": "string",
+                                            "description": "A URL of that gives access to the costdocumentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to cost documentation, typically through a Web form, query or API call.",
+                                            "example": "https://007gc.sharepoint.com/stb/wqmsd/Project.aspx",
+                                            "question": "Provide a link to the cost documentation.",
+                                            "format": "uri",
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/access_url",
+                                            "title": "Access_url"
+                                        },
+                                        "download_url": {
+                                            "type": "string",
+                                            "description": "Download URL to the cost documentation",
+                                            "example": "https://007gc.sharepoint.com/dpmo/projects/project 345 business charter.docx",
+                                            "question": "Provide the download URL for the cost documentation.",
+                                            "format": "uri",
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/download_url",
+                                            "title": "Download_url"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Title of the external document documenting the  cost",
+                                            "example": "Project Business Charter",
+                                            "question": "What is the title of the cost documentation?",
+                                            "requiredWhen": [
+                                                "cost_documentation"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/name",
+                                            "title": "Name"
+                                        }
+                                    },
+                                    "required": [
+                                        "name"
+                                    ]
+                                }
                             },
                             "value": {
                                 "type": "number",
@@ -1183,7 +1226,7 @@
                                 "properties": {
                                     "algorithmic_impact_assessment_conducted": {
                                         "type": "string",
-                                        "description": "To indicate if an algorithmic impact assessment has been conducted related to these data.  https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+                                        "description": "To indicate if an algorithmic impact assessment has been conducted related to these data.  <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html\">www.canada.ca</a>",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -1409,7 +1452,7 @@
                                     },
                                     "synthetic_data_ai": {
                                         "type": "string",
-                                        "description": "Dataset generated by artificial intelligence. See, https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html",
+                                        "description": "Dataset generated by artificial intelligence. See, <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html\">www.canada.ca</a>",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -1509,6 +1552,42 @@
                                             ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software",
                                             "title": "Proprietary_software"
+                                        },
+                                        "software_management_plan": {
+                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
+                                            "type": "object",
+                                            "title": "Software_management_plan",
+                                            "properties": {
+                                                "access_url": {
+                                                    "type": "string",
+                                                    "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
+                                                    "question": "What is the access url to the SMP",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
+                                                    "title": "Access_url"
+                                                },
+                                                "download_url": {
+                                                    "type": "string",
+                                                    "description": "Download URL to the Software Management Plan (SMP)",
+                                                    "question": "What is the dowload url of the SMP",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
+                                                    "title": "Download_url"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "Title of the external document documenting the  cost",
+                                                    "question": "What is the name or title of the SMP",
+                                                    "requiredWhen": [
+                                                        "software_management_plan"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
+                                                    "title": "Name"
+                                                }
+                                            },
+                                            "required": [
+                                                "name"
+                                            ]
                                         }
                                     },
                                     "required": [
@@ -2097,7 +2176,7 @@
                                         },
                                         "character_unicode_block_code": {
                                             "type": "string",
-                                            "description": "Unicode block used in the distribution. Use the \"code\" from the Unicode Standard 15.1. https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks",
+                                            "description": "Unicode block used in the distribution. Use the \"code\" from the Unicode Standard 15.1. <a href=\"https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks\">en.wikipedia.org</a>",
                                             "enum": [
                                                 "U+1E900..U+1E95F",
                                                 "U+10100..U+1013F",
@@ -2418,7 +2497,7 @@
                                         },
                                         "character_unicode_block_name": {
                                             "type": "string",
-                                            "description": "Unicode block used in the distribution. Use the \"name\" from the Unicode Standard 15.1. https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks",
+                                            "description": "Unicode block used in the distribution. Use the \"name\" from the Unicode Standard 15.1. <a href=\"https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks\">en.wikipedia.org</a>",
                                             "enum": [
                                                 "Adlam",
                                                 "Aegean Numbers",
@@ -2739,7 +2818,7 @@
                                         },
                                         "data_access": {
                                             "type": "string",
-                                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf",
+                                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
                                             "enum": [
                                                 "open",
                                                 "shared",
@@ -2975,7 +3054,7 @@
                                             "type": "array",
                                             "items": {
                                                 "type": "string",
-                                                "description": "Identify the distribution file format using IANA codes if appropriate, otherwise use the common name for the format. https://www.iana.org/assignments/media-types/media-types.xhtml ",
+                                                "description": "Identify the distribution file format using IANA codes if appropriate, otherwise use the common name for the format. <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> ",
                                                 "example": "csv",
                                                 "question": "What is the file format for this distribution?",
                                                 "requiredWhen": [
@@ -3460,7 +3539,7 @@
                                                 "properties": {
                                                     "license_ref": {
                                                         "type": "string",
-                                                        "description": "Link to license document. Examples: https://open.canada.ca/en/open-government-license-canada ; https://choosealicense.com/licenses/mit/ ; https://creativecommons.org/licenses/by-sa/4.0/legalcode ; https://opensource.org/licenses ",
+                                                        "description": "Link to license document. Examples: <a href=\"https://open.canada.ca/en/open-government-license-canada\">open.canada.ca</a> ; <a href=\"https://choosealicense.com/licenses/mit/\">choosealicense.com</a> ; <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\">creativecommons.org</a> ; <a href=\"https://opensource.org/licenses\">opensource.org</a> ",
                                                         "example": "https://open.canada.ca/en/open-government-license-canada",
                                                         "question": "Provide a link to the license.",
                                                         "format": "uri",
@@ -3559,7 +3638,7 @@
                                         },
                                         "protection_level": {
                                             "type": "string",
-                                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
+                                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                                             "enum": [
                                                 "unknown",
                                                 "not protected",
@@ -3597,7 +3676,7 @@
                                         },
                                         "security_classification_level": {
                                             "type": "string",
-                                            "description": "Security classification that designates the level of protection against access the data or information requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
+                                            "description": "Security classification that designates the level of protection against access the data or information requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                                             "enum": [
                                                 "unclassified",
                                                 "restricted",
@@ -3701,7 +3780,7 @@
                                 "properties": {
                                     "code": {
                                         "type": "string",
-                                        "description": "NAICS Industry classification code  https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825",
+                                        "description": "NAICS Industry classification code  <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
                                         "enum": [
                                             "11",
                                             "21",
@@ -3731,7 +3810,7 @@
                                     },
                                     "name": {
                                         "type": "string",
-                                        "description": "NAICS Industry classification name   https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825",
+                                        "description": "NAICS Industry classification name   <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
                                         "enum": [
                                             "Agriculture. Forestry. Fishing. Hunting",
                                             "Mining. Quarrying. Oil and gas extraction",
@@ -11341,7 +11420,7 @@
                             },
                             "linked_data_star_rating": {
                                 "type": "string",
-                                "description": "Use the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc.  https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/",
+                                "description": "Use the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc.  <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>",
                                 "enum": [
                                     "1 star",
                                     "2 stars",
@@ -18954,7 +19033,7 @@
                                             "properties": {
                                                 "download_url": {
                                                     "type": "string",
-                                                    "description": "A URL that gives access to the privacy impact assessment. The access URL should be used for the URL of a service or location that can provide access to privacy impact assessment, typically through a Web form, query or API call. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
+                                                    "description": "A URL that gives access to the privacy impact assessment. The access URL should be used for the URL of a service or location that can provide access to privacy impact assessment, typically through a Web form, query or API call. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
                                                     "question": "Provide the URL to download the privacy impact assessment.",
                                                     "format": "uri",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/privacy_impact_assessment/properties/download_url",
@@ -18962,7 +19041,7 @@
                                                 },
                                                 "required": {
                                                     "type": "string",
-                                                    "description": "To indicate if a privacy impact assessment is required. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
+                                                    "description": "To indicate if a privacy impact assessment is required. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
                                                     "enum": [
                                                         "yes",
                                                         "no",
@@ -18993,7 +19072,7 @@
                                                         "properties": {
                                                             "approved": {
                                                                 "type": "string",
-                                                                "description": "To indicate if the privacy impact assessment was approved. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
+                                                                "description": "To indicate if the privacy impact assessment was approved. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
                                                                 "enum": [
                                                                     "yes",
                                                                     "no",
@@ -19024,7 +19103,7 @@
                                                         "properties": {
                                                             "approved_by": {
                                                                 "type": "string",
-                                                                "description": "Name of the person who approved the privacy impact assessment. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
+                                                                "description": "Name of the person who approved the privacy impact assessment. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
                                                                 "enum": [
                                                                     "yes",
                                                                     "no",
@@ -19055,7 +19134,7 @@
                                                         "properties": {
                                                             "registered": {
                                                                 "type": "string",
-                                                                "description": "To indicate if the privacy impact assessment was registered (e.g., yes, no, ID#, etc.). https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
+                                                                "description": "To indicate if the privacy impact assessment was registered (e.g., yes, no, ID#, etc.). <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
                                                                 "example": "ID xxxx-45576",
                                                                 "question": "If a privacy impact assessment (PIA) was performed was it registered or does it have an ID number?",
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/privacy_impact_assessment/properties/registered",
@@ -19106,7 +19185,7 @@
                                 "properties": {
                                     "classification_code": {
                                         "type": "string",
-                                        "description": "Two-letter code (class and sub-class) for subject classification of the dataset according to the Library of Congress Classification (LCC). For example, the class and subclass code for an air quality dataset would be GE (Class: \"Geography, Anthropolgy, Recreation\" ; Subclass: \"Environmental Sciences). https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\nhttps://www.loc.gov/aba/cataloging/classification/lcco/lcco_b.pdf",
+                                        "description": "Two-letter code (class and sub-class) for subject classification of the dataset according to the Library of Congress Classification (LCC). For example, the class and subclass code for an air quality dataset would be GE (Class: \"Geography, Anthropolgy, Recreation\" ; Subclass: \"Environmental Sciences). <a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\">www.loc.gov</a>\n<a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_b.pdf\">www.loc.gov</a>",
                                         "enum": [
                                             "A",
                                             "AC",
@@ -19368,7 +19447,7 @@
                                     },
                                     "classification_description": {
                                         "type": "string",
-                                        "description": "The subclass classification of the dataset according to the Library of Congress Classification (LCC). For example, the subclass for an air quality dataset would be \"Environmental Sciences.\" https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf",
+                                        "description": "The subclass classification of the dataset according to the Library of Congress Classification (LCC). For example, the subclass for an air quality dataset would be \"Environmental Sciences.\" <a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\">www.loc.gov</a>",
                                         "enum": [
                                             "General works",
                                             "Collections. Series. Collected works",
@@ -19690,7 +19769,7 @@
                             },
                             "type": {
                                 "type": "string",
-                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\n http://vocabularies.coar-repositories.org/pubby/resource_type.html",
+                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a>\n http://vocabularies.coar-repositories.org/pubby/resource_type.html",
                                 "example": "image",
                                 "question": "What type of dataset is this?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/type",
@@ -19773,7 +19852,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "description": "First Nations Indian Band name corresponding to the First Nations code associated with the dataset. https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng ; \nhttps://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4",
+                                "description": "First Nations Indian Band name corresponding to the First Nations code associated with the dataset. <a href=\"https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng\">fnp-ppn.aadnc-aandc.gc.ca</a> ; \n<a href=\"https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4\">open.canada.ca</a>",
                                 "enum": [
                                     "Abegweit",
                                     "Lennox Island",
@@ -20423,7 +20502,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "description": "First Nations Indian band number associated with the dataset. https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng ; \nhttps://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4",
+                                "description": "First Nations Indian band number associated with the dataset. <a href=\"https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng\">fnp-ppn.aadnc-aandc.gc.ca</a> ; \n<a href=\"https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4\">open.canada.ca</a>",
                                 "enum": [
                                     "1",
                                     "2",
@@ -21266,7 +21345,7 @@
                                 "properties": {
                                     "traditional_knowledge_classification_code": {
                                         "type": "string",
-                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\n",
+                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). <a href=\"https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\">xwi7xwa-library-10nov2016.sites.olt.ubc.ca</a>\n",
                                         "enum": [
                                             "A",
                                             "AB",
@@ -21682,7 +21761,7 @@
                                 "properties": {
                                     "traditional_knowledge_classification_description": {
                                         "type": "string",
-                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf",
+                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). <a href=\"https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\">xwi7xwa-library-10nov2016.sites.olt.ubc.ca</a>",
                                         "enum": [
                                             "REFERENCE MATERIALS - unspecified",
                                             "BIBLIOGRAPHIES - GENERAL",
@@ -22133,7 +22212,7 @@
                                             "properties": {
                                                 "identifier": {
                                                     "type": "string",
-                                                    "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
+                                                    "description": "Funder ID, recommended to use CrossRef Funder Registry. See: <a href=\"https://www.crossref.org/services/funder-registry/\">www.crossref.org</a>",
                                                     "question": "Provide the funder identifier ID.",
                                                     "requiredWhen": [
                                                         "project"
@@ -22378,7 +22457,7 @@
                     "properties": {
                         "access": {
                             "type": "string",
-                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf",
+                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
                             "enum": [
                                 "open",
                                 "shared",
@@ -29983,7 +30062,7 @@
                         },
                         "protection_level": {
                             "type": "string",
-                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
+                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                             "enum": [
                                 "unknown",
                                 "not protected",
@@ -30013,7 +30092,7 @@
                         },
                         "security_classification_level": {
                             "type": "string",
-                            "description": "Security classification that designates the level of protection against access the DMP requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
+                            "description": "Security classification that designates the level of protection against access the DMP requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
                             "enum": [
                                 "unclassified",
                                 "restricted",
