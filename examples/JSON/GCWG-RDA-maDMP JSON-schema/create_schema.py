@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import numpy as np
 import urllib.parse
+import re
 
 
 """
@@ -230,6 +231,22 @@ for _, row in df.iterrows():
     # Merge the nested dictionary into the base schema properties
     merge_dicts(json_schema['properties'], nested_dict)
 
+def convert_links_to_html(paragraph):
+    """
+    Detects https links in a paragraph and converts them to HTML format.
+    Preserves links already in HTML format.
+    
+    :param paragraph: Input text containing links.
+    :return: Text with links converted to HTML.
+    """
+    def replace_link(match):
+        url = match.group(1)
+        # Customize link content here
+        content = url.split("/")[2]  # Use domain as content
+        return f'<a href="{url}">{content}</a>'
+    
+    regex = r'(?<!<a href=")(https://[^\s<]+)(?!">)'
+    return re.sub(regex, replace_link, paragraph)
 
 # Assign required fields to the correct parent objects in the JSON schema
 def assign_required_fields(schema, path=""):
@@ -245,6 +262,10 @@ def assign_required_fields(schema, path=""):
                 if "required" not in prop_value:
                     prop_value["required"] = []
                 prop_value["required"].extend(require_when_nested_structure_exist[current_path])
+
+            # convert https to http links in the description
+            if "description" in prop_value:
+                prop_value["description"] = convert_links_to_html(prop_value["description"])
 
             assign_required_fields(prop_value, current_path)
 
