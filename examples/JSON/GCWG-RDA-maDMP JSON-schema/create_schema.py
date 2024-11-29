@@ -42,12 +42,14 @@ def merge_dicts(d1, d2):
 
 
 # Load the CSV file (adjust the path as necessary)
-google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A' #'1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
+google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
+old_copy_google_sheet_id = '1rVqYqZzZU_W4qR3C3ea8PVVIakCFP40jFI6rAsTGeQA'
 worksheet_name = 'GC maDMP Master Sheet'
 # URL-encode the worksheet name
 encoded_worksheet_name = urllib.parse.quote(worksheet_name)
 # Construct the URL for the CSV export
-url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
+url = f'https://docs.google.com/spreadsheets/d/{old_copy_google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
+#url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
 
 # Read the data into a pandas DataFrame
 df = pd.read_csv(url, encoding='utf-8')
@@ -76,7 +78,17 @@ df.loc[df['Data type'] == 'date-time', 'format'] = 'date-time'
 df.loc[df['Data type'] == 'URI', 'format'] = 'uri'
 df.loc[df['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].str.contains('mbox', case=False, na=False), 'format'] = 'email'
 
-
+# sort the dataframe based on the 'logic order of subquestions under each chapter' column
+# Define a function to split the string into a list of integers
+def sort_key(value):
+    if pd.isna(value):
+        return [100]
+    #print(value)
+    return [int(x.strip()) for x in str(value).split('.')]
+# Sort the column by the parsed numeric values
+df_sorted = df.sort_values(by='Logic order of subquestions under each chapter', key=lambda col: col.map(sort_key))
+# Reset index if necessary
+df_sorted = df_sorted.reset_index(drop=True)
 
 
 # Initialize the base schema
@@ -100,7 +112,7 @@ require_when_nested_structure_exist = {}
 chapter_1_dict = {}
 
 # Iterate through each row and construct the schema
-for _, row in df.iterrows():
+for _, row in df_sorted.iterrows():
     
     # filter out the rows with empty values
     if pd.isna(row['Data type']) or pd.isna(row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)']) or pd.isna(row['Logic order of subquestions under each chapter']):
@@ -394,12 +406,18 @@ apply_conditionals_appear(json_schema)
 add_array_layer(json_schema)
 move_to_chapter_1(json_schema)
 
+# move the chapter 1 properties to the top level
+temp_dmp = json_schema["properties"]["dmp"]["properties"]
+temp_reordered_dmp = {"general_info": temp_dmp.pop("general_info"), **temp_dmp}
+json_schema["properties"]["dmp"]["properties"] = temp_reordered_dmp
 #print(json.dumps(chapter_1_dict, indent=4))
 
 
 # Output the generated JSON schema as a JSON file or print it out
 with open('GCWG-RDA-maDMP-schema.json', 'w', encoding='utf-8') as f:
     json.dump(json_schema, f, indent=4, ensure_ascii=False)
+
+print("JSON schema has been generated successfully!")
 """
 # Or, print it out to see the result
 print(json.dumps(json_schema, indent=4))
