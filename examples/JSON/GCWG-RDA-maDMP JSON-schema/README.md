@@ -23,9 +23,9 @@ There are `2 scripts` and _3 files_ here that are important in the folder
 
 3. Ensure that you have the correct ouput file names in the scripts.
 
-4. Run the 2 Python scripts. If successfully completed, 2 JSON files should appear
+4. Run the 2 Python scripts `create_schema.py` and `create_uischema.py`. If successfully completed, 2 JSON files should appear
 
-5. Then you need to manual add the name and version of the maDMP and names of the 2 generated files to _schema_metadata.json_.
+5. Then you need to manually add the name and version of the maDMP and names of the 2 generated files to _schema_metadata.json_.
 
 
 ## Adding new keys to the JSON file

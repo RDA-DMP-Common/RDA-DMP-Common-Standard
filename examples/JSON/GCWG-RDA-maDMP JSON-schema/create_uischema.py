@@ -29,7 +29,7 @@ df = pd.read_csv(url, encoding='utf-8')
 
 # Columns that are necessary to generate the schema
 kept_columns = [ "Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)",
-                "Logic order of subquestions under each chapter"]
+                "Logic order of subquestions under each chapter", 'Cardinality']
 
 # Adjust data types based on patterns
 df["Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"] = df["Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)"].str.rstrip("/")
@@ -66,7 +66,7 @@ for _, row in df_sorted.iterrows():
 
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     order = str(row['Logic order of subquestions under each chapter']).split('.')
-    cardinality = row['Cardinality']
+    cardinality = str(row['Cardinality'])
 
     # delete, filter certain rows based on field path
     """
@@ -138,6 +138,10 @@ def move_to_chapter_1(schema, chapter_1_dict):
     schema["dmp"]["general_info"] = {
         "ui:order": chapter_1_dict["dmp"]
     }
+    # move nested properties to chapter 1 level
+    for prop_name in chapter_1_dict["dmp"]:
+        if prop_name in schema["dmp"]:
+            schema["dmp"]["general_info"][prop_name] = schema["dmp"].pop(prop_name)
 
 
 #print(array_list)

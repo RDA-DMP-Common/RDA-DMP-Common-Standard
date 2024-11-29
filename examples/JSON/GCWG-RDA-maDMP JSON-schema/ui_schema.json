@@ -10,12 +10,6 @@
             "dataset",
             "contact"
         ],
-        "dmp_id": {
-            "ui:order": [
-                "identifier",
-                "type"
-            ]
-        },
         "contributor": {
             "items": {
                 "ui:order": [
@@ -185,8 +179,18 @@
                     "title",
                     "description",
                     "currency_code",
-                    "value"
-                ]
+                    "value",
+                    "cost_documentation"
+                ],
+                "cost_documentation": {
+                    "items": {
+                        "ui:order": [
+                            "name",
+                            "access_url",
+                            "download_url"
+                        ]
+                    }
+                }
             }
         },
         "indigenous_considerations": {
@@ -469,8 +473,18 @@
                             "proprietary_software_migration_plan_description",
                             "software_download",
                             "operating_system_name",
-                            "operating_system_description"
-                        ]
+                            "operating_system_description",
+                            "software_management_plan"
+                        ],
+                        "software_management_plan": {
+                            "items": {
+                                "ui:order": [
+                                    "name",
+                                    "access_url",
+                                    "download_url"
+                                ]
+                            }
+                        }
                     }
                 }
             }
@@ -504,7 +518,13 @@
                 "ethical_issues_exist",
                 "ethical_issues_description",
                 "ethical_issues_report"
-            ]
+            ],
+            "dmp_id": {
+                "ui:order": [
+                    "identifier",
+                    "type"
+                ]
+            }
         }
     }
 }

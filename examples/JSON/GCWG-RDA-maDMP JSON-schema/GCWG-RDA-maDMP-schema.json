@@ -903,7 +903,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string",
-                                    "description": "Type of contributor (e.g., cited responsability party, distribution contact, author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
+                                    "description": "Type of contributor (e.g., author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
                                     "example": "Data steward",
                                     "question": "What is the contributor's role?",
                                     "$id": "#/properties/dmp/properties/contributor/properties/role",
@@ -947,49 +947,6 @@
                                 ],
                                 "$id": "#/properties/dmp/properties/cost/properties/title",
                                 "title": "Title"
-                            },
-                            "cost_documentation": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Any external material documenting the cost",
-                                    "$id": "#/properties/dmp/properties/cost/properties/cost_documentation",
-                                    "title": "Cost_documentation",
-                                    "properties": {
-                                        "access_url": {
-                                            "type": "string",
-                                            "description": "A URL of that gives access to the costdocumentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to cost documentation, typically through a Web form, query or API call.",
-                                            "example": "https://007gc.sharepoint.com/stb/wqmsd/Project.aspx",
-                                            "question": "Provide a link to the cost documentation.",
-                                            "format": "uri",
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/access_url",
-                                            "title": "Access_url"
-                                        },
-                                        "download_url": {
-                                            "type": "string",
-                                            "description": "Download URL to the cost documentation",
-                                            "example": "https://007gc.sharepoint.com/dpmo/projects/project 345 business charter.docx",
-                                            "question": "Provide the download URL for the cost documentation.",
-                                            "format": "uri",
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/download_url",
-                                            "title": "Download_url"
-                                        },
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Title of the external document documenting the  cost",
-                                            "example": "Project Business Charter",
-                                            "question": "What is the title of the cost documentation?",
-                                            "requiredWhen": [
-                                                "cost_documentation"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/name",
-                                            "title": "Name"
-                                        }
-                                    },
-                                    "required": [
-                                        "name"
-                                    ]
-                                }
                             },
                             "value": {
                                 "type": "number",
@@ -1552,42 +1509,6 @@
                                             ],
                                             "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/proprietary_software",
                                             "title": "Proprietary_software"
-                                        },
-                                        "software_management_plan": {
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
-                                            "type": "object",
-                                            "title": "Software_management_plan",
-                                            "properties": {
-                                                "access_url": {
-                                                    "type": "string",
-                                                    "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
-                                                    "question": "What is the access url to the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
-                                                    "title": "Access_url"
-                                                },
-                                                "download_url": {
-                                                    "type": "string",
-                                                    "description": "Download URL to the Software Management Plan (SMP)",
-                                                    "question": "What is the dowload url of the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
-                                                    "title": "Download_url"
-                                                },
-                                                "name": {
-                                                    "type": "string",
-                                                    "description": "Title of the external document documenting the  cost",
-                                                    "question": "What is the name or title of the SMP",
-                                                    "requiredWhen": [
-                                                        "software_management_plan"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
-                                                    "title": "Name"
-                                                }
-                                            },
-                                            "required": [
-                                                "name"
-                                            ]
                                         }
                                     },
                                     "required": [
