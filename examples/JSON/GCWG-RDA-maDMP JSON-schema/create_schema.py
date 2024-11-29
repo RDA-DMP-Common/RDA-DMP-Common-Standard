@@ -43,13 +43,11 @@ def merge_dicts(d1, d2):
 
 # Load the CSV file (adjust the path as necessary)
 google_sheet_id = '1OfY5dKEfbvFhlhBjRb4UfdPKqQiB9mjZwe_60R7mu-A'
-old_copy_google_sheet_id = '1rVqYqZzZU_W4qR3C3ea8PVVIakCFP40jFI6rAsTGeQA'
 worksheet_name = 'GC maDMP Master Sheet'
 # URL-encode the worksheet name
 encoded_worksheet_name = urllib.parse.quote(worksheet_name)
 # Construct the URL for the CSV export
-url = f'https://docs.google.com/spreadsheets/d/{old_copy_google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
-#url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
+url = f'https://docs.google.com/spreadsheets/d/{google_sheet_id}/gviz/tq?tqx=out:csv&sheet={encoded_worksheet_name}'
 
 # Read the data into a pandas DataFrame
 df = pd.read_csv(url, encoding='utf-8')
