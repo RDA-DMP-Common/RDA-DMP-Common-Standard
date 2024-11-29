@@ -1,0 +1,13 @@
+[
+    {
+      "name_n_version": "GCWG RDA maDMP Schema v2.0",
+      "schema": "GCWG-RDA-maDMP-schema_v2.0.json",
+      "uischema": "ui_schema_v2.0.json"
+    },
+    {
+      "name_n_version": "Dummy Schema dummy version",
+      "schame": "Another-schema.json",
+      "uischema": "ui_schema.json"
+    }
+  ]
+  
