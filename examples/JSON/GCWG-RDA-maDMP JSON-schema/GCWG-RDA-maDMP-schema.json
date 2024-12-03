@@ -7584,7 +7584,7 @@
                         },
                         "access": {
                             "type": "string",
-                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
+                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf",
                             "enum": [
                                 "open",
                                 "shared",
@@ -7597,7 +7597,7 @@
                         },
                         "protection_level": {
                             "type": "string",
-                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
                             "enum": [
                                 "unknown",
                                 "not protected",
@@ -7612,7 +7612,7 @@
                         },
                         "security_classification_level": {
                             "type": "string",
-                            "description": "Security classification that designates the level of protection against access the DMP requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                            "description": "Security classification that designates the level of protection against access the DMP requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
                             "enum": [
                                 "unclassified",
                                 "restricted",
@@ -7671,6 +7671,15 @@
                             "format": "uri",
                             "$id": "#/properties/dmp/properties/ethical_issues_report",
                             "title": "Ethical_issues_report"
+                        },
+                        "data_disposition_completed": {
+                            "type": "string",
+                            "description": "Indicates the date on which data no longer exists in relation to the dmp. (That is, the data lifecycle is complete, at the institution). \r\nIn instances in which data was never created in relation to the dmp, indicates the date on which the dmp was considered closed. \r\nEncoded using the ISO 8601 Date and Time compliant string.\r\nNote: consider adding a statement to “dmp/description” regarding to where the data was transferred, or that the data no longer exists.",
+                            "example": "2019-06-14",
+                            "question": "Has ALL data associated with this dmp been disposed? (i.e., no data remains with the institution, and none is expected to accrue in the future)",
+                            "format": "date",
+                            "$id": "#/properties/dmp/properties/data_disposition_completed",
+                            "title": "Data_disposition_completed"
                         }
                     },
                     "required": [
@@ -7707,7 +7716,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string",
-                                    "description": "Type of contributor (e.g., author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
+                                    "description": "Type of contributor (e.g., cited responsability party, distribution contact, author, investigator, collaborator, field technician, researcher, data steward, Indigenous traditional knowledge keeper)",
                                     "example": "Data steward",
                                     "question": "What is the contributor's role?",
                                     "$id": "#/properties/dmp/properties/contributor/properties/role",
@@ -8188,7 +8197,7 @@
                                                         "properties": {
                                                             "name": {
                                                                 "type": "string",
-                                                                "description": "Name of educational_institution.\nFrom ‘List of designated educational institutions’\n<a href=\"https://www.canada.ca/en/employment-social-development/programs/designated-schools.html\">www.canada.ca</a> ",
+                                                                "description": "Name of educational_institution.\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html ",
                                                                 "question": "What is the contributor's educational institution name?",
                                                                 "requiredWhen": [
                                                                     "educational_institution"
@@ -8205,7 +8214,7 @@
                                                             },
                                                             "educational_institution_id": {
                                                                 "type": "object",
-                                                                "description": "Educational institution identifier\nFrom ‘List of designated educational institutions’\n<a href=\"https://www.canada.ca/en/employment-social-development/programs/designated-schools.html\">www.canada.ca</a> \n",
+                                                                "description": "Educational institution identifier\nFrom ‘List of designated educational institutions’\nhttps://www.canada.ca/en/employment-social-development/programs/designated-schools.html \n",
                                                                 "requiredWhen": [
                                                                     "educational_institution"
                                                                 ],
@@ -8260,7 +8269,7 @@
                                                         "properties": {
                                                             "name": {
                                                                 "type": "string",
-                                                                "description": "Government department name. Example: <a href=\"https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                                                                "description": "Government department name. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
                                                                 "example": "Environment (Department of the)",
                                                                 "question": "What is the contributor's government department name?",
                                                                 "requiredWhen": [
@@ -8271,7 +8280,7 @@
                                                             },
                                                             "code": {
                                                                 "type": "string",
-                                                                "description": "Government department code. Example: <a href=\"https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                                                                "description": "Government department code. Example: https://www.tpsgc-pwgsc.gc.ca/recgen/pceaf-gwcoa/2223/txt/rg-3-num-eng.html",
                                                                 "example": "7",
                                                                 "question": "What is the contributor's government department code?",
                                                                 "$id": "#/properties/dmp/properties/contributor/properties/affiliation/properties/government_department_or_agency/properties/code",
@@ -8535,301 +8544,56 @@
                         }
                     ]
                 },
-                "project": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "description": "Project related to the DMP",
-                        "$id": "#/properties/dmp/properties/project",
-                        "title": "Project",
-                        "properties": {
-                            "title": {
-                                "type": "string",
-                                "description": "Project title",
-                                "example": "Mission to the sun.",
-                                "question": "What is the project title?",
-                                "requiredWhen": [
-                                    "project"
-                                ],
-                                "$id": "#/properties/dmp/properties/project/properties/title",
-                                "title": "Title"
-                            },
-                            "description": {
-                                "type": "string",
-                                "description": "Project description",
-                                "example": "Important data for secret mission to the sun",
-                                "question": "Describe the project.",
-                                "$id": "#/properties/dmp/properties/project/properties/description",
-                                "title": "Description"
-                            },
-                            "start": {
-                                "type": "string",
-                                "description": "Project start date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                "example": "2023-07-20",
-                                "question": "What is the project start date?",
-                                "format": "date",
-                                "$id": "#/properties/dmp/properties/project/properties/start",
-                                "title": "Start"
-                            },
-                            "end": {
-                                "type": "string",
-                                "description": "Project end date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                "example": "2025-12-31",
-                                "question": "When is the planned end date of the project, or when did the project end?",
-                                "format": "date",
-                                "$id": "#/properties/dmp/properties/project/properties/end",
-                                "title": "End"
-                            },
-                            "funding": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Funding related with a project",
-                                    "requiredWhen": [
-                                        "project"
-                                    ],
-                                    "$id": "#/properties/dmp/properties/project/properties/funding",
-                                    "title": "Funding",
-                                    "properties": {
-                                        "source": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "description": "Project funding source",
-                                                "requiredWhen": [
-                                                    "project"
-                                                ],
-                                                "$id": "#/properties/dmp/properties/project/properties/funding/properties/source",
-                                                "title": "Source",
-                                                "properties": {
-                                                    "type": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "string",
-                                                            "description": "Funding source type for the project (e.g., OCIO A-base, OCIO B-base, program A-base, program B-base, Treasury Board submission, vote-net revenue (VNR), no funding)",
-                                                            "example": "program A-base",
-                                                            "question": "How is the project funded?",
-                                                            "requiredWhen": [
-                                                                "project"
-                                                            ],
-                                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/source/properties/type",
-                                                            "title": "Type"
-                                                        },
-                                                        "minItems": 1
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "To provide any free-form text information on the funding source for the project",
-                                                        "question": "Provide details on project funding.",
-                                                        "$id": "#/properties/dmp/properties/project/properties/funding/properties/source/properties/description",
-                                                        "title": "Description"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "type"
-                                                ]
-                                            },
-                                            "minItems": 1
-                                        },
-                                        "funder_id": {
-                                            "type": "object",
-                                            "description": "Funder ID of the associated project",
-                                            "requiredWhen": [
-                                                "project"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id",
-                                            "title": "Funder_id",
-                                            "properties": {
-                                                "identifier": {
-                                                    "type": "string",
-                                                    "description": "Funder ID, recommended to use CrossRef Funder Registry. See: <a href=\"https://www.crossref.org/services/funder-registry/\">www.crossref.org</a>",
-                                                    "question": "Provide the funder identifier ID.",
-                                                    "requiredWhen": [
-                                                        "project"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/identifier",
-                                                    "title": "Identifier"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "Identifier type",
-                                                    "enum": [
-                                                        "fundref",
-                                                        "url",
-                                                        "other"
-                                                    ],
-                                                    "example": "fundref",
-                                                    "question": "What type of identifier ID does the funder use (fundref, url, other)?",
-                                                    "requiredWhen": [
-                                                        "project"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/type",
-                                                    "title": "Type"
-                                                }
-                                            },
-                                            "required": [
-                                                "identifier",
-                                                "type"
-                                            ]
-                                        },
-                                        "funding_status": {
-                                            "type": "string",
-                                            "description": "To express different phases of project lifecycle.",
-                                            "enum": [
-                                                "planned",
-                                                "applied",
-                                                "granted",
-                                                "rejected",
-                                                "not applicable"
-                                            ],
-                                            "example": "planned",
-                                            "question": "What is the funding status?",
-                                            "requiredWhen": [
-                                                "project"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/funding_status",
-                                            "title": "Funding_status"
-                                        },
-                                        "grant_id": {
-                                            "type": "object",
-                                            "description": "Grant ID of the associated project",
-                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id",
-                                            "title": "Grant_id",
-                                            "properties": {
-                                                "identifier": {
-                                                    "type": "string",
-                                                    "description": "Grant ID",
-                                                    "example": "12345-987654",
-                                                    "question": "Provide the grant ID.",
-                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/identifier",
-                                                    "title": "Identifier"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "Identifier type",
-                                                    "enum": [
-                                                        "url",
-                                                        "other"
-                                                    ],
-                                                    "example": "url",
-                                                    "question": "What is the funder identifier ID type (url, other)?",
-                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/type",
-                                                    "title": "Type"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "required": [
-                                        "source",
-                                        "funder_id",
-                                        "funding_status"
-                                    ]
-                                },
-                                "minItems": 1
-                            },
-                            "partner_organization": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Partner organization",
-                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization",
-                                    "title": "Partner_organization",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Name of partner organization.",
-                                            "example": "Stargazers",
-                                            "question": "What is the partner organization's name? ",
-                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/name",
-                                            "title": "Name"
-                                        },
-                                        "agreement": {
-                                            "type": "object",
-                                            "description": "Partner organization agreement",
-                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement",
-                                            "title": "Agreement",
-                                            "properties": {
-                                                "description": {
-                                                    "type": "string",
-                                                    "description": "To provide any free-form text information description on the agreement made with the partner organization",
-                                                    "example": "Agrees to gaze at the stars",
-                                                    "question": "Describe the project agreement with the partner organization.",
-                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/description",
-                                                    "title": "Description"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "Partner organization agreement type (e.g., MOA - Memorandum of Agreement; MOU - Memorandum of Understanding; Indigenous data sharing agreement; BCR-band council resolution; Treaty; collaborative agreement; cooperative agreement; contract; cost-sharing agreement; contractual material; funding collaboration agreement; grant agreement; service level agreement)",
-                                                    "example": "cooperative agreement",
-                                                    "question": "What type of partner organization agreement exists?",
-                                                    "requiredWhen": [
-                                                        "agreement"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/type",
-                                                    "title": "Type"
-                                                },
-                                                "agreement_download_url": {
-                                                    "type": "string",
-                                                    "description": "Download link to the partner organization agreement document ",
-                                                    "question": "Provide a link to the partner organization agreement.",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/agreement_download_url",
-                                                    "title": "Agreement_download_url"
-                                                }
-                                            },
-                                            "required": [
-                                                "type"
-                                            ]
-                                        },
-                                        "partner_organization_id": {
-                                            "type": "object",
-                                            "description": "Unique identifier assigned to represent partner organization.",
-                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id",
-                                            "title": "Partner_organization_id",
-                                            "properties": {
-                                                "identifier": {
-                                                    "type": "string",
-                                                    "description": "Partner organization identifier",
-                                                    "question": "What is the partner organization's ID?",
-                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/identifier",
-                                                    "title": "Identifier"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "Partner organization identifier type",
-                                                    "question": "What type of ID does the partner organization use?",
-                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/type",
-                                                    "title": "Type"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "succession_plan": {
-                                "type": "string",
-                                "description": "Succession plan, or business continuity plan",
-                                "example": "No plan, project falls apart when P.I. leaves.",
-                                "question": "What is the project succession plan or business continuity plan?",
-                                "$id": "#/properties/dmp/properties/project/properties/succession_plan",
-                                "title": "Succession_plan"
-                            }
-                        },
-                        "required": [
-                            "succession_plan",
-                            "title",
-                            "funding"
-                        ]
-                    }
-                },
                 "cost": {
                     "type": "array",
                     "items": {
-                        "type": "object",
-                        "description": "To list costs related to data management. Providing multiple instances of a 'Cost' allows to break down costs into details. Providing one 'Cost' instance allows to provide one aggregated sum.",
                         "$id": "#/properties/dmp/properties/cost",
+                        "type": "object",
                         "title": "Cost",
                         "properties": {
+                            "cost_documentation": {
+                                "type": "array",
+                                "items": {
+                                    "$id": "#/properties/dmp/properties/cost/properties/cost_documentation",
+                                    "type": "object",
+                                    "title": "Cost_documentation",
+                                    "properties": {
+                                        "download_url": {
+                                            "type": "string",
+                                            "description": "Download URL to the cost documentation",
+                                            "example": "https://007gc.sharepoint.com/dpmo/projects/project 345 business charter.docx",
+                                            "question": "Provide the download URL for the cost documentation.",
+                                            "format": "uri",
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/download_url",
+                                            "title": "Download_url"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Title of the external document documenting the  cost",
+                                            "example": "Project Business Charter",
+                                            "question": "What is the title of the cost documentation?",
+                                            "requiredWhen": [
+                                                "cost_documentation"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/name",
+                                            "title": "Name"
+                                        },
+                                        "access_url": {
+                                            "type": "string",
+                                            "description": "A URL of that gives access to the costdocumentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to cost documentation, typically through a Web form, query or API call.",
+                                            "example": "https://007gc.sharepoint.com/stb/wqmsd/Project.aspx",
+                                            "question": "Provide a link to the cost documentation.",
+                                            "format": "uri",
+                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/access_url",
+                                            "title": "Access_url"
+                                        }
+                                    },
+                                    "description": "Any external material documenting the cost",
+                                    "required": [
+                                        "name"
+                                    ]
+                                }
+                            },
                             "title": {
                                 "type": "string",
                                 "description": "Title",
@@ -8856,51 +8620,9 @@
                                 "question": "What is the total cost amount?",
                                 "$id": "#/properties/dmp/properties/cost/properties/value",
                                 "title": "Value"
-                            },
-                            "cost_documentation": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Any external material documenting the cost",
-                                    "$id": "#/properties/dmp/properties/cost/properties/cost_documentation",
-                                    "title": "Cost_documentation",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Title of the external document documenting the  cost",
-                                            "example": "Project Business Charter",
-                                            "question": "What is the title of the cost documentation?",
-                                            "requiredWhen": [
-                                                "cost_documentation"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/name",
-                                            "title": "Name"
-                                        },
-                                        "access_url": {
-                                            "type": "string",
-                                            "description": "A URL of that gives access to the costdocumentation. e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to cost documentation, typically through a Web form, query or API call.",
-                                            "example": "https://007gc.sharepoint.com/stb/wqmsd/Project.aspx",
-                                            "question": "Provide a link to the cost documentation.",
-                                            "format": "uri",
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/access_url",
-                                            "title": "Access_url"
-                                        },
-                                        "download_url": {
-                                            "type": "string",
-                                            "description": "Download URL to the cost documentation",
-                                            "example": "https://007gc.sharepoint.com/dpmo/projects/project 345 business charter.docx",
-                                            "question": "Provide the download URL for the cost documentation.",
-                                            "format": "uri",
-                                            "$id": "#/properties/dmp/properties/cost/properties/cost_documentation/properties/download_url",
-                                            "title": "Download_url"
-                                        }
-                                    },
-                                    "required": [
-                                        "name"
-                                    ]
-                                }
                             }
                         },
+                        "description": "To list costs related to data management. Providing multiple instances of a 'Cost' allows to break down costs into details. Providing one 'Cost' instance allows to provide one aggregated sum.",
                         "required": [
                             "title"
                         ],
@@ -9111,6 +8833,293 @@
                         ]
                     }
                 },
+                "project": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "Project related to the DMP",
+                        "$id": "#/properties/dmp/properties/project",
+                        "title": "Project",
+                        "properties": {
+                            "title": {
+                                "type": "string",
+                                "description": "Project title",
+                                "example": "Mission to the sun.",
+                                "question": "What is the project title?",
+                                "requiredWhen": [
+                                    "project"
+                                ],
+                                "$id": "#/properties/dmp/properties/project/properties/title",
+                                "title": "Title"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Project description",
+                                "example": "Important data for secret mission to the sun",
+                                "question": "Describe the project.",
+                                "$id": "#/properties/dmp/properties/project/properties/description",
+                                "title": "Description"
+                            },
+                            "start": {
+                                "type": "string",
+                                "description": "Project start date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                "example": "2023-07-20",
+                                "question": "What is the project start date?",
+                                "format": "date",
+                                "$id": "#/properties/dmp/properties/project/properties/start",
+                                "title": "Start"
+                            },
+                            "end": {
+                                "type": "string",
+                                "description": "Project end date. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
+                                "example": "2025-12-31",
+                                "question": "When is the planned end date of the project, or when did the project end?",
+                                "format": "date",
+                                "$id": "#/properties/dmp/properties/project/properties/end",
+                                "title": "End"
+                            },
+                            "funding": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Funding related with a project",
+                                    "requiredWhen": [
+                                        "project"
+                                    ],
+                                    "$id": "#/properties/dmp/properties/project/properties/funding",
+                                    "title": "Funding",
+                                    "properties": {
+                                        "source": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "description": "Project funding source",
+                                                "requiredWhen": [
+                                                    "project"
+                                                ],
+                                                "$id": "#/properties/dmp/properties/project/properties/funding/properties/source",
+                                                "title": "Source",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string",
+                                                            "description": "Funding source type for the project (e.g., OCIO A-base, OCIO B-base, program A-base, program B-base, Treasury Board submission, vote-net revenue (VNR), no funding)",
+                                                            "example": "program A-base",
+                                                            "question": "How is the project funded?",
+                                                            "requiredWhen": [
+                                                                "project"
+                                                            ],
+                                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/source/properties/type",
+                                                            "title": "Type"
+                                                        },
+                                                        "minItems": 1
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "To provide any free-form text information on the funding source for the project",
+                                                        "question": "Provide details on project funding.",
+                                                        "$id": "#/properties/dmp/properties/project/properties/funding/properties/source/properties/description",
+                                                        "title": "Description"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "type"
+                                                ]
+                                            },
+                                            "minItems": 1
+                                        },
+                                        "funder_id": {
+                                            "type": "object",
+                                            "description": "Funder ID of the associated project",
+                                            "requiredWhen": [
+                                                "project"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id",
+                                            "title": "Funder_id",
+                                            "properties": {
+                                                "identifier": {
+                                                    "type": "string",
+                                                    "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
+                                                    "question": "Provide the funder identifier ID.",
+                                                    "requiredWhen": [
+                                                        "project"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/identifier",
+                                                    "title": "Identifier"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Identifier type",
+                                                    "enum": [
+                                                        "fundref",
+                                                        "url",
+                                                        "other"
+                                                    ],
+                                                    "example": "fundref",
+                                                    "question": "What type of identifier ID does the funder use (fundref, url, other)?",
+                                                    "requiredWhen": [
+                                                        "project"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/funder_id/properties/type",
+                                                    "title": "Type"
+                                                }
+                                            },
+                                            "required": [
+                                                "identifier",
+                                                "type"
+                                            ]
+                                        },
+                                        "funding_status": {
+                                            "type": "string",
+                                            "description": "To express different phases of project lifecycle.",
+                                            "enum": [
+                                                "planned",
+                                                "applied",
+                                                "granted",
+                                                "rejected",
+                                                "not applicable"
+                                            ],
+                                            "example": "planned",
+                                            "question": "What is the funding status?",
+                                            "requiredWhen": [
+                                                "project"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/funding_status",
+                                            "title": "Funding_status"
+                                        },
+                                        "grant_id": {
+                                            "type": "object",
+                                            "description": "Grant ID of the associated project",
+                                            "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id",
+                                            "title": "Grant_id",
+                                            "properties": {
+                                                "identifier": {
+                                                    "type": "string",
+                                                    "description": "Grant ID",
+                                                    "example": "12345-987654",
+                                                    "question": "Provide the grant ID.",
+                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/identifier",
+                                                    "title": "Identifier"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Identifier type",
+                                                    "enum": [
+                                                        "url",
+                                                        "other"
+                                                    ],
+                                                    "example": "url",
+                                                    "question": "What is the funder identifier ID type (url, other)?",
+                                                    "$id": "#/properties/dmp/properties/project/properties/funding/properties/grant_id/properties/type",
+                                                    "title": "Type"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "source",
+                                        "funder_id",
+                                        "funding_status"
+                                    ]
+                                },
+                                "minItems": 1
+                            },
+                            "partner_organization": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Partner organization",
+                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization",
+                                    "title": "Partner_organization",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Name of partner organization.",
+                                            "example": "Stargazers",
+                                            "question": "What is the partner organization's name? ",
+                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/name",
+                                            "title": "Name"
+                                        },
+                                        "agreement": {
+                                            "type": "object",
+                                            "description": "Partner organization agreement",
+                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement",
+                                            "title": "Agreement",
+                                            "properties": {
+                                                "description": {
+                                                    "type": "string",
+                                                    "description": "To provide any free-form text information description on the agreement made with the partner organization",
+                                                    "example": "Agrees to gaze at the stars",
+                                                    "question": "Describe the project agreement with the partner organization.",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/description",
+                                                    "title": "Description"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Partner organization agreement type (e.g., MOA - Memorandum of Agreement; MOU - Memorandum of Understanding; Indigenous data sharing agreement; BCR-band council resolution; Treaty; collaborative agreement; cooperative agreement; contract; cost-sharing agreement; contractual material; funding collaboration agreement; grant agreement; service level agreement)",
+                                                    "example": "cooperative agreement",
+                                                    "question": "What type of partner organization agreement exists?",
+                                                    "requiredWhen": [
+                                                        "agreement"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/type",
+                                                    "title": "Type"
+                                                },
+                                                "agreement_download_url": {
+                                                    "type": "string",
+                                                    "description": "Download link to the partner organization agreement document ",
+                                                    "question": "Provide a link to the partner organization agreement.",
+                                                    "format": "uri",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/agreement/properties/agreement_download_url",
+                                                    "title": "Agreement_download_url"
+                                                }
+                                            },
+                                            "required": [
+                                                "type"
+                                            ]
+                                        },
+                                        "partner_organization_id": {
+                                            "type": "object",
+                                            "description": "Unique identifier assigned to represent partner organization.",
+                                            "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id",
+                                            "title": "Partner_organization_id",
+                                            "properties": {
+                                                "identifier": {
+                                                    "type": "string",
+                                                    "description": "Partner organization identifier",
+                                                    "question": "What is the partner organization's ID?",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/identifier",
+                                                    "title": "Identifier"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Partner organization identifier type",
+                                                    "question": "What type of ID does the partner organization use?",
+                                                    "$id": "#/properties/dmp/properties/project/properties/partner_organization/properties/partner_organization_id/properties/type",
+                                                    "title": "Type"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "succession_plan": {
+                                "type": "string",
+                                "description": "Succession plan, or business continuity plan",
+                                "example": "No plan, project falls apart when P.I. leaves.",
+                                "question": "What is the project succession plan or business continuity plan?",
+                                "$id": "#/properties/dmp/properties/project/properties/succession_plan",
+                                "title": "Succession_plan"
+                            }
+                        },
+                        "required": [
+                            "succession_plan",
+                            "title",
+                            "funding"
+                        ]
+                    }
+                },
                 "indigenous_considerations": {
                     "type": "object",
                     "description": "Indigenous considerations related to the maDMP or the data.",
@@ -9196,7 +9205,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "description": "First Nations Indian Band name corresponding to the First Nations code associated with the dataset. <a href=\"https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng\">fnp-ppn.aadnc-aandc.gc.ca</a> ; \n<a href=\"https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4\">open.canada.ca</a>",
+                                "description": "First Nations Indian Band name corresponding to the First Nations code associated with the dataset. https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng ; \nhttps://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4",
                                 "enum": [
                                     "Abegweit",
                                     "Lennox Island",
@@ -9846,7 +9855,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "description": "First Nations Indian band number associated with the dataset. <a href=\"https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng\">fnp-ppn.aadnc-aandc.gc.ca</a> ; \n<a href=\"https://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4\">open.canada.ca</a>",
+                                "description": "First Nations Indian band number associated with the dataset. https://fnp-ppn.aadnc-aandc.gc.ca/fnp/Main/Search/SearchFN.aspx?lang=eng ; \nhttps://open.canada.ca/data/en/dataset/b6567c5c-8339-4055-99fa-63f92114d9e4",
                                 "enum": [
                                     "1",
                                     "2",
@@ -10665,7 +10674,7 @@
                                 "properties": {
                                     "traditional_knowledge_classification_code": {
                                         "type": "string",
-                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). <a href=\"https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\">xwi7xwa-library-10nov2016.sites.olt.ubc.ca</a>\n",
+                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\n",
                                         "enum": [
                                             "A",
                                             "AB",
@@ -10840,7 +10849,6 @@
                                             "FST",
                                             "FSU",
                                             "FSX",
-                                            "FX",
                                             "FX",
                                             "G",
                                             "GH",
@@ -11081,7 +11089,7 @@
                                 "properties": {
                                     "traditional_knowledge_classification_description": {
                                         "type": "string",
-                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). <a href=\"https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf\">xwi7xwa-library-10nov2016.sites.olt.ubc.ca</a>",
+                                        "description": "Indigenous traditional knowledge classification (Xwi7xwa Classification Scheme, based on the Brian Deer Classification Scheme). https://xwi7xwa-library-10nov2016.sites.olt.ubc.ca/files/2021/06/2018-MODIFIED-DEER-Public-version.pdf",
                                         "enum": [
                                             "REFERENCE MATERIALS - unspecified",
                                             "BIBLIOGRAPHIES - GENERAL",
@@ -11257,7 +11265,6 @@
                                             "FISHING – UNITED STATES",
                                             "FISHING – INTERNATIONAL",
                                             "HUNTING AND TRAPPING",
-                                            "HUNTING AND TRAPPING",
                                             "HOUSING AND COMMUNITY DEVELOPMENT",
                                             "HOUSING",
                                             "COMMUNITY IMPROVEMENT",
@@ -11384,71 +11391,31 @@
                                             "LANGUAGES - GENERAL",
                                             "TEACHING METHODS",
                                             "SECOND LANGUAGE",
-                                            "ATHAPASCAN",
                                             "DUNNE-ZA",
                                             "CARRIER",
-                                            "TS'ILHQOT'IN",
                                             "CHIPEWAYAN",
-                                            "DOGRIB",
-                                            "HAN",
-                                            "HARE",
-                                            "KASKA",
                                             "GWITCH'IN (KUTCHIN)",
-                                            "SARCEE",
-                                            "SEKANI",
-                                            "DENE-DHAA (Slavey)",
-                                            "TAGISH",
-                                            "TAHLTAN",
-                                            "TUCHONE",
-                                            "ALGONKIAN",
-                                            "ABENAKI",
-                                            "BLACKFOOT",
-                                            "CREE",
-                                            "DELAWARE",
-                                            "MALECITE",
                                             "MICMAC",
                                             "MONTAGANIS-NASKAPI",
-                                            "OJIBWA",
-                                            "POTAWATOMI",
-                                            "DAKOTA",
-                                            "SIOUAN",
                                             "WAKASHAN",
                                             "HAISLA (Kitimat)",
                                             "HEILTSUK",
                                             "KWAKWALA",
-                                            "NUU-CHAH-NULTH",
                                             "NITINAT",
                                             "OOWEKYALA",
                                             "MAKAH",
                                             "SALISHAN",
                                             "NUXALK",
-                                            "COMOX",
                                             "SLIAMMON",
                                             "KLAHOOSE",
                                             "HOMALCO",
                                             "HALKOMELEM",
                                             "STL'ATL'IMX (LILLOOET)",
-                                            "OKANAGAN",
-                                            "SECHELT",
                                             "SECWEPEMC (SHUSWAP)",
-                                            "SQUAMISH",
-                                            "STRAITS",
                                             "NLAKA'PAMUX (THOMPSON)",
                                             "HUL’QUMI’NUM",
-                                            "IROQUOIAN",
-                                            "CAYUGA",
-                                            "MOHAWK",
-                                            "ONEIDA",
-                                            "ONONDAGA",
-                                            "SENECA",
-                                            "TUSCARORA",
-                                            "TSIMSHIAN",
                                             "COAST TSIMSHIAN",
                                             "SOUTHERN TSIMSHIAN",
-                                            "NISGA'A",
-                                            "GITXSAN",
-                                            "HAIDA",
-                                            "TLINGIT",
                                             "KTUNAXA-KINBASKET",
                                             "ESKIMO-ALEUT",
                                             "INUKITUT",
@@ -11552,7 +11519,7 @@
                                 "properties": {
                                     "classification_code": {
                                         "type": "string",
-                                        "description": "Two-letter code (class and sub-class) for subject classification of the dataset according to the Library of Congress Classification (LCC). For example, the class and subclass code for an air quality dataset would be GE (Class: \"Geography, Anthropolgy, Recreation\" ; Subclass: \"Environmental Sciences). <a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\">www.loc.gov</a>\n<a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_b.pdf\">www.loc.gov</a>",
+                                        "description": "Two-letter code (class and sub-class) for subject classification of the dataset according to the Library of Congress Classification (LCC). For example, the class and subclass code for an air quality dataset would be GE (Class: \"Geography, Anthropolgy, Recreation\" ; Subclass: \"Environmental Sciences). https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\nhttps://www.loc.gov/aba/cataloging/classification/lcco/lcco_b.pdf",
                                         "enum": [
                                             "A",
                                             "AC",
@@ -11565,7 +11532,6 @@
                                             "AS",
                                             "AY",
                                             "AZ",
-                                            "B",
                                             "B",
                                             "BC",
                                             "BD",
@@ -11582,7 +11548,6 @@
                                             "BV",
                                             "BX",
                                             "C",
-                                            "C",
                                             "CB",
                                             "CC",
                                             "CD",
@@ -11592,7 +11557,6 @@
                                             "CR",
                                             "CS",
                                             "CT",
-                                            "D",
                                             "D",
                                             "DA",
                                             "DAW",
@@ -11618,7 +11582,6 @@
                                             "R",
                                             "FC",
                                             "G",
-                                            "G",
                                             "GA",
                                             "GB",
                                             "GC",
@@ -11628,7 +11591,6 @@
                                             "GR",
                                             "GT",
                                             "GV",
-                                            "H",
                                             "H",
                                             "HA",
                                             "HB",
@@ -11646,7 +11608,6 @@
                                             "HV",
                                             "HX",
                                             "J",
-                                            "J",
                                             "JA",
                                             "JC",
                                             "JF",
@@ -11659,7 +11620,6 @@
                                             "JV",
                                             "JX",
                                             "JZ",
-                                            "K",
                                             "K",
                                             "KB",
                                             "KBM",
@@ -11679,7 +11639,6 @@
                                             "KU/KUQ",
                                             "KZ",
                                             "L",
-                                            "L",
                                             "LA",
                                             "LB",
                                             "LC",
@@ -11691,10 +11650,8 @@
                                             "LJ",
                                             "LT",
                                             "M",
-                                            "M",
                                             "ML",
                                             "MT",
-                                            "N",
                                             "N",
                                             "NA",
                                             "NB",
@@ -11703,7 +11660,6 @@
                                             "NE",
                                             "NK",
                                             "NX",
-                                            "P",
                                             "P",
                                             "PA",
                                             "PB",
@@ -11724,7 +11680,6 @@
                                             "PT",
                                             "PZ",
                                             "Q",
-                                            "Q",
                                             "QA",
                                             "QB",
                                             "QC",
@@ -11736,8 +11691,6 @@
                                             "QM",
                                             "QP",
                                             "QR",
-                                            "R",
-                                            "R",
                                             "RA",
                                             "RB",
                                             "RC",
@@ -11755,13 +11708,11 @@
                                             "RX",
                                             "RZ",
                                             "S",
-                                            "S",
                                             "SB",
                                             "SD",
                                             "SF",
                                             "SH",
                                             "SK",
-                                            "T",
                                             "T",
                                             "TA",
                                             "TC",
@@ -11780,7 +11731,6 @@
                                             "TT",
                                             "TX",
                                             "U",
-                                            "U",
                                             "UA",
                                             "UB",
                                             "UC",
@@ -11789,7 +11739,6 @@
                                             "UF",
                                             "UG",
                                             "UH",
-                                            "V",
                                             "V",
                                             "VA",
                                             "VB",
@@ -11800,7 +11749,6 @@
                                             "VG",
                                             "VK",
                                             "VM",
-                                            "Z",
                                             "Z",
                                             "ZA"
                                         ],
@@ -11814,7 +11762,7 @@
                                     },
                                     "classification_description": {
                                         "type": "string",
-                                        "description": "The subclass classification of the dataset according to the Library of Congress Classification (LCC). For example, the subclass for an air quality dataset would be \"Environmental Sciences.\" <a href=\"https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf\">www.loc.gov</a>",
+                                        "description": "The subclass classification of the dataset according to the Library of Congress Classification (LCC). For example, the subclass for an air quality dataset would be \"Environmental Sciences.\" https://www.loc.gov/aba/cataloging/classification/lcco/lcco_g.pdf",
                                         "enum": [
                                             "General works",
                                             "Collections. Series. Collected works",
@@ -11843,7 +11791,6 @@
                                             "Doctrinal theology",
                                             "Practical theology",
                                             "Christian Denominations",
-                                            "Auxiliary Sciences of History",
                                             "Auxiliary Sciences of History",
                                             "History of Civilization",
                                             "Archaeology",
@@ -11952,7 +11899,6 @@
                                             "College and school magazines and papers",
                                             "Student fraternities and societies. United States",
                                             "Textbooks",
-                                            "Music",
                                             "Music",
                                             "Literature on music",
                                             "Instruction and study",
@@ -12093,7 +12039,7 @@
                             },
                             "type": {
                                 "type": "string",
-                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. <a href=\"https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\">schema.datacite.org</a>\n http://vocabularies.coar-repositories.org/pubby/resource_type.html",
+                                "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf\n http://vocabularies.coar-repositories.org/pubby/resource_type.html",
                                 "example": "image",
                                 "question": "What type of dataset is this?",
                                 "$id": "#/properties/dmp/properties/dataset/properties/type",
@@ -12159,7 +12105,7 @@
                                 "properties": {
                                     "code": {
                                         "type": "string",
-                                        "description": "NAICS Industry classification code  <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
+                                        "description": "NAICS Industry classification code  https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825",
                                         "enum": [
                                             "11",
                                             "21",
@@ -12189,7 +12135,7 @@
                                     },
                                     "name": {
                                         "type": "string",
-                                        "description": "NAICS Industry classification name   <a href=\"https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825\">www23.statcan.gc.ca</a>",
+                                        "description": "NAICS Industry classification name   https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1369825",
                                         "enum": [
                                             "Agriculture. Forestry. Fishing. Hunting",
                                             "Mining. Quarrying. Oil and gas extraction",
@@ -19810,7 +19756,7 @@
                             },
                             "data_governance_description": {
                                 "type": "string",
-                                "description": "Describe the data governance. See, also: UNDRIP; Canada Tri-Agency requirements.",
+                                "description": "To describe data governance considerations specific to the dataset. These considerations might refer to a specific agreement or departmental policy, or to published principles such as the CARE Principles for Indigenous Data Governance, the First Nations principles of ownership, control, access and possession (OCAP), the Māori data governance model, or some other specified data governance model, or etc.",
                                 "question": "Describe the data governance.",
                                 "$id": "#/properties/dmp/properties/dataset/properties/data_governance_description",
                                 "title": "Data_governance_description"
@@ -19873,7 +19819,7 @@
                                             "properties": {
                                                 "download_url": {
                                                     "type": "string",
-                                                    "description": "A URL that gives access to the privacy impact assessment. The access URL should be used for the URL of a service or location that can provide access to privacy impact assessment, typically through a Web form, query or API call. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
+                                                    "description": "A URL that gives access to the privacy impact assessment. The access URL should be used for the URL of a service or location that can provide access to privacy impact assessment, typically through a Web form, query or API call. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
                                                     "question": "Provide the URL to download the privacy impact assessment.",
                                                     "format": "uri",
                                                     "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/privacy_impact_assessment/properties/download_url",
@@ -19881,7 +19827,7 @@
                                                 },
                                                 "required": {
                                                     "type": "string",
-                                                    "description": "To indicate if a privacy impact assessment is required. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
+                                                    "description": "To indicate if a privacy impact assessment is required. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
                                                     "enum": [
                                                         "yes",
                                                         "no",
@@ -19912,7 +19858,7 @@
                                                         "properties": {
                                                             "approved": {
                                                                 "type": "string",
-                                                                "description": "To indicate if the privacy impact assessment was approved. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
+                                                                "description": "To indicate if the privacy impact assessment was approved. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
                                                                 "enum": [
                                                                     "yes",
                                                                     "no",
@@ -19943,7 +19889,7 @@
                                                         "properties": {
                                                             "approved_by": {
                                                                 "type": "string",
-                                                                "description": "Name of the person who approved the privacy impact assessment. <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
+                                                                "description": "Name of the person who approved the privacy impact assessment. https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
                                                                 "enum": [
                                                                     "yes",
                                                                     "no",
@@ -19974,7 +19920,7 @@
                                                         "properties": {
                                                             "registered": {
                                                                 "type": "string",
-                                                                "description": "To indicate if the privacy impact assessment was registered (e.g., yes, no, ID#, etc.). <a href=\"https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308\">www.tbs-sct.gc.ca</a>",
+                                                                "description": "To indicate if the privacy impact assessment was registered (e.g., yes, no, ID#, etc.). https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=18308",
                                                                 "example": "ID xxxx-45576",
                                                                 "question": "If a privacy impact assessment (PIA) was performed was it registered or does it have an ID number?",
                                                                 "$id": "#/properties/dmp/properties/dataset/properties/security_and_privacy/properties/privacy_impact_assessment/properties/registered",
@@ -20164,7 +20110,7 @@
                                         "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_source_external_description",
                                         "title": "Data_source_external_description"
                                     },
-                                    "data_aggregation": {
+                                    "data_aggreagation": {
                                         "type": "string",
                                         "description": "To indicate if the dataset is the result of data aggregation",
                                         "enum": [
@@ -20174,8 +20120,8 @@
                                         ],
                                         "example": "yes",
                                         "question": "Are these aggregated data?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_aggregation",
-                                        "title": "Data_aggregation"
+                                        "$id": "#/properties/dmp/properties/dataset/properties/collection/properties/data_aggreagation",
+                                        "title": "Data_aggreagation"
                                     },
                                     "data_aggregation_description": {
                                         "type": "string",
@@ -20230,7 +20176,7 @@
                                     },
                                     "synthetic_data_ai": {
                                         "type": "string",
-                                        "description": "Dataset generated by artificial intelligence. See, <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html\">www.canada.ca</a>",
+                                        "description": "Dataset generated by artificial intelligence. See, https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -20251,7 +20197,7 @@
                                     },
                                     "algorithmic_impact_assessment_conducted": {
                                         "type": "string",
-                                        "description": "To indicate if an algorithmic impact assessment has been conducted related to these data.  <a href=\"https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html\">www.canada.ca</a>",
+                                        "description": "To indicate if an algorithmic impact assessment has been conducted related to these data.  https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
                                         "enum": [
                                             "yes",
                                             "no",
@@ -20317,7 +20263,7 @@
                             },
                             "linked_data_star_rating": {
                                 "type": "string",
-                                "description": "Use the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc.  <a href=\"https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/\">opendatahandbook.org</a>",
+                                "description": "Use the Tim Berners-Lee (founder of the World Wide Web) 5-star rating system for open data. To score the maximum five stars, data must (1) be available on the Web under an open license, (2) be in the form of structured data, (3) be in a non-proprietary file format, (4) use URIs as its identifiers (see also RDF), (5) include links to other data sources (see linked data). To score 3 stars, it must satisfy all of (1)-(3), etc.  https://opendatahandbook.org/glossary/en/terms/five-stars-of-open-data/",
                                 "enum": [
                                     "1 star",
                                     "2 stars",
@@ -28021,7 +27967,7 @@
                                         },
                                         "data_access": {
                                             "type": "string",
-                                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. <a href=\"https://theodi.org/insights/tools/the-data-spectrum/\">theodi.org</a> ; <a href=\"https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf\">www.alerc.org.uk</a>",
+                                            "description": "OPEN ACCESS: available to anyone based on an open license (e.g., CC0, CC-BY, Open Government License). SHARED ACCESS: Public access with a license that limits use, that is available to anyone under terms and conditions that are not ‘open' (e.g., CC-BY-NC), shared only with named people or organisations, or via authentication for specific groups that meet certain criteria. CLOSED ACCESS: Internal access only. https://theodi.org/insights/tools/the-data-spectrum/ ; https://www.alerc.org.uk/uploads/7/6/3/3/7633190/an_introduction_to_open_shared_and_closed_data.pdf",
                                             "enum": [
                                                 "open",
                                                 "shared",
@@ -28083,7 +28029,7 @@
                                             "type": "array",
                                             "items": {
                                                 "type": "string",
-                                                "description": "Identify the distribution file format using IANA codes if appropriate, otherwise use the common name for the format. <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">www.iana.org</a> ",
+                                                "description": "Identify the distribution file format using IANA codes if appropriate, otherwise use the common name for the format. https://www.iana.org/assignments/media-types/media-types.xhtml ",
                                                 "example": "csv",
                                                 "question": "What is the file format for this distribution?",
                                                 "requiredWhen": [
@@ -28124,7 +28070,7 @@
                                         },
                                         "character_unicode_block_code": {
                                             "type": "string",
-                                            "description": "Unicode block used in the distribution. Use the \"code\" from the Unicode Standard 15.1. <a href=\"https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks\">en.wikipedia.org</a>",
+                                            "description": "Unicode block used in the distribution. Use the \"code\" from the Unicode Standard 15.1. https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks",
                                             "enum": [
                                                 "U+1E900..U+1E95F",
                                                 "U+10100..U+1013F",
@@ -28445,7 +28391,7 @@
                                         },
                                         "character_unicode_block_name": {
                                             "type": "string",
-                                            "description": "Unicode block used in the distribution. Use the \"name\" from the Unicode Standard 15.1. <a href=\"https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks\">en.wikipedia.org</a>",
+                                            "description": "Unicode block used in the distribution. Use the \"name\" from the Unicode Standard 15.1. https://en.wikipedia.org/wiki/Unicode_block#List_of_blocks",
                                             "enum": [
                                                 "Adlam",
                                                 "Aegean Numbers",
@@ -28797,7 +28743,7 @@
                                                 "properties": {
                                                     "license_ref": {
                                                         "type": "string",
-                                                        "description": "Link to license document. Examples: <a href=\"https://open.canada.ca/en/open-government-license-canada\">open.canada.ca</a> ; <a href=\"https://choosealicense.com/licenses/mit/\">choosealicense.com</a> ; <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\">creativecommons.org</a> ; <a href=\"https://opensource.org/licenses\">opensource.org</a> ",
+                                                        "description": "Link to license document. Examples: https://open.canada.ca/en/open-government-license-canada ; https://choosealicense.com/licenses/mit/ ; https://creativecommons.org/licenses/by-sa/4.0/legalcode ; https://opensource.org/licenses ",
                                                         "example": "https://open.canada.ca/en/open-government-license-canada",
                                                         "question": "Provide a link to the license.",
                                                         "format": "uri",
@@ -28829,7 +28775,7 @@
                                         },
                                         "protection_level": {
                                             "type": "string",
-                                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                                            "description": "Protected information is not classified. Information is \"protected\" when unauthorized disclosure could reasonably be expected to cause injury to a non-national interest (i.e., an individual interest such as a person or an organization). Protected information is any sensitive information that does not relate to national security and cannot be disclosed under access and privacy legislation because of the potential injury to particular public or private interests. Protection levels: Protected A (Injury to an individual, organization or government), Protected B (Serious injury to an individual, organization or government), Protected C (Extremely grave injury to an individual, organization or government).  https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
                                             "enum": [
                                                 "unknown",
                                                 "not protected",
@@ -28847,7 +28793,7 @@
                                         },
                                         "security_classification_level": {
                                             "type": "string",
-                                            "description": "Security classification that designates the level of protection against access the data or information requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. <a href=\"https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html\">www.tpsgc-pwgsc.gc.ca</a>",
+                                            "description": "Security classification that designates the level of protection against access the data or information requires when unauthorized disclosure could reasonably be expected to cause injury to the national interest – defence and maintenance of the social, political and economic stability of the nation. Classification levels: Unclassified, Restricted (disadvantageous to the interests of the nation), Confidential (injury to the national interest), Secret (serious injury to the national interest), Top Secret (exceptionally grave injury to the national interest). \"Other\" could include, for example: Clearance, Compartmented information, Critical nuclear weapon design information (CNDWI), No foreign dissemination (NOFORN), Official/For official use only, Official sensitive, Originator controlled dissemination (ORCON), Special intelligence, Sensitive but unclassified. https://www.tpsgc-pwgsc.gc.ca/esc-src/protection-safeguarding/niveaux-levels-eng.html",
                                             "enum": [
                                                 "unclassified",
                                                 "restricted",
@@ -28876,160 +28822,31 @@
                                                 "title": "Data_security-privacy_measures"
                                             }
                                         },
-                                        "disposition_planning": {
-                                            "type": "object",
-                                            "description": "The disposition plan for the distribution ",
-                                            "requiredWhen": [
-                                                "distribution"
-                                            ],
-                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning",
-                                            "title": "Disposition_planning",
-                                            "properties": {
-                                                "archival_value": {
-                                                    "type": "string",
-                                                    "description": "Enables compliance with the LAC Act. Applies to GC records only. [LAC_Act]",
-                                                    "enum": [
-                                                        "yes",
-                                                        "no",
-                                                        "unknown"
-                                                    ],
-                                                    "example": "yes",
-                                                    "question": "Does the distribution have any archival value?",
-                                                    "requiredWhen": [
-                                                        "distribution"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning/properties/archival_value",
-                                                    "title": "Archival_value"
-                                                },
-                                                "legal_issues": {
-                                                    "type": "string",
-                                                    "description": "To indicate if there will be any legal issues associated with the disposition planning of the distribution.",
-                                                    "enum": [
-                                                        "yes",
-                                                        "no",
-                                                        "unknown"
-                                                    ],
-                                                    "example": "yes",
-                                                    "question": "Are there are legal issues with disposition planning of the distribution?",
-                                                    "requiredWhen": [
-                                                        "distribution"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning/properties/legal_issues",
-                                                    "title": "Legal_issues"
-                                                },
-                                                "required_destruction": {
-                                                    "type": "string",
-                                                    "description": "To indicate if the distribution must be destroyed ",
-                                                    "enum": [
-                                                        "yes all",
-                                                        "yes part",
-                                                        "no",
-                                                        "not applicable",
-                                                        "unknown"
-                                                    ],
-                                                    "example": "yes all",
-                                                    "question": "Is the distribution required to be destroyed?",
-                                                    "requiredWhen": [
-                                                        "distribution"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning/properties/required_destruction",
-                                                    "title": "Required_destruction"
-                                                },
-                                                "required_perpetual_use": {
-                                                    "type": "string",
-                                                    "description": "To indicate if the distribution must be used perpetually",
-                                                    "enum": [
-                                                        "yes",
-                                                        "no",
-                                                        "unknown"
-                                                    ],
-                                                    "example": "yes",
-                                                    "question": "Is there required perpetual use of the distribution?",
-                                                    "requiredWhen": [
-                                                        "distribution"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning/properties/required_perpetual_use",
-                                                    "title": "Required_perpetual_use"
-                                                },
-                                                "retention_review_trigger_date": {
-                                                    "type": "string",
-                                                    "description": "Date of the end of the retention period at which time the distribution is disposed of according to the file plan (destruction, transfer to archives, or alienation. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                                    "example": "2023-07-20",
-                                                    "question": "What is the retention review trigger date?",
-                                                    "format": "date",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_planning/properties/retention_review_trigger_date",
-                                                    "title": "Retention_review_trigger_date"
-                                                }
-                                            },
-                                            "required": [
-                                                "archival_value",
-                                                "legal_issues",
-                                                "required_destruction",
-                                                "required_perpetual_use"
-                                            ]
+                                        "preservation_flag": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "description": "To flag distributions for digital preservation attention purposes.\nAllowed values:\n•        Retention --perpetual /indefinite\n•        Retention -- long-term\n•        Archival value\n•        None\n•        Unknown",
+                                                "enum": [
+                                                    "Retention --perpetual /indefinite",
+                                                    "Retention -- long-term",
+                                                    "Archival value",
+                                                    "None",
+                                                    "Unknown"
+                                                ],
+                                                "question": "Does this distribution have a very long or perpetual retention period, or have archival value?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/preservation_flag",
+                                                "title": "Preservation_flag"
+                                            }
                                         },
-                                        "disposition_action_completed": {
-                                            "type": "object",
-                                            "description": "Details of the disposition action that was completed. The act of archiving or destroying a dataset should be recorded in the maDMP (anticipated date, then the actual date of the action). The maDMP itself should continue to exist in perpetuity. ",
-                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_action_completed",
-                                            "title": "Disposition_action_completed",
-                                            "properties": {
-                                                "authorization_number": {
-                                                    "type": "string",
-                                                    "description": "The authorization number of the completed disposition action",
-                                                    "question": "What is the authorization number after the disposition action has been completed?",
-                                                    "requiredWhen": [
-                                                        "distribution",
-                                                        "disposition_action_completed"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_action_completed/properties/authorization_number",
-                                                    "title": "Authorization_number"
-                                                },
-                                                "date": {
-                                                    "type": "string",
-                                                    "description": "Completion date for the disposition action. Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                                    "example": "2023-07-20",
-                                                    "question": "What date was the disposition action completed?",
-                                                    "format": "date",
-                                                    "requiredWhen": [
-                                                        "distribution",
-                                                        "disposition_action_completed"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_action_completed/properties/date",
-                                                    "title": "Date"
-                                                },
-                                                "description": {
-                                                    "type": "string",
-                                                    "description": "Description of the disposition action completed ",
-                                                    "example": "Transfer to LAC 2030-01-01 as part of accession no. 2030-zzzzz-yyyy.",
-                                                    "question": "Describe the completed disposition action.",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_action_completed/properties/description",
-                                                    "title": "Description"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "To indicate which type of record disposition action was completed",
-                                                    "enum": [
-                                                        "alienated from government holdings",
-                                                        "destroyed",
-                                                        "transferred to national archives",
-                                                        "transferred to other government department/agency"
-                                                    ],
-                                                    "example": "alienated from government holdings",
-                                                    "question": "What type of disposition action was completed?",
-                                                    "requiredWhen": [
-                                                        "distribution",
-                                                        "disposition_action_completed"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_action_completed/properties/type",
-                                                    "title": "Type"
-                                                }
-                                            },
-                                            "required": [
-                                                "authorization_number",
-                                                "date",
-                                                "type"
-                                            ]
+                                        "disposition_completed": {
+                                            "type": "string",
+                                            "description": "Indicates the date on which the distribution was disposed. (That is, the data lifecycle is complete, at the institution). \nIn instances in which data was never created in relation to a planned distribution, indicates the date on which the creation of the distribution was abandoned. \nEncoded using the ISO 8601 Date and Time compliant string.\nNote: consider adding information to “dmp/dataset/distribution/description” regarding the nature of the disposition.",
+                                            "example": "2015-03-24",
+                                            "question": "Has ALL data associated with this distribution been disposed? If so, indicate date (i.e., no data remains with the institution, and none is expected to accrue in the future)",
+                                            "format": "date",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/distribution/properties/disposition_completed",
+                                            "title": "Disposition_completed"
                                         },
                                         "host": {
                                             "type": "object",
@@ -29570,203 +29387,358 @@
                                         "quality_control_level",
                                         "license",
                                         "protection_level",
-                                        "security_classification_level",
-                                        "disposition_planning"
+                                        "security_classification_level"
                                     ]
                                 }
                             },
                             "disposition_planning": {
                                 "type": "object",
-                                "description": "To indicate any disposition plan for the dataset",
+                                "description": "Used to document information in anticipation of a future disposition review. \r\nNote: does not document disposition actions actually effected.",
                                 "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning",
                                 "title": "Disposition_planning",
                                 "properties": {
-                                    "retention_review_trigger": {
-                                        "type": "string",
-                                        "description": "What type of trigger starts the retention period count down. Example: fixed date, event-based.",
-                                        "enum": [
-                                            "fixed date",
-                                            "event-based",
-                                            "not applicable (transitory record)",
-                                            "not applicable (permanent retention)",
-                                            "other",
-                                            "unknown (based on Electronic records as documentary evidence s. 6.4.5.)"
-                                        ],
-                                        "example": "fixed date",
-                                        "question": "What is triggering the count down of the retention period",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_review_trigger",
-                                        "title": "Retention_review_trigger"
+                                    "retention_specification": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification",
+                                            "title": "Retention_specification",
+                                            "properties": {
+                                                "description": {
+                                                    "type": "string",
+                                                    "description": "Indicates how long a dataset should be retained, and why. In instances of determinate retention, a retention specification includes three elements: a retention period; a retention period initiator (trigger); a rationale that explains or justifies the retention period and trigger.",
+                                                    "example": "See the Directive on the Management of Microdata for all retention specifications.",
+                                                    "question": "What are the retention specifications for the dataset?",
+                                                    "requiredWhen": [
+                                                        "retention_specification"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/description",
+                                                    "title": "Description"
+                                                },
+                                                "trigger_type": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "Allowed values:\r\n•\tdate (fixed)\r\n•\tduration after date (fixed)\r\n•\tduration after event\r\n•\tevent\r\n•\tnot applicable (indefinite retention)\r\n•\tnot applicable (transitory record)\r\n•\tnot set\r\n•\trange with maximum retention\r\n•\trange with minimum retention\r\n•\trange with min&max retention",
+                                                        "enum": [
+                                                            "date (fixed)",
+                                                            "duration after date (fixed)",
+                                                            "duration after event",
+                                                            "event",
+                                                            "not applicable (indefinite retention)",
+                                                            "not applicable (transitory record)",
+                                                            "not set",
+                                                            "range with maximum retention",
+                                                            "range with minimum retention",
+                                                            "range with min&max retention"
+                                                        ],
+                                                        "example": "date (fixed)",
+                                                        "question": "What type of event triggers the retention period start?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/trigger_type",
+                                                        "title": "Trigger_type"
+                                                    }
+                                                },
+                                                "trigger_description": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "A trigger (retention period initiator) is an event in time that begins a retention period.",
+                                                        "example": "Data collection end date",
+                                                        "question": "What is the event that triggers a retention period?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/trigger_description",
+                                                        "title": "Trigger_description"
+                                                    }
+                                                },
+                                                "retention_rationale": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "The reason (justification) for retaining a dataset for a particular period of time.",
+                                                        "example": "Irreplicable observational data; 1962 ionosphere can no longer be replicated (space junk).",
+                                                        "question": "Why is the dataset to be retained for the length of time indicated?",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/retention_rationale",
+                                                        "title": "Retention_rationale"
+                                                    }
+                                                },
+                                                "retention_period_duration": {
+                                                    "type": "string",
+                                                    "description": "To record duration of retention period after trigger event. (At the end of its retention period, the dataset should be reviewed for disposition, and disposition effected if possible.) Encoded using the relevant ISO 8601 Duration compliant string.",
+                                                    "example": "P7Y2M0DT0H0M0S",
+                                                    "question": "How long is the retention period?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/retention_period_duration",
+                                                    "title": "Retention_period_duration"
+                                                },
+                                                "retention_period_end_date": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "To record a fixed date marking the end of a retention period. (At the end of its retention period, the dataset should be reviewed for disposition, and disposition effected if possible.) Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                                                        "example": "48091",
+                                                        "question": "On what date does the retention period end?",
+                                                        "format": "date",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/retention_period_end_date",
+                                                        "title": "Retention_period_end_date"
+                                                    }
+                                                },
+                                                "required_perpetual_use": {
+                                                    "type": "string",
+                                                    "description": "Examples where this may be required include the need to maintain scientific integrity, treaties, agreements, or compliance with UN Joinet-Orentlicher principles for the protection and promotion of human rights through action to combat impunity. Allowed values:\n•        yes -- all\n•        yes -- part\n•        no\n•        not applicable\n•        to be determined \n•        unknown.\nNote: context can be recorded in “retention_specifications/description.”",
+                                                    "enum": [
+                                                        "yes all",
+                                                        "yes part",
+                                                        "no",
+                                                        "not applicable",
+                                                        "to be determined",
+                                                        "unknown"
+                                                    ],
+                                                    "example": "yes all",
+                                                    "question": "Do you need to keep this dataset indefinitely, for active use?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/required_perpetual_use",
+                                                    "title": "Required_perpetual_use"
+                                                },
+                                                "required_destruction": {
+                                                    "type": "string",
+                                                    "description": "To indicate that a dataset must be destroyed.\nAllowed values:\n•        yes -- all\n•        yes -- part\n•        no\n•        not applicable\n•        to be determined \n•        unknown.\nNote: context can be recorded in “retention_specifications/description.”",
+                                                    "enum": [
+                                                        "yes all",
+                                                        "yes part",
+                                                        "no",
+                                                        "not applicable",
+                                                        "to be determined",
+                                                        "unknown"
+                                                    ],
+                                                    "example": "yes all",
+                                                    "question": "Does this dataset need to be destroyed (e.g., according to consent forms), in whole or in part?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/required_destruction",
+                                                    "title": "Required_destruction"
+                                                },
+                                                "trigger_triggered": {
+                                                    "type": "string",
+                                                    "description": "The date on which the trigger was triggered, and the retention period began. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                                                    "example": "2024-11-20",
+                                                    "question": "When did the retention period start?",
+                                                    "format": "date",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/trigger_triggered",
+                                                    "title": "Trigger_triggered"
+                                                }
+                                            },
+                                            "required": [
+                                                "required_perpetual_use",
+                                                "required_destruction",
+                                                "description"
+                                            ],
+                                            "allOf": [
+                                                {
+                                                    "if": {
+                                                        "properties": {
+                                                            "required_destruction": {
+                                                                "enum": [
+                                                                    "yes all",
+                                                                    "yes part"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "then": {
+                                                        "properties": {
+                                                            "required_destruction_description": {
+                                                                "type": "string",
+                                                                "description": "Description on the reason why the dataset must be destroyed",
+                                                                "example": "2042-01-01\r\n",
+                                                                "question": "On what date(s) was data destruction promised to occur? (e.g., according to consent forms)",
+                                                                "format": "date",
+                                                                "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_specification/properties/required_destruction_description",
+                                                                "title": "Required_destruction_description"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "required_destruction_description"
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     },
-                                    "retention_review_trigger_description": {
+                                    "retention_schedule_url": {
                                         "type": "string",
-                                        "description": "Description of the trigger that starts the retention period count down: what is the trigger, what is the retention period and what is the final disposition (destruction, archival retention) .",
-                                        "question": "Describe the trigger of the retention review.",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_review_trigger_description",
-                                        "title": "Retention_review_trigger_description"
-                                    },
-                                    "retention_review_trigger_date": {
-                                        "type": "string",
-                                        "description": "If the retention period count down has been triggered, date of the end of the retention period at which time the distribution is disposed of according to the file plan (destruction, transfer to archives, or alienation). Encoded using the relevant ISO 8601 Date <a href=\"https://www.w3.org/TR/NOTE-datetime\">compliant string</a>",
-                                        "example": "2023-07-20",
-                                        "question": "If the retention count down has been triggered, what is the date for final dispoistion review?",
-                                        "format": "date",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_review_trigger_date",
-                                        "title": "Retention_review_trigger_date"
+                                        "description": "A URL that leads to the applicable retention schedule",
+                                        "example": "//intranet.server/.../retention_schedule",
+                                        "question": "Where can you click to see the retention schedule?",
+                                        "format": "uri",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/retention_schedule_url",
+                                        "title": "Retention_schedule_url"
                                     },
                                     "archival_value": {
                                         "type": "string",
-                                        "description": "Archival values is the ongoing usefulness or significance of records, based on the administrative, legal, fiscal, evidential, or historical information they contain, justifying their continued preservation. In general, records with archival value are estimated to make up only a small percentage of an organization’s records. In most organizations, the determination of which records are considered to have archival value is made by archivists. Sometimes, archivists distinguish between the concepts of historical value and archival value. In such cases, historical value is defined narrowly as the value of a record to support research in the history of people and the world, and archival value is defined broadly to encompass value that supports any type of research using permanent records, including psychological, sociological, and other types of scientific research. (Society of American Archivists)",
+                                        "description": "Archival value according to the national archives. (Applies to records only.) \nFor the Government of Canada, refer to definition of government records in the Library and Archives of Canada Act. Nevertheless, except in instances in which a distribution is considered a “publication” as defined in the Library and Archives of Canada Act, datasets under the control of a government institution likely meet the definition of a government record in the Act.\nAllowed values:\n•        yes -- all\n•        yes -- part\n•        no\n•        not applicable\n•        to be determined \n•        unknown.",
                                         "enum": [
                                             "yes all",
                                             "yes part",
                                             "no",
                                             "not applicable",
+                                            "to be determined",
                                             "unknown"
                                         ],
                                         "example": "yes all",
                                         "question": "Does the dataset have archival value?",
+                                        "requiredWhen": [
+                                            "disposition_planning"
+                                        ],
                                         "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/archival_value",
                                         "title": "Archival_value"
                                     },
                                     "archival_value_description": {
                                         "type": "string",
-                                        "description": "Description of the archival value.",
-                                        "question": "Describe the archival value of the dataset.",
+                                        "description": "Indicates nature and scope of the data with archival value according to national archives.",
+                                        "question": "What is the nature and scope of the data with archival value according to Library and Archives Canada instructions?",
                                         "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/archival_value_description",
                                         "title": "Archival_value_description"
                                     },
-                                    "legal_issues": {
+                                    "disposition_planning_last_reviewed": {
                                         "type": "string",
-                                        "description": "To indicate if there are any legal issues associated with the disposition planning of the dataset. Examples include cases where data are required to be: (1) preserved for the ongoing protection of human rights, legal evidence or litigation holds; or, (2) there are other, dataset-specific legal considerations affecting final disposition (e.g,. partnership agreement).",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "yes",
-                                        "question": "Are there legal issues associated with the dataset?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/legal_issues",
-                                        "title": "Legal_issues"
+                                        "description": "To record the most recent date on which the values entered in disposition planning properties were reviewed. Encoded using the ISO 8601 Date and Time compliant string.",
+                                        "example": "2024-11-20",
+                                        "question": "When was the information in the disposition planning section last reviewed?",
+                                        "format": "date",
+                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/disposition_planning_last_reviewed",
+                                        "title": "Disposition_planning_last_reviewed"
                                     },
-                                    "legal_issues_description.": {
-                                        "type": "string",
-                                        "description": "Description of any legal issues associated with the disposition planning of the dataset",
-                                        "question": "Describe the legal issues associated with the the disposition planning of the dataset?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/legal_issues_description.",
-                                        "title": "Legal_issues_description."
+                                    "disposition_impediment": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "description": "For noting time-limited impediments to effecting disposition at the end of the dataset's retention period. Note: use the retention specification nest to indicate an indefinite retention period or a perpetual use requirement.",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/disposition_impediment",
+                                            "title": "Disposition_impediment",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Allowed values:\n•        agreement\n•        ATIP request\n•        litigation or legal issue\n•        technical issue\n•        no disposition authorization\n•        organizational issue\n•        other",
+                                                    "enum": [
+                                                        "agreement",
+                                                        "ligation or legal issue",
+                                                        "technical issue",
+                                                        "no disposition authorization",
+                                                        "organizational issue",
+                                                        "other"
+                                                    ],
+                                                    "example": "agreement",
+                                                    "question": "What type of impediment blocks you from effecting disposition?",
+                                                    "requiredWhen": [
+                                                        "disposition_impediment"
+                                                    ],
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/disposition_impediment/properties/type",
+                                                    "title": "Type"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "description": "Include the name of the litigation, software, etc. where applicable.\nNote: if there is a known end date to the disposition impediment, consider entering it in “dmp/dataset/disposition_planning/disposition_review _next”",
+                                                    "enum": [
+                                                        "yes",
+                                                        "no",
+                                                        "unknown"
+                                                    ],
+                                                    "example": "yes",
+                                                    "question": "What is preventing you from effecting disposition, once the retention period has elapsed?",
+                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/disposition_impediment/properties/description",
+                                                    "title": "Description"
+                                                }
+                                            },
+                                            "required": [
+                                                "type"
+                                            ]
+                                        }
                                     },
-                                    "remaining_distributions": {
-                                        "type": "string",
-                                        "description": "Following disposition of distribution(s), flagging that there remain one or more other distributions.",
-                                        "enum": [
-                                            "yes",
-                                            "no",
-                                            "unknown"
-                                        ],
-                                        "example": "no",
-                                        "question": "Are there any distributions remaining following disposition?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/remaining_distributions",
-                                        "title": "Remaining_distributions"
-                                    },
-                                    "required_destruction": {
-                                        "type": "string",
-                                        "description": "To indicate whether the dataset is required to be destroyed",
-                                        "enum": [
-                                            "yes all",
-                                            "yes part",
-                                            "no",
-                                            "not applicable",
-                                            "unknown"
-                                        ],
-                                        "example": "yes all",
-                                        "question": "Does the dataset need to be destroyed?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/required_destruction",
-                                        "title": "Required_destruction"
-                                    },
-                                    "required_perpetual_use": {
-                                        "type": "string",
-                                        "description": "To indicate if the dataset has a long-term usage and must retained in the active records area indefinitely. Examples where this may be required include the need to maintain scientific integrity,  treaties, agreements, or compliance with UN Joinet-Orentlicher principles for the protection and promotion of human rights through action to combat impunity. ",
-                                        "enum": [
-                                            "yes all",
-                                            "yes part",
-                                            "no",
-                                            "not applicable",
-                                            "unknown"
-                                        ],
-                                        "example": "yes all",
-                                        "question": "Is the dataset required to be retained in the active records area indefinitely?",
-                                        "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/required_perpetual_use",
-                                        "title": "Required_perpetual_use"
+                                    "disposition_review_next": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "To record the next date(s) on which the dataset should be reviewed for disposition. (This may be the end of a retention period, the date on which a disposition impediment will be lifted, or some other date). Encoded using the ISO 8601 Date and Time compliant string.",
+                                            "example": "2029-11-20",
+                                            "question": "When should someone review whether disposition can be effected?",
+                                            "format": "date",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/disposition_review_next",
+                                            "title": "Disposition_review_next"
+                                        }
                                     }
                                 },
                                 "required": [
-                                    "retention_review_trigger",
-                                    "archival_value",
-                                    "legal_issues",
-                                    "required_destruction",
-                                    "required_perpetual_use"
-                                ],
-                                "allOf": [
-                                    {
-                                        "if": {
-                                            "properties": {
-                                                "required_destruction": {
-                                                    "enum": [
-                                                        "yes all",
-                                                        "yes part"
-                                                    ]
-                                                }
+                                    "archival_value"
+                                ]
+                            },
+                            "disposition_action": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Used to document disposition that has been effected in relation to a dataset. Note: when all data associated with a dataset has been disposed, also indicate this in “dmp/dataset/disposition_completed.” ",
+                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_action",
+                                    "title": "Disposition_action",
+                                    "properties": {
+                                        "type": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "description": "Indicate the type of action taken to dispose of the data (scope of the data to be detailed in the description field)\nAllowed values\n - alienated from government control, \n - destroyed, \n - transferred to national archives, \n - transferred to another government institution",
+                                                "enum": [
+                                                    "alienated from government control",
+                                                    "destroyed",
+                                                    "transferred to national archives",
+                                                    "transferred to another government institution"
+                                                ],
+                                                "example": "alienated from government control",
+                                                "question": "Was the dataset disposed by destruction, transfer to LAC, or alienation?",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/disposition_action/properties/type",
+                                                "title": "Type"
                                             }
                                         },
-                                        "then": {
-                                            "properties": {
-                                                "required_destruction_description": {
-                                                    "type": "string",
-                                                    "description": "Description on the reason why the dataset must be destroyed",
-                                                    "example": "Ethics Review Board clearance requires destruction of all identifying datasets at project close, estimated to occur 2030-01-01.",
-                                                    "question": "Describe the reason why the dataset must be destroyed?",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/required_destruction_description",
-                                                    "title": "Required_destruction_description"
-                                                }
-                                            },
-                                            "required": [
-                                                "required_destruction_description"
-                                            ]
+                                        "description": {
+                                            "type": "string",
+                                            "description": "To document the scope of disposition action effected, as well as other details when required (e.g., means, issues).",
+                                            "example": "All non-disseminated datasets associated with the project NameMyTree were manually deleted from drive Z by project lead. Litigation and ATIP checks had been completed 2020-01-12. Backup tapes not addressed.",
+                                            "question": "What was the scope of the disposition? What details are important for documented disposition?",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_action/properties/description",
+                                            "title": "Description"
+                                        },
+                                        "authorization": {
+                                            "type": "string",
+                                            "description": "Indicate disposition authorization number and details when available. May also be used to document internal signoff.",
+                                            "example": "DA 2018/001, Application Guide for National Registration version 2.0. Signoff by CIO on 2020-03-13.",
+                                            "question": "What legal instrument authorized the disposition? ",
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_action/properties/authorization",
+                                            "title": "Authorization"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "description": "Date on which disposition effected. Encoded using the ISO 8601 Date and Time compliant string.",
+                                            "example": "2020-03-1\r\n",
+                                            "question": "On what date was disposition effected?",
+                                            "format": "date",
+                                            "requiredWhen": [
+                                                "disposition_action"
+                                            ],
+                                            "$id": "#/properties/dmp/properties/dataset/properties/disposition_action/properties/date",
+                                            "title": "Date"
                                         }
                                     },
-                                    {
-                                        "if": {
-                                            "properties": {
-                                                "required_perpetual_use": {
-                                                    "enum": [
-                                                        "yes all",
-                                                        "yes part"
-                                                    ]
-                                                }
-                                            }
-                                        },
-                                        "then": {
-                                            "properties": {
-                                                "required_perpetual_use_description": {
-                                                    "type": "string",
-                                                    "description": "Description of the perpetual usage of the dataset ",
-                                                    "question": "Describe the perpetual use of the dataset.",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/disposition_planning/properties/required_perpetual_use_description",
-                                                    "title": "Required_perpetual_use_description"
-                                                }
-                                            },
-                                            "required": [
-                                                "required_perpetual_use_description"
-                                            ]
-                                        }
-                                    }
-                                ]
+                                    "required": [
+                                        "date"
+                                    ]
+                                }
+                            },
+                            "disposition_completed": {
+                                "type": "string",
+                                "description": "Indicates the date on which data no longer exists in relation to the dataset. (That is, the data lifecycle is complete, at the institution). \r\nIn instances in which data was never created in relation to a planned dataset, indicates the date on which the dataset creation was abandoned. \r\nEncoded using the ISO 8601 Date and Time compliant string.\r\nNote: consider adding information to “dmp/dataset/disposition_action/description” regarding the nature of the disposition.",
+                                "example": "2019-06-0\r\n",
+                                "question": "Has ALL data associated with this dataset been disposed? (i.e., no data remains with the institution, and none is expected to accrue in the future)",
+                                "format": "date",
+                                "$id": "#/properties/dmp/properties/dataset/properties/disposition_completed",
+                                "title": "Disposition_completed"
                             },
                             "computing_environment": {
                                 "type": "array",
                                 "items": {
                                     "type": "object",
-                                    "description": "Computing environment for the distribution in the DMP",
+                                    "description": "Repeat as many times as needed to describe all computing environments (for each environment fill in the computer code or the software section, if applicable additonally fill in the proprietary sftware section and the software management plan section)) used for data collection, data processing, data analysis.",
                                     "question": " ",
                                     "$id": "#/properties/dmp/properties/dataset/properties/computing_environment",
                                     "title": "Computing_environment",
@@ -29843,40 +29815,44 @@
                                             "title": "Operating_system_description"
                                         },
                                         "software_management_plan": {
-                                            "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
-                                            "type": "object",
-                                            "title": "Software_management_plan",
-                                            "properties": {
-                                                "name": {
-                                                    "type": "string",
-                                                    "description": "Title of the external document documenting the  cost",
-                                                    "question": "What is the name or title of the SMP",
-                                                    "requiredWhen": [
-                                                        "software_management_plan"
-                                                    ],
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
-                                                    "title": "Name"
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "description": "To reference an external software management plan",
+                                                "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan",
+                                                "title": "Software_management_plan",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "Title of the external document documenting the  cost",
+                                                        "question": "What is the name or title of the SMP",
+                                                        "requiredWhen": [
+                                                            "software_management_plan"
+                                                        ],
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/name",
+                                                        "title": "Name"
+                                                    },
+                                                    "access_url": {
+                                                        "type": "string",
+                                                        "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
+                                                        "question": "What is the access url to the SMP",
+                                                        "format": "uri",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
+                                                        "title": "Access_url"
+                                                    },
+                                                    "download_url": {
+                                                        "type": "string",
+                                                        "description": "Download URL to the Software Management Plan (SMP)",
+                                                        "question": "What is the dowload url of the SMP",
+                                                        "format": "uri",
+                                                        "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
+                                                        "title": "Download_url"
+                                                    }
                                                 },
-                                                "access_url": {
-                                                    "type": "string",
-                                                    "description": "A URL of that gives access to the Software Management Plan (SMP), e.g., landing page, feed, SPARQL endpoint. The access URL should be used for the URL of a service or location that can provide access to the SMP, typically through a Web form, query or API call.",
-                                                    "question": "What is the access url to the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/access_url",
-                                                    "title": "Access_url"
-                                                },
-                                                "download_url": {
-                                                    "type": "string",
-                                                    "description": "Download URL to the Software Management Plan (SMP)",
-                                                    "question": "What is the dowload url of the SMP",
-                                                    "format": "uri",
-                                                    "$id": "#/properties/dmp/properties/dataset/properties/computing_environment/properties/software_management_plan/properties/download_url",
-                                                    "title": "Download_url"
-                                                }
-                                            },
-                                            "required": [
-                                                "name"
-                                            ]
+                                                "required": [
+                                                    "name"
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -30060,8 +30036,7 @@
                             "security_and_privacy",
                             "linked_data_star_rating",
                             "intellectual_property",
-                            "metadata",
-                            "disposition_planning"
+                            "metadata"
                         ]
                     },
                     "minItems": 1

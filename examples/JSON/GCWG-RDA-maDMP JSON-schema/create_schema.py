@@ -113,8 +113,9 @@ chapter_1_dict = {}
 for _, row in df_sorted.iterrows():
     
     # filter out the rows with empty values
-    if pd.isna(row['Data type']) or pd.isna(row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)']) or pd.isna(row['Logic order of subquestions under each chapter']):
-        continue 
+    for column in kept_columns:
+        if pd.isna(row[column]):
+            continue
 
     field_path = row['Common standard fieldname\n(click on blue hyperlinks for RDA core maDMP field descriptions)'].split('/')
     data_type = row['Data type'].lower()  # Convert to lowercase for easier matching
@@ -176,7 +177,7 @@ for _, row in df_sorted.iterrows():
         schema_object["description"] = description
 
     if pd.notna(allowed_values):
-        schema_object["enum"] = [v.strip() for v in allowed_values.split(',')]
+        schema_object["enum"] = list(dict.fromkeys([v.strip() for v in allowed_values.split(',')]))
 
     if pd.notna(example_value):
         schema_object["example"] = example_value
@@ -274,8 +275,8 @@ def assign_required_fields(schema, path=""):
                 prop_value["required"].extend(require_when_nested_structure_exist[current_path])
 
             # convert https to http links in the description
-            if "description" in prop_value:
-                prop_value["description"] = convert_links_to_html(prop_value["description"])
+            #if "description" in prop_value:
+            #    prop_value["description"] = convert_links_to_html(prop_value["description"])
 
             assign_required_fields(prop_value, current_path)
 
