@@ -998,6 +998,7 @@
                           "type": "string",
                           "enum": [
                             "fundref",
+                            "ror",
                             "url",
                             "other"
                           ],

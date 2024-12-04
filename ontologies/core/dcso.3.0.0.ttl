@@ -345,7 +345,7 @@ dcat:accessURL rdf:type owl:DatatypeProperty ;
 
 dcat:byteSize rdf:type owl:DatatypeProperty ;
 
-              rdfs:comment "Byte size" .
+              rdfs:comment "Size of the file, in bytes" .
 
 
 
