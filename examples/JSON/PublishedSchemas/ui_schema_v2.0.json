@@ -8,7 +8,8 @@
             "cost",
             "indigenous_considerations",
             "dataset",
-            "contact"
+            "contact",
+            "hierarchy_level"
         ],
         "contributor": {
             "items": {
@@ -17,7 +18,15 @@
                     "role",
                     "mbox",
                     "contributor_id",
-                    "affiliation"
+                    "affiliation",
+                    "city",
+                    "delivery_point",
+                    "fax_number",
+                    "telephone_number",
+                    "position_name",
+                    "postal_zip_code",
+                    "url",
+                    "hours_of_service"
                 ],
                 "contributor_id": {
                     "ui:order": [
@@ -380,7 +389,10 @@
                             "preservation_flag",
                             "disposition_completed",
                             "host",
-                            "physical_data_asset"
+                            "physical_data_asset",
+                            "online_service",
+                            "spatial_representation_type",
+                            "resource_constraint"
                         ],
                         "license": {
                             "items": {
@@ -389,6 +401,23 @@
                                     "start_date"
                                 ]
                             }
+                        },
+                        "disposition_planning": {
+                            "ui:order": [
+                                "archival_value",
+                                "legal_issues",
+                                "required_destruction",
+                                "required_perpetual_use",
+                                "retention_review_trigger_date"
+                            ]
+                        },
+                        "disposition_action_completed": {
+                            "ui:order": [
+                                "authorization_number",
+                                "date",
+                                "description",
+                                "type"
+                            ]
                         },
                         "host": {
                             "ui:order": [
@@ -424,18 +453,42 @@
                                     "computer_name_full"
                                 ]
                             }
+                        },
+                        "resource_constraint": {
+                            "ui:order": [
+                                "other_constraints",
+                                "use_constraints"
+                            ]
+                        },
+                        "online_service": {
+                            "ui:order": [
+                                "format",
+                                "content_type",
+                                "name",
+                                "feature_info",
+                                "legend_format",
+                                "layer_name",
+                                "service_language",
+                                "protocol",
+                                "service_url"
+                            ]
                         }
                     }
                 },
                 "disposition_planning": {
                     "ui:order": [
+                        "retention_review_trigger",
                         "retention_specification",
+                        "retention_review_trigger_description",
                         "retention_schedule_url",
                         "archival_value",
+                        "retention_review_trigger_date",
                         "archival_value_description",
                         "disposition_planning_last_reviewed",
                         "disposition_impediment",
-                        "disposition_review_next"
+                        "disposition_review_next",
+                        "required_perpetual_use_description",
+                        "remaining_distributions"
                     ],
                     "retention_specification": {
                         "items": {
@@ -500,6 +553,31 @@
                             }
                         }
                     }
+                },
+                "extent": {
+                    "geographic_bounding_box": {
+                        "ui:order": [
+                            "south",
+                            "east",
+                            "north",
+                            "west"
+                        ]
+                    },
+                    "ui:order": [
+                        "geographic_bounding_box"
+                    ]
+                },
+                "disribution": {
+                    "resource_constraint": {
+                        "ui:order": [
+                            "access_constraints"
+                        ]
+                    }
+                },
+                "resource_constraint": {
+                    "ui:order": [
+                        "use_limitation"
+                    ]
                 }
             }
         },
@@ -507,7 +585,19 @@
             "ui:order": [
                 "name",
                 "mbox",
-                "contact_id"
+                "contact_id",
+                "role",
+                "hours_of_service",
+                "url",
+                "country",
+                "postal_zip_code",
+                "province_state",
+                "city",
+                "delivery_point",
+                "fax_number",
+                "telephone_number",
+                "position_name",
+                "organization_name"
             ],
             "contact_id": {
                 "ui:order": [

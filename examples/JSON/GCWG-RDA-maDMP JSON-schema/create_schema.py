@@ -135,7 +135,7 @@ for _, row in df_sorted.iterrows():
 
 
     # delete filters certain fields
-    # filters level 2 fields
+    # filters nested fields
     """
     if "dataset" in field_path:
         if len(field_path) != 2:
@@ -145,7 +145,7 @@ for _, row in df_sorted.iterrows():
         continue
     """
     # filters level 1 fields
-    #if "dataset_documentation" not in field_path: # and "cost" not in field_path:
+    #if "cost" not in field_path: # and "cost" not in field_path:
     #    continue
     #if order[0] > '2':
     #    continue
@@ -392,6 +392,7 @@ def move_to_chapter_1(schema, path=""):
 
                 schema["properties"][prop_name]["properties"]["general_info"]= {
                     "type": "object",
+                    "title": "General Information",
                     "properties": chapter_1_properties,
                     "required": chapter_1_required_list
                 }
@@ -406,10 +407,14 @@ add_array_layer(json_schema)
 move_to_chapter_1(json_schema)
 
 # move the chapter 1 properties to the top level
-temp_dmp = json_schema["properties"]["dmp"]["properties"]
-temp_reordered_dmp = {"general_info": temp_dmp.pop("general_info"), **temp_dmp}
-json_schema["properties"]["dmp"]["properties"] = temp_reordered_dmp
+if "general_info" in json_schema["properties"]["dmp"]["properties"]:
+    temp_dmp = json_schema["properties"]["dmp"]["properties"]
+    temp_reordered_dmp = {"general_info": temp_dmp.pop("general_info"), **temp_dmp}
+    json_schema["properties"]["dmp"]["properties"] = temp_reordered_dmp
 #print(json.dumps(chapter_1_dict, indent=4))
+
+# rename Dmp title
+json_schema["properties"]["dmp"]["title"] = "DMP"
 
 
 # Output the generated JSON schema as a JSON file or print it out
