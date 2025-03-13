@@ -14,12 +14,12 @@
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
-         terms:created "2019-09-18T00:00:00"^^xsd:dateTime ;
+         terms:created "2019-09-18T00:00:00Z"^^xsd:dateTime ;
          terms:description "This DMP is awesome!" ;                  
          dcso:ethicalIssuesExist "unknown" ;
          dcso:ethicalIssuesReport <http://a.url.com> ;
          terms:language dcs-lang:eng ;
-         terms:modified "2019-09-18T00:00:00"^^xsd:dateTime ; 
+         terms:modified "2019-09-18T00:00:00Z"^^xsd:dateTime ; 
          terms:title "Unidade de Genómica" ;
          dcso:hasDMPId ex:dmpid_1 ;
          dcso:hasContact ex:contact_1 ;
@@ -78,8 +78,8 @@ ex:cost_1 rdf:type owl:NamedIndividual ,
 ex:project_1 rdf:type owl:NamedIndividual ,
                       dcso:Project ;
              dcso:hasFunding ex:funding_1 ;
-             dcso:end "2020-12-01T00:00:00"^^xsd:date ;
-             dcso:start "2017-01-01T00:00:00"^^xsd:date ;
+             dcso:end "2020-12-01"^^xsd:date ;
+             dcso:start "2017-01-01"^^xsd:date ;
              terms:description "ONEIDA is a project." ;
              terms:title "ONEIDA" .   
 

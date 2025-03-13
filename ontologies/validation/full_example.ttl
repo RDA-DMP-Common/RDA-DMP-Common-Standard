@@ -63,7 +63,7 @@ ex:dataset_1 rdf:type owl:NamedIndividual ,
              dcso:hasDistribution ex:distribution_1 ;
              dcso:hasSecurityPrivacy ex:sp_1 ;
              dcso:hasTechnicalResource ex:technicalresource_1 ;
-             terms:issued "2019-09-18T00:00:00" ;
+             terms:issued "2019-09-18T00:00:00Z" ;
              dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC" ;
              dcso:personal_data "no" ;
              dcso:preservation_statement "Keep record" ;
@@ -82,7 +82,7 @@ ex:distribution_1 rdf:type owl:NamedIndividual ,
                   terms:format "application/pdf" ;
                   dcat:access_url "http://example.org/example_url" ;
                   dcat:download_url "http://example.org/example_url" ;
-                  dcso:available_until "2022-01-01T00:00:00" ;
+                  dcso:available_until "2022-01-01T00:00:00Z" ;
                   dcso:data_access "shared" ;
                   terms:description "Files will be stored in xls and pfd in the storage server (AFS)" ;
                   terms:title "Quality control file" .
@@ -99,10 +99,10 @@ ex:dmp_1 rdf:type owl:NamedIndividual ,
          dcso:hasDataset ex:dataset_1 ;
          dcso:hasProject ex:project_1 ;
          dcso:ethical_issues_exist "unknown" ;
-         terms:created "2019-09-18T00:00:00" ;
+         terms:created "2019-09-18T00:00:00Z" ;
          terms:description "This DMP serves to characterize the functioning of the Unidade de Genómica at the Instituto Gulbenkian para a Ciência in Oeiras." ;
          terms:language dcs-lang:eng ;
-         terms:modified "2019-09-18T00:00:00" ;
+         terms:modified "2019-09-18T00:00:00Z" ;
          terms:title "Unidade de Genómica" .
 
 
@@ -169,7 +169,7 @@ ex:id_4 rdf:type owl:NamedIndividual ,
 ex:license_1 rdf:type owl:NamedIndividual ,
                       dcso:License ;
              dcso:license_ref "https://creativecommons.org/licenses/by/4.0" ;
-             dcso:start_date "2022-01-01T00:00:00" .
+             dcso:start_date "2022-01-01T00:00:00Z" .
 
 
 ###  https://w3id.org/dcso/id/example/metadata_1
@@ -184,8 +184,8 @@ ex:metadata_1 rdf:type owl:NamedIndividual ,
 ex:project_1 rdf:type owl:NamedIndividual ,
                       dcso:Project ;
              dcso:hasFunding ex:funding_1 ;
-             dcso:end "2020-12-01T00:00:00" ;
-             dcso:start "2017-01-01T00:00:00" ;
+             dcso:end "2020-12-01T00:00:00Z" ;
+             dcso:start "2017-01-01T00:00:00Z" ;
              terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance." ;
              terms:title "ONEIDA" .
 

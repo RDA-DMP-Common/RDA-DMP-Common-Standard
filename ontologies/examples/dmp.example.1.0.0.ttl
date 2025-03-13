@@ -736,11 +736,11 @@ ex:cost_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/dataset_1
 ex:dataset_1 rdf:type owl:NamedIndividual ,
                       dcso:Dataset ;
-             terms:description "Quality Control of DNA and RNA " ;
-             terms:issued "2019-09-18T00:00:00" ;
+             terms:description "Quality Control of DNA and RNA" ;
+             terms:issued "2019-09-18T00:00:00Z" ;
              terms:language dcs-lang:eng ;
-             terms:title "Quality Check QC " ;
-             dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC " ;
+             terms:title "Quality Check QC" ;
+             dcso:data_quality_assurance "RIM and DIM for RNA and DNA QC" ;
              dcso:hasDatasetId ex:datasetid_1 ;
              dcso:hasDistribution ex:distribution_1 ;
              dcso:hasSecurityPrivacy ex:sp_1 ;
@@ -761,12 +761,12 @@ ex:datasetid_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/distribution_1
 ex:distribution_1 rdf:type owl:NamedIndividual ,
                            dcso:Distribution ;
-                  terms:description "Files will be stored in xls and pfd in the storage server (AFS) " ;
+                  terms:description "Files will be stored in xls and pfd in the storage server (AFS)" ;
                   terms:format "application/pdf" ;
-                  terms:title "Quality control file " ;
+                  terms:title "Quality control file" ;
                   dcat:access_url "http://example.org/example_url" ;
                   dcat:download_url "http://example.org/example_url" ;
-                  dcso:available_until "2022-01-01T00:00:00 " ;
+                  dcso:available_until "2022-01-01T00:00:00Z" ;
                   dcso:data_access "shared" ;
                   dcso:hasHost ex:host_1 ;
                   dcso:hasLicense ex:license_1 .
@@ -775,11 +775,11 @@ ex:distribution_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
-         terms:created "2019-09-18T00:00:00" ;
+         terms:created "2019-09-18T00:00:00Z" ;
          terms:description "This DMP serves to characterize the functioning of the Unidade de Genómica at the Instituto Gulbenkian para a Ciência in Oeiras." ;
          terms:language dcs-lang:eng ;
-         terms:modified "2019-09-18T00:00:00" ;
-         terms:title "Unidade de Genómica " ;
+         terms:modified "2019-09-18T00:00:00Z" ;
+         terms:title "Unidade de Genómica" ;
          dcso:ethical_issues_exist "unknown" ;
          dcso:hasContact ex:contributor_1 ;
          dcso:hasContributor ex:contributor_1 ,
@@ -824,7 +824,7 @@ ex:grantid_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/host_1
 ex:host_1 rdf:type owl:NamedIndividual ,
                    dcso:Host ;
-          terms:description "Storage server (AFS) managed by IGC IT " ;
+          terms:description "Storage server (AFS) managed by IGC IT" ;
           terms:title "AFS Server" ;
           dcso:availability 99.5 ;
           dcso:backup_frequency "daily" ;
@@ -839,14 +839,14 @@ ex:host_1 rdf:type owl:NamedIndividual ,
 ex:license_1 rdf:type owl:NamedIndividual ,
                       dcso:License ;
              dcso:license_ref "https://creativecommons.org/licenses/by/4.0" ;
-             dcso:start_date "2022-01-01T00:00:00 " .
+             dcso:start_date "2022-01-01T00:00:00Z" .
 
 
 ###  https://w3id.org/dcso/id/example/metadata_1
 ex:metadata_1 rdf:type owl:NamedIndividual ,
                        dcso:Metadata ,
                        dcso:MetadataStandardId ;
-              terms:description "Used index and sample name (sample sheet) " ;
+              terms:description "Used index and sample name (sample sheet)" ;
               terms:identifier "xpto naming convention" ;
               terms:language dcs-lang:eng ;
               dcso:hasMetadataStandardId ex:metadataid_1 ;
@@ -856,24 +856,24 @@ ex:metadata_1 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dcso/id/example/project_1
 ex:project_1 rdf:type owl:NamedIndividual ,
                       dcso:Project ;
-             terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance. " ;
+             terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance." ;
              terms:title "ONEIDA" ;
-             dcso:end "2020-12-01T00:00:00 " ;
+             dcso:end "2020-12-01T00:00:00Z" ;
              dcso:hasFunding ex:funding_1 ;
-             dcso:start "2017-01-01T00:00:00 " .
+             dcso:start "2017-01-01T00:00:00Z" .
 
 
 ###  https://w3id.org/dcso/id/example/sp_1
 ex:sp_1 rdf:type owl:NamedIndividual ,
                  dcso:SecurityPrivacy ;
-        terms:description "Used index and sample name (sample sheet) " ;
+        terms:description "Used index and sample name (sample sheet)" ;
         terms:title "Access" .
 
 
 ###  https://w3id.org/dcso/id/example/technicalresource_1
 ex:technicalresource_1 rdf:type owl:NamedIndividual ,
                                 dcso:TechnicalResource ;
-                       terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html " ;
+                       terms:description "https://www.illumina.com/systems/sequencing-platforms/miseq.html" ;
                        terms:title "Ilumina sequencer" .
 
 

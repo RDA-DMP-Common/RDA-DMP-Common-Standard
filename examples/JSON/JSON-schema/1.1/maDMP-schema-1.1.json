@@ -209,7 +209,7 @@
           "format": "date-time",
           "title": "The DMP Creation Schema",
           "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time compliant string",
-          "examples": ["2019-03-13T13:13:00"]
+          "examples": ["2019-03-13T13:13:00Z"]
         },
         "dataset": {
           "$id": "#/properties/dmp/properties/dataset",
@@ -851,7 +851,7 @@
           "format": "date-time",
           "title": "The DMP Modification Schema",
           "description": "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time compliant string.",
-          "examples": ["2020-03-14T10:53:49"]
+          "examples": ["2020-03-14T10:53:49Z"]
         },
         "project": {
           "$id": "#/properties/dmp/properties/project",

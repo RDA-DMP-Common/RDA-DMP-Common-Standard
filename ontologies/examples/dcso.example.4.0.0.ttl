@@ -400,7 +400,7 @@
 			 <https://w3id.org/dcso/ns/core#hasMetadata> :ontologyWebLanguage ;
 			 <https://w3id.org/dcso/ns/core#hasSecurityPrivacy> :security_001 ;
 			 <https://w3id.org/dcso/ns/core#hasDistribution> :distribution_001 ;				 
-             <http://purl.org/dc/terms/issued> "2022-07-01T00:00:00"^^xsd:dateTime ;
+             <http://purl.org/dc/terms/issued> "2022-07-01T00:00:00Z"^^xsd:dateTime ;
              <http://www.w3.org/ns/dcat#keyword> "dmp, dcso, ontology"^^xsd:string ;
              <https://w3id.org/dcso/ns/core#dataQualityAssurance> "File naming conventions are used throughout the dataset."^^xsd:string ;
              <https://w3id.org/dcso/ns/core#language> "en"^^xsd:string ;
@@ -426,7 +426,7 @@
 			   <https://w3id.org/dcso/ns/core#hasLicense> :license_001 ;
 			   <https://w3id.org/dcso/ns/core#hasHost> :qtydataverse ;
                <https://w3id.org/dcso/ns/core#accessURL> "https://doi.org/10.82210/AYNC9E"^^xsd:string ;
-			   <https://w3id.org/dcso/ns/core#availableUntil> "2033-07-01T00:00:00"^^xsd:dateTime ;
+			   <https://w3id.org/dcso/ns/core#availableUntil> "2033-07-01T00:00:00Z"^^xsd:dateTime ;
 			   <https://w3id.org/dcso/ns/core#byteSize> "0"^^xsd:integer ;
 			   <https://w3id.org/dcso/ns/core#dataAccess> "open"^^xsd:string ;
 			   <http://purl.org/dc/terms/description> "Distribution 001 applies to all datasets which have open access, no ethical issues, no personal data, and that should be preserved for 10 years in a Dataverse repository."^^xsd:string ;
@@ -468,12 +468,12 @@
             <https://w3id.org/dcso/ns/core#hasDMPId> :dmpId ;
             <https://w3id.org/dcso/ns/core#hasProject> :exampleProject ;
 			<https://w3id.org/dcso/ns/core#hasDataset> :dataset_001 ;
-            <https://w3id.org/dcso/ns/core#created> "2022-03-03T11:31:00"^^xsd:dateTime ;
+            <https://w3id.org/dcso/ns/core#created> "2022-03-03T11:31:00Z"^^xsd:dateTime ;
             <https://w3id.org/dcso/ns/core#ethicalIssueDescription> "There are no ethical issues, as is refered in the ethical issue report."^^xsd:string ;
             <https://w3id.org/dcso/ns/core#ethicalIssuesExist> "no"^^xsd:string ;
             <https://w3id.org/dcso/ns/core#ethicalIssuesReport> "https://doi.org/10.82210/MUZFDV"^^xsd:anyURI ;
             <https://w3id.org/dcso/ns/core#language> "en"^^xsd:string ;
-            <https://w3id.org/dcso/ns/core#modified> "2022-03-03T11:31:00"^^xsd:dateTime ;
+            <https://w3id.org/dcso/ns/core#modified> "2022-03-03T11:31:00Z"^^xsd:dateTime ;
             <http://purl.org/dc/terms/description> "This is the DMP for the Example Project. A project that Example University is scheduled to begin in the summer of 2022."^^xsd:string ;
             <http://purl.org/dc/terms/title> "DMP - Example Project"^^xsd:string .
 
@@ -497,8 +497,8 @@
 :exampleProject rdf:type owl:NamedIndividual ,
                          <https://w3id.org/dcso/ns/core#Project> ;
                 <https://w3id.org/dcso/ns/core#hasFunding> :exampleFunding ;
-                <https://w3id.org/dcso/ns/core#end> "2023-07-01T00:00:00"^^xsd:dateTime ;
-                <https://w3id.org/dcso/ns/core#start> "2022-07-01T00:00:00"^^xsd:dateTime ;
+                <https://w3id.org/dcso/ns/core#end> "2023-07-01T00:00:00Z"^^xsd:dateTime ;
+                <https://w3id.org/dcso/ns/core#start> "2022-07-01T00:00:00Z"^^xsd:dateTime ;
                 <http://purl.org/dc/terms/description> "The Example Project focuses on describing how a DMP should be represented using the DCSO."^^xsd:string ;
                 <http://purl.org/dc/terms/title> "Example Project"^^xsd:string .
 
@@ -530,7 +530,7 @@
 :license_001 rdf:type owl:NamedIndividual ,
                 <https://w3id.org/dcso/ns/core#License> ;
        <https://w3id.org/dcso/ns/core#licenseRef> "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-       <https://w3id.org/dcso/ns/core#startDate> "2022-07-01T00:00:00"^^xsd:dateTime .
+       <https://w3id.org/dcso/ns/core#startDate> "2022-07-01T00:00:00Z"^^xsd:dateTime .
 
 
 ###  https://w3id.org/dcso/ns/example#johnDoe

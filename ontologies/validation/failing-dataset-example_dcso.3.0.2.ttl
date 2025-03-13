@@ -19,7 +19,7 @@ ex:ds_1 rdf:type owl:NamedIndividual ,
 		
 		#0 or 1
 		terms:description "This Dataset is awesome!" ; 
-		terms:issued "2019-09-18T00:00:00"^^xsd:dateTime ;
+		terms:issued "2019-09-18T00:00:00Z"^^xsd:dateTime ;
 		dcso:preservationStatement "Volatile data" ; 
 		
 		#0 to n
