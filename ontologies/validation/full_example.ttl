@@ -23,13 +23,13 @@
 @prefix dcs-lang: <https://w3id.org/dcso/id/iso639-3/> .
 @prefix ex: <https://w3id.org/dcso/id/example/> .
 @base <https://w3id.org/dcso/ns/core> .
-​
-​
-​
+
+
+
 #################################################################
 #    Individuals
 #################################################################
-​
+
 ###  https://w3id.org/dcso/id/example/contact_1
 ex:contact_1 rdf:type owl:NamedIndividual ,
                       dcso:Contributor ;
@@ -37,8 +37,8 @@ ex:contact_1 rdf:type owl:NamedIndividual ,
              foaf:mbox "rleite@igc.gulbenkian.pt" ;
              dcso:role "project leader" ;
              foaf:name "Ricardo Leite" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/contact_2
 ex:contact_2 rdf:type owl:NamedIndividual ,
                       dcso:Contributor ;
@@ -46,8 +46,8 @@ ex:contact_2 rdf:type owl:NamedIndividual ,
              foaf:mbox "sladeiro@igc.gulbenkian.pt" ;
              dcso:role "project leader" ;
              foaf:name "Susana Ladeiro" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/cost_1
 ex:cost_1 rdf:type owl:NamedIndividual ,
                    dcso:Cost ;
@@ -55,8 +55,8 @@ ex:cost_1 rdf:type owl:NamedIndividual ,
           dcso:value 100000 ;
           terms:description "The cost of buying and maintaining equipment for the laboratory." ;
           terms:title "Equipment" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/dataset_1
 ex:dataset_1 rdf:type owl:NamedIndividual ,
                       dcso:Dataset ;
@@ -72,8 +72,8 @@ ex:dataset_1 rdf:type owl:NamedIndividual ,
              terms:description "Quality Control of DNA and RNA" ;
              terms:language dcs-lang:eng ;
              terms:title "Quality Check QC" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/distribution_1
 ex:distribution_1 rdf:type owl:NamedIndividual ,
                            dcso:Distribution ;
@@ -86,8 +86,8 @@ ex:distribution_1 rdf:type owl:NamedIndividual ,
                   dcso:data_access "shared" ;
                   terms:description "Files will be stored in xls and pfd in the storage server (AFS)" ;
                   terms:title "Quality control file" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/dmp_1
 ex:dmp_1 rdf:type owl:NamedIndividual ,
                   dcso:DMP ;
@@ -104,23 +104,23 @@ ex:dmp_1 rdf:type owl:NamedIndividual ,
          terms:language dcs-lang:eng ;
          terms:modified "2019-09-18T00:00:00" ;
          terms:title "Unidade de Genómica" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/dmpid_1
 ex:dmpid_1 rdf:type owl:NamedIndividual ,
                     dcso:Id ;
            dcso:identifier_type "url" ;
            terms:identifier "https://www.dropbox.com/s/rfu5nyo0s1wx9ju/DMP.Unidade.Genomica.1.0.json?dl=0" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/funding_1
 ex:funding_1 rdf:type owl:NamedIndividual ,
                       dcso:Funding ;
              dcso:hasFunderId ex:id_4 ;
              dcso:hasGrantId ex:id_3 ;
              dcso:funding_status "granted" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/host_1
 ex:host_1 rdf:type owl:NamedIndividual ,
                    dcso:Host ;
@@ -133,29 +133,29 @@ ex:host_1 rdf:type owl:NamedIndividual ,
           dcso:support_versioning "no" ;
           terms:description "Storage server (AFS) managed by IGC IT" ;
           terms:title "AFS Server" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/id_1
 ex:id_1 rdf:type owl:NamedIndividual ,
                  dcso:Id ;
         dcso:identifier_type "orcid" ;
         terms:identifier "0000-0002-9622-3895" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/id_2
 ex:id_2 rdf:type owl:NamedIndividual ,
                  dcso:Id ;
         dcso:identifier_type "orcid" ;
         terms:identifier "0000-0003-4333-2008" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/id_3
 ex:id_3 rdf:type owl:NamedIndividual ,
                  dcso:Id ;
         dcso:identifier_type "other" ;
         terms:identifier "03/SAICT/2015" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/id_4
 ex:id_4 rdf:type owl:NamedIndividual ,
                  dcso:Id ;
@@ -163,23 +163,23 @@ ex:id_4 rdf:type owl:NamedIndividual ,
                              "url" ;
         terms:identifier "http://dx.doi.org/10.13039/501100000780" ,
                          "https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/sequencing-sheet-format-specifications-technical-note-970-2017-004.pdf" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/license_1
 ex:license_1 rdf:type owl:NamedIndividual ,
                       dcso:License ;
              dcso:license_ref "https://creativecommons.org/licenses/by/4.0" ;
              dcso:start_date "2022-01-01T00:00:00" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/metadata_1
 ex:metadata_1 rdf:type owl:NamedIndividual ,
                        dcso:Metadata ;
               dcso:hasMetadataStandardId ex:id_4 ;
               terms:description "Used index and sample name (sample sheet)" ;
               terms:language dcs-lang:eng .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/project_1
 ex:project_1 rdf:type owl:NamedIndividual ,
                       dcso:Project ;
@@ -188,15 +188,15 @@ ex:project_1 rdf:type owl:NamedIndividual ,
              dcso:start "2017-01-01T00:00:00" ;
              terms:description "ONEIDA is a consortium established between Instituto de Tecnologia Química e Biológica António Xavier (ITQB NOVA), Instituto Gulbenkian de Ciência (IGC) and Instituto de Medicina Molecular (iMM) to match the urgent need for effective solutions in the prevention and control of infectious diseases and ­antibiotic resistance." ;
              terms:title "ONEIDA" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/sp_1
 ex:sp_1 rdf:type owl:NamedIndividual ,
                  dcso:SecurityPrivacy ;
         terms:description "Used index and sample name (sample sheet)" ;
         terms:title "Access" .
-​
-​
+
+
 ###  https://w3id.org/dcso/id/example/technicalresource_1
 ex:technicalresource_1 rdf:type owl:NamedIndividual ,
                                 dcso:TechnicalResource ;
