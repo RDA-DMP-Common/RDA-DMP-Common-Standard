@@ -1017,6 +1017,5 @@
 			]
 		}
 	},
-	"additionalProperties": false,
 	"required": ["dmp"]
 }
