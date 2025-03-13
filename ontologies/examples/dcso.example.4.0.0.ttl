@@ -182,8 +182,8 @@
 <https://w3id.org/dcso/ns/core#created> rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/dcso/ns/core#curencyCode
-<https://w3id.org/dcso/ns/core#curencyCode> rdf:type owl:DatatypeProperty .
+###  https://w3id.org/dcso/ns/core#currencyCode
+<https://w3id.org/dcso/ns/core#currencyCode> rdf:type owl:DatatypeProperty .
 
 
 ###  https://w3id.org/dcso/ns/core#dataAccess
@@ -386,7 +386,7 @@
 ###  https://w3id.org/dcso/ns/example#cost_001
 :cost_001 rdf:type owl:NamedIndividual ,
                    <https://w3id.org/dcso/ns/core#Cost> ;
-          <https://w3id.org/dcso/ns/core#curencyCode> "EUR"^^xsd:string ;
+          <https://w3id.org/dcso/ns/core#currencyCode> "EUR"^^xsd:string ;
           <https://w3id.org/dcso/ns/core#value> "1500"^^xsd:integer ;
           <http://purl.org/dc/terms/description> "Cost 001 refers to the cost of maintaining the digital repository where data will be hosted during and after the end of the project."^^xsd:string ;
           <http://purl.org/dc/terms/title> "Cost 001 - Digital Repository"^^xsd:string .

@@ -371,12 +371,12 @@ dcso:created rdf:type owl:DatatypeProperty ;
              rdfs:label "created" .
 
 
-###  https://w3id.org/dcso/ns/core#curencyCode
-dcso:curencyCode rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/dcso/ns/core#currencyCode
+dcso:currencyCode rdf:type owl:DatatypeProperty ;
                  rdfs:domain dcso:Cost ;
                  rdfs:range xsd:string ;
                  rdfs:comment "A Currency Code used to express values in this Cost." ;
-                 rdfs:label "curencyCode" .
+                 rdfs:label "currencyCode" .
 
 
 ###  https://w3id.org/dcso/ns/core#dataAccess
