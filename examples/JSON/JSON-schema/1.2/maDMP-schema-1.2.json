@@ -209,7 +209,7 @@
           "format": "date-time",
           "title": "The DMP Creation Schema",
           "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time compliant string",
-          "examples": ["2019-03-13T13:13:00"]
+          "examples": ["2019-03-13T13:13:00Z"]
         },
         "dataset": {
           "$id": "#/properties/dmp/properties/dataset",
@@ -326,7 +326,7 @@
                     "download_url": {
                       "$id": "#/properties/dmp/properties/dataset/items/properties/distribution/items/properties/download_url",
                       "type": "string",
-                      "format": "uri",
+                      "format": "url",
                       "title": "The Dataset Distribution Download URL Schema",
                       "description": "The URL of the downloadable file in a given format. E.g. CSV file or RDF file.",
                       "examples": ["http://some.repo.../download/..."]
@@ -480,8 +480,8 @@
                         "url": {
                           "$id": "#/properties/dmp/properties/dataset/items/properties/distribution/items/properties/host/properties/url",
                           "type": "string",
-                          "format": "uri",
-                          "title": "The Dataset Distribution Host Title Schema",
+                          "format": "url",
+                          "title": "The Dataset Distribution Host URL Schema",
                           "description": "The URL of the system hosting a distribution of a dataset",
                           "examples": ["https://zenodo.org"]
                         }
@@ -504,7 +504,7 @@
                           "license_ref": {
                             "$id": "#/properties/dmp/properties/dataset/items/properties/distribution/items/properties/license/items/properties/license_ref",
                             "type": "string",
-                            "format": "uri",
+                            "format": "url",
                             "title": "The Dataset Distribution License Reference Schema",
                             "description": "Link to license document.",
                             "examples": ["https://creativecommons.org/licenses/by/4.0/"]
@@ -821,7 +821,7 @@
         "ethical_issues_report": {
           "$id": "#/properties/dmp/properties/ethical_issues_report",
           "type": "string",
-          "format": "uri",
+          "format": "url",
           "title": "The DMP Ethical Issues Report Schema",
           "description": "To indicate where a protocol from a meeting with an ethical commitee can be found",
           "examples": ["http://report.location"]
@@ -851,7 +851,7 @@
           "format": "date-time",
           "title": "The DMP Modification Schema",
           "description": "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time compliant string.",
-          "examples": ["2020-03-14T10:53:49"]
+          "examples": ["2020-03-14T10:53:49Z"]
         },
         "project": {
           "$id": "#/properties/dmp/properties/project",
@@ -1009,6 +1009,5 @@
       ]
     }
   },
-  "additionalProperties": false,
   "required": ["dmp"]
 }
