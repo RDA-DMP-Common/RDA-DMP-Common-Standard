@@ -208,7 +208,7 @@
           "type": "string",
           "format": "date-time",
           "title": "The DMP Creation Schema",
-          "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time compliant string",
+          "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string",
           "examples": ["2019-03-13T13:13:00Z"]
         },
         "dataset": {
@@ -294,7 +294,7 @@
                       "type": "string",
                       "format": "date",
                       "title": "The Dataset Distribution Available Until Schema",
-                      "description": "Indicates how long this distribution will be/ should be available. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                      "description": "Indicates how long this distribution will be/ should be available. Encoded using the relevant ISO 8601 Date compliant string.",
                       "examples": ["2030-06-30"]
                     },
                     "byte_size": {
@@ -514,7 +514,7 @@
                             "type": "string",
                             "format": "date",
                             "title": "The Dataset Distribution License Start Date Schema",
-                            "description": "If date is set in the future, it indicates embargo period. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                            "description": "If date is set in the future, it indicates embargo period. Encoded using the relevant ISO 8601 Date compliant string.",
                             "examples": ["2019-06-30"]
                           }
                         },
@@ -550,7 +550,7 @@
                 "type": "string",
                 "format": "date",
                 "title": "The Dataset Date of Issue Schema",
-                "description": "Issued. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                "description": "Issued. Encoded using the relevant ISO 8601 Date compliant string.",
                 "examples": ["2019-06-30"]
               },
               "keyword": {
@@ -857,7 +857,7 @@
           "type": "string",
           "format": "date-time",
           "title": "The DMP Modification Schema",
-          "description": "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+          "description": "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string.",
           "examples": ["2020-03-14T10:53:49Z"]
         },
         "project": {
@@ -882,7 +882,7 @@
                 "type": "string",
                 "format": "date",
                 "title": "The DMP Project End Date Schema",
-                "description": "Project end date. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                "description": "Project end date. Encoded using the relevant ISO 8601 Date compliant string.",
                 "examples": ["2020-03-31"]
               },
               "funding": {
@@ -980,7 +980,7 @@
                 "type": "string",
                 "format": "date",
                 "title": "The DMP Project Start Date Schema",
-                "description": "Project start date. Encoded using the relevant ISO 8601 Date and Time compliant string.",
+                "description": "Project start date. Encoded using the relevant ISO 8601 Date compliant string.",
                 "examples": ["2019-04-01"]
               },
               "title": {
