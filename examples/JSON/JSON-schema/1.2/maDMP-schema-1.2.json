@@ -538,6 +538,13 @@
                   ]
                 }
               },
+              "is_reused": {
+                "$id": "#/properties/dmp/properties/dataset/items/properties/is_reused",
+                "type": "boolean",
+                "title": "The Dataset Is Reused Schema",
+                "description": "Indicates if the dataset is reused, i.e., not produced in project(s) covered by this DMP.",
+                "examples": [true]
+              },
               "issued": {
                 "$id": "#/properties/dmp/properties/dataset/items/properties/issued",
                 "type": "string",
