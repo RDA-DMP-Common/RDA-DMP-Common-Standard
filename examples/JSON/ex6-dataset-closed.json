@@ -1,4 +1,5 @@
 {
+	"$schema": "./JSON-schema/1.2/maDMP-schema-1.2.json",
 	"dmp": {
 		"title": "Super secret data DMP",
 		"description": "DMP with super secret and sensitive data that cannot be shared",

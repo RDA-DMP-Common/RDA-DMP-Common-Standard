@@ -1,4 +1,5 @@
 {
+	"$schema": "./JSON-schema/1.2/maDMP-schema-1.2.json",
 	"dmp": {
 		"title": "DMP in a planning phase",
 		"description": "Example of a DMP describing a project in which source code will be created and put on GitHub. The DMP is created on 2019-02-22. The code is planned to be released on 2019-06-30 using CC-BY license.",

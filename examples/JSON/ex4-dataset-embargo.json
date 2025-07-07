@@ -1,4 +1,5 @@
 {
+	"$schema": "./JSON-schema/1.2/maDMP-schema-1.2.json",
 	"dmp": {
 		"title": "Embargo DMP",
 		"description": "Data will be shared after two years (embargo)",
