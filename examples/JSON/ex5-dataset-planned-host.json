@@ -1,4 +1,5 @@
 {
+	"$schema": "./JSON-schema/1.2/maDMP-schema-1.2.json",
 	"dmp": {
 		"title": "Estimation DMP",
 		"description": "DOI pre-booked for data, it's size is estimated",
