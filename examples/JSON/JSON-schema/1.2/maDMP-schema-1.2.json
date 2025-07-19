@@ -1142,9 +1142,8 @@
         },
         "ethical_issues_report": {
           "type": "string",
-          "format": "url",
           "title": "The DMP Ethical Issues Report Schema",
-          "description": "To indicate where a protocol from a meeting with an ethical commitee can be found",
+          "description": "To indicate where a report/document that details all identified ethical issues (might be for example emit from a meeting with an ethical committee), preferably in URL format",
           "examples": [
             "http://report.location"
           ]
