@@ -693,8 +693,8 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
     </tr>
     <tr>
       <td valign="top"><a id="ethical_issues_report" href="#ethical_issues_report_tree">ethical_issues_report</a></td>
-      <td valign="top">To indicate where a report/document that details all identified ethical issues (might be for example emit from a meeting with an ethical committee)</td>
-      <td valign="top">URL</td>
+      <td valign="top">To indicate where a report/document that details all identified ethical issues (might be for example emit from a meeting with an ethical committee), preferably in URL format</td>
+      <td valign="top">String</td>
       <td valign="top">0..1</td>
       <td valign="top">http://report.location</td>
     </tr>
