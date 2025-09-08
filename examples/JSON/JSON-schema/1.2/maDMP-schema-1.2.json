@@ -11,6 +11,68 @@
   },
   "required": ["dmp"],
   "$defs": {
+    "Affiliation": {
+      "$anchor": "Affiliation",
+      "type": "object",
+      "title": "Affiliation",
+      "properties": {
+        "affiliation_id": {
+          "$ref": "#/$defs/AffiliationID"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the affiliation",
+          "examples": [
+            "Some University"
+          ]
+        }
+      },
+      "required": [
+        "affiliation_id",
+        "name"
+      ]
+    },
+    "AffiliationID": {
+      "$anchor": "AffiliationID",
+      "type": "object",
+      "title": "Affiliation ID",
+      "properties": {
+        "identifier": {
+          "$ref": "#/$defs/AffiliationIDValue"
+        },
+        "type": {
+          "$ref": "#/$defs/AffiliationIDType"
+        }
+      },
+      "required": [
+          "identifier",
+          "type"
+      ]
+    },
+    "AffiliationIDType": {
+      "$anchor": "AffiliationIDType",
+      "type": "string",
+      "enum": [
+        "ror",
+        "grid",
+        "isni",
+        "other"
+      ],
+      "title": "Affiliation ID Type",
+      "description": "Identifier type. Allowed values: ror, grid, isni, other",
+      "examples": [
+        "ror"
+      ]
+    },
+    "AffiliationIDValue": {
+      "$anchor": "AffiliationIDValue",
+      "type": "string",
+      "title": "Affiliation ID Value",
+      "examples": [
+        "https://ror.org/03yrm5c26"
+      ]
+    },
     "Booleanish": {
       "$anchor": "Booleanish",
       "type": "string",
@@ -49,6 +111,14 @@
       "type": "object",
       "title": "The DMP Contact Schema",
       "properties": {
+        "affiliation": {
+          "type": "array",
+          "title": "Affiliations",
+          "description": "Affiliation(s) of the contributor",
+          "items": {
+            "$ref": "#/$defs/Affiliation"
+          }
+        },
         "contact_id": {
           "$ref": "#/$defs/ContactID"
         },
@@ -81,6 +151,14 @@
       "type": "object",
       "title": "The Contributor Items Schema",
       "properties": {
+        "affiliation": {
+          "type": "array",
+          "title": "Affiliations",
+          "description": "Affiliation(s) of the contributor",
+          "items": {
+            "$ref": "#/$defs/Affiliation"
+          }
+        },
         "contributor_id": {
           "$ref": "#/$defs/ContributorID"
         },
