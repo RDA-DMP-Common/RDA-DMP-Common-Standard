@@ -88,6 +88,17 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     <li id="dmp_created_tree"><a href="#dmp_created">created</a></li>
     <li id="dataset_tree"><a href="#dataset_table">dataset</a></li>
     <ul>
+      <li id="creator_tree"><a href="#creator_table">creator</a></li>
+      <ul>
+        <li id="creator_affiliation_tree"><a href="#creator_affiliation">affiliation</a></li>
+        <li id="creator_id_tree"><a href="#creator_id_table">creator_id</a></li>
+        <ul>
+          <li id="creator_id_id_tree"><a href="#creator_id_id">identifier</a></li>
+          <li id="creator_id_type_tree"><a href="#creator_id_type">type</a></li>
+        </ul>
+        <li id="creator_mbox_tree"><a href="#creator_mbox">mbox</a></li>
+        <li id="creator_name_tree"><a href="#creator_name">name</a></li>
+      </ul>
       <li id="dataset_quality_assurance_tree"><a href="#dataset_quality_assurance">data_quality_assurance</a></li>
       <li id="dataset_id_tree"><a href="#dataset_id_table">dataset_id</a></li>
       <ul>
@@ -276,7 +287,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
   </thead>
   <tbody>
-    <tr>  
+    <tr>
       <td valign="top"><a id="contact_affiliation" href="#affiliation_tree">affiliation</a></td>
       <td valign="top">Affiliations of a contact</td>
       <td valign="top">Nested Data Structure</td>
@@ -454,6 +465,80 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">Number</td>
       <td valign="top">0..1</td>
       <td valign="top">1000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="creator_table">Properties in 'creator'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="creator_affiliation" href="#affiliation_tree">affiliation</a></td>
+      <td valign="top">Affiliations of a creator</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="creator_id" href="#creator_id_tree">creator_id</a></td>
+      <td valign="top">Identifier for a creator</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">1</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="creator_mbox" href="#creator_mbox_tree">mbox</a></td>
+      <td valign="top">E-mail address for a creator</td>
+      <td valign="top">String</td>
+      <td valign="top">0..1</td>
+      <td valign="top">john.doe@example.com</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="creator_name" href="#creator_name_tree">name</a></td>
+      <td valign="top">Name of a creator person or organisation</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">John Doe</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="creator_id_table">Properties in 'creator_id'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="creator_id_id" href="#creator_id_id_tree">identifier</a></td>
+      <td valign="top">To indicate the specific value of an identifier for a creator</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">http://orcid.org/0000-0000-0000-0000</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="creator_id_type" href="#creator_id_type_tree">type</a></td>
+      <td valign="top">To specify a type of an identifier for a creator. <br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li></ul></td>
+      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">1</td>
+      <td valign="top">orcid</td>
     </tr>
   </tbody>
 </table>
