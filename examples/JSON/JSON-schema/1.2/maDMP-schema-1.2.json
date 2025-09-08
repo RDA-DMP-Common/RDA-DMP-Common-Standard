@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema/1.2",
-  "title": "RDA DMP Common Standard Schema",
-  "description": "JSON Schema for the RDA DMP Common Standard",
+  "title": "RDA DMP Common Standard for machine-actionable Data Management Plans",
+  "description": "This is a metadata application profile to provide basic interoperability between systems producing or consuming machine-actionable data management plans (maDMPS). Further fields can be added in specific deployments, but they do not guarantee interoperability. DMP tools can use any other fields in their internal data models.\n\nThis application profile is intended to cover a wide range of use cases and does not set any business (e.g. funder specific) requirements. It represents information over the whole DMP lifecycle.",
   "type": "object",
   "properties": {
     "dmp": {
@@ -100,7 +100,7 @@
         "wds",
         "coretrustseal"
       ],
-      "title": "The Dataset Distribution Host Certification Type Schema",
+      "title": "Certification",
       "description": "Repository certified to a recognised standard. Allowed values: din31644, dini-zertifikat, dsa, iso16363, iso16919, trac, wds, coretrustseal",
       "examples": [
         "coretrustseal"
@@ -109,7 +109,8 @@
     "Contact": {
       "$anchor": "Contact",
       "type": "object",
-      "title": "The DMP Contact Schema",
+      "title": "Contact",
+      "description": "Specifies the party which can provide any information on the DMP. This is not necessarily the DMP creator, and can be a person or an organisation.",
       "properties": {
         "affiliation": {
           "type": "array",
@@ -125,7 +126,7 @@
         "mbox": {
           "type": "string",
           "format": "email",
-          "title": "The Mailbox Schema",
+          "title": "Mailbox",
           "description": "Contact Person's E-mail address",
           "examples": [
             "cc@example.com"
@@ -133,7 +134,7 @@
         },
         "name": {
           "type": "string",
-          "title": "The Name Schema",
+          "title": "Name",
           "description": "Name of the contact person",
           "examples": [
             "Charlie Chaplin"
@@ -146,119 +147,10 @@
         "name"
       ]
     },
-    "Contributor": {
-      "$anchor": "Contributor",
-      "type": "object",
-      "title": "The Contributor Items Schema",
-      "properties": {
-        "affiliation": {
-          "type": "array",
-          "title": "Affiliations",
-          "description": "Affiliation(s) of the contributor",
-          "items": {
-            "$ref": "#/$defs/Affiliation"
-          }
-        },
-        "contributor_id": {
-          "$ref": "#/$defs/ContributorID"
-        },
-        "mbox": {
-          "type": "string",
-          "title": "The Contributor Mailbox Schema",
-          "description": "Contributor Mail address",
-          "examples": [
-            "john@smith.com"
-          ],
-          "format": "email"
-        },
-        "name": {
-          "type": "string",
-          "title": "The Name Schema",
-          "description": "Name of the contributor",
-          "examples": [
-            "John Smith"
-          ]
-        },
-        "role": {
-          "$ref": "#/$defs/ContributorRoles"
-        }
-      },
-      "required": [
-        "contributor_id",
-        "name",
-        "role"
-      ]
-    },
-    "ContributorID": {
-      "$anchor": "ContributorID",
-      "type": "object",
-      "title": "The Contributor ID Schema",
-      "properties": {
-        "identifier": {
-          "$ref": "#/$defs/ContributorIDValue"
-        },
-        "type": {
-          "$ref": "#/$defs/ContributorIDType"
-        }
-      },
-      "required": [
-        "identifier",
-        "type"
-      ]
-    },
-    "ContributorIDType": {
-      "$anchor": "ContributorIDType",
-      "type": "string",
-      "enum": [
-        "orcid",
-        "isni",
-        "openid",
-        "other"
-      ],
-      "title": "The DMP Contact Identifier Type Schema",
-      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
-      "examples": [
-        "orcid"
-      ]
-    },
-    "ContributorIDValue": {
-      "$anchor": "ContributorIDValue",
-      "type": "string",
-      "title": "The DMP Contributor Identifier Schema",
-      "examples": [
-        "https://orcid.org/0000-0003-0644-4174"
-      ]
-    },
-    "ContributorRole": {
-      "$anchor": "ContributorRole",
-      "type": "string",
-      "title": "The Contributor Role(s) Items Schema",
-      "examples": [
-        "Data Steward"
-      ]
-    },
-    "ContributorRoles": {
-      "$anchor": "ContributorRoles",
-      "type": "array",
-      "title": "The Role Schema",
-      "description": "Type of contributor",
-      "items": {
-        "$ref": "#/$defs/ContributorRole"
-      },
-      "uniqueItems": true
-    },
-    "Contributors": {
-      "$anchor": "Contributors",
-      "type": "array",
-      "title": "The Contributor Schema",
-      "items": {
-        "$ref": "#/$defs/Contributor"
-      }
-    },
     "ContactID": {
       "$anchor": "ContactID",
       "type": "object",
-      "title": "The Contact ID Schema",
+      "title": "Contact ID",
       "properties": {
         "identifier": {
           "$ref": "#/$defs/ContactIDValue"
@@ -281,7 +173,7 @@
         "openid",
         "other"
       ],
-      "title": "The DMP Contact Identifier Type Schema",
+      "title": "Contact ID Type",
       "description": "Identifier type. Allowed values: orcid, isni, openid, other",
       "examples": [
         "orcid"
@@ -290,39 +182,140 @@
     "ContactIDValue": {
       "$anchor": "ContactIDValue",
       "type": "string",
-      "title": "The DMP Contact Identifier Schema",
+      "title": "Contact ID Value",
       "examples": [
         "https://orcid.org/0000-0003-0644-4174"
       ]
     },
+    "Contributor": {
+      "$anchor": "Contributor",
+      "type": "object",
+      "title": "Contributor",
+      "properties": {
+        "contributor_id": {
+          "$ref": "#/$defs/ContributorID"
+        },
+        "mbox": {
+          "type": "string",
+          "title": "Mailbox",
+          "description": "E-mail address for a contributor",
+          "examples": [
+            "john@smith.com"
+          ],
+          "format": "email"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the contributor",
+          "examples": [
+            "John Smith"
+          ]
+        },
+        "role": {
+          "$ref": "#/$defs/ContributorRoles"
+        }
+      },
+      "required": [
+        "contributor_id",
+        "name",
+        "role"
+      ]
+    },
+    "ContributorID": {
+      "$anchor": "ContributorID",
+      "type": "object",
+      "title": "Contributor ID",
+      "properties": {
+        "identifier": {
+          "$ref": "#/$defs/ContributorIDValue"
+        },
+        "type": {
+          "$ref": "#/$defs/ContributorIDType"
+        }
+      },
+      "required": [
+        "identifier",
+        "type"
+      ]
+    },
+    "ContributorIDType": {
+      "$anchor": "ContributorIDType",
+      "type": "string",
+      "enum": [
+        "orcid",
+        "isni",
+        "openid",
+        "other"
+      ],
+      "title": "Contact ID Type",
+      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
+      "examples": [
+        "orcid"
+      ]
+    },
+    "ContributorIDValue": {
+      "$anchor": "ContributorIDValue",
+      "type": "string",
+      "title": "Contributor ID Value",
+      "examples": [
+        "https://orcid.org/0000-0003-0644-4174"
+      ]
+    },
+    "ContributorRole": {
+      "$anchor": "ContributorRole",
+      "type": "string",
+      "title": "Contributor Role",
+      "examples": [
+        "Data Steward"
+      ]
+    },
+    "ContributorRoles": {
+      "$anchor": "ContributorRoles",
+      "type": "array",
+      "title": "Contributor Roles",
+      "description": "Type of contributor",
+      "items": {
+        "$ref": "#/$defs/ContributorRole"
+      },
+      "uniqueItems": true
+    },
+    "Contributors": {
+      "$anchor": "Contributors",
+      "type": "array",
+      "title": "The Contributor Schema",
+      "items": {
+        "$ref": "#/$defs/Contributor"
+      }
+    },
     "Cost": {
       "$anchor": "Cost",
       "type": "object",
-      "title": "The Cost Items Schema",
+      "title": "Cost",
       "properties": {
         "currency_code": {
           "$ref": "#/$defs/CurrencyCode"
         },
         "description": {
           "type": "string",
-          "title": "The Cost Description Schema",
-          "description": "Cost(s) Description",
+          "title": "Description",
+          "description": "To provide additional details about a cost, including specifying which activities or resources it relates to, such as making data FAIR, ensuring data accessibility, or enhancing its reusability.",
           "examples": [
-            "Costs for maintaining..."
+            "Storage and backup costs are calculated based on a 12-month storage period, daily incremental and weekly full backups, and a frequency of 4 restores per month, as outlined in the evaluation table at www.example-storagecostevaluation.com."
           ]
         },
         "title": {
           "type": "string",
-          "title": "The Cost Title Schema",
-          "description": "Title",
+          "title": "Title",
+          "description": "Title of a cost",
           "examples": [
             "Storage and Backup"
           ]
         },
         "value": {
           "type": "number",
-          "title": "The Cost Value Schema",
-          "description": "Value",
+          "title": "Value",
+          "description": "Cost value in the specified currency",
           "examples": [
             1000
           ]
@@ -335,7 +328,7 @@
     "Costs": {
       "$anchor": "Costs",
       "type": "array",
-      "title": "The Cost Schema",
+      "title": "Costs",
       "items": {
         "$ref": "#/$defs/Cost"
       }
@@ -507,7 +500,7 @@
         "ZMW",
         "ZWD"
       ],
-      "title": "The Cost Currency Code Schema",
+      "title": "Currency Code",
       "description": "Allowed values defined by ISO 4217",
       "examples": [
         "EUR"
@@ -767,7 +760,7 @@
         "ZM",
         "ZW"
       ],
-      "title": "The Dataset Distribution Host Geographical Location Schema",
+      "title": "Country Code",
       "description": "Physical location of the data expressed using ISO 3166-1 country code.",
       "examples": [
         "AT"
@@ -781,7 +774,7 @@
         "shared",
         "closed"
       ],
-      "title": "The Dataset Distribution Data Access Schema",
+      "title": "Data Access",
       "description": "Indicates access mode for data. Allowed values: open, shared, closed",
       "examples": [
         "open"
@@ -790,17 +783,16 @@
     "Dataset": {
       "$anchor": "Dataset",
       "type": "object",
-      "title": "The Dataset Items Schema",
+      "title": "Dataset",
       "properties": {
         "data_quality_assurance": {
           "type": "array",
-          "title": "The Data Quality Assurance Schema",
-          "description": "Data Quality Assurance",
+          "title": "Data Quality Assurance",
+          "description": "To describe any quality assurance processes applied to a dataset, such as, to ensure its accuracy, reliability, consistency, and usability for its intended purposes. This includes systematic practices, procedures, and policies designed to maintain high data quality throughout its lifecycle.",
           "items": {
             "type": "string",
-            "title": "The Data Quality Assurance Schema",
             "examples": [
-              "We use file naming convention..."
+              "We calibrate measuring equipment daily, run repeat samples to monitor consistency in measurements and results, and cross-check collected data with at least two colleagues for accuracy."
             ]
           }
         },
@@ -809,15 +801,15 @@
         },
         "description": {
           "type": "string",
-          "title": "The Dataset Description Schema",
+          "title": "Description",
           "description": "Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.",
           "examples": [
-            "Field observation"
+            "The dataset includes detailed measurements of temperature, humidity, and soil moisture levels collected at various time intervals (every 30 minutes) across multiple locations. The dataset will also include metadata such as GPS coordinates, sensor calibration data, and environmental conditions. The primary objective of this dataset is to analyze the correlation between these variables and their impact on plant growth patterns over a 6-month period."
           ]
         },
         "distribution": {
           "type": "array",
-          "title": "The Dataset Distribution Schema",
+          "title": "Distributions",
           "description": "To provide technical information on a specific instance of data.",
           "items": {
             "$ref": "#/$defs/Distribution"
@@ -834,222 +826,30 @@
         "issued": {
           "type": "string",
           "format": "date",
-          "title": "The Dataset Date of Issue Schema",
-          "description": "Issued. Encoded using the relevant ISO 8601 Date compliant string.",
+          "title": "Issued",
+          "description": "To indicate a date when a dataset was published or released. Encoded using the relevant ISO 8601 Date compliant string.",
           "examples": [
             "2019-06-30"
           ]
         },
         "keyword": {
           "type": "array",
-          "title": "The Dataset Keyword(s) Schema",
-          "description": "Keywords",
+          "title": "Keywords",
           "items": {
             "type": "string",
-            "title": "The Dataset Keyword Items Schema",
+            "title": "Keyword",
             "examples": [
-              "keyword 1, keyword 2"
+              "keyword 1",
+              "keyword 2"
             ]
           }
         },
         "language": {
-          "type": "string",
-          "enum": [
-            "aar",
-            "abk",
-            "afr",
-            "aka",
-            "amh",
-            "ara",
-            "arg",
-            "asm",
-            "ava",
-            "ave",
-            "aym",
-            "aze",
-            "bak",
-            "bam",
-            "bel",
-            "ben",
-            "bih",
-            "bis",
-            "bod",
-            "bos",
-            "bre",
-            "bul",
-            "cat",
-            "ces",
-            "cha",
-            "che",
-            "chu",
-            "chv",
-            "cor",
-            "cos",
-            "cre",
-            "cym",
-            "dan",
-            "deu",
-            "div",
-            "dzo",
-            "ell",
-            "eng",
-            "epo",
-            "est",
-            "eus",
-            "ewe",
-            "fao",
-            "fas",
-            "fij",
-            "fin",
-            "fra",
-            "fry",
-            "ful",
-            "gla",
-            "gle",
-            "glg",
-            "glv",
-            "grn",
-            "guj",
-            "hat",
-            "hau",
-            "hbs",
-            "heb",
-            "her",
-            "hin",
-            "hmo",
-            "hrv",
-            "hun",
-            "hye",
-            "ibo",
-            "ido",
-            "iii",
-            "iku",
-            "ile",
-            "ina",
-            "ind",
-            "ipk",
-            "isl",
-            "ita",
-            "jav",
-            "jpn",
-            "kal",
-            "kan",
-            "kas",
-            "kat",
-            "kau",
-            "kaz",
-            "khm",
-            "kik",
-            "kin",
-            "kir",
-            "kom",
-            "kon",
-            "kor",
-            "kua",
-            "kur",
-            "lao",
-            "lat",
-            "lav",
-            "lim",
-            "lin",
-            "lit",
-            "ltz",
-            "lub",
-            "lug",
-            "mah",
-            "mal",
-            "mar",
-            "mkd",
-            "mlg",
-            "mlt",
-            "mon",
-            "mri",
-            "msa",
-            "mya",
-            "nau",
-            "nav",
-            "nbl",
-            "nde",
-            "ndo",
-            "nep",
-            "nld",
-            "nno",
-            "nob",
-            "nor",
-            "nya",
-            "oci",
-            "oji",
-            "ori",
-            "orm",
-            "oss",
-            "pan",
-            "pli",
-            "pol",
-            "por",
-            "pus",
-            "que",
-            "roh",
-            "ron",
-            "run",
-            "rus",
-            "sag",
-            "san",
-            "sin",
-            "slk",
-            "slv",
-            "sme",
-            "smo",
-            "sna",
-            "snd",
-            "som",
-            "sot",
-            "spa",
-            "sqi",
-            "srd",
-            "srp",
-            "ssw",
-            "sun",
-            "swa",
-            "swe",
-            "tah",
-            "tam",
-            "tat",
-            "tel",
-            "tgk",
-            "tgl",
-            "tha",
-            "tir",
-            "ton",
-            "tsn",
-            "tso",
-            "tuk",
-            "tur",
-            "twi",
-            "uig",
-            "ukr",
-            "urd",
-            "uzb",
-            "ven",
-            "vie",
-            "vol",
-            "wln",
-            "wol",
-            "xho",
-            "yid",
-            "yor",
-            "zha",
-            "zho",
-            "zul"
-          ],
-          "title": "The Dataset Language Schema",
-          "description": "Language of the dataset expressed using ISO 639-3.",
-          "examples": [
-            "eng"
-          ]
+          "$ref": "#/$defs/LanguageID"
         },
         "metadata": {
           "type": "array",
-          "title": "The Dataset Metadata Schema",
+          "title": "Metadata",
           "description": "To describe metadata standards used.",
           "items": {
             "$ref": "#/$defs/Metadata"
@@ -1062,18 +862,18 @@
             "no",
             "unknown"
           ],
-          "title": "The Dataset Personal Data Schema",
-          "description": "If any personal data is contained. Allowed values: yes, no, unknown",
+          "title": "Personal Data",
+          "description": "To indicate whether a dataset contains personal data. Personal data refers to any data that can identify an individual (e.g. name, birthdate, address, voice recordings, etc.). Allowed values: yes, no, unknown",
           "examples": [
             "unknown"
           ]
         },
         "preservation_statement": {
           "type": "string",
-          "title": "The Dataset Preservation Statement Schema",
-          "description": "Preservation Statement",
+          "title": "Preservation Statement",
+          "description": "To outline a plan for how and why a dataset will be preserved for long-term access, including for example storage redundancy, integrity checks (checksums, fixity checks), format migration,  and a sustainability plan ensuring institutional commitment and funding.",
           "examples": [
-            "Must be preserved to enable..."
+            "All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data."
           ]
         },
         "security_and_privacy": {
@@ -1086,8 +886,8 @@
             "no",
             "unknown"
           ],
-          "title": "The Dataset Sensitive Data Schema",
-          "description": "If any sensitive data is contained. Allowed values: yes, no, unknown",
+          "title": "Sensitive Data",
+          "description": "To indicate whether a dataset contains sensitive data. Sensitive data refers to information that could pose risks to individuals or organizations for example  financial information, medical records, passwords and social security numbers. Allowed values: yes, no, unknown",
           "examples": [
             "unknown"
           ]
@@ -1097,7 +897,7 @@
         },
         "title": {
           "type": "string",
-          "title": "The Dataset Title Schema",
+          "title": "Title",
           "description": "Title is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.",
           "examples": [
             "Fast car images"
@@ -1105,7 +905,7 @@
         },
         "type": {
           "type": "string",
-          "title": "The Dataset Type Schema",
+          "title": "Type",
           "description": "If appropriate, type according to: DataCite and/or COAR dictionary. Otherwise use the common name for the type, e.g. raw data, software, survey, etc. https://schema.datacite.org/meta/kernel-4.1/doc/DataCite-MetadataKernel_v4.1.pdf http://vocabularies.coar-repositories.org/pubby/resource_type.html",
           "examples": [
             "image"
@@ -1122,8 +922,7 @@
     "DatasetID": {
       "$anchor": "DatasetID",
       "type": "object",
-      "title": "The Dataset ID Schema",
-      "description": "Dataset ID",
+      "title": "Dataset ID",
       "properties": {
         "identifier": {
           "$ref": "#/$defs/DatasetIDValue"
@@ -1137,14 +936,6 @@
         "type"
       ]
     },
-    "Datasets": {
-      "$anchor": "Datasets",
-      "type": "array",
-      "title": "The Dataset Schema",
-      "items": {
-        "$ref": "#/$defs/Dataset"
-      }
-    },
     "DatasetIDType": {
       "$anchor": "DatasetIDType",
       "type": "string",
@@ -1155,7 +946,7 @@
         "url",
         "other"
       ],
-      "title": "The Dataset Identifier Type Schema",
+      "title": "Dataset ID Type",
       "description": "Dataset identifier type. Allowed values: handle, doi, ark, url, other",
       "examples": [
         "handle"
@@ -1164,16 +955,25 @@
     "DatasetIDValue": {
       "$anchor": "DatasetIDValue",
       "type": "string",
-      "title": "The Dataset Identifier Schema",
+      "title": "Dataset ID Value",
       "description": "Identifier for a dataset",
       "examples": [
         "https://hdl.handle.net/11353/10.923628"
       ]
     },
+    "Datasets": {
+      "$anchor": "Datasets",
+      "type": "array",
+      "title": "Datasets",
+      "items": {
+        "$ref": "#/$defs/Dataset"
+      }
+    },
     "DMPData": {
       "$anchor": "DMPData",
       "type": "object",
-      "title": "The DMP Schema",
+      "title": "DMP",
+      "description": "Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory.",
       "properties": {
         "contact": {
           "$ref": "#/$defs/Contact"
@@ -1187,8 +987,8 @@
         "created": {
           "type": "string",
           "format": "date-time",
-          "title": "The DMP Creation Schema",
-          "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string",
+          "title": "Created",
+          "description": "Date and time of the first version of a DMP. Must not be changed in subsequent DMPs. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string.",
           "examples": [
             "2019-03-13T13:13:00Z"
           ]
@@ -1198,8 +998,8 @@
         },
         "description": {
           "type": "string",
-          "title": "The DMP Description Schema",
-          "description": "To provide any free-form text information on a DMP",
+          "title": "Description",
+          "description": "Any text related to this DMP, optionally describing the project. It can include important information that doesn't fit elsewhere.",
           "examples": [
             "This DMP is for our new project"
           ]
@@ -1209,8 +1009,8 @@
         },
         "ethical_issues_description": {
           "type": "string",
-          "title": "The DMP Ethical Issues Description Schema",
-          "description": "To describe ethical issues directly in a DMP",
+          "title": "Ethical Issues Description",
+          "description": "To describe considerations that require compliance with laws and regulations (e.g. GDPR, animal welfare) due to the involvement of humans, animals, or sensitive information. This includes ensuring informed consent from participants, protecting privacy and confidentiality, and adhering to applicable legal and ethical standards throughout the research.",
           "examples": [
             "There are ethical issues, because..."
           ]
@@ -1220,7 +1020,7 @@
         },
         "ethical_issues_report": {
           "type": "string",
-          "title": "The DMP Ethical Issues Report Schema",
+          "title": "Ethical Issues Report",
           "description": "To indicate where a report/document that details all identified ethical issues (might be for example emit from a meeting with an ethical committee), preferably in URL format",
           "examples": [
             "http://report.location"
@@ -1232,23 +1032,23 @@
         "modified": {
           "type": "string",
           "format": "date-time",
-          "title": "The DMP Modification Schema",
-          "description": "Must be set each time DMP is modified. Indicates DMP version. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string.",
+          "title": "Modified",
+          "description": "Must be set each time DMP is modified. Indicates a DMP version. Encoded using the relevant ISO 8601 Date and Time (with timezone) compliant string.",
           "examples": [
             "2020-03-14T10:53:49Z"
           ]
         },
         "project": {
           "type": "array",
-          "title": "The DMP Project Schema",
-          "description": "Project related to a DMP",
+          "title": "Projects",
+          "description": "Projects related to a DMP",
           "items": {
             "$ref": "#/$defs/Project"
           }
         },
         "title": {
           "type": "string",
-          "title": "The DMP Title Schema",
+          "title": "Title",
           "description": "Title of a DMP",
           "examples": [
             "DMP for our new project"
@@ -1269,7 +1069,7 @@
     "DMPID": {
       "$anchor": "DMPID",
       "type": "object",
-      "title": "The DMP Identifier Schema",
+      "title": "DMP ID",
       "description": "Identifier for the DMP itself",
       "properties": {
         "identifier": {
@@ -1294,7 +1094,7 @@
         "url",
         "other"
       ],
-      "title": "The DMP Identifier Type Schema",
+      "title": "DMP ID Type",
       "description": "The DMP Identifier Type. Allowed values: handle, doi, ark, url, other",
       "examples": [
         "doi"
@@ -1303,7 +1103,7 @@
     "DMPIDValue": {
       "$anchor": "DMPIDValue",
       "type": "string",
-      "title": "The DMP Identifier Value Schema",
+      "title": "DMP ID Value",
       "description": "Identifier for a DMP",
       "examples": [
         "https://doi.org/10.1371/journal.pcbi.1006750"
@@ -1312,11 +1112,11 @@
     "Distribution": {
       "$anchor": "Distribution",
       "type": "object",
-      "title": "The Dataset Distribution Items Schema",
+      "title": "Distribution",
       "properties": {
         "access_url": {
           "type": "string",
-          "title": "The Dataset Distribution Access URL Schema",
+          "title": "Access URL",
           "description": "A URL of the resource that gives access to a distribution of the dataset. e.g. landing page.",
           "examples": [
             "http://some.repo"
@@ -1325,7 +1125,7 @@
         "available_until": {
           "type": "string",
           "format": "date",
-          "title": "The Dataset Distribution Available Until Schema",
+          "title": "Available Until",
           "description": "Indicates how long this distribution will be/ should be available. Encoded using the relevant ISO 8601 Date compliant string.",
           "examples": [
             "2030-06-30"
@@ -1333,7 +1133,7 @@
         },
         "byte_size": {
           "type": "integer",
-          "title": "The Dataset Distribution Byte Size Schema",
+          "title": "Byte Size",
           "description": "Size in bytes.",
           "examples": [
             690000
@@ -1344,7 +1144,7 @@
         },
         "description": {
           "type": "string",
-          "title": "The Dataset Distribution Description Schema",
+          "title": "Description",
           "description": "Description is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.",
           "examples": [
             "Best quality data before resizing"
@@ -1353,7 +1153,7 @@
         "download_url": {
           "type": "string",
           "format": "url",
-          "title": "The Dataset Distribution Download URL Schema",
+          "title": "Download URL",
           "description": "The URL of the downloadable file in a given format. E.g. CSV file or RDF file.",
           "examples": [
             "http://some.repo.../download/..."
@@ -1361,7 +1161,7 @@
         },
         "format": {
           "type": "array",
-          "title": "The Dataset Distribution Format Schema",
+          "title": "Format",
           "description": "Format according to: https://www.iana.org/assignments/media-types/media-types.xhtml if appropriate, otherwise use the common name for this format.",
           "items": {
             "$ref": "#/$defs/MIMEType"
@@ -1375,7 +1175,7 @@
         },
         "title": {
           "type": "string",
-          "title": "The Dataset Distribution Title Schema",
+          "title": "Title",
           "description": "Title is a property in both Dataset and Distribution, in compliance with W3C DCAT. In some cases these might be identical, but in most cases the Dataset represents a more abstract concept, while the distribution can point to a specific file.",
           "examples": [
             "Full resolution images"
@@ -1390,7 +1190,7 @@
     "FunderID": {
       "$anchor": "FunderID",
       "type": "object",
-      "title": "The Funder ID Schema",
+      "title": "Funder ID",
       "description": "Funder ID of the associated project",
       "properties": {
         "identifier": {
@@ -1413,7 +1213,7 @@
         "url",
         "other"
       ],
-      "title": "The Funder ID Type Schema",
+      "title": "Funder ID Type",
       "description": "Identifier type. Allowed values: fundref, url, other",
       "examples": [
         "fundref"
@@ -1422,31 +1222,16 @@
     "FunderIDValue": {
       "$anchor": "FunderIDValue",
       "type": "string",
-      "title": "The Funder ID Value Schema",
+      "title": "Funder ID Value",
       "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
       "examples": [
         "501100002428"
       ]
     },
-    "FundingStatus": {
-      "$anchor": "FundingStatus",
-      "type": "string",
-      "enum": [
-        "planned",
-        "applied",
-        "granted",
-        "rejected"
-      ],
-      "title": "The Funding Status Schema",
-      "description": "To express different phases of project lifecycle. Allowed values: planned, applied, granted, rejected",
-      "examples": [
-        "granted"
-      ]
-    },
     "Funding": {
       "$anchor": "Funding",
       "type": "object",
-      "title": "The DMP Project Funding Items Schema",
+      "title": "Funding",
       "properties": {
         "funder_id": {
           "$ref": "#/$defs/FunderID"
@@ -1465,16 +1250,31 @@
     "Fundings": {
       "$anchor": "Fundings",
       "type": "array",
-      "title": "The DMP Project Funding Schema",
+      "title": "Fundings",
       "description": "Funding related with a project",
       "items": {
         "$ref": "#/$defs/Funding"
       }
     },
+    "FundingStatus": {
+      "$anchor": "FundingStatus",
+      "type": "string",
+      "enum": [
+        "planned",
+        "applied",
+        "granted",
+        "rejected"
+      ],
+      "title": "Funding Status",
+      "description": "To express different phases of project lifecycle. Allowed values: planned, applied, granted, rejected",
+      "examples": [
+        "granted"
+      ]
+    },
     "GrantID": {
       "$anchor": "GrantID",
       "type": "object",
-      "title": "The Funding Grant ID Schema",
+      "title": "Grant ID",
       "description": "Grant ID of the associated project",
       "properties": {
         "identifier": {
@@ -1492,7 +1292,7 @@
     "GrantIDType": {
       "$anchor": "GrantIDType",
       "type": "string",
-      "title": "The Funding Grant ID Type Schema",
+      "title": "Grant ID Type",
       "enum": [
         "url",
         "other"
@@ -1505,7 +1305,7 @@
     "GrantIDValue": {
       "$anchor": "GrantIDValue",
       "type": "string",
-      "title": "The Funding Grant ID Value Schema",
+      "title": "Grant ID Value",
       "description": "Grant ID",
       "examples": [
         "776242"
@@ -1514,29 +1314,29 @@
     "Host": {
       "$anchor": "Host",
       "type": "object",
-      "title": "The Dataset Distribution Host Schema",
+      "title": "Host",
       "description": "To provide information on quality of service provided by infrastructure (e.g. repository) where data is stored.",
       "properties": {
         "availability": {
           "type": "string",
-          "title": "The Dataset Distribution Host Availability Schema",
-          "description": "Availability",
+          "title": "Availability",
+          "description": "Availability of a host (preferably as a percentage)",
           "examples": [
             "99,5"
           ]
         },
         "backup_frequency": {
           "type": "string",
-          "title": "The Dataset Distribution Host Backup Frequency Schema",
-          "description": "Backup Frequency",
+          "title": "Backup Frequency",
+          "description": "Frequency of backups provided by a host",
           "examples": [
             "weekly"
           ]
         },
         "backup_type": {
           "type": "string",
-          "title": "The Dataset Distribution Host Backup Type Schema",
-          "description": "Backup Type",
+          "title": "Backup Type",
+          "description": "Location and/or type of the backup provided by a host",
           "examples": [
             "tapes"
           ]
@@ -1546,8 +1346,7 @@
         },
         "description": {
           "type": "string",
-          "title": "The Dataset Distribution Host Description Schema",
-          "description": "Description",
+          "title": "Description",
           "examples": [
             "Repository hosted by..."
           ]
@@ -1556,12 +1355,12 @@
           "$ref": "#/$defs/CountryCode"
         },
         "pid_system": {
-          "$ref": "#/$defs/PidSystems"
+          "$ref": "#/$defs/PIDSystems"
         },
         "storage_type": {
           "type": "string",
-          "title": "The Dataset Distribution Host Storage Type Schema",
-          "description": "The type of storage required",
+          "title": "Storage Type",
+          "description": "To indicate whether a host supports versioning of data distributions.",
           "examples": [
             "External Hard Drive"
           ]
@@ -1571,8 +1370,7 @@
         },
         "title": {
           "type": "string",
-          "title": "The Dataset Distribution Host Title Schema",
-          "description": "Title",
+          "title": "Title",
           "examples": [
             "Super Repository"
           ]
@@ -1580,8 +1378,8 @@
         "url": {
           "type": "string",
           "format": "url",
-          "title": "The Dataset Distribution Host URL Schema",
-          "description": "The URL of the system hosting a distribution of a dataset",
+          "title": "URL",
+          "description": "A URL of an infrastructure hosting a distribution of a dataset",
           "examples": [
             "https://zenodo.org"
           ]
@@ -1595,7 +1393,7 @@
     "MIMEType": {
       "$anchor": "MIMEType",
       "type": "string",
-      "title": "The Dataset Distribution Format Items Schema",
+      "title": "Format MIME Type",
       "examples": [
         "image/tiff"
       ]
@@ -1790,7 +1588,7 @@
         "zho",
         "zul"
       ],
-      "title": "The Dataset Metadata Language Schema",
+      "title": "Language",
       "description": "Language of the metadata expressed using ISO 639-3.",
       "examples": [
         "eng"
@@ -1799,12 +1597,12 @@
     "License": {
       "$anchor": "License",
       "type": "object",
-      "title": "The Dataset Distribution License Items",
+      "title": "License",
       "properties": {
         "license_ref": {
           "type": "string",
           "format": "url",
-          "title": "The Dataset Distribution License Reference Schema",
+          "title": "License Reference",
           "description": "Link to license document.",
           "examples": [
             "https://creativecommons.org/licenses/by/4.0/"
@@ -1813,7 +1611,7 @@
         "start_date": {
           "type": "string",
           "format": "date",
-          "title": "The Dataset Distribution License Start Date Schema",
+          "title": "Start Date",
           "description": "If date is set in the future, it indicates embargo period. Encoded using the relevant ISO 8601 Date compliant string.",
           "examples": [
             "2019-06-30"
@@ -1828,7 +1626,7 @@
     "Licenses": {
       "$anchor": "Licenses",
       "type": "array",
-      "title": "The Dataset Distribution License(s) Schema",
+      "title": "Licenses",
       "description": "To list all licenses applied to a specific distribution of data.",
       "items": {
         "$ref": "#/$defs/License"
@@ -1837,14 +1635,14 @@
     "Metadata": {
       "$anchor": "Metadata",
       "type": "object",
-      "title": "The Dataset Metadata Items Schema",
+      "title": "Metadata",
       "properties": {
         "description": {
           "type": "string",
-          "title": "The Dataset Metadata Description Schema",
-          "description": "Description",
+          "title": "Description",
+          "description": "To provide any details on the choice of the metadata standard",
           "examples": [
-            "Provides taxonomy for..."
+            "The ISO 19115 Metadata Standard is applied to describe each geospatial dataset. Metadata includes the satellite's sensor type (e.g. Landsat 8 OLI), acquisition date, spatial resolution (30m), and cloud cover percentage."
           ]
         },
         "language": {
@@ -1862,7 +1660,7 @@
     "MetadataStandardID": {
       "$anchor": "MetadataStandardID",
       "type": "object",
-      "title": "The Dataset Metadata Standard ID Schema",
+      "title": "Metadata Standard ID",
       "properties": {
         "identifier": {
           "$ref": "#/$defs/MetadataStandardIDValue"
@@ -1883,7 +1681,7 @@
         "url",
         "other"
       ],
-      "title": "The Dataset Metadata Standard Identifier Type Schema",
+      "title": "Metadata Standard ID Type",
       "description": "Identifier type. Allowed values: url, other",
       "examples": [
         "url"
@@ -1892,25 +1690,25 @@
     "MetadataStandardIDValue": {
       "$anchor": "MetadataStandardIDValue",
       "type": "string",
-      "title": "The Dataset Metadata Standard Identifier Value Schema",
+      "title": "Metadata Standard ID Value",
       "description": "Identifier for the metadata standard used.",
       "examples": [
         "http://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
       ]
     },
-    "PidSystems": {
-      "$anchor": "PidSystems",
+    "PIDSystems": {
+      "$anchor": "PIDSystems",
       "type": "array",
-      "title": "The Dataset Distribution Host PID System Schema",
+      "title": "PID System",
       "description": "PID system(s). Allowed values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other",
       "items": {
-        "$ref": "#/$defs/PidSystemType"
+        "$ref": "#/$defs/PIDSystemType"
       }
     },
-    "PidSystemType": {
-      "$anchor": "PidSystemType",
+    "PIDSystemType": {
+      "$anchor": "PIDSystemType",
       "type": "string",
-      "title": "The Dataset Distribution Host PID System Items Schema",
+      "title": "PID System Type",
       "enum": [
         "ark",
         "arxiv",
@@ -1939,21 +1737,21 @@
     "Project": {
       "$anchor": "Project",
       "type": "object",
-      "title": "The DMP Project Items Schema",
+      "title": "Project",
       "properties": {
         "description": {
           "type": "string",
-          "title": "The DMP Project Description Schema",
-          "description": "Project description",
+          "title": "Description",
+          "description": "Project abstract providing an overview of the project's goals and scope",
           "examples": [
-            "Project develops novel..."
+            "This project aims to analyze the impact of urbanization on local biodiversity by collecting and assessing environmental data from multiple urban centers. Using remote sensing, field observations, and statistical modeling, the study will identify key factors influencing species diversity and habitat loss. The findings will support sustainable urban planning initiatives and inform conservation strategies."
           ]
         },
         "end": {
           "type": "string",
           "format": "date",
-          "title": "The DMP Project End Date Schema",
-          "description": "Project end date. Encoded using the relevant ISO 8601 Date compliant string.",
+          "title": "End",
+          "description": "Project end date. Encoded using the relevant ISO 8601 Date compliant string",
           "examples": [
             "2020-03-31"
           ]
@@ -1964,15 +1762,15 @@
         "start": {
           "type": "string",
           "format": "date",
-          "title": "The DMP Project Start Date Schema",
-          "description": "Project start date. Encoded using the relevant ISO 8601 Date compliant string.",
+          "title": "Start",
+          "description": "Project start date. Encoded using the relevant ISO 8601 Date compliant string",
           "examples": [
             "2019-04-01"
           ]
         },
         "title": {
           "type": "string",
-          "title": "The DMP Project Title Schema",
+          "title": "Title",
           "description": "Project title",
           "examples": [
             "Our New Project"
@@ -1985,22 +1783,22 @@
     },
     "SecurityAndPrivacyItem": {
       "type": "object",
-      "title": "The Dataset Security & Policy Items Schema",
+      "title": "Security and Policy",
       "properties": {
         "description": {
           "type": "string",
-          "title": "The Dataset Security & Policy Description Schema",
-          "description": "Description",
+          "title": "Description",
+          "description": "Describe a security and privacy measure applied to a dataset to protect sensitive information",
           "examples": [
-            "Server with data must be kept in a locked room"
+            "The dataset undergoes anonymization by applying data masking techniques. Names, addresses, and phone numbers are replaced with pseudonyms or randomly generated identifiers. Specific details, such as exact birthdates, are generalized into age ranges."
           ]
         },
         "title": {
           "type": "string",
-          "title": "The Dataset Security & Policy Title Schema",
-          "description": "Title",
+          "title": "Title",
+          "description": "Title a measure applied to a dataset",
           "examples": [
-            "Physical access control"
+            "Anonymization of Personally Identifiable Data"
           ]
         }
       },
@@ -2010,7 +1808,7 @@
     },
     "SecurityAndPrivacyItems": {
       "type": "array",
-      "title": "The Dataset Security and Policy Schema",
+      "title": "Security and Policy Items",
       "description": "To list all issues and requirements related to security and privacy",
       "items": {
         "$ref": "#/$defs/SecurityAndPrivacyItem"
@@ -2018,22 +1816,22 @@
     },
     "TechnicalResource": {
       "type": "object",
-      "title": "The Dataset Technical Resource Items Schema",
+      "title": "Technical Resource",
       "properties": {
         "description": {
           "type": "string",
-          "title": "The Dataset Technical Resource Description Schema",
-          "description": "Description of the technical resource",
+          "title": "Description",
+          "description": "Describe a technical resource (e.g. tools or software) required for any stage of a dataset lifecycle (e.g. microscopes, sensors, Jupyter Notebook, Galaxy workflows, measuring devices)",
           "examples": [
-            "Device needed to collect field data..."
+            "The Celestron 44102 Inverted Biological Microscope was used to examine biological samples, such as cells and microorganisms, with high-resolution optics."
           ]
         },
         "name": {
           "type": "string",
-          "title": "The Dataset Technical Resource Name Schema",
-          "description": "Name of the technical resource",
+          "title": "Name",
+          "description": "Name a resource applied to a dataset",
           "examples": [
-            "123/45/43/AT"
+            "Celestron Microscope"
           ]
         }
       },
@@ -2043,7 +1841,7 @@
     },
     "TechnicalResources": {
       "type": "array",
-      "title": "The Dataset Technical Resource Schema",
+      "title": "Technical Resources",
       "description": "To list all technical resources needed to implement a DMP",
       "items": {
         "$ref": "#/$defs/TechnicalResource"
