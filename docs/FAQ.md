@@ -33,7 +33,7 @@ If a DMP contains only one Dataset (the most generic setting), it can denote tha
 If a DMP contains more than one Dataset, then each dataset can represent a logical group of data, e.g. raw data, software, publication, etc. Thus, the standard allows to express that different data is handled in a different way. For example, software is deposited in a source code repository under embargo, while a publication is instantly available from a pre-print server.
 
 ### What is a difference between Dataset and a Distribution?
-Dataset and Distribution are defined as in W3C DCAT specification.
+Dataset and Distribution are defined as in W3C DCAT specification (compatible with both [DCAT v2](https://www.w3.org/TR/vocab-dcat-2/) and [DCAT v3](https://www.w3.org/TR/vocab-dcat-3/)).
 
 Dataset can be understood as a logical entity depicting data, e.g. raw data, software, publication, etc. Distribution points to a specific instance of a dataset. Hence, distribution contains information like format and size of files.
 
