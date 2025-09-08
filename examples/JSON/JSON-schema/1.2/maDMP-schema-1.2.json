@@ -266,8 +266,10 @@
       "$anchor": "ContributorRole",
       "type": "string",
       "title": "Contributor Role",
+      "description": "Contributors role(s) within the process of data management (incl. planning). It is recommended to use contributor types of DataCite Metadata Schema (https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/).",
       "examples": [
-        "Data Steward"
+        "DataManager",
+        "Researcher"
       ]
     },
     "ContributorRoles": {

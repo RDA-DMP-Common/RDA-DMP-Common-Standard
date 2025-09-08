@@ -378,10 +378,10 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="dmp_contributor_role" href="#dmp_contributor_role_tree">role</a></td>
-      <td valign="top">Contributors role(s) within the process of data management (incl. planning)</td>
+      <td valign="top">Contributors role(s) within the process of data management (incl. planning). It is recommended to use <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/" target="_blank">contributor types of DataCite Metadata Schema</a>.</td>
       <td valign="top">String</td>
       <td valign="top">1..n</td>
-      <td valign="top">Data Steward</td>
+      <td valign="top">DataManager, Researcher</td>
     </tr>
   </tbody>
 </table>
