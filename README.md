@@ -47,6 +47,9 @@ For specifying equipment needed/used to create or process the data, e.g. a micro
 <h3>Metadata</h3>
 Provides a pointer to a metadata standard used to describe the data. It does <b>not</b> contain any actual metadata relating to the dataset.
 
+<h3>Affiliation</h3>
+For specifying the organisation(s) to which a contact or contributor belongs.
+
 </td><td valign="top"><h3>Structure</h3>
   
 <ul>
@@ -54,6 +57,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
   <ul>
     <li id="dmp_contact_tree"><a href="#dmp_contact_table">contact</a></li>
     <ul>
+      <li id="contact_affiliation_tree"><a href="#contact_affiliation">affiliation</a></li>
       <li id="contact_id_tree"><a href="#contact_id_table">contact_id</a></li>
       <ul>
         <li id="contact_id_identifier_tree"><a href="#contact_id_identifier">identifier</a></li>
@@ -64,6 +68,7 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
     </ul>
     <li id="dmp_contributor_tree"><a href="#dmp_contributor_table">contributor</a></li>
     <ul>
+      <li id="contributor_affiliation_tree"><a href="#contributor_affiliation">affiliation</a></li>
       <li id="contributor_id_tree"><a href="#contributor_id_table">contributor_id</a></li>
       <ul>
         <li id="contributor_id_id_tree"><a href="#contributor_id_id">identifier</a></li>
@@ -184,11 +189,79 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
     </ul>
     <li id="dmp_title_tree"><a href="#dmp_title">title</a></li>
   </ul>
+  <li id="affiliation_tree"><a href="#affiliation_table">affiliation</a></li>
+  <ul>
+    <li id="affiliation_name_tree"><a href="#affiliation_name">name</a></li>
+    <li id="affiliation_id_tree"><a href="#affiliation_id_table">affiliation_id</a></li>
+    <ul>
+      <li id="affiliation_id_id_tree"><a href="#affiliation_id_id">identifier</a></li>
+      <li id="affiliation_id_type_tree"><a href="#affiliation_id_type">type</a></li>
+    </ul>
+  </ul>
 </ul>
 
 </td></tr></table>
 
 <hr/>
+
+<h2 id="affiliation_table">Properties in 'affiliation'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>  
+      <td valign="top"><a id="affiliation_id" href="#affiliation_id_tree">affiliation_id</a></td>
+      <td valign="top">Identifier for an affiliation</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">1</td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="affiliation_name" href="#affiliation_name_tree">name</a></td>
+      <td valign="top">Name of an affiliation</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">Some University</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="affiliation_id_table">Properties in 'affiliation_id'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="affiliation_id_id" href="#affiliation_id_id_tree">identifier</a></td>
+      <td valign="top">To indicate the specific value of an identifier for an affiliation</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">https://ror.org/03yrm5c26</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="affiliation_id_type" href="#affiliation_id_type_tree">type</a></td>
+      <td valign="top">To specify a type of an identifier for an affiliation. <br/>Allowed Values:<ul><li>ror</li><li>grid</li><li>isni</li><li>other</li></ul></td>
+      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">1</td>
+      <td valign="top">ror</td>
+    </tr>
+  </tbody>
 
 <h2 id="dmp_contact_table">Properties in 'contact'</h2>
 
@@ -203,6 +276,13 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
     </tr>
   </thead>
   <tbody>
+    <tr>  
+      <td valign="top"><a id="contact_affiliation" href="#affiliation_tree">affiliation</a></td>
+      <td valign="top">Affiliations of a contact</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
     <tr>  
       <td valign="top"><a id="contact_id" href="#contact_id_tree">contact_id</a></td>
       <td valign="top">Identifier for a contact</td>
@@ -270,6 +350,13 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
     </tr>
   </thead>
   <tbody>
+    <tr>  
+      <td valign="top"><a id="contributor_affiliation" href="#affiliation_tree">affiliation</a></td>
+      <td valign="top">Affiliations of a contributor</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
     <tr>
       <td valign="top"><a id="contributor_id" href="#contributor_id_tree">contributor_id</a></td>
       <td valign="top">Identifier for a contributor</td>
