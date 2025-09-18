@@ -115,7 +115,7 @@
         "affiliation": {
           "type": "array",
           "title": "Affiliations",
-          "description": "Affiliation(s) of the contributor",
+          "description": "Affiliation(s) of the contact",
           "items": {
             "$ref": "#/$defs/Affiliation"
           }
@@ -192,6 +192,14 @@
       "type": "object",
       "title": "Contributor",
       "properties": {
+        "affiliation": {
+          "type": "array",
+          "title": "Affiliations",
+          "description": "Affiliation(s) of the contributor",
+          "items": {
+            "$ref": "#/$defs/Affiliation"
+          }
+        },
         "contributor_id": {
           "$ref": "#/$defs/ContributorID"
         },
