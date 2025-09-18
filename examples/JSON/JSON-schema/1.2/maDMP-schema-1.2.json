@@ -343,6 +343,85 @@
         "$ref": "#/$defs/Cost"
       }
     },
+    "Creator": {
+      "$anchor": "Creator",
+      "type": "object",
+      "title": "Creator",
+      "properties": {
+        "affiliation": {
+          "type": "array",
+          "title": "Affiliations",
+          "description": "Affiliation(s) of the creator",
+          "items": {
+            "$ref": "#/$defs/Affiliation"
+          }
+        },
+        "creator_id": {
+          "$ref": "#/$defs/CreatorID"
+        },
+        "mbox": {
+          "type": "string",
+          "title": "Mailbox",
+          "description": "Creator Mail address",
+          "examples": [
+            "john.doe@example.com"
+          ],
+          "format": "email"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the creator",
+          "examples": [
+            "John Doe"
+          ]
+        }
+      },
+      "required": [
+          "creator_id",
+          "name"
+      ]
+    },
+    "CreatorID": {
+      "$anchor": "CreatorID",
+      "type": "object",
+      "title": "Creator ID",
+      "properties": {
+        "identifier": {
+          "$ref": "#/$defs/CreatorIDValue"
+        },
+        "type": {
+          "$ref": "#/$defs/CreatorIDType"
+        }
+      },
+      "required": [
+          "identifier",
+          "type"
+      ]
+    },
+    "CreatorIDType": {
+      "$anchor": "CreatorIDType",
+      "type": "string",
+      "enum": [
+        "orcid",
+        "isni",
+        "openid",
+        "other"
+      ],
+      "title": "Creator ID Type",
+      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
+      "examples": [
+        "orcid"
+      ]
+    },
+    "CreatorIDValue": {
+      "$anchor": "CreatorIDValue",
+      "type": "string",
+      "title": "Creator ID Value",
+      "examples": [
+        "https://orcid.org/0000-0003-0644-4174"
+      ]
+    },
     "CurrencyCode": {
       "$anchor": "CurrencyCode",
       "type": "string",
@@ -795,6 +874,13 @@
       "type": "object",
       "title": "Dataset",
       "properties": {
+        "creator": {
+          "type": "array",
+          "title": "Creators",
+          "items": {
+            "$ref": "#/$defs/Creator"
+          }
+        },
         "data_quality_assurance": {
           "type": "array",
           "title": "Data Quality Assurance",
