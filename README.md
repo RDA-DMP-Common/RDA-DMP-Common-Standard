@@ -557,6 +557,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
   </thead>
   <tbody>
     <tr>
+      <td valign="top"><a id="creator" href="#creator_tree">creator</a></td>
+      <td valign="top">To specify the creators of the dataset.</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="dataset_quality_assurance" href="#dataset_quality_assurance_tree">data_quality_assurance</a></td>
       <td valign="top">To describe any quality assurance processes applied to a dataset, such as, to ensure its accuracy, reliability, consistency, and usability for its intended purposes. This includes systematic practices, procedures, and policies designed to maintain high data quality throughout its lifecycle.</td>
       <td valign="top">String</td>
