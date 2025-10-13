@@ -1934,12 +1934,12 @@
             "https://example.com/"
           ]
         },
-        "type": {
+        "metadata_scheme": {
           "type": "string",
-          "title": "Type",
-          "description": "Type of the identifier, suggested values from DataCite relatedIdentifierType: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/",
+          "title": "Metadata Scheme",
+          "description": "Name of the related metadata schema (if applicable)",
           "examples": [
-            "url"
+            "DDI-L"
           ]
         },
         "relation_type": {
@@ -1950,12 +1950,20 @@
             "HasMetadata"
           ]
         },
-        "metadata_scheme": {
+        "resource_type": {
           "type": "string",
-          "title": "Metadata Scheme",
-          "description": "Name of the related metadata schema (if applicable)",
+          "title": "Resource Type",
+          "description": "Type of the related resource, suggested values from DataCite resourceTypeGeneral: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/",
           "examples": [
-            "DDI-L"
+            "Model"
+          ]
+        },
+        "scheme_type": {
+          "type": "string",
+          "title": "Scheme Type",
+          "description": "Type of the related metadata scheme linked with scheme URI (if applicable)",
+          "examples": [
+            "XSD"
           ]
         },
         "scheme_uri": {
@@ -1967,20 +1975,12 @@
             "http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd"
           ]
         },
-        "scheme_type": {
+        "type": {
           "type": "string",
-          "title": "Scheme Type",
-          "description": "Type of the related metadata scheme linked with scheme URI (if applicable)",
+          "title": "Type",
+          "description": "Type of the identifier, suggested values from DataCite relatedIdentifierType: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/",
           "examples": [
-            "XSD"
-          ]
-        },
-        "resource_type": {
-          "type": "string",
-          "title": "Resource Type",
-          "description": "Type of the related resource, suggested values from DataCite resourceTypeGeneral: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/",
-          "examples": [
-            "Model"
+            "url"
           ]
         }
       },

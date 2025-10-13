@@ -1470,11 +1470,11 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">https://example.com/</td>
     </tr>
     <tr>
-      <td valign="top"><a id="related_identifier_type" href="#related_identifier_type_tree">type</a></td>
-      <td valign="top">Type of the identifier, suggested values from DataCite <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/" target="_blank">relatedIdentifierType</a></td>
+      <td valign="top"><a id="related_identifier_metadata_scheme" href="#related_identifier_metadata_scheme_tree">metadata_scheme</a></td>
+      <td valign="top">Name of the related metadata schema (if applicable)</td>
       <td valign="top">String</td>
-      <td valign="top">1</td>
-      <td valign="top">url</td>
+      <td valign="top">0..1</td>
+      <td valign="top">DDI-L</td>
     </tr>
     <tr>
       <td valign="top"><a id="related_identifier_relation_type" href="#related_identifier_relation_type_tree">relation_type</a></td>
@@ -1484,18 +1484,12 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">HasMetadata</td>
     </tr>
     <tr>
-      <td valign="top"><a id="related_identifier_metadata_scheme" href="#related_identifier_metadata_scheme_tree">metadata_scheme</a></td>
-      <td valign="top">Name of the related metadata schema (if applicable)</td>
+      <td valign="top"><a id="related_identifier_resource_type" href="#related_identifier_resource_type_tree">resource_type</a></td>
+      <td valign="top">Type of the related resource, suggested values from DataCite
+        <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/" target="_blank">resourceTypeGeneral</a></td>
       <td valign="top">String</td>
       <td valign="top">0..1</td>
-      <td valign="top">DDI-L</td>
-    </tr>
-    <tr>
-      <td valign="top"><a id="related_identifier_scheme_uri" href="#related_identifier_scheme_uri_tree">scheme_uri</a></td>
-      <td valign="top">Link to the scheme of the identifier (if applicable)</td>
-      <td valign="top">URI</td>
-      <td valign="top">0..1</td>
-      <td valign="top">http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd</td>
+      <td valign="top">Model</td>
     </tr>
     <tr>
       <td valign="top"><a id="related_identifier_scheme_type" href="#related_identifier_scheme_type_tree">scheme_type</a></td>
@@ -1505,12 +1499,18 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">XSD</td>
     </tr>
     <tr>
-      <td valign="top"><a id="related_identifier_resource_type" href="#related_identifier_resource_type_tree">resource_type</a></td>
-      <td valign="top">Type of the related resource, suggested values from DataCite
-        <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/" target="_blank">resourceTypeGeneral</a></td>
-      <td valign="top">String</td>
+      <td valign="top"><a id="related_identifier_scheme_uri" href="#related_identifier_scheme_uri_tree">scheme_uri</a></td>
+      <td valign="top">Link to the scheme of the identifier (if applicable)</td>
+      <td valign="top">URI</td>
       <td valign="top">0..1</td>
-      <td valign="top">Model</td>
+      <td valign="top">http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_type" href="#related_identifier_type_tree">type</a></td>
+      <td valign="top">Type of the identifier, suggested values from DataCite <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/" target="_blank">relatedIdentifierType</a></td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>
