@@ -42,13 +42,13 @@
           "type": "string",
           "title": "Identifier",
           "examples": [
-            "https://ror.org/03yrm5c26"
+            "03yrm5c26"
           ]
         },
         "type": {
           "type": "string",
           "title": "Type",
-          "description": "Identifier type. Suggested values: ror, grid, isni, other",
+          "description": "Identifier type. Suggested Values: ror, grid, isni, other",
           "examples": [
             "ror"
           ]
@@ -1911,7 +1911,9 @@
           "title": "Type",
           "description": "Identifier type. Suggested values: doi, raid, url",
           "examples": [
-            "url"
+            "url",
+            "doi",
+            "raid"
           ]
         }
       },
@@ -2070,7 +2072,9 @@
           "title": "Type",
           "description": "Identifier type. Suggested values: url",
           "examples": [
-            "url"
+            "url",
+            "doi",
+            "other"
           ]
         }
       },
