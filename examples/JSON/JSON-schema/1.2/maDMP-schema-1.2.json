@@ -886,13 +886,6 @@
           },
           "minItems": 0
         },
-        "related_identifier": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/RelatedIdentifier"
-          },
-          "minItems": 0
-        },
         "creator": {
           "type": "array",
           "title": "Creators",
@@ -991,6 +984,13 @@
             "All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data."
           ]
         },
+        "related_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RelatedIdentifier"
+          },
+          "minItems": 0
+        },
         "security_and_privacy": {
           "$ref": "#/$defs/SecurityAndPrivacyItems"
         },
@@ -1081,13 +1081,6 @@
           },
           "minItems": 0
         },
-        "related_identifier": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/RelatedIdentifier"
-          },
-          "minItems": 0
-        },
         "contact": {
           "$ref": "#/$defs/Contact"
         },
@@ -1158,6 +1151,13 @@
           "items": {
             "$ref": "#/$defs/Project"
           }
+        },
+        "related_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RelatedIdentifier"
+          },
+          "minItems": 0
         },
         "title": {
           "type": "string",

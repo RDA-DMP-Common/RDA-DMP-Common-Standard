@@ -51,10 +51,10 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 For specifying the organisation(s) to which a contact or contributor belongs.
 
 <h3>Alternate Identifier</h3>
-For specifying alternate identifiers for a DMP, e.g. an internal identifier used by a DMP tool. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/alternateidentifier/">DataCite Metadata Schema</a>.
+For specifying alternate identifiers for a DMP or a dataset, e.g. an internal identifier used by a DMP tool. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/alternateidentifier/">DataCite Metadata Schema</a>.
 
 <h3>Related Identifier</h3>
-For specifying related identifiers for a DMP, e.g. a DOI of a publication that describes the data management described in this DMP. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/relatedidentifier/">DataCite Metadata Schema</a>.
+For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publication that describes the data management described in this DMP. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/relatedidentifier/">DataCite Metadata Schema</a>.
 
 </td><td valign="top"><h3>Structure</h3>
   
@@ -605,7 +605,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="creator_id_type" href="#creator_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a creator. <br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li></ul></td>
+      <td valign="top">To specify a type of an identifier for a creator. <br/>Allowed Values: orcid, isni, openid, other</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">orcid</td>
@@ -627,15 +627,15 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
   </thead>
   <tbody>
     <tr>
-      <td valign="top"><a id="creator" href="#creator_tree">creator</a></td>
-      <td valign="top">To specify the creators of the dataset.</td>
+      <td valign="top"><a id="dataset_alternate_identifier" href="#dataset_alternate_identifier_tree">alternate_identifier</a></td>
+      <td valign="top">To provide alternative identifiers for a dataset, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include local accession numbers, internal database IDs, or other unique codes assigned to the dataset by various organizations or repositories.</td>
       <td valign="top">Nested Data Structure</td>
       <td valign="top">0..n</td>
       <td valign="top"> </td>
     </tr>
     <tr>
-      <td valign="top"><a id="dataset_alternate_identifier" href="#dataset_alternate_identifier_tree">alternate_identifier</a></td>
-      <td valign="top">To provide alternative identifiers for a dataset, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include local accession numbers, internal database IDs, or other unique codes assigned to the dataset by various organizations or repositories.</td>
+      <td valign="top"><a id="creator" href="#creator_tree">creator</a></td>
+      <td valign="top">To specify the creators of the dataset.</td>
       <td valign="top">Nested Data Structure</td>
       <td valign="top">0..n</td>
       <td valign="top"> </td>
@@ -705,7 +705,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="dataset_personal_data" href="#dataset_personal_data_tree">personal_data</a></td>
-      <td valign="top">To indicate whether a dataset contains personal data. Personal data refers to any data that can identify an individual (e.g. name, birthdate, address, voice recordings, etc.).<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether a dataset contains personal data. Personal data refers to any data that can identify an individual (e.g. name, birthdate, address, voice recordings, etc.).<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">unknown</td>
@@ -733,7 +733,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="dataset_sensitive_data" href="#dataset_sensitive_data_tree">sensitive_data</a></td>
-      <td valign="top">To indicate whether a dataset contains sensitive data. Sensitive data refers to information that could pose risks to individuals or organizations for example  financial information, medical records, passwords and social security numbers.<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether a dataset contains sensitive data. Sensitive data refers to information that could pose risks to individuals or organizations for example  financial information, medical records, passwords and social security numbers.<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">unknown</td>
@@ -828,7 +828,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="distribution_data_access" href="#distribution_data_access_tree">data_access</a></td>
-      <td valign="top">Indicates access mode for data.<br/>Allowed Values:<ul><li>open</li><li>shared</li><li>closed</li></ul></td>
+      <td valign="top">Indicates access mode for data.<br/>Allowed Values: open, shared, closed</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">open</td>
@@ -893,7 +893,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
   <tbody>
     <tr>
       <td valign="top"><a id="dmp_alternate_identifier" href="#dmp_alternate_identifier_tree">alternate_identifier</a></td>
-      <td valign="top">To provide alternative or secondary identifiers for a DMP.</td
+      <td valign="top">To provide alternative or secondary identifiers for a DMP, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include other PIDs from DMP storage systems, internal database IDs, or other unique codes assigned to the DMP by various organizations or services.</td>
       <td valign="top">Nested Data Structure</td>
       <td valign="top">0..n</td>
       <td valign="top"> </td>
@@ -956,7 +956,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td>
-      <td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">yes</td>
@@ -1087,7 +1087,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="funding_status" href="#funding_status_tree">funding_status</a></td>
-      <td valign="top">To express different phases of project lifecycle.<br/>Allowed Values:<ul><li>planned</li><li>applied</li><li>granted</li><li>rejected</li></ul></td>
+      <td valign="top">To express different phases of project lifecycle.<br/>Allowed Values: planned, applied, granted, rejected</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">granted</td>
@@ -1120,14 +1120,14 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
       <td valign="top">To indicate the specific value of an identifier for a grant</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">776242</td>
+      <td valign="top">http://example.com/grants/776242</td>
     </tr>
     <tr>
       <td valign="top"><a id="grant_id_type" href="#grant_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a grant. Suggested Values: url</td>
+      <td valign="top">To specify a type of an identifier for a grant. Suggested Values: doi, url</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">other</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>
@@ -1168,7 +1168,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="host_certified_with" href="#host_certified_with_tree">certified_with</a></td>
-      <td valign="top">To indicate host trustworthiness via a standard repository certificate.<br/>Allowed Values:<ul><li>din31644</li><li>dini-zertifikat</li><li>dsa</li><li>iso16363</li><li>iso16919</li><li>trac</li><li>wds</li><li>coretrustseal</li></ul></td>
+      <td valign="top">To indicate host trustworthiness via a standard repository certificate.<br/>Allowed Values: din31644, dini-zertifikat, dsa, iso16363, iso16919, trac, wds, coretrustseal</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">coretrustseal</td>
@@ -1196,7 +1196,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="host_pid_system" href="#host_pid_system_tree">pid_system</a></td>
-      <td valign="top">PID System used by a host.<br/>Allowed Values:<ul><li>ark</li><li>arxiv</li><li>bibcode</li><li>doi</li><li>ean13</li><li>eissn</li><li>handle</li><li>igsn</li><li>isbn</li><li>issn</li><li>istc</li><li>lissn</li><li>lsid</li><li>pmid</li><li>purl</li><li>upc</li><li>url</li><li>urn</li><li>other</li></ul></td>
+      <td valign="top">PID System used by a host.<br/>Allowed Values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..n</td>
       <td valign="top">doi</td>
@@ -1210,7 +1210,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="host_supports_versioning" href="#host_supports_versioning_tree">support_versioning</a></td>
-      <td valign="top"><br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top"><br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">yes</td>
@@ -1254,7 +1254,7 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
     </tr>
     <tr>
       <td valign="top"><a id="host_id_type" href="#host_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a host</td>
+      <td valign="top">To specify a type of an identifier for a host.  Suggested Values: url</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">url</td>
@@ -1570,18 +1570,18 @@ For specifying related identifiers for a DMP, e.g. a DOI of a publication that d
       </td>
     </tr>
     <tr>
-      <td valign="top"><a id="technical_resource_id" href="#technical_resource_id_tree">technical_resource_id</a></td>
-      <td valign="top">Identifier of a technical resource</td>
-      <td valign="top">Nested Data Structure</td>
-      <td valign="top">0..n</td>
-      <td valign="top"> </td>
-    </tr>
-    <tr>
       <td valign="top"><a id="technical_resource_name" href="#technical_resource_name_tree">name</a></td>
       <td valign="top">Name a resource applied to a dataset</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">Celestron Microscope</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="technical_resource_id" href="#technical_resource_id_tree">technical_resource_id</a></td>
+      <td valign="top">Identifier of a technical resource</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
     </tr>
   </tbody>
 </table>
