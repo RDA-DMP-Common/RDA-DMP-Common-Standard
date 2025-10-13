@@ -563,7 +563,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top"><a id="creator_id" href="#creator_id_tree">creator_id</a></td>
       <td valign="top">Identifier for a creator</td>
       <td valign="top">Nested Data Structure</td>
-      <td valign="top">1</td>
+      <td valign="top">0..n</td>
       <td valign="top"> </td>
     </tr>
     <tr>
