@@ -10,14 +10,14 @@
 			"mbox": "TMiksa@sba-research.org",
 			"name": "Tomasz Miksa",
 			"contact_id": {
-				"identifier": "https://orcid.org/0000-0000-0000-0000",
+				"identifier": "0000-0000-0000-0000",
 				"type": "orcid"
 			}
 		},
 		"language": "eng",
 		"ethical_issues_exist": "no",
 		"dmp_id": {
-			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"identifier": "10.0000/00.0.1234",
 			"type": "doi"
 		},
 		"dataset": [

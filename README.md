@@ -303,7 +303,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">To indicate the specific value of an identifier for an affiliation</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://ror.org/03yrm5c26</td>
+      <td valign="top">03yrm5c26</td>
     </tr>
     <tr>
       <td valign="top"><a id="affiliation_id_type" href="#affiliation_id_type_tree">type</a></td>
@@ -601,7 +601,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">To indicate the specific value of an identifier for a creator</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">http://orcid.org/0000-0000-0000-0000</td>
+      <td valign="top">s0000-0000-0000-0000</td>
     </tr>
     <tr>
       <td valign="top"><a id="creator_id_type" href="#creator_id_type_tree">type</a></td>
@@ -780,7 +780,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">To indicate the specific value of an identifier for a dataset</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://hdl.handle.net/11353/10.923628</td>
+      <td valign="top">11353/10.923628</td>
     </tr>
     <tr>
       <td valign="top"><a id="dataset_id_type" href="#dataset_id_type_tree">type</a></td>

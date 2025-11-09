@@ -4,7 +4,7 @@
     "title": "DMP including FAIRsharing DOIs",
     "contact": {
       "contact_id": {
-        "identifier": "http://orcid.org/0000-0000-0000-0000",
+        "identifier": "0000-0000-0000-0000",
         "type": "orcid"
       },
       "mbox": "cc@example.com",
@@ -12,14 +12,14 @@
     },
     "created": "2023-03-15T10:10:23.6Z",
     "dmp_id": {
-      "identifier": "https://doi.org/10.0000/00.0.1269",
+      "identifier": "10.0000/00.0.1269",
       "type": "doi"
     },
     "dataset": [
       {
 		"title": "Puerto Rico Long-Term Coral Reef Monitoring Program Database Compilation",
         "dataset_id": {
-          "identifier": "https://doi.org/10.15468/heuugg",
+          "identifier": "10.15468/heuugg",
           "type": "doi"
         },
         "distribution": [
@@ -42,14 +42,14 @@
                 "description": "The Ecological Metadata Language (EML) metadata standard was originally developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. It has been developed to document any research data, and as such can be used outside of these original subject areas. EML is implemented as a series of XML document types that can by used in a modular and extensible manner to document ecological data. Each EML module is designed to describe one logical part of the total metadata that should be included with any ecological dataset.",
                 "language": "eng",
                 "metadata_standard_id": {
-                  "identifier": "https://doi.org/10.25504/FAIRsharing.r3vtvx",
+                  "identifier": "10.25504/FAIRsharing.r3vtvx",
                   "type": "doi"
                 }
               }
             ],
             "host": {
               "title": "GBIF.org",
-              "url": "https://doi.org/10.25504/FAIRsharing.zv11j3",
+              "url": "10.25504/FAIRsharing.zv11j3",
               "description": "GBIF\u2014the Global Biodiversity Information Facility\u2014is an international network and data infrastructure funded by the world's governments and aimed at providing anyone, anywhere, open access to data about all types of life on Earth. Strictly speaking, GBIF is not a data repository. Rather, GBIF indexes thousands of datasets through a distributed infrastructure involving more than 100 formal participants that supports hundreds of data-publishing institutions worldwide. GBIF.org makes the FAIR and open data discoverable and citable, assigning each download a DOI and storing it for an extended period of time. More than three peer-reviewed research articles make use of data from the GBIF network every day, in studies spanning the impacts of climate change, the spread of pests and diseases, priority areas for conservation and food security. To share data with GBIF, follow this quick guide: http://www.gbif.org/publishing-data/quick-guide. To deposit or host data, we suggest using one of the trusted data hosting centres (DHC) listed in FAIRsharing.org that uses GBIF's IPT (Integrated Publishing Toolkit) software. The DHC provides data publishers with a hosted IPT account enabling them to manage and publish datasets through GBIF.org."
             }
           }
