@@ -165,12 +165,12 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       </ul>
       <li id="dataset_personal_data_tree"><a href="#dataset_personal_data">personal_data</a></li>
       <li id="dataset_preservation_tree"><a href="#dataset_preservation">preservation_statement</a></li>
+      <li id="dataset_related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
       <li id="security_privacy_tree"><a href="#security_privacy_table">security_and_privacy</a></li>
       <ul>
         <li id="sp_description_tree"><a href="#sp_description">description</a></li>
         <li id="sp_title_tree"><a href="#sp_title">title</a></li>
       </ul>
-      <li id="dataset_related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
       <li id="dataset_sensitive_data_tree"><a href="#dataset_sensitive_data">sensitive_data</a></li>
       <li id="technical_resource_tree"><a href="#technical_resource_table">technical_resource</a></li>
       <ul>
@@ -605,8 +605,8 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="creator_id_type" href="#creator_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a creator. <br/>Allowed Values: orcid, isni, openid, other</td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a creator. <br/>Suggested Values: orcid, isni, openid, other</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">orcid</td>
     </tr>
