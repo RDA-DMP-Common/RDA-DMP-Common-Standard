@@ -12,7 +12,6 @@
   "required": ["dmp"],
   "$defs": {
     "Affiliation": {
-      "$anchor": "Affiliation",
       "type": "object",
       "title": "Affiliation",
       "properties": {
@@ -34,7 +33,6 @@
       ]
     },
     "AffiliationID": {
-      "$anchor": "AffiliationID",
       "type": "object",
       "title": "Affiliation ID",
       "properties": {
@@ -60,7 +58,6 @@
       ]
     },
     "AlternateIdentifier": {
-      "$anchor": "AlternateIdentifier",
       "type": "object",
       "title": "Alternate Identifier",
       "properties": {
@@ -88,21 +85,19 @@
       ]
     },
     "Booleanish": {
-      "$anchor": "Booleanish",
       "type": "string",
       "enum": [
         "yes",
         "no",
         "unknown"
       ],
-      "title": "The DMP Ethical Issues Exist Schema",
+      "title": "Booleanish",
       "description": "To indicate whether there are ethical issues related to data that this DMP describes. Allowed values: yes, no, unknown",
       "examples": [
         "yes"
       ]
     },
     "Certification": {
-      "$anchor": "Certification",
       "type": "string",
       "enum": [
         "din31644",
@@ -121,7 +116,6 @@
       ]
     },
     "Contact": {
-      "$anchor": "Contact",
       "type": "object",
       "title": "Contact",
       "description": "Specifies the party which can provide any information on the DMP. This is not necessarily the DMP creator, and can be a person or an organisation.",
@@ -173,7 +167,6 @@
       ]
     },
     "ContactID": {
-      "$anchor": "ContactID",
       "type": "object",
       "title": "Contact ID",
       "properties": {
@@ -199,7 +192,6 @@
       ]
     },
     "Contributor": {
-      "$anchor": "Contributor",
       "type": "object",
       "title": "Contributor",
       "properties": {
@@ -253,7 +245,6 @@
       ]
     },
     "ContributorID": {
-      "$anchor": "ContributorID",
       "type": "object",
       "title": "Contributor ID",
       "properties": {
@@ -279,7 +270,6 @@
       ]
     },
     "ContributorRole": {
-      "$anchor": "ContributorRole",
       "type": "string",
       "title": "Contributor Role",
       "description": "Contributors role(s) within the process of data management (incl. planning). It is recommended to use contributor types of DataCite Metadata Schema (https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/).",
@@ -289,7 +279,6 @@
       ]
     },
     "ContributorRoles": {
-      "$anchor": "ContributorRoles",
       "type": "array",
       "title": "Contributor Roles",
       "description": "Type of contributor",
@@ -299,7 +288,6 @@
       "uniqueItems": true
     },
     "Contributors": {
-      "$anchor": "Contributors",
       "type": "array",
       "title": "The Contributor Schema",
       "items": {
@@ -307,7 +295,6 @@
       }
     },
     "Cost": {
-      "$anchor": "Cost",
       "type": "object",
       "title": "Cost",
       "properties": {
@@ -344,7 +331,6 @@
       ]
     },
     "Costs": {
-      "$anchor": "Costs",
       "type": "array",
       "title": "Costs",
       "items": {
@@ -352,7 +338,6 @@
       }
     },
     "Creator": {
-      "$anchor": "Creator",
       "type": "object",
       "title": "Creator",
       "properties": {
@@ -402,7 +387,6 @@
       ]
     },
     "CreatorID": {
-      "$anchor": "CreatorID",
       "type": "object",
       "title": "Creator ID",
       "properties": {
@@ -428,7 +412,6 @@
       ]
     },
     "CurrencyCode": {
-      "$anchor": "CurrencyCode",
       "type": "string",
       "enum": [
         "AED",
@@ -601,7 +584,6 @@
       ]
     },
     "CountryCode": {
-      "$anchor": "CountryCode",
       "type": "string",
       "enum": [
         "AD",
@@ -861,7 +843,6 @@
       ]
     },
     "DataAccess": {
-      "$anchor": "DataAccess",
       "type": "string",
       "enum": [
         "open",
@@ -875,7 +856,6 @@
       ]
     },
     "Dataset": {
-      "$anchor": "Dataset",
       "type": "object",
       "title": "Dataset",
       "properties": {
@@ -1035,7 +1015,6 @@
       ]
     },
     "DatasetID": {
-      "$anchor": "DatasetID",
       "type": "object",
       "title": "Dataset ID",
       "properties": {
@@ -1061,7 +1040,6 @@
       ]
     },
     "Datasets": {
-      "$anchor": "Datasets",
       "type": "array",
       "title": "Datasets",
       "items": {
@@ -1069,7 +1047,6 @@
       }
     },
     "DMPData": {
-      "$anchor": "DMPData",
       "type": "object",
       "title": "DMP",
       "description": "Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory.",
@@ -1180,7 +1157,6 @@
       ]
     },
     "DMPID": {
-      "$anchor": "DMPID",
       "type": "object",
       "title": "DMP ID",
       "description": "Identifier for the DMP itself",
@@ -1207,7 +1183,6 @@
       ]
     },
     "Distribution": {
-      "$anchor": "Distribution",
       "type": "object",
       "title": "Distribution",
       "properties": {
@@ -1285,7 +1260,6 @@
       ]
     },
     "FunderID": {
-      "$anchor": "FunderID",
       "type": "object",
       "title": "Funder ID",
       "description": "Funder ID of the associated project",
@@ -1313,7 +1287,6 @@
       ]
     },
     "Funding": {
-      "$anchor": "Funding",
       "type": "object",
       "title": "Funding",
       "properties": {
@@ -1332,7 +1305,6 @@
       ]
     },
     "Fundings": {
-      "$anchor": "Fundings",
       "type": "array",
       "title": "Fundings",
       "description": "Funding related with a project",
@@ -1341,7 +1313,6 @@
       }
     },
     "FundingStatus": {
-      "$anchor": "FundingStatus",
       "type": "string",
       "enum": [
         "planned",
@@ -1356,7 +1327,6 @@
       ]
     },
     "GrantID": {
-      "$anchor": "GrantID",
       "type": "object",
       "title": "Grant ID",
       "description": "Grant ID of the associated project",
@@ -1383,7 +1353,6 @@
       ]
     },
     "Host": {
-      "$anchor": "Host",
       "type": "object",
       "title": "Host",
       "description": "To provide information on quality of service provided by infrastructure (e.g. repository) where data is stored.",
@@ -1469,7 +1438,6 @@
       ]
     },
     "HostID": {
-      "$anchor": "HostID",
       "type": "object",
       "title": "Host ID",
       "properties": {
@@ -1495,7 +1463,6 @@
       ]
     },
     "MIMEType": {
-      "$anchor": "MIMEType",
       "type": "string",
       "title": "Format MIME Type",
       "examples": [
@@ -1503,7 +1470,6 @@
       ]
     },
     "LanguageCode": {
-      "$anchor": "LanguageCode",
       "type": "string",
       "enum": [
         "aar",
@@ -1699,7 +1665,6 @@
       ]
     },
     "License": {
-      "$anchor": "License",
       "type": "object",
       "title": "License",
       "properties": {
@@ -1728,7 +1693,6 @@
       ]
     },
     "Licenses": {
-      "$anchor": "Licenses",
       "type": "array",
       "title": "Licenses",
       "description": "To list all licenses applied to a specific distribution of data.",
@@ -1737,7 +1701,6 @@
       }
     },
     "Metadata": {
-      "$anchor": "Metadata",
       "type": "object",
       "title": "Metadata",
       "properties": {
@@ -1773,7 +1736,6 @@
       ]
     },
     "MetadataStandardID": {
-      "$anchor": "MetadataStandardID",
       "type": "object",
       "title": "Metadata Standard ID",
       "properties": {
@@ -1803,7 +1765,6 @@
       ]
     },
     "PIDSystems": {
-      "$anchor": "PIDSystems",
       "type": "array",
       "title": "PID System",
       "description": "PID system(s). Allowed values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other",
@@ -1812,7 +1773,6 @@
       }
     },
     "PIDSystemType": {
-      "$anchor": "PIDSystemType",
       "type": "string",
       "title": "PID System Type",
       "enum": [
@@ -1841,7 +1801,6 @@
       ]
     },
     "Project": {
-      "$anchor": "Project",
       "type": "object",
       "title": "Project",
       "properties": {
@@ -1895,7 +1854,6 @@
       ]
     },
     "ProjectID": {
-      "$anchor": "ProjectID",
       "type": "object",
       "title": "Project ID",
       "properties": {
@@ -1923,7 +1881,6 @@
       ]
     },
     "RelatedIdentifier": {
-      "$anchor": "RelatedIdentifier",
       "type": "object",
       "title": "Related Identifier",
       "properties": {
@@ -2056,7 +2013,6 @@
       ]
     },
     "TechnicalResourceID": {
-      "$anchor": "TechnicalResourceID",
       "type": "object",
       "title": "Technical Resource ID",
       "properties": {
