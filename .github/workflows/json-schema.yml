@@ -1,0 +1,35 @@
+name: JSON Schema Validation
+
+on:
+  push:
+
+jobs:
+  metaschema:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Install the JSON Schema CLI
+        uses: sourcemeta/jsonschema@v12.2.1
+    
+      - name: Validate JSON Schemas
+        run: |
+          for schema in $(find ./examples/JSON/JSON-schema -name "*.json"); do
+            jsonschema metaschema "$schema" -v
+          done
+
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo 
+        uses: actions/checkout@v5
+
+      - name: Install the JSON Schema CLI
+        uses: sourcemeta/jsonschema@v12.2.1
+    
+      - name: Validate JSON Examples
+        run: |
+          jsonschema validate ./examples/JSON/JSON-schema/1.2/maDMP-schema-1.2.json ./examples/JSON/*.json
