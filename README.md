@@ -50,11 +50,18 @@ Provides a pointer to a metadata standard used to describe the data. It does <b>
 <h3>Affiliation</h3>
 For specifying the organisation(s) to which a contact or contributor belongs.
 
+<h3>Alternate Identifier</h3>
+For specifying alternate identifiers for a DMP or a dataset, e.g. an internal identifier used by a DMP tool. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/alternateidentifier/">DataCite Metadata Schema</a>.
+
+<h3>Related Identifier</h3>
+For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publication that describes the data management described in this DMP. This is in alignment with the <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/relatedidentifier/">DataCite Metadata Schema</a>.
+
 </td><td valign="top"><h3>Structure</h3>
   
 <ul>
   <li id="dmp_tree"><a href="#dmp_table">dmp</a></li>
   <ul>
+    <li id="dmp_alternate_identifier_tree"><a href="#alternate_identifier_table">alternate_identifier</a></li>
     <li id="dmp_contact_tree"><a href="#dmp_contact_table">contact</a></li>
     <ul>
       <li id="contact_affiliation_tree"><a href="#contact_affiliation">affiliation</a></li>
@@ -88,6 +95,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     <li id="dmp_created_tree"><a href="#dmp_created">created</a></li>
     <li id="dataset_tree"><a href="#dataset_table">dataset</a></li>
     <ul>
+      <li id="dataset_alternate_identifier_tree"><a href="#alternate_identifier_table">alternate_identifier</a></li>
       <li id="creator_tree"><a href="#creator_table">creator</a></li>
       <ul>
         <li id="creator_affiliation_tree"><a href="#creator_affiliation">affiliation</a></li>
@@ -123,6 +131,11 @@ For specifying the organisation(s) to which a contact or contributor belongs.
           <li id="host_certified_with_tree"><a href="#host_certified_with">certified_with</a></li>
           <li id="host_description_tree"><a href="#host_description">description</a></li>
           <li id="host_geo_location_tree"><a href="#host_geo_location">geo_location</a></li>
+          <li id="host_id_tree"><a href="#host_id_table">host_id</a></li>
+          <ul>
+            <li id="host_id_id_tree"><a href="#host_id_id">identifier</a></li>
+            <li id="host_id_type_tree"><a href="#host_id_type">type</a></li>
+          </ul>
           <li id="host_pid_system_tree"><a href="#host_pid_system">pid_system</a></li>
           <li id="host_storage_type_tree"><a href="#host_storage_type">storage_type</a></li>
           <li id="host_supports_versioning_tree"><a href="#host_supports_versioning">support_versioning</a></li>
@@ -152,6 +165,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       </ul>
       <li id="dataset_personal_data_tree"><a href="#dataset_personal_data">personal_data</a></li>
       <li id="dataset_preservation_tree"><a href="#dataset_preservation">preservation_statement</a></li>
+      <li id="dataset_related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
       <li id="security_privacy_tree"><a href="#security_privacy_table">security_and_privacy</a></li>
       <ul>
         <li id="sp_description_tree"><a href="#sp_description">description</a></li>
@@ -162,6 +176,11 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <ul>
         <li id="technical_resource_description_tree"><a href="#technical_resource_description">description</a></li>
         <li id="technical_resource_name_tree"><a href="#technical_resource_name">name</a></li>
+        <li id="technical_resource_id_tree"><a href="#technical_resource_id_table">technical_resource_id</a></li>
+        <ul>
+          <li id="technical_resource_id_id_tree"><a href="#technical_resource_id_id">identifier</a></li>
+          <li id="technical_resource_id_type_tree"><a href="#technical_resource_id_type">type</a></li>
+        </ul>
       </ul>
       <li id="dataset_title_tree"><a href="#dataset_title">title</a></li>
       <li id="dataset_type_tree"><a href="#dataset_type">type</a></li>
@@ -195,9 +214,15 @@ For specifying the organisation(s) to which a contact or contributor belongs.
           <li id="grant_id_type_tree"><a href="#grant_id_type">type</a></li>
         </ul>
       </ul>
+      <li id="project_id_tree"><a href="#project_id_table">project_id</a></li>
+      <ul>
+        <li id="project_id_id_tree"><a href="#project_id_id">identifier</a></li>
+        <li id="project_id_type_tree"><a href="#project_id_type">type</a></li>
+      </ul>
       <li id="project_start_tree"><a href="#project_start">start</a></li>
       <li id="project_title_tree"><a href="#project_title">title</a></li>
     </ul>
+    <li id="dmp_related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
     <li id="dmp_title_tree"><a href="#dmp_title">title</a></li>
   </ul>
   <li id="affiliation_tree"><a href="#affiliation_table">affiliation</a></li>
@@ -208,6 +233,21 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <li id="affiliation_id_id_tree"><a href="#affiliation_id_id">identifier</a></li>
       <li id="affiliation_id_type_tree"><a href="#affiliation_id_type">type</a></li>
     </ul>
+  </ul>
+  <li id="alternate_identifier_tree"><a href="#alternate_identifier_table">alternate_identifier</a></li>
+  <ul>
+    <li id="alternate_identifier_id_tree"><a href="#alternate_identifier_id">identifier</a></li>
+    <li id="alternate_identifier_type_tree"><a href="#alternate_identifier_type">type</a></li>
+  </ul>
+  <li id="related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
+  <ul>
+    <li id="related_identifier_id_tree"><a href="#related_identifier_id">identifier</a></li>
+    <li id="related_identifier_type_tree"><a href="#related_identifier_type">type</a></li>
+    <li id="related_identifier_relation_type_tree"><a href="#related_identifier_relation_type">relation_type</a></li>
+    <li id="related_identifier_metadata_scheme_tree"><a href="#related_identifier_metadata_scheme">metadata_scheme</a></li>
+    <li id="related_identifier_scheme_uri_tree"><a href="#related_identifier_scheme_uri">scheme_uri</a></li>
+    <li id="related_identifier_scheme_type_tree"><a href="#related_identifier_scheme_type">scheme_type</a></li>
+    <li id="related_identifier_resource_type_tree"><a href="#related_identifier_resource_type">resource_type</a></li>
   </ul>
 </ul>
 
@@ -263,16 +303,46 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for an affiliation</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://ror.org/03yrm5c26</td>
+      <td valign="top">03yrm5c26</td>
     </tr>
     <tr>
       <td valign="top"><a id="affiliation_id_type" href="#affiliation_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for an affiliation. <br/>Allowed Values:<ul><li>ror</li><li>grid</li><li>isni</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for an affiliation. Suggested Values: ror, grid, isni</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">ror</td>
     </tr>
   </tbody>
+
+<h2 id="alternate_identifier_table">Properties in 'alternate_identifier'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>  
+      <td valign="top"><a id="alternate_identifier_id" href="#alternate_identifier_id_tree">identifier</a></td>
+      <td valign="top">Value of the identifier</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">E-GEOD-34814</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="alternate_identifier_type" href="#alternate_identifier_type_tree">type</a></td>
+      <td valign="top">Type of the identifier</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">Local accession number</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="dmp_contact_table">Properties in 'contact'</h2>
 
@@ -298,7 +368,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"><a id="contact_id" href="#contact_id_tree">contact_id</a></td>
       <td valign="top">Identifier for a contact</td>
       <td valign="top">Nested Data Structure</td>
-      <td valign="top">1</td>
+      <td valign="top">1..n</td>
       <td valign="top"> </td>
     </tr>
     <tr>
@@ -336,12 +406,12 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a contact</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top"> </td>
+      <td valign="top">0000-0000-0000-0000</td>
     </tr>
     <tr>
       <td valign="top"><a id="contact_id_type" href="#contact_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a contact.<br/> Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a contact. Suggested Values: orcid, isni, openid</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">orcid</td>
     </tr>
@@ -372,7 +442,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"><a id="contributor_id" href="#contributor_id_tree">contributor_id</a></td>
       <td valign="top">Identifier for a contributor</td>
       <td valign="top">Nested Data Structure</td>
-      <td valign="top">1</td><td valign="top"> </td>
+      <td valign="top">0..n</td><td valign="top"> </td>
     </tr>
     <tr>
       <td valign="top"><a id="dmp_contributor_mbox" href="#dmp_contributor_mbox_tree">mbox</a></td>
@@ -415,12 +485,12 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a contributor</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">http://orcid.org/0000-0000-0000-0000</td>
+      <td valign="top">0000-0000-0000-0000</td>
     </tr>
     <tr>
       <td valign="top"><a id="contributor_id_type" href="#contributor_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a contributor. <br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a contributor. Suggested Values: orcid, isni, openid.</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">orcid</td>
     </tr>
@@ -493,7 +563,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"><a id="creator_id" href="#creator_id_tree">creator_id</a></td>
       <td valign="top">Identifier for a creator</td>
       <td valign="top">Nested Data Structure</td>
-      <td valign="top">1</td>
+      <td valign="top">0..n</td>
       <td valign="top"> </td>
     </tr>
     <tr>
@@ -531,12 +601,12 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a creator</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">http://orcid.org/0000-0000-0000-0000</td>
+      <td valign="top">s0000-0000-0000-0000</td>
     </tr>
     <tr>
       <td valign="top"><a id="creator_id_type" href="#creator_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a creator. <br/>Allowed Values:<ul><li>orcid</li><li>isni</li><li>openid</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a creator. <br/>Suggested Values: orcid, isni, openid, other</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">orcid</td>
     </tr>
@@ -556,6 +626,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td valign="top"><a id="dataset_alternate_identifier" href="#dataset_alternate_identifier_tree">alternate_identifier</a></td>
+      <td valign="top">To provide alternative identifiers for a dataset, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include local accession numbers, internal database IDs, or other unique codes assigned to the dataset by various organizations or repositories.</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
     <tr>
       <td valign="top"><a id="creator" href="#creator_tree">creator</a></td>
       <td valign="top">To specify the creators of the dataset.</td>
@@ -628,7 +705,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="dataset_personal_data" href="#dataset_personal_data_tree">personal_data</a></td>
-      <td valign="top">To indicate whether a dataset contains personal data. Personal data refers to any data that can identify an individual (e.g. name, birthdate, address, voice recordings, etc.).<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether a dataset contains personal data. Personal data refers to any data that can identify an individual (e.g. name, birthdate, address, voice recordings, etc.).<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">unknown</td>
@@ -641,6 +718,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data.</td>
     </tr>
     <tr>
+      <td valign="top"><a id="dataset_related_identifier" href="#dataset_related_identifier_tree">related_identifier</a></td>
+      <td valign="top">To provide references to related resources, such as publications, datasets or software, that are associated with the dataset. This helps to establish connections between different research outputs and enhances the discoverability and context of the dataset.</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="security_privacy" href="#security_privacy_tree">security_and_privacy</a></td>
       <td valign="top">To list all security and privacy measures applied to a dataset to protect sensitive information, for example encryption, anonymization, data masking, and compliance with data protection regulations (e.g. GDPR or HIPAA). It can also be used to express any security measures required for handling the dataset, e.g. only physical access, etc. </td>
       <td valign="top">Nested Data Structure</td>
@@ -649,7 +733,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="dataset_sensitive_data" href="#dataset_sensitive_data_tree">sensitive_data</a></td>
-      <td valign="top">To indicate whether a dataset contains sensitive data. Sensitive data refers to information that could pose risks to individuals or organizations for example  financial information, medical records, passwords and social security numbers.<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether a dataset contains sensitive data. Sensitive data refers to information that could pose risks to individuals or organizations for example  financial information, medical records, passwords and social security numbers.<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">unknown</td>
@@ -696,12 +780,12 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a dataset</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://hdl.handle.net/11353/10.923628</td>
+      <td valign="top">11353/10.923628</td>
     </tr>
     <tr>
       <td valign="top"><a id="dataset_id_type" href="#dataset_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a dataset.<br/>Allowed Values:<ul><li>handle</li><li>doi</li><li>ark</li><li>url</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a dataset. Suggested Values: handle, doi, ark, url</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">handle</td>
     </tr>
@@ -744,7 +828,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="distribution_data_access" href="#distribution_data_access_tree">data_access</a></td>
-      <td valign="top">Indicates access mode for data.<br/>Allowed Values:<ul><li>open</li><li>shared</li><li>closed</li></ul></td>
+      <td valign="top">Indicates access mode for data.<br/>Allowed Values: open, shared, closed</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">open</td>
@@ -808,6 +892,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
   </thead>
   <tbody>
     <tr>
+      <td valign="top"><a id="dmp_alternate_identifier" href="#dmp_alternate_identifier_tree">alternate_identifier</a></td>
+      <td valign="top">To provide alternative or secondary identifiers for a DMP, which can be used to reference or cite the dataset in different contexts or systems. Alternative identifiers can include other PIDs from DMP storage systems, internal database IDs, or other unique codes assigned to the DMP by various organizations or services.</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="dmp_contact" href="#dmp_contact_tree">contact</a></td>
       <td valign="top">Contact person for a DMP</td>
       <td valign="top">Nested Data Structure</td>
@@ -865,7 +956,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="ethical_issues_exist" href="#ethical_issues_exist_tree">ethical_issues_exist</a></td>
-      <td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.<br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top">To indicate whether there are ethical issues related to data that this DMP describes.<br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">yes</td>
@@ -898,6 +989,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"> </td>
     </tr>
     <tr>
+      <td valign="top"><a id="dmp_related_identifier" href="#dmp_related_identifier_tree">related_identifier</a></td>
+      <td valign="top">To provide identifiers of related resources, e.g. a project page, previous DMP versions, or a publication that describes this DMP.</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="dmp_title" href="#dmp_title_tree">title</a></td>
       <td valign="top">Title of a DMP</td>
       <td valign="top">String</td>
@@ -925,12 +1023,12 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a DMP</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://doi.org/10.1371/journal.pcbi.1006750</td>
+      <td valign="top">10.1371/journal.pcbi.1006750</td>
     </tr>
     <tr>
       <td valign="top"><a id="dmp_id_type" href="#dmp_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a DMP.<br/>Allowed Values:<ul><li>handle</li><li>doi</li><li>ark</li><li>url</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a DMP. Suggested Values: handle, doi, ark, url</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">doi</td>
     </tr>
@@ -959,8 +1057,8 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="funder_id_type" href="#funder_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of identifier for a funder.<br/>Allowed Values:<ul><li>fundref</li><li>url</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of identifier for a funder. Suggested Values: fundref, url</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">fundref</td>
     </tr>
@@ -989,7 +1087,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="funding_status" href="#funding_status_tree">funding_status</a></td>
-      <td valign="top">To express different phases of project lifecycle.<br/>Allowed Values:<ul><li>planned</li><li>applied</li><li>granted</li><li>rejected</li></ul></td>
+      <td valign="top">To express different phases of project lifecycle.<br/>Allowed Values: planned, applied, granted, rejected</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">granted</td>
@@ -1022,14 +1120,14 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">To indicate the specific value of an identifier for a grant</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">776242</td>
+      <td valign="top">http://example.com/grants/776242</td>
     </tr>
     <tr>
       <td valign="top"><a id="grant_id_type" href="#grant_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a grant.<br/>Allowed Values:<ul><li>url</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a grant. Suggested Values: doi, url</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">other</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>
@@ -1070,7 +1168,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="host_certified_with" href="#host_certified_with_tree">certified_with</a></td>
-      <td valign="top">To indicate host trustworthiness via a standard repository certificate.<br/>Allowed Values:<ul><li>din31644</li><li>dini-zertifikat</li><li>dsa</li><li>iso16363</li><li>iso16919</li><li>trac</li><li>wds</li><li>coretrustseal</li></ul></td>
+      <td valign="top">To indicate host trustworthiness via a standard repository certificate.<br/>Allowed Values: din31644, dini-zertifikat, dsa, iso16363, iso16919, trac, wds, coretrustseal</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">coretrustseal</td>
@@ -1090,8 +1188,15 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">AT</td>
     </tr>
     <tr>
+      <td valign="top"><a id="host_id" href="#host_id_tree">host_id</a></td>
+      <td valign="top">Identifier of Host</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="host_pid_system" href="#host_pid_system_tree">pid_system</a></td>
-      <td valign="top">PID System used by a host.<br/>Allowed Values:<ul><li>ark</li><li>arxiv</li><li>bibcode</li><li>doi</li><li>ean13</li><li>eissn</li><li>handle</li><li>igsn</li><li>isbn</li><li>issn</li><li>istc</li><li>lissn</li><li>lsid</li><li>pmid</li><li>purl</li><li>upc</li><li>url</li><li>urn</li><li>other</li></ul></td>
+      <td valign="top">PID System used by a host.<br/>Allowed Values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..n</td>
       <td valign="top">doi</td>
@@ -1105,7 +1210,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="host_supports_versioning" href="#host_supports_versioning_tree">support_versioning</a></td>
-      <td valign="top"><br/>Allowed Values:<ul><li>yes</li><li>no</li><li>unknown</li></ul></td>
+      <td valign="top"><br/>Allowed Values: yes, no, unknown</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">0..1</td>
       <td valign="top">yes</td>
@@ -1123,6 +1228,36 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">URL</td>
       <td valign="top">1</td>
       <td valign="top">https://zenodo.org</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="host_id_table">Properties in 'host_id'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="host_id_id" href="#host_id_id_tree">identifier</a></td>
+      <td valign="top">To indicate the specific value of an identifier for a host</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">https://example.org/repo</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="host_id_type" href="#host_id_type_tree">type</a></td>
+      <td valign="top">To specify a type of an identifier for a host.  Suggested Values: url</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>
@@ -1187,7 +1322,7 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"><a id="metadata_standard_id" href="#metadata_standard_id_tree">metadata_standard_id</a></td>
       <td valign="top">Identifier of Metadata Standard</td>
       <td valign="top">Nested Data Structure</td>
-      <td valign="top">1</td>
+      <td valign="top">1..n</td>
       <td valign="top"> </td>
     </tr>
   </tbody>
@@ -1215,8 +1350,8 @@ For specifying the organisation(s) to which a contact or contributor belongs.
     </tr>
     <tr>
       <td valign="top"><a id="metadata_id_type" href="#metadata_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a metadata standard.<br/>Allowed Values: <ul><li>url</li><li>other</li></ul></td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">To specify a type of an identifier for a metadata standard. Suggested Values: doi, url</td>
+      <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">url</td>
     </tr>
@@ -1260,6 +1395,13 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top"></td>
     </tr>
     <tr>
+      <td valign="top"><a id="project_id" href="#project_id_tree">project_id</a></td>
+      <td valign="top">Identifier of Project</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+    <tr>
       <td valign="top"><a id="project_start" href="#project_start_tree">start</a></td>
       <td valign="top">Project start date. Encoded using the relevant ISO 8601 Date <a
           href="https://www.w3.org/TR/NOTE-datetime">compliant string</a></td>
@@ -1273,6 +1415,102 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">Our New Project</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="project_id_table">Properties in 'project_id'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="project_id_id" href="#project_id_id_tree">identifier</a></td>
+      <td valign="top">To indicate the specific value of an identifier for a project</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">https://example.org/project</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="project_id_type" href="#project_id_type_tree">type</a></td>
+      <td valign="top">To specify a type of an identifier for a project. Suggested Values: doi, raid, url</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">url</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="related_identifier_table">Properties in 'related_identifier'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>  
+      <td valign="top"><a id="related_identifier_id" href="#related_identifier_id_tree">identifier</a></td>
+      <td valign="top">Value of the identifier</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">https://example.com/</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_metadata_scheme" href="#related_identifier_metadata_scheme_tree">metadata_scheme</a></td>
+      <td valign="top">Name of the related metadata schema (if applicable)</td>
+      <td valign="top">String</td>
+      <td valign="top">0..1</td>
+      <td valign="top">DDI-L</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_relation_type" href="#related_identifier_relation_type_tree">relation_type</a></td>
+      <td valign="top">Type of relation between the resource and the related resource, suggested values from DataCite <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relationType/" target="_blank">relationType</a></td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">HasMetadata</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_resource_type" href="#related_identifier_resource_type_tree">resource_type</a></td>
+      <td valign="top">Type of the related resource, suggested values from DataCite
+        <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/" target="_blank">resourceTypeGeneral</a></td>
+      <td valign="top">String</td>
+      <td valign="top">0..1</td>
+      <td valign="top">Model</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_scheme_type" href="#related_identifier_scheme_type_tree">scheme_type</a></td>
+      <td valign="top">Type of the related metadata scheme linked with scheme URI (if applicable)</td>
+      <td valign="top">String</td>
+      <td valign="top">0..1</td>
+      <td valign="top">XSD</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_scheme_uri" href="#related_identifier_scheme_uri_tree">scheme_uri</a></td>
+      <td valign="top">Link to the scheme of the identifier (if applicable)</td>
+      <td valign="top">URI</td>
+      <td valign="top">0..1</td>
+      <td valign="top">http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="related_identifier_type" href="#related_identifier_type_tree">type</a></td>
+      <td valign="top">Type of the identifier, suggested values from DataCite <a href="https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/" target="_blank">relatedIdentifierType</a></td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>
@@ -1337,6 +1575,43 @@ For specifying the organisation(s) to which a contact or contributor belongs.
       <td valign="top">String</td>
       <td valign="top">1</td>
       <td valign="top">Celestron Microscope</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="technical_resource_id" href="#technical_resource_id_tree">technical_resource_id</a></td>
+      <td valign="top">Identifier of a technical resource</td>
+      <td valign="top">Nested Data Structure</td>
+      <td valign="top">0..n</td>
+      <td valign="top"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="technical_resource_id_table">Properties in 'technical_resource_id'</h2>
+
+<table style="width: 99%;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Cardinality</th>
+      <th>Example Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a id="technical_resource_id_id" href="#technical_resource_id_id_tree">identifier</a></td>
+      <td valign="top">To indicate the specific value of an identifier for a technical resource</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">https://example.org/resource</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="technical_resource_id_type" href="#technical_resource_id_type_tree">type</a></td>
+      <td valign="top">To specify a type of an identifier for a technical resource. Suggested Values: doi, url, other</td>
+      <td valign="top">String</td>
+      <td valign="top">1</td>
+      <td valign="top">url</td>
     </tr>
   </tbody>
 </table>

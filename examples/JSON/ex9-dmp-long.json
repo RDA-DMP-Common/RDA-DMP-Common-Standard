@@ -7,7 +7,7 @@
 		"created": "2019-12-06T11:33:05.619Z",
 		"modified": "2019-12-06T11:33:05.619Z",
 		"dmp_id": {
-			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"identifier": "10.0000/00.0.1234",
 			"type": "doi"
 		},
 		"contact": {
@@ -23,7 +23,7 @@
 				"name": "Leo Messi",
 				"mbox": "leo.messi@barcelona.com",
 				"contributor_id": {
-					"identifier": "https://orcid.org/0000-0002-0000-0000",
+					"identifier": "0000-0002-0000-0000",
 					"type": "orcid"
 				},
 				"role": [
@@ -34,7 +34,7 @@
 				"name": "Robert Lewandowski",
 				"mbox": "robert@bayern.de",
 				"contributor_id": {
-					"identifier": "https://orcid.org/0000-0002-4929-7875",
+					"identifier": "0000-0002-4929-7875",
 					"type": "orcid"
 				},
 				"role": [
@@ -83,7 +83,7 @@
 		"dataset": [
 			{
 				"dataset_id": {
-					"identifier": "https://hdl.handle.net/0000/00.00000",
+					"identifier": "0000/00.00000",
 					"type": "handle"
 				},
 				"title": "Client application",
@@ -121,7 +121,7 @@
 			},
 			{
 				"dataset_id": {
-					"identifier": "https://hdl.handle.net/0000/00.00000",
+					"identifier": "0000/00.00000",
 					"type": "handle"
 				},
 				"title": "Image collection",
@@ -140,7 +140,7 @@
 			},
 			{
 				"dataset_id": {
-					"identifier": "https://hdl.handle.net/0000/00.00000",
+					"identifier": "0000/00.00000",
 					"type": "handle"
 				},
 				"title": "Interviews",

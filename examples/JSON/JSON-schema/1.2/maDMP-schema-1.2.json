@@ -39,10 +39,19 @@
       "title": "Affiliation ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/AffiliationIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "03yrm5c26"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/AffiliationIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested Values: ror, grid, isni, other",
+          "examples": [
+            "ror"
+          ]
         }
       },
       "required": [
@@ -50,27 +59,32 @@
           "type"
       ]
     },
-    "AffiliationIDType": {
-      "$anchor": "AffiliationIDType",
-      "type": "string",
-      "enum": [
-        "ror",
-        "grid",
-        "isni",
-        "other"
-      ],
-      "title": "Affiliation ID Type",
-      "description": "Identifier type. Allowed values: ror, grid, isni, other",
-      "examples": [
-        "ror"
-      ]
-    },
-    "AffiliationIDValue": {
-      "$anchor": "AffiliationIDValue",
-      "type": "string",
-      "title": "Affiliation ID Value",
-      "examples": [
-        "https://ror.org/03yrm5c26"
+    "AlternateIdentifier": {
+      "$anchor": "AlternateIdentifier",
+      "type": "object",
+      "title": "Alternate Identifier",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "title": "Identifier",
+          "description": "Alternate identifier value",
+          "examples": [
+            "E-GEOD-34814"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Type of alternate identifier",
+          "examples": [
+            "accession number",
+            "doi"
+          ]
+        }
+      },
+      "required": [
+          "identifier",
+          "type"
       ]
     },
     "Booleanish": {
@@ -121,7 +135,18 @@
           }
         },
         "contact_id": {
-          "$ref": "#/$defs/ContactID"
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ContactID"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ContactID"
+              },
+              "minItems": 1
+            }
+          ]
         },
         "mbox": {
           "type": "string",
@@ -153,38 +178,24 @@
       "title": "Contact ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/ContactIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "0000-0003-0644-4174"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/ContactIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: orcid, isni, openid",
+          "examples": [
+            "orcid"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "ContactIDType": {
-      "$anchor": "ContactIDType",
-      "type": "string",
-      "enum": [
-        "orcid",
-        "isni",
-        "openid",
-        "other"
-      ],
-      "title": "Contact ID Type",
-      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
-      "examples": [
-        "orcid"
-      ]
-    },
-    "ContactIDValue": {
-      "$anchor": "ContactIDValue",
-      "type": "string",
-      "title": "Contact ID Value",
-      "examples": [
-        "https://orcid.org/0000-0003-0644-4174"
       ]
     },
     "Contributor": {
@@ -201,7 +212,18 @@
           }
         },
         "contributor_id": {
-          "$ref": "#/$defs/ContributorID"
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ContributorID"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ContributorID"
+              },
+              "minItems": 0
+            }
+          ]
         },
         "mbox": {
           "type": "string",
@@ -236,38 +258,24 @@
       "title": "Contributor ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/ContributorIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "0000-0003-0644-4174"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/ContributorIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: orcid, isni, openid",
+          "examples": [
+            "orcid"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "ContributorIDType": {
-      "$anchor": "ContributorIDType",
-      "type": "string",
-      "enum": [
-        "orcid",
-        "isni",
-        "openid",
-        "other"
-      ],
-      "title": "Contact ID Type",
-      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
-      "examples": [
-        "orcid"
-      ]
-    },
-    "ContributorIDValue": {
-      "$anchor": "ContributorIDValue",
-      "type": "string",
-      "title": "Contributor ID Value",
-      "examples": [
-        "https://orcid.org/0000-0003-0644-4174"
       ]
     },
     "ContributorRole": {
@@ -357,7 +365,18 @@
           }
         },
         "creator_id": {
-          "$ref": "#/$defs/CreatorID"
+          "oneOf": [
+            {
+              "$ref": "#/$defs/CreatorID"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CreatorID"
+              },
+              "minItems": 0
+            }
+          ]
         },
         "mbox": {
           "type": "string",
@@ -388,38 +407,24 @@
       "title": "Creator ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/CreatorIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "0000-0003-0644-4174"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/CreatorIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: orcid, isni, openid",
+          "examples": [
+            "orcid"
+          ]
         }
       },
       "required": [
           "identifier",
           "type"
-      ]
-    },
-    "CreatorIDType": {
-      "$anchor": "CreatorIDType",
-      "type": "string",
-      "enum": [
-        "orcid",
-        "isni",
-        "openid",
-        "other"
-      ],
-      "title": "Creator ID Type",
-      "description": "Identifier type. Allowed values: orcid, isni, openid, other",
-      "examples": [
-        "orcid"
-      ]
-    },
-    "CreatorIDValue": {
-      "$anchor": "CreatorIDValue",
-      "type": "string",
-      "title": "Creator ID Value",
-      "examples": [
-        "https://orcid.org/0000-0003-0644-4174"
       ]
     },
     "CurrencyCode": {
@@ -874,6 +879,13 @@
       "type": "object",
       "title": "Dataset",
       "properties": {
+        "alternate_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AlternateIdentifier"
+          },
+          "minItems": 0
+        },
         "creator": {
           "type": "array",
           "title": "Creators",
@@ -941,7 +953,7 @@
           }
         },
         "language": {
-          "$ref": "#/$defs/LanguageID"
+          "$ref": "#/$defs/LanguageCode"
         },
         "metadata": {
           "type": "array",
@@ -971,6 +983,13 @@
           "examples": [
             "All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data."
           ]
+        },
+        "related_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RelatedIdentifier"
+          },
+          "minItems": 0
         },
         "security_and_privacy": {
           "$ref": "#/$defs/SecurityAndPrivacyItems"
@@ -1021,40 +1040,24 @@
       "title": "Dataset ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/DatasetIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "11353/10.923628"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/DatasetIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Dataset identifier type. Suggested values: handle, doi, ark, url",
+          "examples": [
+            "handle"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "DatasetIDType": {
-      "$anchor": "DatasetIDType",
-      "type": "string",
-      "enum": [
-        "handle",
-        "doi",
-        "ark",
-        "url",
-        "other"
-      ],
-      "title": "Dataset ID Type",
-      "description": "Dataset identifier type. Allowed values: handle, doi, ark, url, other",
-      "examples": [
-        "handle"
-      ]
-    },
-    "DatasetIDValue": {
-      "$anchor": "DatasetIDValue",
-      "type": "string",
-      "title": "Dataset ID Value",
-      "description": "Identifier for a dataset",
-      "examples": [
-        "https://hdl.handle.net/11353/10.923628"
       ]
     },
     "Datasets": {
@@ -1071,6 +1074,13 @@
       "title": "DMP",
       "description": "Provides high level information about the DMP, e.g. its title, modification date, etc. It is the root of this application profile. The majority of its fields are mandatory.",
       "properties": {
+        "alternate_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AlternateIdentifier"
+          },
+          "minItems": 0
+        },
         "contact": {
           "$ref": "#/$defs/Contact"
         },
@@ -1123,7 +1133,7 @@
           ]
         },
         "language": {
-          "$ref": "#/$defs/LanguageID"
+          "$ref": "#/$defs/LanguageCode"
         },
         "modified": {
           "type": "string",
@@ -1141,6 +1151,13 @@
           "items": {
             "$ref": "#/$defs/Project"
           }
+        },
+        "related_identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RelatedIdentifier"
+          },
+          "minItems": 0
         },
         "title": {
           "type": "string",
@@ -1169,40 +1186,24 @@
       "description": "Identifier for the DMP itself",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/DMPIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "10.1371/journal.pcbi.1006750"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/DMPIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "The DMP Identifier Type. Suggested values: handle, doi, ark, url",
+          "examples": [
+            "doi"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "DMPIDType": {
-      "$anchor": "DMPIDType",
-      "type": "string",
-      "enum": [
-        "handle",
-        "doi",
-        "ark",
-        "url",
-        "other"
-      ],
-      "title": "DMP ID Type",
-      "description": "The DMP Identifier Type. Allowed values: handle, doi, ark, url, other",
-      "examples": [
-        "doi"
-      ]
-    },
-    "DMPIDValue": {
-      "$anchor": "DMPIDValue",
-      "type": "string",
-      "title": "DMP ID Value",
-      "description": "Identifier for a DMP",
-      "examples": [
-        "https://doi.org/10.1371/journal.pcbi.1006750"
       ]
     },
     "Distribution": {
@@ -1290,38 +1291,25 @@
       "description": "Funder ID of the associated project",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/FunderIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
+          "examples": [
+            "501100002428"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/FunderIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: fundref, url",
+          "examples": [
+            "fundref"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "FunderIDType": {
-      "$anchor": "FunderIDType",
-      "type": "string",
-      "enum": [
-        "fundref",
-        "url",
-        "other"
-      ],
-      "title": "Funder ID Type",
-      "description": "Identifier type. Allowed values: fundref, url, other",
-      "examples": [
-        "fundref"
-      ]
-    },
-    "FunderIDValue": {
-      "$anchor": "FunderIDValue",
-      "type": "string",
-      "title": "Funder ID Value",
-      "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
-      "examples": [
-        "501100002428"
       ]
     },
     "Funding": {
@@ -1374,37 +1362,24 @@
       "description": "Grant ID of the associated project",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/GrantIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "http://example.org/grants/776242"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/GrantIDType"
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: url",
+          "examples": [
+            "url"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "GrantIDType": {
-      "$anchor": "GrantIDType",
-      "type": "string",
-      "title": "Grant ID Type",
-      "enum": [
-        "url",
-        "other"
-      ],
-      "description": "Identifier type. Allowed values: url, other",
-      "examples": [
-        "other"
-      ]
-    },
-    "GrantIDValue": {
-      "$anchor": "GrantIDValue",
-      "type": "string",
-      "title": "Grant ID Value",
-      "description": "Grant ID",
-      "examples": [
-        "776242"
       ]
     },
     "Host": {
@@ -1450,6 +1425,13 @@
         "geo_location": {
           "$ref": "#/$defs/CountryCode"
         },
+        "host_id": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HostID"
+          },
+          "minItems": 0
+        },
         "pid_system": {
           "$ref": "#/$defs/PIDSystems"
         },
@@ -1486,6 +1468,32 @@
         "url"
       ]
     },
+    "HostID": {
+      "$anchor": "HostID",
+      "type": "object",
+      "title": "Host ID",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "http://example.org/repo"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: url",
+          "examples": [
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "type"
+      ]
+    },
     "MIMEType": {
       "$anchor": "MIMEType",
       "type": "string",
@@ -1494,8 +1502,8 @@
         "image/tiff"
       ]
     },
-    "LanguageID": {
-      "$anchor": "LanguageID",
+    "LanguageCode": {
+      "$anchor": "LanguageCode",
       "type": "string",
       "enum": [
         "aar",
@@ -1742,10 +1750,21 @@
           ]
         },
         "language": {
-          "$ref": "#/$defs/LanguageID"
+          "$ref": "#/$defs/LanguageCode"
         },
         "metadata_standard_id": {
-          "$ref": "#/$defs/MetadataStandardID"
+          "oneOf": [
+            {
+              "$ref": "#/$defs/MetadataStandardID"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/MetadataStandardID"
+              },
+              "minItems": 1
+            }
+          ]
         }
       },
       "required": [
@@ -1759,37 +1778,28 @@
       "title": "Metadata Standard ID",
       "properties": {
         "identifier": {
-          "$ref": "#/$defs/MetadataStandardIDValue"
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "http://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+          ]
         },
         "type": {
-          "$ref": "#/$defs/MetadataStandardIDType"
+          "type": "string",
+          "enum": [
+            "url",
+            "other"
+          ],
+          "title": "Type",
+          "description": "Identifier type. Suggested values: url",
+          "examples": [
+            "url"
+          ]
         }
       },
       "required": [
         "identifier",
         "type"
-      ]
-    },
-    "MetadataStandardIDType": {
-      "$anchor": "MetadataStandardIDType",
-      "type": "string",
-      "enum": [
-        "url",
-        "other"
-      ],
-      "title": "Metadata Standard ID Type",
-      "description": "Identifier type. Allowed values: url, other",
-      "examples": [
-        "url"
-      ]
-    },
-    "MetadataStandardIDValue": {
-      "$anchor": "MetadataStandardIDValue",
-      "type": "string",
-      "title": "Metadata Standard ID Value",
-      "description": "Identifier for the metadata standard used.",
-      "examples": [
-        "http://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
       ]
     },
     "PIDSystems": {
@@ -1855,6 +1865,13 @@
         "funding": {
           "$ref": "#/$defs/Fundings"
         },
+        "project_id": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ProjectID"
+          },
+          "minItems": 0
+        },
         "start": {
           "type": "string",
           "format": "date",
@@ -1875,6 +1892,102 @@
       },
       "required": [
         "title"
+      ]
+    },
+    "ProjectID": {
+      "$anchor": "ProjectID",
+      "type": "object",
+      "title": "Project ID",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "https://example.org/project"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: doi, raid, url",
+          "examples": [
+            "url",
+            "doi",
+            "raid"
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "type"
+      ]
+    },
+    "RelatedIdentifier": {
+      "$anchor": "RelatedIdentifier",
+      "type": "object",
+      "title": "Related Identifier",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "https://example.com/"
+          ]
+        },
+        "metadata_scheme": {
+          "type": "string",
+          "title": "Metadata Scheme",
+          "description": "Name of the related metadata schema (if applicable)",
+          "examples": [
+            "DDI-L"
+          ]
+        },
+        "relation_type": {
+          "type": "string",
+          "title": "Relation Type",
+          "description": "Type of relation between the resource and the related resource, suggested values from DataCite relationType: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relationType/",
+          "examples": [
+            "HasMetadata"
+          ]
+        },
+        "resource_type": {
+          "type": "string",
+          "title": "Resource Type",
+          "description": "Type of the related resource, suggested values from DataCite resourceTypeGeneral: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/resourceTypeGeneral/",
+          "examples": [
+            "Model"
+          ]
+        },
+        "scheme_type": {
+          "type": "string",
+          "title": "Scheme Type",
+          "description": "Type of the related metadata scheme linked with scheme URI (if applicable)",
+          "examples": [
+            "XSD"
+          ]
+        },
+        "scheme_uri": {
+          "type": "string",
+          "format": "uri",
+          "title": "Scheme URI",
+          "description": "Link to the scheme of the identifier (if applicable)",
+          "examples": [
+            "http://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/instance.xsd"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Type of the identifier, suggested values from DataCite relatedIdentifierType: https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/relatedIdentifierType/",
+          "examples": [
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "type",
+        "relation_type"
       ]
     },
     "SecurityAndPrivacyItem": {
@@ -1929,10 +2042,45 @@
           "examples": [
             "Celestron Microscope"
           ]
+        },
+        "technical_resource_id": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TechnicalResourceID"
+          },
+          "minItems": 0
         }
       },
       "required": [
         "name"
+      ]
+    },
+    "TechnicalResourceID": {
+      "$anchor": "TechnicalResourceID",
+      "type": "object",
+      "title": "Technical Resource ID",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "title": "Identifier",
+          "examples": [
+            "https://example.org/resource"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Identifier type. Suggested values: url",
+          "examples": [
+            "url",
+            "doi",
+            "other"
+          ]
+        }
+      },
+      "required": [
+        "identifier",
+        "type"
       ]
     },
     "TechnicalResources": {

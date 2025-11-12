@@ -27,14 +27,14 @@
 		],
 		"contact": {
 			"contact_id": {
-				"identifier": "http://orcid.org/0000-0000-0000-0000",
+				"identifier": "0000-0000-0000-0000",
 				"type": "orcid"
 			},
 			"mbox": "cc@example.com",
 			"name": "Charlie Chaplin"
 		},
 		"dmp_id": {
-			"identifier": "https://doi.org/10.0000/00.0.1234",
+			"identifier": "10.0000/00.0.1234",
 			"type": "doi"
 		},
 		"language": "eng",
@@ -43,7 +43,7 @@
 			{
 				"title": "Source Code",
 				"dataset_id": {
-					"identifier": "https://hdl.handle.net/11353/10.923628",
+					"identifier": "11353/10.923628",
 					"type": "handle"
 				},
 				"personal_data": "unknown",
