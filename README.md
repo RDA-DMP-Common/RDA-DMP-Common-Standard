@@ -165,6 +165,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       </ul>
       <li id="dataset_personal_data_tree"><a href="#dataset_personal_data">personal_data</a></li>
       <li id="dataset_preservation_tree"><a href="#dataset_preservation">preservation_statement</a></li>
+      <li id="dataset_rights_tree"><a href="#dataset_rights">rights</a></li>
       <li id="dataset_related_identifier_tree"><a href="#related_identifier_table">related_identifier</a></li>
       <li id="security_privacy_tree"><a href="#security_privacy_table">security_and_privacy</a></li>
       <ul>
@@ -716,6 +717,13 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">String</td>
       <td valign="top">0..1</td>
       <td valign="top">All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data.</td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="dataset_rights" href="#dataset_rights_tree">rights</a></td>
+      <td valign="top">A statement that concerns all rights not addressed with license, such as copyright statements.</td>
+      <td valign="top">String</td>
+      <td valign="top">0..1</td>
+      <td valign="top">This dataset incorporates third-party materials that are subject to additional rights and restrictions. Users must obtain permission from the original rights holders before reuse.</td>
     </tr>
     <tr>
       <td valign="top"><a id="dataset_related_identifier" href="#dataset_related_identifier_tree">related_identifier</a></td>
