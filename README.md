@@ -142,6 +142,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
           <li id="host_title_tree"><a href="#host_title">title</a></li>
           <li id="host_url_tree"><a href="#host_url">url</a></li>
         </ul>
+        <li id="distribution_issued_tree"><a href="#distribution_issued">issued</a></li>
         <li id="license_tree"><a href="#license_table">license</a></li>
         <ul>
           <li id="license_ref_tree"><a href="#license_ref">license_ref</a></li>
@@ -860,6 +861,13 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">Nested Data Structure</td>
       <td valign="top">0..1</td>
       <td valign="top"> </td>
+    </tr>
+    <tr>
+      <td valign="top"><a id="distribution_issued" href="#distribution_issued_tree">issued</a></td>
+      <td valign="top">To indicate a date when a distribution was published or released. Encoded using the relevant ISO 8601 Date <a href="https://www.w3.org/TR/NOTE-datetime">compliant string</a></td>
+      <td valign="top">Date</td>
+      <td valign="top">0..1</td>
+      <td valign="top">2019-06-30</td>
     </tr>
     <tr>
       <td valign="top"><a id="license" href="#license_tree">license</a></td>
