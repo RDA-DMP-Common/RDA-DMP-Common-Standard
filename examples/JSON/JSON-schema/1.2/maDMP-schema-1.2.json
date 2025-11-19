@@ -964,6 +964,14 @@
             "All research data will be stored in the university's secure data repository, backed up daily to ensure redundancy and prevent data loss. The dataset will be preserved in a standardized format (e.g. CSV, JSON) and will include detailed metadata for clarity. It will be accessible to the public via the university’s open-access platform three months after the completion of the project, with ongoing access ensured for a minimum of 5 years. Regular checks will be performed every 6 months to confirm the integrity and readability of the data."
           ]
         },
+        "rights": {
+          "type": "string",
+          "title": "Rights",
+          "description": "A statement that concerns all rights not addressed with license, such as copyright statements.",
+          "examples": [
+            "This dataset incorporates third-party materials that are subject to additional rights and restrictions. Users must obtain permission from the original rights holders before reuse."
+          ]
+        },
         "related_identifier": {
           "type": "array",
           "items": {
