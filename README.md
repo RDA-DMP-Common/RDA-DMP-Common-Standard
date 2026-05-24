@@ -315,6 +315,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">ror</td>
     </tr>
   </tbody>
+</table>
 
 <h2 id="alternate_identifier_table">Properties in 'alternate_identifier'</h2>
 
