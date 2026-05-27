@@ -838,7 +838,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="distribution_data_access" href="#distribution_data_access_tree">data_access</a></td>
-      <td valign="top">Indicates access mode for data.<br/>Allowed Values: open, shared, closed</td>
+      <td valign="top">Indicates access mode for data.<br/>Allowed Values: open, restricted, closed</td>
       <td valign="top">Term from Controlled Vocabulary</td>
       <td valign="top">1</td>
       <td valign="top">open</td>
