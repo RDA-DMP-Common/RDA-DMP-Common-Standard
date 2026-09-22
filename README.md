@@ -1206,7 +1206,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="host_id" href="#host_id_tree">host_id</a></td>
-      <td valign="top">Identifier of Host</td>
+      <td valign="top">Persistent identifier of a host, e.g. its re3data identifier. It identifies the host itself; use <a href="#host_url">url</a> to provide the address where the host can be accessed.</td>
       <td valign="top">Nested Data Structure</td>
       <td valign="top">0..n</td>
       <td valign="top"> </td>
@@ -1241,7 +1241,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="host_url" href="#host_url_tree">url</a></td>
-      <td valign="top">A URL of an infrastructure hosting a distribution of a dataset</td>
+      <td valign="top">A URL where the infrastructure hosting a distribution of a dataset can be accessed, e.g. the landing page of a repository. To identify the host persistently, use <a href="#host_id">host_id</a>.</td>
       <td valign="top">URL</td>
       <td valign="top">1</td>
       <td valign="top">https://zenodo.org</td>
@@ -1267,14 +1267,14 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top">To indicate the specific value of an identifier for a host</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">https://example.org/repo</td>
+      <td valign="top">https://doi.org/10.17616/R3QP53</td>
     </tr>
     <tr>
       <td valign="top"><a id="host_id_type" href="#host_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of an identifier for a host.  Suggested Values: url</td>
+      <td valign="top">To specify a type of an identifier for a host.  Suggested Values: re3data, doi, url</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">url</td>
+      <td valign="top">re3data</td>
     </tr>
   </tbody>
 </table>

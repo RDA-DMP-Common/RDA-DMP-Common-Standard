@@ -12,6 +12,7 @@ Index:
 * [Why Metadata is referenced from a Dataset?](#why-metadata-is-referenced-from-a-dataset)
 * [Are there any other serialisations planned different than JSON?](#are-there-any-other-serialisations-planned-different-tham-json)
 * [Is there a JSON schema?](#is-there-a-JSON-schema)
+* [What is the difference between host_id and url of a Host?](#what-is-the-difference-between-host_id-and-url-of-a-host)
 
 ### When to use this standard?
 The standard is meant for exchange of machine-actionable DMPs between systems. It is independent of any internal data organisation used by these systems. The standard also does not prescribe how information must be presented to the end user and do not enforce any specific logic on how this information must be collected or used. The standard is an information carrier and the full machine-actionability can only be achieved when systems using the standard implement appropriate logic.
@@ -77,3 +78,5 @@ All the examples provided so far are in JSON, because of its popularity. The sta
 ### Is there a JSON schema?
 Yes, you can find it [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/tree/master/examples/JSON/JSON-schema)
 
+### What is the difference between host_id and url of a Host?
+They serve distinct purposes. [host_id](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#host_id) is a persistent identifier of the host itself, e.g. its re3data identifier (such as `https://doi.org/10.17616/R3QP53` for Zenodo), which allows to unambiguously identify the host and retrieve further information about it from registries. [url](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#host_url) is the address where the host can be accessed, e.g. the landing page of a repository (such as `https://zenodo.org`). A URL may change over time and does not have to be provided for hosts that are not accessible online, e.g. an external hard drive. If no persistent identifier exists for a host, its URL can also be used as `host_id` with type `url`.

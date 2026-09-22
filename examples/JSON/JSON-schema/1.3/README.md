@@ -6,3 +6,4 @@ This is the JSON schema for the DMP common standard. Examples against the schema
 
 - Recommended ROR instead of Crossref Funder Registry for `funder_id` in `Funding` ([#145](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/145))
 - Fixed descriptions of `backup_type` and `storage_type` in `Host` ([#153](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/153))
+- Clarified the difference between `host_id` and `url` in `Host` and extended suggested `host_id` types ([#144](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/144))
