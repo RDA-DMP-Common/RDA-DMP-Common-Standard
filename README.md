@@ -1213,8 +1213,8 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="host_pid_system" href="#host_pid_system_tree">pid_system</a></td>
-      <td valign="top">PID System used by a host.<br/>Allowed Values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other</td>
-      <td valign="top">Term from Controlled Vocabulary</td>
+      <td valign="top">PID System used by a host.<br/>Suggested Values: ark, arxiv, bibcode, doi, ean13, eissn, handle, igsn, isbn, issn, istc, lissn, lsid, pmid, purl, upc, url, urn, other</td>
+      <td valign="top">String</td>
       <td valign="top">0..n</td>
       <td valign="top">doi</td>
     </tr>

@@ -10,3 +10,4 @@ This is the JSON schema for the DMP common standard. Examples against the schema
 - Added `restricted` as a value of `data_access` in `Distribution` and deprecated `shared` ([#150](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/pull/150))
 - Clarified the use of `is_reused` together with `related_identifier` in `Dataset` for reused data ([#143](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/143))
 - Changed `url` in `Host` to optional ([#152](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/152))
+- Changed `pid_system` in `Host` to suggested values instead of a fixed list, consistent with identifier types ([#146](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/issues/146))
