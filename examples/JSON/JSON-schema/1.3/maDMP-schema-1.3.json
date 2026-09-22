@@ -1284,17 +1284,17 @@
         "identifier": {
           "type": "string",
           "title": "Identifier",
-          "description": "Funder ID, recommended to use CrossRef Funder Registry. See: https://www.crossref.org/services/funder-registry/",
+          "description": "Funder ID, recommended to use ROR (https://ror.org), which is replacing the Crossref Funder Registry (https://www.crossref.org/services/funder-registry/)",
           "examples": [
-            "501100002428"
+            "013tf3c58"
           ]
         },
         "type": {
           "type": "string",
           "title": "Type",
-          "description": "Identifier type. Suggested values: fundref, url",
+          "description": "Identifier type. Suggested values: ror, fundref, url",
           "examples": [
-            "fundref"
+            "ror"
           ]
         }
       },
