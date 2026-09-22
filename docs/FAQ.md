@@ -13,6 +13,7 @@ Index:
 * [Are there any other serialisations planned different than JSON?](#are-there-any-other-serialisations-planned-different-tham-json)
 * [Is there a JSON schema?](#is-there-a-JSON-schema)
 * [What is the difference between host_id and url of a Host?](#what-is-the-difference-between-host_id-and-url-of-a-host)
+* [How to express reused data?](#how-to-express-reused-data)
 
 ### When to use this standard?
 The standard is meant for exchange of machine-actionable DMPs between systems. It is independent of any internal data organisation used by these systems. The standard also does not prescribe how information must be presented to the end user and do not enforce any specific logic on how this information must be collected or used. The standard is an information carrier and the full machine-actionability can only be achieved when systems using the standard implement appropriate logic.
@@ -80,3 +81,24 @@ Yes, you can find it [here](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Sta
 
 ### What is the difference between host_id and url of a Host?
 They serve distinct purposes. [host_id](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#host_id) is a persistent identifier of the host itself, e.g. its re3data identifier (such as `https://doi.org/10.17616/R3QP53` for Zenodo), which allows to unambiguously identify the host and retrieve further information about it from registries. [url](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#host_url) is the address where the host can be accessed, e.g. the landing page of a repository (such as `https://zenodo.org`). A URL may change over time and does not have to be provided for hosts that are not accessible online, e.g. an external hard drive. If no persistent identifier exists for a host, its URL can also be used as `host_id` with type `url`.
+
+### How to express reused data?
+Data that is reused, i.e. not produced in project(s) covered by the DMP, is described as a [Dataset](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#dataset_table) with [is_reused](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#dataset_is_reused) set to `true`. This allows the DMP to describe how the reused data is handled in the project, e.g. its access, licensing, or storage, and it makes reused data easy to distinguish from newly produced data.
+
+If a dataset produced in the project is derived from reused data, the relation can be expressed explicitly using [related_identifier](https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard#dataset_related_identifier) of the produced dataset, e.g. with relation type `IsDerivedFrom` pointing to the identifier of the reused data:
+
+```json
+{
+  "title": "Processed survey results",
+  "is_reused": false,
+  "related_identifier": [
+    {
+      "identifier": "https://doi.org/10.1234/survey-2020",
+      "type": "doi",
+      "relation_type": "IsDerivedFrom"
+    }
+  ]
+}
+```
+
+Both approaches can be combined: the reused data can be listed as a Dataset with `is_reused` set to `true` (and the same identifier in its `dataset_id`), while the produced dataset references it via `related_identifier`. Using only `related_identifier` is also possible when there is no need to describe the reused data in the DMP.
