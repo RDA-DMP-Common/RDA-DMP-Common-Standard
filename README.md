@@ -1178,7 +1178,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="host_backup_type" href="#host_backup_type_tree">backup_type</a></td>
-      <td valign="top">Location and/or type of the backup provided by a host</td>
+      <td valign="top">Type of the backup provided by a host.</td>
       <td valign="top">String</td>
       <td valign="top">0..1</td>
       <td valign="top">tapes</td>
@@ -1220,10 +1220,10 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="host_storage_type" href="#host_storage_type_tree">storage_type</a></td>
-      <td valign="top">To indicate whether a host supports versioning of data distributions. </td>
+      <td valign="top">The type of storage medium or system used to store the data.</td>
       <td valign="top">String</td>
       <td valign="top">0..1</td>
-      <td valign="top">LTO-8 tape</td>
+      <td valign="top">object storage</td>
     </tr>
     <tr>
       <td valign="top"><a id="host_supports_versioning" href="#host_supports_versioning_tree">support_versioning</a></td>

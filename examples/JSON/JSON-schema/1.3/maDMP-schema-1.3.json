@@ -1393,7 +1393,7 @@
         "backup_type": {
           "type": "string",
           "title": "Backup Type",
-          "description": "Location and/or type of the backup provided by a host",
+          "description": "Type of the backup provided by a host.",
           "examples": [
             "tapes"
           ]
@@ -1424,9 +1424,9 @@
         "storage_type": {
           "type": "string",
           "title": "Storage Type",
-          "description": "To indicate whether a host supports versioning of data distributions.",
+          "description": "The type of storage medium or system used to store the data.",
           "examples": [
-            "External Hard Drive"
+            "object storage"
           ]
         },
         "support_versioning": {
