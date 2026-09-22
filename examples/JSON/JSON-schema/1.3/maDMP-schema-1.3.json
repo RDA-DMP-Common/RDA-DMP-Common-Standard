@@ -1413,6 +1413,8 @@
         },
         "host_id": {
           "type": "array",
+          "title": "Host ID",
+          "description": "Persistent identifier of a host, e.g. its re3data identifier. It identifies the host itself; use url to provide the address where the host can be accessed.",
           "items": {
             "$ref": "#/$defs/HostID"
           },
@@ -1443,7 +1445,7 @@
           "type": "string",
           "format": "url",
           "title": "URL",
-          "description": "A URL of an infrastructure hosting a distribution of a dataset",
+          "description": "A URL where the infrastructure hosting a distribution of a dataset can be accessed, e.g. the landing page of a repository. To identify the host persistently, use host_id.",
           "examples": [
             "https://zenodo.org"
           ]
@@ -1461,16 +1463,17 @@
         "identifier": {
           "type": "string",
           "title": "Identifier",
+          "description": "To indicate the specific value of an identifier for a host",
           "examples": [
-            "http://example.org/repo"
+            "https://doi.org/10.17616/R3QP53"
           ]
         },
         "type": {
           "type": "string",
           "title": "Type",
-          "description": "Identifier type. Suggested values: url",
+          "description": "Identifier type. Suggested values: re3data, doi, url",
           "examples": [
-            "url"
+            "re3data"
           ]
         }
       },
