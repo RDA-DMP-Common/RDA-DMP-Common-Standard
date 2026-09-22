@@ -1243,7 +1243,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
       <td valign="top"><a id="host_url" href="#host_url_tree">url</a></td>
       <td valign="top">A URL where the infrastructure hosting a distribution of a dataset can be accessed, e.g. the landing page of a repository. To identify the host persistently, use <a href="#host_id">host_id</a>.</td>
       <td valign="top">URL</td>
-      <td valign="top">1</td>
+      <td valign="top">0..1</td>
       <td valign="top">https://zenodo.org</td>
     </tr>
   </tbody>
