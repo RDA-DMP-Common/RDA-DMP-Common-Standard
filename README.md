@@ -673,7 +673,7 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
     </tr>
     <tr>
       <td valign="top"><a id="dataset_is_reused" href="#dataset_is_reused_tree">is_reused</a></td>
-      <td valign="top">Indication if the dataset is reused, i.e., not produced in project(s) covered by this DMP.</td>
+      <td valign="top">Indication if the dataset is reused, i.e., not produced in project(s) covered by this DMP. To link a dataset produced in the project to the reused data it is derived from, use <a href="#dataset_related_identifier">related_identifier</a> (e.g. with relation type IsDerivedFrom). See <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard/blob/master/docs/FAQ.md#how-to-express-reused-data">FAQ</a> for more details.</td>
       <td valign="top">Boolean</td>
       <td valign="top">0..1</td>
       <td valign="top">true</td>

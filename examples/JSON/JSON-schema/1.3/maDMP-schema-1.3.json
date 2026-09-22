@@ -906,8 +906,8 @@
         },
         "is_reused": {
           "type": "boolean",
-          "title": "The Dataset Is Reused Schema",
-          "description": "Indicates if the dataset is reused, i.e., not produced in project(s) covered by this DMP.",
+          "title": "Is Reused",
+          "description": "Indicates if the dataset is reused, i.e., not produced in project(s) covered by this DMP. To link a dataset produced in the project to the reused data it is derived from, use related_identifier (e.g. with relation type IsDerivedFrom).",
           "examples": [
             true
           ]
