@@ -13,8 +13,8 @@
 				"funding": [
 					{
 						"funder_id": {
-							"identifier": "501100002428",
-							"type": "fundref"
+							"identifier": "013tf3c58",
+							"type": "ror"
 						},
 						"grant_id": {
 							"identifier": "1234567-AT",

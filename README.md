@@ -1067,17 +1067,17 @@ For specifying related identifiers for a DMP or a dataset, e.g. a DOI of a publi
   <tbody>
     <tr>
       <td valign="top"><a id="funder_id_id" href="#funder_id_id_tree">identifier</a></td>
-      <td valign="top">To indicate the specific value of an identifier for a funder. It is recommended to use <a href="https://www.crossref.org/services/funder-registry/" target="_blank">CrossRef Funder Registry</a>.</td>
+      <td valign="top">To indicate the specific value of an identifier for a funder. It is recommended to use <a href="https://ror.org" target="_blank">ROR</a>, which is replacing the <a href="https://www.crossref.org/services/funder-registry/" target="_blank">Crossref Funder Registry</a>.</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">501100002428</td>
+      <td valign="top">013tf3c58</td>
     </tr>
     <tr>
       <td valign="top"><a id="funder_id_type" href="#funder_id_type_tree">type</a></td>
-      <td valign="top">To specify a type of identifier for a funder. Suggested Values: fundref, url</td>
+      <td valign="top">To specify a type of identifier for a funder. Suggested Values: ror, fundref, url</td>
       <td valign="top">String</td>
       <td valign="top">1</td>
-      <td valign="top">fundref</td>
+      <td valign="top">ror</td>
     </tr>
   </tbody>
 </table>
