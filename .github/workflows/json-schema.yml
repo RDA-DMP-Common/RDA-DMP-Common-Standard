@@ -32,4 +32,4 @@ jobs:
     
       - name: Validate JSON Examples
         run: |
-          jsonschema validate ./examples/JSON/JSON-schema/1.2/maDMP-schema-1.2.json ./examples/JSON/*.json
+          jsonschema validate ./examples/JSON/JSON-schema/1.3/maDMP-schema-1.3.json ./examples/JSON/*.json

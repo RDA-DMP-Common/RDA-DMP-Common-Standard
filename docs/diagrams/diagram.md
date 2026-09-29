@@ -1,6 +1,6 @@
 ```mermaid
 ---
-title: "RDA DMP Common Standard for maDMPs (v1.2)"
+title: "RDA DMP Common Standard for maDMPs (v1.3)"
 
 config:
   theme: 'neutral'
