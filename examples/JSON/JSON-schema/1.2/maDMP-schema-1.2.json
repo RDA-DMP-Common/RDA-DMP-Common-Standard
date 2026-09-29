@@ -846,11 +846,11 @@
       "type": "string",
       "enum": [
         "open",
-        "restricted",
+        "shared",
         "closed"
       ],
       "title": "Data Access",
-      "description": "Indicates access mode for data. Allowed values: open, restricted, closed",
+      "description": "Indicates access mode for data. Allowed values: open, shared, closed",
       "examples": [
         "open"
       ]
